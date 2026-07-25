@@ -1,15 +1,19 @@
 import { SafeAreaView, View, Text, Pressable, StyleSheet } from "react-native";
 import { router } from "expo-router";
 
+// Components
+import PrimaryButton from "@/components/Primary-Button";
+import AppLogo from "@/components/AppLogo";
+import PaginationDots from "@/components/ui/PaginationDots";
+
+
 export default function IntroductionScreen() {
   return (
     <SafeAreaView style={styles.container}>
 
       <View style={styles.content}>
 
-        <View style={styles.logo}>
-          <Text style={styles.logoText}>M</Text>
-        </View>
+      <AppLogo size={100}/>
 
         <Text style={styles.title}>MonoFact</Text>
 
@@ -17,17 +21,21 @@ export default function IntroductionScreen() {
           Learn the Truth, One Swipe at a Time.
         </Text>
 
-        <View style={styles.pagination}>
-          <View style={styles.activeDot} />
-          <View style={styles.dot} />
-          <View style={styles.dot} />
-        </View>
+        <PaginationDots
+        total={3}
+        active={0}
+        />
 
       </View>
 
-      <Pressable style={styles.button} onPress={() => router.push("/(tabs)")}>
-        <Text style={styles.buttonText}>Get Started</Text>
-      </Pressable>
+    <View style={styles.buttonContainer}>
+      <PrimaryButton
+        title="Get Started"
+        onPress={() => {
+          // Navigation comes here later
+        }}
+      />
+    </View>
 
     </SafeAreaView>
   );
@@ -70,6 +78,8 @@ const styles = StyleSheet.create({
     textAlign: "center",
     marginBottom: 40,
   },
+
+  // Dots styling
   pagination: {
     flexDirection: "row",
     gap: 8,
@@ -86,6 +96,8 @@ const styles = StyleSheet.create({
     borderRadius: 4,
     backgroundColor: "#C8C8C8",
   },
+
+  // Button styling
   button: {
     marginHorizontal: 20,
     marginBottom: 20,
@@ -100,4 +112,8 @@ const styles = StyleSheet.create({
     color: "#8A8A8A",
 
   },
+  buttonContainer: {
+    marginHorizontal: 20,
+    marginBottom: 30,
+  }
 });

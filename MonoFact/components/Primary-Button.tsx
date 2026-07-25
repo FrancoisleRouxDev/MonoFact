@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
     button: {
         marginHorizontal: 20,
         marginBottom: 30,
-        backgroundColor: "white",
+        backgroundColor: "#FFFFFF",
         paddingVertical: 15,
         borderRadius: 10,
         alignItems: "center",
@@ -29,6 +29,6 @@ const styles = StyleSheet.create({
     text: {
         fontSize: 16,
         fontWeight: "bold",
-        color: "#2B2B2B",
+        color: "#1E1E1E",
     },
 });
