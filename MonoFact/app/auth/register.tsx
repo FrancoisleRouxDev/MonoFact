@@ -10,8 +10,11 @@ import {
 import AppLogo from "@/components/AppLogo";
 import PrimaryButton from "@/components/Primary-Button";
 import InputField from "@/components/InputField";
+import { router, useRouter } from "expo-router";
 
 export default function RegisterScreen() {
+
+  const router = useRouter();
 
   const [username, setUsername] = useState("");
   const [email, setEmail] = useState("");
@@ -62,11 +65,12 @@ export default function RegisterScreen() {
           title="Create Account"
           onPress={() => {
             // Firebase later
+          router.push("/(tabs)")
           }}
         />
 
         <Pressable>
-          <Text style={styles.link}>
+          <Text style={styles.link} onPress={() => router.push("/auth/login")}>
             Already have an account? Log In
           </Text>
         </Pressable>
