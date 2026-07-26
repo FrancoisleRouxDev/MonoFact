@@ -1,5 +1,5 @@
-import { SafeAreaView, View, Text, Pressable, StyleSheet } from "react-native";
-import { router } from "expo-router";
+import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
 
 // Components
 import PrimaryButton from "@/components/Primary-Button";
@@ -8,6 +8,9 @@ import PaginationDots from "@/components/ui/PaginationDots";
 
 
 export default function IntroductionScreen() {
+
+  const router = useRouter();
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -32,7 +35,7 @@ export default function IntroductionScreen() {
       <PrimaryButton
         title="Get Started"
         onPress={() => {
-          // Navigation comes here later
+          router.push('/auth/login');
         }}
       />
     </View>
