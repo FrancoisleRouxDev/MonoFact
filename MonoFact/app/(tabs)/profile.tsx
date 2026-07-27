@@ -7,6 +7,7 @@ import ContinueCard from "@/components/newcomps/ContinueCard";
 import CategoryCard from "@/components/newcomps/CategoryCard";
 import DailyChallengeCard from "@/components/newcomps/DailyChallengeCard";
 import BottomNav from "@/components/newcomps/BottomNav";
+// import AchiementCard from "@/components/newcomps/AchiementCard";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
@@ -47,66 +48,6 @@ const stats: {
 
       <View style={styles.header}>
 
-        <Text style={styles.subtitle}>
-          Good Morning
-        </Text>
-
-        <Text style={styles.title}>
-          {username}
-        </Text>
-
-      <View style={styles.statsContainer}>
-        {stats.map((stat) => (
-          <StatCard
-            key={stat.label}
-            icon={stat.icon}
-            value={stat.value}
-            label={stat.label}
-          />
-        ))}
-      </View>
-        
-      </View>
-
-      <View >
-      <ContinueCard 
-        icon="play-outline"
-        label="Continue where you left off"   
-        value="Science - Round 3"
-      />
-      </View>
-
-        <text style={styles.categoryTitle}>
-          Categories
-        </text>
-
-      <View style={styles.categoryContainer1}>
-        
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
-      
-      <View style={styles.categoryContainer2}>
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
       </View>
 
       <View style={styles.dailyChallengeCard}>
@@ -136,9 +77,6 @@ const styles = StyleSheet.create({
     paddingHorizontal: 20,
     paddingTop: 20,
     height: 300,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-
   },
   title: {
     fontSize: 32,
