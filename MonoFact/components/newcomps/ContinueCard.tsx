@@ -1,17 +1,19 @@
+
+
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 
-type ContinueCardProps = {
+type CategoryCardProps = {
   icon: keyof typeof Ionicons.glyphMap;
   value: string;
   label: string;
 };
 
-export default function ContinueCard({
+export default function CategoryCard({
   icon,
   value,
   label,
-}: ContinueCardProps) {
+}: CategoryCardProps) {
   return (
     <View style={styles.card}>
 

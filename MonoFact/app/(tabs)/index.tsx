@@ -4,6 +4,7 @@ import { useRouter } from "expo-router";
 // Components
 import StatCard from "@/components/newcomps/StatCard";
 import ContinueCard from "@/components/newcomps/ContinueCard";
+import CategoryCard from "@/components/newcomps/CategoryCard";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
@@ -73,6 +74,39 @@ const stats: {
       />
       </View>
 
+        <text style={styles.categoryTitle}>
+          Categories
+        </text>
+
+      <View style={styles.categoryContainer1}>
+        
+      <CategoryCard
+        title="Science"
+        icon="flask-outline"
+        onPress={() => router.push("/")}
+      />
+
+      <CategoryCard
+        title="Science"
+        icon="flask-outline"
+        onPress={() => router.push("/")}
+      />
+      </View>
+      
+      <View style={styles.categoryContainer2}>
+      <CategoryCard
+        title="Science"
+        icon="flask-outline"
+        onPress={() => router.push("/")}
+      />
+
+      <CategoryCard
+        title="Science"
+        icon="flask-outline"
+        onPress={() => router.push("/")}
+      />
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -106,5 +140,26 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     justifyContent: "space-between",
     marginTop: 20,
-  }
+  },
+
+  //body section
+  categoryTitle: {
+    fontSize: 30,
+    fontWeight: "bold",
+    paddingHorizontal: 20,
+    marginLeft: 20,
+    
+  },
+  categoryContainer1: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+  },
+    categoryContainer2: {
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    paddingHorizontal: 20,
+  },
 });
