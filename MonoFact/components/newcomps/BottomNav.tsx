@@ -1,0 +1,95 @@
+import { View, StyleSheet } from "react-native";
+import { useRouter } from "expo-router";
+
+import BottomNavItem from "./BottomNavItem";
+
+import {
+  House,
+  CircleDot,
+  User,
+  ChartColumn,
+  Settings,
+} from "lucide-react-native";
+
+type BottomNavProps = {
+  current:
+    | "home"
+    | "play"
+    | "profile"
+    | "stats"
+    | "settings";
+};
+
+export default function BottomNav({
+  current,
+}: BottomNavProps) {
+
+  const router = useRouter();
+
+  return (
+    <View style={styles.container}>
+
+      <BottomNavItem
+        label="Home"
+        icon={House}
+        active={current === "home"}
+        onPress={() => router.push("/(tabs)")}
+      />
+
+      <BottomNavItem
+        label="Play"
+        icon={CircleDot}
+        active={current === "play"}
+        onPress={() => {}}
+      />
+
+      <BottomNavItem
+        label="Profile"
+        icon={User}
+        active={current === "profile"}
+        onPress={() => {}}
+      />
+
+      <BottomNavItem
+        label="Stats"
+        icon={ChartColumn}
+        active={current === "stats"}
+        onPress={() => {}}
+      />
+
+      <BottomNavItem
+        label="Settings"
+        icon={Settings}
+        active={current === "settings"}
+        onPress={() => {}}
+      />
+
+    </View>
+  );
+}
+
+const styles = StyleSheet.create({
+  container: {
+    flexDirection: "row",
+
+    justifyContent: "space-around",
+
+    alignItems: "center",
+
+    backgroundColor: "#FFFFFF",
+
+    paddingVertical: 12,
+
+    borderTopLeftRadius: 30,
+
+    borderTopRightRadius: 30,
+
+    elevation: 12,
+
+    shadowColor: "#000",
+
+    shadowOpacity: 0.08,
+
+    shadowRadius: 10,
+  },
+});

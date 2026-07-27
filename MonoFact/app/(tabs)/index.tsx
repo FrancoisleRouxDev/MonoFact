@@ -6,6 +6,7 @@ import StatCard from "@/components/newcomps/StatCard";
 import ContinueCard from "@/components/newcomps/ContinueCard";
 import CategoryCard from "@/components/newcomps/CategoryCard";
 import DailyChallengeCard from "@/components/newcomps/DailyChallengeCard";
+import BottomNav from "@/components/newcomps/BottomNav";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
@@ -118,6 +119,8 @@ const stats: {
         />
 
       </View>
+
+      <BottomNav current="home" />
 
     </SafeAreaView>
   );
