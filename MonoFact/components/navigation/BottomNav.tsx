@@ -80,9 +80,9 @@ const styles = StyleSheet.create({
 
     paddingVertical: 12,
 
-    borderTopLeftRadius: 30,
+    // borderTopLeftRadius: 30,
 
-    borderTopRightRadius: 30,
+    // borderTopRightRadius: 30,
 
     elevation: 12,
 

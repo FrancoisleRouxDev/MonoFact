@@ -8,7 +8,7 @@ import {
 } from "react-native";
 
 import AppLogo from "@/components/newcomps/AppLogo";
-import PrimaryButton from "@/components/newcomps/Primary-Button";
+import PrimaryButton from "@/components/buttons/Primary-Button";
 import InputField from "@/components/newcomps/InputField";
 import { router, useRouter } from "expo-router";
 

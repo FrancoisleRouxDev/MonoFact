@@ -10,7 +10,7 @@ import { router } from "expo-router";
 
 import AppLogo from "@/components/newcomps/AppLogo";
 import InputField from "@/components/newcomps/InputField";
-import PrimaryButton from "@/components/newcomps/Primary-Button";
+import PrimaryButton from "@/components/buttons/Primary-Button";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");

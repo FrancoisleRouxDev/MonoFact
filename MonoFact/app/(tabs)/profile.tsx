@@ -3,9 +3,9 @@ import { SafeAreaView, ScrollView, View, StyleSheet, } from "react-native";
 import { Zap, Target, Gamepad2, FlaskConical, } from "lucide-react-native";
 
 import ProfileHeader from "@/components/newcomps/ProfileHeader";
-import ProfileStatCard from "@/components/newcomps/ProfileStatCard";
-import AchievementsCard from "@/components/newcomps/AchiementCard";
-import BottomNav from "@/components/newcomps/BottomNav";
+import ProfileStatCard from "@/components/cards/ProfileStatCard";
+import AchievementsCard from "@/components/cards/AchiementCard";
+import BottomNav from "@/components/navigation/BottomNav";
 
 export default function ProfileScreen() {
 

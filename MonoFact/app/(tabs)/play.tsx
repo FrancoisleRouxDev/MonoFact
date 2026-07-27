@@ -2,8 +2,8 @@ import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
-import CategoryCard from "@/components/newcomps/CategoryCard";
-import BottomNav from "@/components/newcomps/BottomNav";
+import CategoryCard from "@/components/cards/CategoryCard";
+import BottomNav from "@/components/navigation/BottomNav";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
