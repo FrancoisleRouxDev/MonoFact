@@ -5,6 +5,7 @@ import { useRouter } from "expo-router";
 import StatCard from "@/components/newcomps/StatCard";
 import ContinueCard from "@/components/newcomps/ContinueCard";
 import CategoryCard from "@/components/newcomps/CategoryCard";
+import DailyChallengeCard from "@/components/newcomps/DailyChallengeCard";
 
 // Icons
 import { Ionicons } from "@expo/vector-icons";
@@ -107,6 +108,17 @@ const stats: {
       />
       </View>
 
+      <View style={styles.dailyChallengeCard}>
+        <DailyChallengeCard
+          title="Daily Challenge"
+          description="Complete today's fact challenge."
+          reward="+250 XP"
+          icon="trophy-outline"
+          onPress={() => {}}
+        />
+
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -162,4 +174,7 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     paddingHorizontal: 20,
   },
+  dailyChallengeCard: {
+
+  }
 });
