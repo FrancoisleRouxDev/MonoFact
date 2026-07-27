@@ -2,7 +2,7 @@ import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
-import StatCard from "@/components/newcomps/StatCard";
+import StatCard from "@/components/newcomps/HeaderStatCard";
 import ContinueCard from "@/components/newcomps/ContinueCard";
 import CategoryCard from "@/components/newcomps/CategoryCard";
 import DailyChallengeCard from "@/components/newcomps/DailyChallengeCard";

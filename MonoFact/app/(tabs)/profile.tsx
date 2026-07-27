@@ -1,65 +1,64 @@
-import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
+import { SafeAreaView, ScrollView, View, StyleSheet, } from "react-native";
 
-// Components
-import StatCard from "@/components/newcomps/StatCard";
-import ContinueCard from "@/components/newcomps/ContinueCard";
-import CategoryCard from "@/components/newcomps/CategoryCard";
-import DailyChallengeCard from "@/components/newcomps/DailyChallengeCard";
+import { Zap, Target, Gamepad2, FlaskConical, } from "lucide-react-native";
+
+import ProfileHeader from "@/components/newcomps/ProfileHeader";
+import ProfileStatCard from "@/components/newcomps/ProfileStatCard";
+import AchievementsCard from "@/components/newcomps/AchiementCard";
 import BottomNav from "@/components/newcomps/BottomNav";
-// import AchiementCard from "@/components/newcomps/AchiementCard";
 
-// Icons
-import { Ionicons } from "@expo/vector-icons";
+export default function ProfileScreen() {
 
-export default function HomeScreen() {
-
-  const router = useRouter();
-
-  //Temp username
-  const username = "John Doe";
-
-  //Mock Data
-const stats: {
-  icon: keyof typeof Ionicons.glyphMap;
-  value: string;
-  label: string;
-}[] = [
-  {
-    icon: "flash-outline",
-    value: "4,820",
-    label: "XP",
-  },
-  {
-    icon: "flame-outline",
-    value: "12d",
-    label: "Streak",
-  },
-  {
-    icon: "stats-chart-outline",
-    value: "84%",
-    label: "Accuracy",
-  },
-];
-
+  const stats = [
+    {
+      icon: Zap,
+      value: "4,820",
+      label: "Total XP",
+    },
+    {
+      icon: Target,
+      value: "84%",
+      label: "Accuracy",
+    },
+    {
+      icon: Gamepad2,
+      value: "47",
+      label: "Games Played",
+    },
+    {
+      icon: FlaskConical,
+      value: "Science",
+      label: "Fav. Category",
+    },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
 
-      <View style={styles.header}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+      >
 
-      </View>
-
-      <View style={styles.dailyChallengeCard}>
-        <DailyChallengeCard
-          title="Daily Challenge"
-          description="Complete today's fact challenge."
-          reward="+250 XP"
-          icon="trophy-outline"
-          onPress={() => {}}
+        <ProfileHeader
+          username="John Doe"
+          email="john.doe@email.com"
+          level="Level 7 • Fact Explorer"
         />
 
-      </View>
+        <View style={styles.statsContainer}>
+          {stats.map((stat) => (
+            <ProfileStatCard
+              key={stat.label}
+              icon={stat.icon}
+              value={stat.value}
+              label={stat.label}
+            />
+          ))}
+        </View>
+
+        <AchievementsCard />
+
+      </ScrollView>
 
       <BottomNav current="profile" />
 
@@ -70,52 +69,15 @@ const stats: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#F5F5F5",
   },
-  header:{
-    backgroundColor: "#8A8A8A",
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    height: 300,
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: "white",
-    marginBottom: 20,
-  },
+
   statsContainer: {
     flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
-  },
-
-  //body section
-  categoryTitle: {
-    fontSize: 30,
-    fontWeight: "bold",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    
-  },
-  categoryContainer1: {
-    flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-    categoryContainer2: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-  dailyChallengeCard: {
 
-  }
+    paddingHorizontal: 20,
+    marginVertical: 24,
+  },
 });
