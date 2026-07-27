@@ -8,9 +8,9 @@ import {
 } from "react-native";
 import { router } from "expo-router";
 
-import AppLogo from "@/components/AppLogo";
-import InputField from "@/components/InputField";
-import PrimaryButton from "@/components/Primary-Button";
+import AppLogo from "@/components/newcomps/AppLogo";
+import InputField from "@/components/newcomps/InputField";
+import PrimaryButton from "@/components/newcomps/Primary-Button";
 
 export default function LoginScreen() {
   const [email, setEmail] = useState("");

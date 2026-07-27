@@ -7,9 +7,9 @@ import {
   StyleSheet,
 } from "react-native";
 
-import AppLogo from "@/components/AppLogo";
-import PrimaryButton from "@/components/Primary-Button";
-import InputField from "@/components/InputField";
+import AppLogo from "@/components/newcomps/AppLogo";
+import PrimaryButton from "@/components/newcomps/Primary-Button";
+import InputField from "@/components/newcomps/InputField";
 import { router, useRouter } from "expo-router";
 
 export default function RegisterScreen() {

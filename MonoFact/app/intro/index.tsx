@@ -2,8 +2,8 @@ import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
-import PrimaryButton from "@/components/Primary-Button";
-import AppLogo from "@/components/AppLogo";
+import PrimaryButton from "@/components/newcomps/Primary-Button";
+import AppLogo from "@/components/newcomps/AppLogo";
 import PaginationDots from "@/components/ui/PaginationDots";
 
 

@@ -2,7 +2,10 @@ import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
-import StatCard from "@/components/StatCard";
+import StatCard from "@/components/newcomps/StatCard";
+import ContinueCard from "@/components/newcomps/ContinueCard";
+
+// Icons
 import { Ionicons } from "@expo/vector-icons";
 
 export default function HomeScreen() {
@@ -62,6 +65,14 @@ const stats: {
         
       </View>
 
+      <View >
+      <ContinueCard 
+        icon="play-outline"
+        label="Continue where you left off"   
+        value="Science - Round 3"
+      />
+      </View>
+
     </SafeAreaView>
   );
 }
@@ -69,11 +80,15 @@ const stats: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8A8A8A",
+    backgroundColor: "#FFFFFF",
   },
   header:{
+    backgroundColor: "#8A8A8A",
     paddingHorizontal: 20,
     paddingTop: 20,
+    height: 300,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
 
   },
   title: {
