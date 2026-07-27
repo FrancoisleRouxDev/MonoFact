@@ -29,40 +29,40 @@ export default function BottomNav({
   return (
     <View style={styles.container}>
 
-      <BottomNavItem
+    <BottomNavItem
         label="Home"
         icon={House}
         active={current === "home"}
         onPress={() => router.push("/(tabs)")}
-      />
+    />
 
-      <BottomNavItem
+    <BottomNavItem
         label="Play"
         icon={CircleDot}
         active={current === "play"}
-        onPress={() => {}}
-      />
+        onPress={() => router.push("/(tabs)/play")}
+    />
 
-      <BottomNavItem
+    <BottomNavItem
         label="Profile"
         icon={User}
         active={current === "profile"}
-        onPress={() => {}}
-      />
+        onPress={() => router.push("/(tabs)/profile")}
+    />
 
-      <BottomNavItem
+    <BottomNavItem
         label="Stats"
         icon={ChartColumn}
         active={current === "stats"}
-        onPress={() => {}}
-      />
+        onPress={() => router.push("/(tabs)/stats")}
+    />
 
-      <BottomNavItem
+    <BottomNavItem
         label="Settings"
         icon={Settings}
         active={current === "settings"}
-        onPress={() => {}}
-      />
+        onPress={() => router.push("/(tabs)/settings")}
+    />
 
     </View>
   );
