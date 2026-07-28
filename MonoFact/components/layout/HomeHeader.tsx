@@ -33,7 +33,7 @@ export default function HomeHeader() {
     <View style={styles.container}>
 
       <Text style={styles.greeting}>
-        Good Morning
+        Good Morning,
       </Text>
 
       <Text style={styles.username}>

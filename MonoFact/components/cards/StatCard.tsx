@@ -1,26 +1,28 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { LucideIcon } from "lucide-react-native";
 
-type CategoryCardProps = {
+type StatCardProps = {
   title: string;
+  subtitle: string;
   icon: LucideIcon;
-  onPress: () => void;
+  iconBackgroundColor?: string;
 };
 
-export default function CategoryCard({
+export default function StatCard({
   title,
+  subtitle,
   icon: Icon,
-  onPress,
-}: CategoryCardProps) {
+  iconBackgroundColor = "#EEF2FF",
+}: StatCardProps) {
   return (
-    <Pressable style={styles.card} onPress={onPress}>
+    <Pressable style={styles.card}>
       <View style={styles.iconContainer}>
         <Icon size={26} color="#1F2937" />
       </View>
 
       <Text style={styles.title}>{title}</Text>
 
-      <Text style={styles.subtitle}>25 Facts</Text>
+      <Text style={styles.subtitle}>{subtitle}</Text>
     </Pressable>
   );
 }
@@ -28,7 +30,7 @@ export default function CategoryCard({
 const styles = StyleSheet.create({
   card: {
     width: "47%",
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#EEF2FF",
     borderRadius: 22,
     padding: 18,
     marginBottom: 16,

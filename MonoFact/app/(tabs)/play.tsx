@@ -1,4 +1,4 @@
-import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
@@ -6,7 +6,7 @@ import CategoryCard from "@/components/cards/CategoryCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
 // Icons
-import { Ionicons } from "@expo/vector-icons";
+import { FlaskConical, Leaf, PawPrint, Telescope, Globe, Landmark,  } from "lucide-react-native";
 
 export default function HomeScreen() {
 
@@ -16,11 +16,7 @@ export default function HomeScreen() {
   const username = "John Doe";
 
   //Mock Data
-const stats: {
-  icon: keyof typeof Ionicons.glyphMap;
-  value: string;
-  label: string;
-}[] = [
+const stats =[
   {
     icon: "flash-outline",
     value: "4,820",
@@ -42,59 +38,57 @@ const stats: {
   return (
     <SafeAreaView style={styles.container}>
 
-        <text style={styles.categoryTitle}>
-          Categories
-        </text>
+      <ScrollView showsVerticalScrollIndicator={false}>
 
-        <text style={styles.categorySubtitle}>
-          Pick a topic and start fact-checking
-        </text>
+          <Text style={styles.categoryTitle}>
+            Categories
+          </Text>
 
-      <View style={styles.categoryContainer1}>
-        
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
+          <Text style={styles.categorySubtitle}>
+            Pick a topic and start fact-checking
+          </Text>
 
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
-      
-      <View style={styles.categoryContainer2}>
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
+        <View style={styles.categoryContainer1}>
+          
+        <CategoryCard
+          title="Science"
+          icon={FlaskConical}
+          onPress={() => router.push("/")}
+        />
 
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
+        <CategoryCard
+          title="Nature"
+          icon={Leaf}
+          onPress={() => router.push("/")}
+        />
 
-      <View style={styles.categoryContainer3}>
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
+        <CategoryCard
+          title="Animals"
+          icon={PawPrint}
+          onPress={() => router.push("/")}
+        />
 
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
+        <CategoryCard
+          title="Space"
+          icon={Telescope}
+          onPress={() => router.push("/")}
+        />
 
-      <BottomNav current="play" />
+        <CategoryCard
+          title="History"
+          icon={Landmark}
+          onPress={() => router.push("/")}
+        />
 
+        <CategoryCard
+          title="Geography"
+          icon={Globe}
+          onPress={() => router.push("/")}
+        />
+        </View>
+      </ScrollView>
+    <BottomNav current="play" />
+    
     </SafeAreaView>
   );
 }
@@ -103,6 +97,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
+    paddingTop: 50,
   },
   header:{
     backgroundColor: "#8A8A8A",

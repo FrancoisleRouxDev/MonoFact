@@ -1,124 +1,80 @@
-import { SafeAreaView, View, Text, StyleSheet } from "react-native";
-import { useRouter } from "expo-router";
+import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
+import { useState } from "react";
 
-// Components
-import StatCard from "@/components/cards/HeaderStatCard";
-import ContinueCard from "@/components/cards/ContinueCard";
-import CategoryCard from "@/components/cards/CategoryCard";
-import DailyChallengeCard from "@/components/cards/DailyChallengeCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
-// Icons
-import { Ionicons } from "@expo/vector-icons";
+import ScreenHeader from "@/components/layout/ScreenHeader";
 
-export default function HomeScreen() {
+import SettingsSection from "@/components/settings/SettingsSection";
+import SettingsItem from "@/components/settings/SettingsItem";
+import SettingsSwitch from "@/components/settings/SettingsSwitch";
+import LogoutButton from "@/components/settings/LogoutButton";
 
-  const router = useRouter();
+import { UserRound, Bell, Shield, Info, } from "lucide-react-native";
 
-  //Temp username
-  const username = "John Doe";
+export default function SettingsScreen() {
 
-  //Mock Data
-const stats: {
-  icon: keyof typeof Ionicons.glyphMap;
-  value: string;
-  label: string;
-}[] = [
-  {
-    icon: "flash-outline",
-    value: "4,820",
-    label: "XP",
-  },
-  {
-    icon: "flame-outline",
-    value: "12d",
-    label: "Streak",
-  },
-  {
-    icon: "stats-chart-outline",
-    value: "84%",
-    label: "Accuracy",
-  },
-];
-
+  const [notifications, setNotifications] = useState(true);
 
   return (
     <SafeAreaView style={styles.container}>
 
-      <View style={styles.header}>
+      <ScrollView
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
+      >
 
-        <Text style={styles.subtitle}>
-          Good Morning
-        </Text>
+        <ScreenHeader
+          title="Settings"
+        />
 
-        <Text style={styles.title}>
-          {username}
-        </Text>
+        <SettingsSection title="ACCOUNT">
 
-      <View style={styles.statsContainer}>
-        {stats.map((stat) => (
-          <StatCard
-            key={stat.label}
-            icon={stat.icon}
-            value={stat.value}
-            label={stat.label}
+          <SettingsItem
+            title="Alex Rivera"
+            subtitle="alex@email.com"
+            icon={UserRound}
+            onPress={() => {}}
           />
-        ))}
-      </View>
-        
-      </View>
 
-      <View >
-      <ContinueCard 
-        icon="play-outline"
-        label="Continue where you left off"   
-        value="Science - Round 3"
-      />
-      </View>
+        </SettingsSection>
 
-        <text style={styles.categoryTitle}>
-          Categories
-        </text>
+        <SettingsSection title="PREFERENCES">
 
-      <View style={styles.categoryContainer1}>
-        
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
+          <SettingsSwitch
+            title="Notifications"
+            icon={Bell}
+            value={notifications}
+            onValueChange={setNotifications}
+          />
 
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
-      
-      <View style={styles.categoryContainer2}>
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
+        </SettingsSection>
 
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
+        <SettingsSection title="ABOUT">
 
-      <View style={styles.dailyChallengeCard}>
-        <DailyChallengeCard
-          title="Daily Challenge"
-          description="Complete today's fact challenge."
-          reward="+250 XP"
-          icon="trophy-outline"
+          <SettingsItem
+            title="About MonoFact"
+            icon={Info}
+            onPress={() => {}}
+          />
+
+          <SettingsItem
+            title="Privacy Policy"
+            icon={Shield}
+            onPress={() => {}}
+          />
+
+        </SettingsSection>
+
+        <LogoutButton
           onPress={() => {}}
         />
 
-      </View>
+        <Text style={styles.version}>
+          MonoFact v1.0.0
+        </Text>
+
+      </ScrollView>
 
       <BottomNav current="settings" />
 
@@ -129,55 +85,17 @@ const stats: {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
+    backgroundColor: "#F5F6FA",
   },
-  header:{
-    backgroundColor: "#8A8A8A",
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    height: 300,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
 
+  content: {
+    padding: 20,
+    paddingBottom: 120,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: "white",
-    marginBottom: 20,
-  },
-  statsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
+
+  version: {
+    textAlign: "center",
     marginTop: 20,
+    color: "#C6CAD6",
   },
-
-  //body section
-  categoryTitle: {
-    fontSize: 30,
-    fontWeight: "bold",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    
-  },
-  categoryContainer1: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-    categoryContainer2: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-  dailyChallengeCard: {
-
-  }
 });

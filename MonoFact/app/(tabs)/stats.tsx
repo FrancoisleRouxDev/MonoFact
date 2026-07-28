@@ -1,124 +1,79 @@
-import { SafeAreaView, View, Text, StyleSheet } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 
 // Components
-import StatCard from "@/components/cards/HeaderStatCard";
-import ContinueCard from "@/components/cards/ContinueCard";
-import CategoryCard from "@/components/cards/CategoryCard";
-import DailyChallengeCard from "@/components/cards/DailyChallengeCard";
+import StatCard from "@/components/cards/StatCard";
 import BottomNav from "@/components/navigation/BottomNav";
+import AccuracyCategoryCard from "@/components/cards/AccuracyCategoryCard";
 
 // Icons
-import { Ionicons } from "@expo/vector-icons";
+import { Trophy, Check, X, Target, Flame, FlaskConical } from "lucide-react-native";
+
+//Stats data
+const stats = [
+  {
+    icon: Trophy,
+    title: "47",
+    subtitle: "Total Games",
+  },
+  {
+    icon: Check,
+    title: "187",
+    subtitle: "Correct Answers",
+  },
+  {
+    icon: X,
+    title: "48",
+    subtitle: "Incorrect Answers",
+  },
+  {
+    icon: Target,
+    title: "79.6%",
+    subtitle: "Accuracy",
+  },
+  {
+    icon: Flame,
+    title: "12",
+    subtitle: "Best Streak",
+  },
+  {
+    icon: FlaskConical,
+    title: "Science",
+    subtitle: "Fav. Category",
+  },
+];
 
 export default function HomeScreen() {
 
   const router = useRouter();
 
-  //Temp username
-  const username = "John Doe";
-
-  //Mock Data
-const stats: {
-  icon: keyof typeof Ionicons.glyphMap;
-  value: string;
-  label: string;
-}[] = [
-  {
-    icon: "flash-outline",
-    value: "4,820",
-    label: "XP",
-  },
-  {
-    icon: "flame-outline",
-    value: "12d",
-    label: "Streak",
-  },
-  {
-    icon: "stats-chart-outline",
-    value: "84%",
-    label: "Accuracy",
-  },
-];
-
-
   return (
     <SafeAreaView style={styles.container}>
 
-      <View style={styles.header}>
+          <ScrollView showsVerticalScrollIndicator={false}>
 
-        <Text style={styles.subtitle}>
-          Good Morning
-        </Text>
+              <Text style={styles.categoryTitle}>
+                Statistics
+              </Text>
 
-        <Text style={styles.title}>
-          {username}
-        </Text>
+              <Text style={styles.categorySubtitle}>
+                Your performance at a glance
+              </Text>
 
-      <View style={styles.statsContainer}>
-        {stats.map((stat) => (
-          <StatCard
-            key={stat.label}
-            icon={stat.icon}
-            value={stat.value}
-            label={stat.label}
-          />
-        ))}
-      </View>
-        
-      </View>
+            <View style={styles.statsGrid}>
+              {stats.map((stat) => (
+                <StatCard
+                  key={stat.subtitle}
+                  icon={stat.icon}
+                  title={stat.title}
+                  subtitle={stat.subtitle}
+                />
+              ))}
+            </View>
 
-      <View >
-      <ContinueCard 
-        icon="play-outline"
-        label="Continue where you left off"   
-        value="Science - Round 3"
-      />
-      </View>
+            <AccuracyCategoryCard />
 
-        <text style={styles.categoryTitle}>
-          Categories
-        </text>
-
-      <View style={styles.categoryContainer1}>
-        
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
-      
-      <View style={styles.categoryContainer2}>
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-
-      <CategoryCard
-        title="Science"
-        icon="flask-outline"
-        onPress={() => router.push("/")}
-      />
-      </View>
-
-      <View style={styles.dailyChallengeCard}>
-        <DailyChallengeCard
-          title="Daily Challenge"
-          description="Complete today's fact challenge."
-          reward="+250 XP"
-          icon="trophy-outline"
-          onPress={() => {}}
-        />
-
-      </View>
+          </ScrollView>
 
       <BottomNav current="stats" />
 
@@ -130,12 +85,16 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     backgroundColor: "#FFFFFF",
+    paddingTop: 50,
   },
   header:{
     backgroundColor: "#8A8A8A",
     paddingHorizontal: 20,
     paddingTop: 20,
     height: 300,
+    borderBottomLeftRadius: 30,
+    borderBottomRightRadius: 30,
+
   },
   title: {
     fontSize: 32,
@@ -162,19 +121,19 @@ const styles = StyleSheet.create({
     marginLeft: 20,
     
   },
-  categoryContainer1: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
+  categorySubtitle: {
+    fontSize: 18,
+    color: "black",
     paddingHorizontal: 20,
+    marginLeft: 20,
+    marginBottom: 20,
   },
-    categoryContainer2: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-  dailyChallengeCard: {
+  statsGrid: {
+  flexDirection: "row",
+  flexWrap: "wrap",
+  justifyContent: "space-between",
+  paddingHorizontal: 20,
+  marginTop: 20,
+},
 
-  }
 });
