@@ -43,12 +43,12 @@ export default function GameplayScreen() {
 
                 <AnswerButton 
                     answer="myth"
-                    onPress={() => {}}
+                    onPress={() => router.replace("/")}
                 />
 
                 <AnswerButton 
                     answer="fact"
-                    onPress={() => {}}
+                    onPress={() => router.replace("/game/result")}
                 />
 
             </View>

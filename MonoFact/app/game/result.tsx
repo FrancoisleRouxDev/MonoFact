@@ -1,11 +1,14 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable } from "react-native";
 import { Check } from "lucide-react-native";
+import { useRouter } from "expo-router";
 
 import AnswerCard from "@/components/cards/AnswerCard";
 import FactExplanation from "@/components/gameplay/FactExplanation";
 
 
 export default function ResultScreen(){
+
+    const router = useRouter();
 
 return(
 
@@ -40,7 +43,9 @@ statement="Bees can recognize human faces and remember them."
     description="Bees use configural processing to recognize faces."
 />
 
-<Pressable style={styles.button}>
+<Pressable style={styles.button}
+            onPress={() => router.push("/game/complete")}
+>
 
 <Text style={styles.buttonText}>
 

@@ -1,4 +1,5 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
+import { useRouter } from "expo-router";
 import { useState } from "react";
 
 import BottomNav from "@/components/navigation/BottomNav";
@@ -15,6 +16,7 @@ import { UserRound, Bell, Shield, Info, } from "lucide-react-native";
 export default function SettingsScreen() {
 
   const [notifications, setNotifications] = useState(true);
+  const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
@@ -67,7 +69,7 @@ export default function SettingsScreen() {
         </SettingsSection>
 
         <LogoutButton
-          onPress={() => {}}
+        onPress={() => router.push("/auth/login")}
         />
 
         <Text style={styles.version}>

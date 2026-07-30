@@ -1,4 +1,5 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable } from "react-native";
+import { useRouter } from "expo-router";
 
 import {
 Trophy,
@@ -13,6 +14,8 @@ import RoundStats from "@/components/gameplay/RoundStats";
 
 
 export default function CompleteScreen(){
+
+const router = useRouter();
 
 return(
 
@@ -73,7 +76,10 @@ requiredXP={5000}
 level={7}
 />
 
-<Pressable style={styles.primary}>
+<Pressable style={styles.primary}
+           onPress={() => router.push("/(tabs)/play")}
+
+>
 
 <Text style={styles.primaryText}>
 
@@ -83,7 +89,9 @@ Play Again
 
 </Pressable>
 
-<Pressable style={styles.secondary}>
+<Pressable style={styles.secondary}
+        onPress={() => router.push("/(tabs)")}
+>
 
 <Text style={styles.secondaryText}>
 
