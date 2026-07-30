@@ -1,6 +1,11 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Lightbulb } from "lucide-react-native";
 
+//Animation imports
+import Animated, { useSharedValue, useAnimatedStyle, withSpring, runOnJS, } from "react-native-reanimated";
+
+import { Gesture, GestureDetector, } from "react-native-gesture-handler";
+
 type QuestionCardProps = {
   category: string;
   question: string;

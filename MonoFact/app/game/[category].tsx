@@ -3,6 +3,7 @@ import { useLocalSearchParams, useRouter } from "expo-router";
 
 //components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";
+import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
@@ -30,10 +31,31 @@ export default function GameplayScreen() {
 
             <View style={styles.content}>
 
-                <QuestionCard
-                    category={currentQuestion.category}
-                    question={currentQuestion.question}
-                />
+                <SwipeableQuestionCard
+
+                    onSwipeLeft={() => {
+
+                        router.push("/game/result");
+
+                    }}
+
+                    onSwipeRight={() => {
+
+                        router.push("/game/result");
+
+                    }}
+
+                >
+
+                    <QuestionCard
+
+                        category="Science"
+
+                        question="Bees recognize faces."
+
+                    />
+
+                </SwipeableQuestionCard>
 
             </View>
 
@@ -41,15 +63,15 @@ export default function GameplayScreen() {
 
             <View style={styles.buttonRow}>
 
-                <AnswerButton 
-                    answer="myth"
-                    onPress={() => router.replace("/")}
-                />
+                    <AnswerButton
+                        answer="myth"
+                        onPress={() => router.push("/game/result")}
+                    />
 
-                <AnswerButton 
-                    answer="fact"
-                    onPress={() => router.replace("/game/result")}
-                />
+                    <AnswerButton
+                        answer="fact"
+                        onPress={() => router.push("/game/result")}
+                    />
 
             </View>
             
