@@ -12,29 +12,6 @@ export default function HomeScreen() {
 
   const router = useRouter();
 
-  //Temp username
-  const username = "John Doe";
-
-  //Mock Data
-const stats =[
-  {
-    icon: "flash-outline",
-    value: "4,820",
-    label: "XP",
-  },
-  {
-    icon: "flame-outline",
-    value: "12d",
-    label: "Streak",
-  },
-  {
-    icon: "stats-chart-outline",
-    value: "84%",
-    label: "Accuracy",
-  },
-];
-
-
   return (
     <SafeAreaView style={styles.container}>
 
@@ -53,7 +30,7 @@ const stats =[
         <CategoryCard
           title="Science"
           icon={FlaskConical}
-          onPress={() => router.push("/")}
+          onPress={() => router.push("/game/[category]")}
         />
 
         <CategoryCard
