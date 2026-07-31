@@ -1,6 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
 
 
 import BottomNavItem from "./BottomNavItem";
@@ -78,13 +79,10 @@ const styles = StyleSheet.create({
 
     alignItems: "center",
 
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.surface,
 
-    paddingVertical: 12,
-
-    // borderTopLeftRadius: 30,
-
-    // borderTopRightRadius: 30,
+    paddingVertical: Spacing.sm,
+    paddingHorizontal: Spacing.sm,
 
     elevation: 12,
 
@@ -92,6 +90,10 @@ const styles = StyleSheet.create({
 
     shadowOpacity: 0.08,
 
-    shadowRadius: 10,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: -4,
+    },
   },
 });

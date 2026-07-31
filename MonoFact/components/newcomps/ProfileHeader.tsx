@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { UserRound, Star } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
 
 type ProfileHeaderProps = {
   username: string;
@@ -49,7 +50,7 @@ export default function ProfileHeader({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#8A8A8A",
+    backgroundColor: Colors.primary,
     alignItems: "center",
     paddingTop: 40,
     paddingBottom: 40,
@@ -59,7 +60,9 @@ const styles = StyleSheet.create({
     width: 90,
     height: 90,
     borderRadius: 24,
-    backgroundColor: "#BDBDBD",
+    backgroundColor: Colors.primaryLight,
+    borderWidth: 5,
+    borderColor: Colors.primaryDark,
     justifyContent: "center",
     alignItems: "center",
     marginBottom: 18,
@@ -79,10 +82,10 @@ const styles = StyleSheet.create({
   levelBadge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: "#A4A4A4",
+    backgroundColor: Colors.primaryLight,
     paddingHorizontal: 16,
     paddingVertical: 8,
-    borderRadius: 30,
+    borderRadius: 15,
     marginTop: 18,
   },
 

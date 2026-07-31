@@ -1,6 +1,8 @@
 import { Pressable, Text, StyleSheet, View } from "react-native";
 import { LucideIcon } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type BottomNavItemProps = {
@@ -20,9 +22,9 @@ export default function BottomNavItem({
     <Pressable onPress={onPress} style={styles.container}>
       <View style={[styles.iconContainer, active && styles.activeBackground]}>
         <Icon
-          size={28}
-          color={active ? "#000" : "#A9A9A9"}
-          strokeWidth={2.5}
+          size={24}
+          color={active ? Colors.primaryDark : Colors.textSecondary}
+          strokeWidth={2.2}
         />
       </View>
 
@@ -46,27 +48,27 @@ const styles = StyleSheet.create({
   },
 
   iconContainer: {
-    width: 64,
-    height: 48,
-    borderRadius: 18,
+    width: 58,
+    height: 42,
+    borderRadius: 16,
 
     justifyContent: "center",
     alignItems: "center",
   },
 
   activeBackground: {
-    backgroundColor: "#EEF2FA",
+    backgroundColor: Colors.surfaceLight,
   },
 
   label: {
-    marginTop: 8,
-    fontSize: 13,
-    color: "#B0B0B0",
+    marginTop: Spacing.xs,
+    ...Typography.small,
+    color: Colors.textSecondary,
     fontWeight: "500",
   },
 
   activeLabel: {
-    color: "#000",
+    color: Colors.primaryDark,
     fontWeight: "700",
   },
 });

@@ -1,6 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { Trophy, ArrowRight } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type DailyChallengeCardProps = {
@@ -31,10 +33,6 @@ export default function DailyChallengeCard({
 
         <Text style={styles.description}>
           {description}
-        </Text>
-
-        <Text style={styles.reward}>
-          {reward}
         </Text>
 
         <Pressable
@@ -68,14 +66,14 @@ export default function DailyChallengeCard({
 const styles = StyleSheet.create({
 
   container: {
-    backgroundColor: "#8A8A8A",
+    backgroundColor: Colors.cardDaily,
 
-    marginHorizontal: 20,
-    marginVertical: 25,
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
 
-    borderRadius: 28,
+    borderRadius: 24,
 
-    padding: 24,
+    padding: Spacing.lg,
 
     flexDirection: "row",
     justifyContent: "space-between",
@@ -83,45 +81,36 @@ const styles = StyleSheet.create({
 
   leftSection: {
     flex: 1,
-    justifyContent: "space-between",
   },
 
   label: {
-    color: "#DADADA",
-    fontSize: 12,
-    letterSpacing: 1.2,
+    ...Typography.small,
+    color: "rgba(255, 255, 255, 0.78)",
+    letterSpacing: 1,
   },
 
   title: {
-    color: "#FFFFFF",
-    fontSize: 30,
-    fontWeight: "700",
-    marginTop: 8,
+    ...Typography.h3,
+    color: Colors.surface,
+    marginTop: 4,
   },
 
   description: {
-    color: "#F1F1F1",
-    fontSize: 18,
-    marginTop: 6,
-  },
-
-  reward: {
-    color: "#FFFFFF",
-    fontSize: 18,
-    fontWeight: "600",
-    marginTop: 6,
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.90)",
+    marginTop: 4,
   },
 
   button: {
-    marginTop: 22,
+    marginTop: 18,
 
-    width: 145,
-    height: 52,
+    width: 138,
+    height: 48,
 
     borderRadius: 16,
 
     borderWidth: 1,
-    borderColor: "#FFFFFF55",
+    borderColor: "rgba(255, 255, 255, 0.28)",
 
     flexDirection: "row",
     justifyContent: "center",
@@ -131,16 +120,16 @@ const styles = StyleSheet.create({
   },
 
   buttonText: {
-    color: "#FFFFFF",
+    ...Typography.caption,
+    color: Colors.surface,
     fontWeight: "700",
-    fontSize: 16,
   },
 
   iconContainer: {
     justifyContent: "center",
     alignItems: "center",
 
-    paddingLeft: 20,
+    paddingLeft: Spacing.lg,
   },
 
 });

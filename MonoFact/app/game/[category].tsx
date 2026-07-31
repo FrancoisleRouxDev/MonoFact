@@ -18,7 +18,7 @@ export default function GameplayScreen() {
 
     const currentQuestion = {
         category: String(category),
-        question: "Bess can recognize human faces and remember them for several days.",
+        question: "Bees can recognize human faces and remember them for several days.",
     };
 
     return (
@@ -53,7 +53,7 @@ export default function GameplayScreen() {
 
                         category="Science"
 
-                        question="Bees recognize faces."
+                        question="Bees can recognize human faces and remember them for several days."
 
                     />
 

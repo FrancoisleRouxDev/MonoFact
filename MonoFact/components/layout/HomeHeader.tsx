@@ -1,12 +1,14 @@
 import { View, Text, StyleSheet } from "react-native";
-import { Zap, Flame, Target, LucideIcon } from "lucide-react-native";
+import { Hand, Zap, Flame, Target, LucideIcon } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 import HeaderStatCard from "../cards/HeaderStatCard";
 
 export default function HomeHeader() {
 
-  const username = "John Doe";
+  const username = "Alex Rivera";
 
   const stats: {
     icon: LucideIcon;
@@ -34,12 +36,16 @@ export default function HomeHeader() {
     <View style={styles.container}>
 
       <Text style={styles.greeting}>
-        Good Morning,
+        Good morning,
       </Text>
 
-      <Text style={styles.username}>
-        {username}
-      </Text>
+      <View style={styles.usernameRow}>
+        <Text style={styles.username}>
+          {username}
+        </Text>
+
+        <Hand size={22} color={Colors.surface} strokeWidth={2.2} />
+      </View>
 
       <View style={styles.statsRow}>
         {stats.map((stat) => (
@@ -60,31 +66,35 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.primary,
 
-    paddingHorizontal: 20,
-    paddingTop: 30,
-    paddingBottom: 30,
+    paddingHorizontal: Spacing.lg,
+    paddingTop: 36,
+    paddingBottom: 24,
 
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
+    borderBottomLeftRadius: 28,
+    borderBottomRightRadius: 28,
   },
 
   greeting: {
-    color: "white",
-    fontSize: 18,
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.72)",
+  },
+
+  usernameRow: {
+    flexDirection: "row",
+    alignItems: "center",
+    gap: Spacing.xs,
+    marginTop: 2,
   },
 
   username: {
-    color: "white",
-    fontSize: 32,
-    fontWeight: "700",
-
-    marginTop: 8,
+    ...Typography.h1,
+    color: Colors.surface,
   },
 
   statsRow: {
     flexDirection: "row",
     justifyContent: "space-between",
-
-    marginTop: 30,
+    gap: Spacing.sm,
+    marginTop: Spacing.lg,
   },
 });

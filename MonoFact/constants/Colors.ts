@@ -1,21 +1,33 @@
 export const Colors = {
-
-  primary: "#0B2E59",
-
-  secondary: "#3F6AB3",
-
-  accent: "#F4C542",
-
-  success: "#2ECC71",
-
-  error: "#E74C3C",
-
-  background: "#F5F7FA",
+  background: "#F5F7FC",
 
   surface: "#FFFFFF",
 
-  text: "#1E293B",
+  surfaceLight: "#F5F7FC",
 
-  subtitle: "#64748B",
+  cardDaily: "#2EC4B6",
 
+  primary: "#233E68",
+  primaryLight: "#36527D",
+  primaryDark: "#1B2E4D",
+
+  text: "#23283A",
+  textSecondary: "#9098AD",
+
+  border: "#E8EDF5",
+
+  success: "#35C9C0",
+  error: "#F16D6D",
+  warning: "#F0C557",
+
+  shadow: "#000000",
+
+  categories: {
+    nature: "#35C9C0",
+    science: "#4D8BC9",
+    animals: "#E6B94A",
+    space: "#233E68",
+    photography: "#F45D6A",
+    technology: "#6B6EFF",
+  },
 };

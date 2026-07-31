@@ -1,6 +1,8 @@
 import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 // Components
@@ -8,66 +10,113 @@ import CategoryCard from "@/components/cards/CategoryCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
 // Icons
-import { FlaskConical, Leaf, PawPrint, Telescope, Globe, Landmark,  } from "lucide-react-native";
+import { FlaskConical, Leaf, PawPrint, Telescope, Camera, Cpu } from "lucide-react-native";
 
-export default function HomeScreen() {
+type CategoryItem = {
+  title: string;
+  subtitle: string;
+  progress: number;
+  icon: typeof Leaf;
+  color: string;
+  iconBackgroundColor: string;
+};
+
+export default function PlayScreen() {
 
   const router = useRouter();
+
+  const categories: CategoryItem[] = [
+    {
+      title: "Nature",
+      subtitle: "25 facts • ~5 min",
+      progress: 65,
+      icon: Leaf,
+      color: Colors.categories.nature,
+      iconBackgroundColor: "#E5F7F5",
+    },
+    {
+      title: "Science",
+      subtitle: "25 facts • ~5 min",
+      progress: 40,
+      icon: FlaskConical,
+      color: Colors.categories.science,
+      iconBackgroundColor: "#E7F0F8",
+    },
+    {
+      title: "Animals",
+      subtitle: "25 facts • ~5 min",
+      progress: 80,
+      icon: PawPrint,
+      color: Colors.categories.animals,
+      iconBackgroundColor: "#FFF3DC",
+    },
+    {
+      title: "Space",
+      subtitle: "25 facts • ~5 min",
+      progress: 20,
+      icon: Telescope,
+      color: Colors.categories.space,
+      iconBackgroundColor: "#E7ECF6",
+    },
+    {
+      title: "Photography",
+      subtitle: "25 facts • ~5 min",
+      progress: 55,
+      icon: Camera,
+      color: Colors.categories.photography,
+      iconBackgroundColor: "#FDE7EB",
+    },
+    {
+      title: "Technology",
+      subtitle: "25 facts • ~5 min",
+      progress: 90,
+      icon: Cpu,
+      color: Colors.categories.technology,
+      iconBackgroundColor: "#ECE9FF",
+    },
+  ];
 
   return (
     <SafeAreaView style={styles.container}>
 
-      <ScrollView showsVerticalScrollIndicator={false}>
+      <ScrollView
+        showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
+      >
+
+        <View style={styles.header}>
 
           <Text style={styles.categoryTitle}>
-            Categories
+            Choose a Category
           </Text>
 
           <Text style={styles.categorySubtitle}>
             Pick a topic and start fact-checking
           </Text>
 
-        <View style={styles.categoryContainer1}>
-          
-        <CategoryCard
-          title="Science"
-          icon={FlaskConical}
-          onPress={() => router.push("/game/[category]")}
-        />
-
-        <CategoryCard
-          title="Nature"
-          icon={Leaf}
-          onPress={() => router.push("/")}
-        />
-
-        <CategoryCard
-          title="Animals"
-          icon={PawPrint}
-          onPress={() => router.push("/")}
-        />
-
-        <CategoryCard
-          title="Space"
-          icon={Telescope}
-          onPress={() => router.push("/")}
-        />
-
-        <CategoryCard
-          title="History"
-          icon={Landmark}
-          onPress={() => router.push("/")}
-        />
-
-        <CategoryCard
-          title="Geography"
-          icon={Globe}
-          onPress={() => router.push("/")}
-        />
         </View>
+
+        <View style={styles.categoryGrid}>
+
+          {categories.map((category) => (
+            <CategoryCard
+              key={category.title}
+              title={category.title}
+              icon={category.icon}
+              subtitle={category.subtitle}
+              progress={category.progress}
+              onPress={() => router.push("/game/[category]")}
+              color={category.color}
+              iconBackgroundColor={category.iconBackgroundColor}
+            />
+          ))}
+
+        </View>
+
       </ScrollView>
-    <BottomNav current="play" />
-    
+
+      <BottomNav current="play" />
+
     </SafeAreaView>
   );
 }
@@ -75,67 +124,33 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    paddingTop: 50,
+    backgroundColor: Colors.background,
   },
-  header:{
-    backgroundColor: "#8A8A8A",
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    height: 300,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-
-  },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 10,
-  },
-  subtitle: {
-    fontSize: 18,
-    color: "white",
-    marginBottom: 20,
-  },
-  statsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
+  scrollContent: {
+    paddingHorizontal: Spacing.lg,
+    paddingTop: Spacing.xl,
+    paddingBottom: Spacing.xl,
   },
 
-  //body section
+  header: {
+    marginBottom: Spacing.lg,
+  },
+
   categoryTitle: {
-    fontSize: 30,
-    fontWeight: "bold",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    
+    ...Typography.h2,
+    color: Colors.primaryDark,
   },
+
   categorySubtitle: {
-    fontSize: 18,
-    color: "black",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    marginBottom: 20,
+    ...Typography.caption,
+    color: Colors.textSecondary,
+    marginTop: Spacing.xs,
   },
-  categoryContainer1: {
+
+  categoryGrid: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-    categoryContainer2: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
-  },
-    categoryContainer3: {
-    flexDirection: "row",
-    flexWrap: "wrap",
-    justifyContent: "space-between",
-    paddingHorizontal: 20,
   },
 
 });

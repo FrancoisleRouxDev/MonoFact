@@ -1,10 +1,16 @@
-import { TextInput, StyleSheet } from "react-native";
+import { ReactNode } from "react";
+import { View, TextInput, StyleSheet } from "react-native";
+import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 type InputFieldProps = {
   placeholder: string;
   value: string;
   onChangeText: (text: string) => void;
   secureTextEntry?: boolean;
+  leftIcon?: ReactNode;
+  rightIcon?: ReactNode;
 };
 
 export default function InputField({
@@ -12,34 +18,54 @@ export default function InputField({
   value,
   onChangeText,
   secureTextEntry = false,
+  leftIcon,
+  rightIcon,
 }: InputFieldProps) {
   return (
-    <TextInput
-      style={styles.input}
-      placeholder={placeholder}
-      placeholderTextColor="#A0A0A0"
-      value={value}
-      onChangeText={onChangeText}
-      secureTextEntry={secureTextEntry}
-    />
+    <View style={styles.container}>
+      {leftIcon ? <View style={styles.leftIcon}>{leftIcon}</View> : null}
+
+      <TextInput
+        style={styles.input}
+        placeholder={placeholder}
+        placeholderTextColor={Colors.textSecondary}
+        value={value}
+        onChangeText={onChangeText}
+        secureTextEntry={secureTextEntry}
+      />
+
+      {rightIcon ? <View style={styles.rightIcon}>{rightIcon}</View> : null}
+    </View>
   );
 }
 
 const styles = StyleSheet.create({
-  input: {
+  container: {
     width: "100%",
-    height: 50,
+    minHeight: 56,
+    flexDirection: "row",
+    alignItems: "center",
+    backgroundColor: Colors.surface,
+    borderRadius: 16,
+    borderWidth: 1,
+    borderColor: Colors.border,
+    paddingHorizontal: Spacing.md,
+    marginBottom: Spacing.sm,
+  },
 
-    backgroundColor: "#F2F2F2",
+  leftIcon: {
+    marginRight: Spacing.sm,
+  },
 
-    borderRadius: 12,
+  rightIcon: {
+    marginLeft: Spacing.sm,
+  },
 
-    paddingHorizontal: 15,
-
-    marginBottom: 15,
-
-    fontSize: 16,
-
-    color: "#000",
+  input: {
+    flex: 1,
+    minHeight: 56,
+    ...Typography.body,
+    color: Colors.text,
+    paddingVertical: 0,
   },
 });

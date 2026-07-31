@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Ionicons } from "@expo/vector-icons";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type StatCardProps = {
@@ -19,7 +21,7 @@ export default function StatCard({
       <Ionicons
         name={icon}
         size={24}
-        color="#FFFFFF"
+        color={Colors.surface}
       />
 
       <Text style={styles.value}>
@@ -35,29 +37,29 @@ export default function StatCard({
 
 const styles = StyleSheet.create({
   card: {
-    width: 100,
-    height: 110,
+    flex: 1,
+    minHeight: 106,
 
-    backgroundColor: "#707070",
+    backgroundColor: "rgba(255, 255, 255, 0.12)",
 
-    borderRadius: 16,
+    borderRadius: 18,
 
     justifyContent: "center",
     alignItems: "center",
 
-    padding: 10,
+    paddingVertical: Spacing.md,
+    paddingHorizontal: Spacing.sm,
   },
 
   value: {
-    fontSize: 20,
-    fontWeight: "bold",
-    color: "white",
-    marginTop: 10,
+    ...Typography.title,
+    color: Colors.surface,
+    marginTop: 8,
   },
 
   label: {
-    fontSize: 14,
-    color: "white",
-    marginTop: 5,
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.72)",
+    marginTop: 3,
   },
 });

@@ -1,6 +1,7 @@
 import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
 
 import HomeHeader from "@/components/layout/HomeHeader";
 import ContinueCard from "@/components/cards/ContinueCard";
@@ -17,6 +18,7 @@ export default function HomeScreen() {
 
       <ScrollView
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
       >
 
         <HomeHeader />
@@ -47,6 +49,10 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: Colors.primary,
+    backgroundColor: Colors.surfaceLight,
+  },
+
+  scrollContent: {
+    paddingBottom: Spacing.xl,
   },
 });

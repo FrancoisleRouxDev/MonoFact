@@ -51,7 +51,7 @@ export default function AccuracyCategoryCard() {
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.surface,
     borderRadius: 24,
     padding: 20,
     marginHorizontal: 20,
@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 20,
     fontWeight: "700",
-    color: "#1F2940",
+    color: Colors.text,
     marginBottom: 20,
   },
 
@@ -89,19 +89,19 @@ const styles = StyleSheet.create({
   percent: {
     fontSize: 16,
     fontWeight: "700",
-    color: "#1F2940",
+    color: Colors.text,
   },
 
   barBackground: {
     height: 8,
-    backgroundColor: "#ECEEF5",
+    backgroundColor: Colors.surfaceLight,
     borderRadius: 999,
     overflow: "hidden",
   },
 
   barFill: {
     height: "100%",
-    backgroundColor: "#7D8792",
+    backgroundColor: Colors.primary,
     borderRadius: 999,
   },
 });

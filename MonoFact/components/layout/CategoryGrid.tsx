@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 import {
   FlaskConical,
@@ -15,6 +17,7 @@ type Category = {
   title: string;
   facts: number;
   icon: LucideIcon;
+  color: string;
 };
 
 export default function CategoriesGrid() {
@@ -24,21 +27,25 @@ export default function CategoriesGrid() {
       title: "Nature",
       facts: 25,
       icon: Leaf,
+      color: Colors.categories.nature,
     },
     {
       title: "Science",
       facts: 25,
       icon: FlaskConical,
+      color: Colors.categories.science,
     },
     {
       title: "Animals",
       facts: 25,
       icon: PawPrint,
+      color: Colors.categories.animals,
     },
     {
       title: "Space",
       facts: 25,
       icon: Telescope,
+      color: Colors.categories.space,
     },
   ];
 
@@ -63,8 +70,9 @@ export default function CategoriesGrid() {
           <CategoryCard
             key={category.title}
             title={category.title}
-            facts={category.facts}
+            subtitle={`${category.facts} facts`}
             icon={category.icon}
+            color={category.color}
             onPress={() => {}}
           />
         ))}
@@ -78,8 +86,8 @@ export default function CategoriesGrid() {
 const styles = StyleSheet.create({
 
   container: {
-    paddingHorizontal: 20,
-    marginTop: 30,
+    paddingHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
   },
 
   header: {
@@ -87,23 +95,23 @@ const styles = StyleSheet.create({
     justifyContent: "space-between",
     alignItems: "center",
 
-    marginBottom: 20,
+    marginBottom: Spacing.md,
   },
 
   title: {
-    fontSize: 28,
-    fontWeight: "700",
-    color: "#1D1D1D",
+    ...Typography.h3,
+    color: Colors.text,
   },
 
   link: {
-    color: "#8A8A8A",
-    fontSize: 16,
+    ...Typography.caption,
+    color: Colors.textSecondary,
   },
 
   grid: {
     flexDirection: "row",
     flexWrap: "wrap",
     justifyContent: "space-between",
+    gap: Spacing.sm,
   },
 });

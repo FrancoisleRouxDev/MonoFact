@@ -1,6 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { LucideIcon, Zap } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type ContinueCardProps = {
@@ -30,7 +32,7 @@ export default function ContinueCard({
       </View>
 
       <View style={styles.iconContainer}>
-        <Icon size={28} color="#FFFFFF" />
+        <Icon size={26} color={Colors.surface} />
       </View>
 
     </Pressable>
@@ -39,14 +41,14 @@ export default function ContinueCard({
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#8A8A8A",
+    backgroundColor: Colors.primary,
 
-    marginHorizontal: 20,
-    marginTop: 25,
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
 
-    borderRadius: 22,
+    borderRadius: 24,
 
-    padding: 20,
+    padding: Spacing.lg,
 
     flexDirection: "row",
     justifyContent: "space-between",
@@ -56,24 +58,23 @@ const styles = StyleSheet.create({
   },
 
   label: {
-    color: "#ECECEC",
-    fontSize: 15,
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.72)",
   },
 
   category: {
-    color: "#FFFFFF",
-    fontSize: 26,
-    fontWeight: "700",
-    marginTop: 6,
+    ...Typography.h3,
+    color: Colors.surface,
+    marginTop: 4,
   },
 
   iconContainer: {
-    width: 56,
-    height: 56,
+    width: 52,
+    height: 52,
 
-    borderRadius: 16,
+    borderRadius: 18,
 
-    backgroundColor: "#A0A0A0",
+    backgroundColor: Colors.primaryLight,
 
     justifyContent: "center",
     alignItems: "center",

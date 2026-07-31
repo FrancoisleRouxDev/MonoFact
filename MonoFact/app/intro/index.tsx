@@ -1,5 +1,7 @@
 import { SafeAreaView, View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 import { useRouter } from "expo-router";
 
 // Components
@@ -9,37 +11,38 @@ import PaginationDots from "@/components/ui/PaginationDots";
 
 
 export default function IntroductionScreen() {
-
   const router = useRouter();
 
   return (
     <SafeAreaView style={styles.container}>
 
+      <View pointerEvents="none" style={styles.backgroundGlow} />
+
       <View style={styles.content}>
 
-      <AppLogo size={100}/>
+        <AppLogo size={96} />
 
         <Text style={styles.title}>MonoFact</Text>
 
         <Text style={styles.subtitle}>
-          Learn the Truth, One Swipe at a Time.
+          Learn the truth, one swipe at a time.
         </Text>
 
         <PaginationDots
-        total={3}
-        active={0}
+          total={3}
+          active={0}
         />
 
       </View>
 
-    <View style={styles.buttonContainer}>
-      <PrimaryButton
-        title="Get Started"
-        onPress={() => {
-          router.push('/auth/login');
-        }}
-      />
-    </View>
+      <View style={styles.buttonContainer}>
+        <PrimaryButton
+          title="Get Started"
+          onPress={() => {
+            router.push('/auth/login');
+          }}
+        />
+      </View>
 
     </SafeAreaView>
   );
@@ -48,76 +51,40 @@ export default function IntroductionScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#8A8A8A",
+    backgroundColor: Colors.primaryDark,
+  },
+  backgroundGlow: {
+    position: "absolute",
+    top: -140,
+    left: -120,
+    width: 380,
+    height: 380,
+    borderRadius: 190,
+    backgroundColor: "rgba(69, 123, 157, 0.22)",
   },
   content: {
     flex: 1,
-    justifyContent: "center",
+    justifyContent: "flex-start",
     alignItems: "center",
-  },
-  logo: {
-    width: 70,
-    height: 70,
-    borderRadius: 20,
-    backgroundColor: "#A0A0A0",
-    justifyContent: "center",
-    alignItems: "center", 
-    marginBottom: 20,
-  },
-  logoText: {
-    color: "white",
-    fontSize: 40,
-    fontWeight: 700,
-
+    paddingTop: 88,
+    paddingHorizontal: Spacing.lg,
   },
   title: {
-    fontSize: 32,
-    fontWeight: "700",
-    color: "white",
-    marginBottom: 10,
+    ...Typography.h1,
+    color: Colors.surface,
+    marginTop: Spacing.lg,
   },
   subtitle: {
-    fontSize: 14,
-    color: "white",
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.72)",
     textAlign: "center",
-    marginBottom: 40,
-  },
-
-  // Dots styling
-  pagination: {
-    flexDirection: "row",
-    gap: 8,
-  },
-  activeDot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: "white",
-  },
-  dot: {
-    width: 8,
-    height: 8,
-    borderRadius: 4,
-    backgroundColor: "#C8C8C8",
-  },
-
-  // Button styling
-  button: {
-    marginHorizontal: 20,
-    marginBottom: 20,
-    backgroundColor: "white",
-    paddingVertical: 15,
-    borderRadius: 10,
-    alignItems: "center",
-  },
-  buttonText: {
-    fontSize: 15,
-    fontWeight: "700",
-    color: "#8A8A8A",
-
+    marginTop: Spacing.sm,
+    marginBottom: Spacing.xl,
+    lineHeight: 20,
+    maxWidth: 240,
   },
   buttonContainer: {
-    marginHorizontal: 20,
-    marginBottom: 30,
-  }
+    paddingHorizontal: Spacing.lg,
+    paddingBottom: Spacing.lg,
+  },
 });
