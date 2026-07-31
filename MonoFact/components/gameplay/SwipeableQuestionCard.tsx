@@ -1,5 +1,7 @@
 import { ReactNode } from "react";
 import { Dimensions } from "react-native";
+import { Colors } from "@/constants/Colors";
+
 
 import Animated, {
     useAnimatedStyle,

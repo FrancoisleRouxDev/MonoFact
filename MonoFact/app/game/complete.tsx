@@ -1,5 +1,7 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable } from "react-native";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+
 
 import {
 Trophy,

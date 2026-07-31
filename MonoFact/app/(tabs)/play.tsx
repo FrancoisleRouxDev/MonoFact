@@ -1,5 +1,7 @@
 import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+
 
 // Components
 import CategoryCard from "@/components/cards/CategoryCard";

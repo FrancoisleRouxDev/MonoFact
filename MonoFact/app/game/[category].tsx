@@ -1,5 +1,7 @@
 import { SafeAreaView, StyleSheet, View } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+
 
 //components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";

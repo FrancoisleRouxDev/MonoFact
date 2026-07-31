@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Lightbulb } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 //Animation imports
 import Animated, { useSharedValue, useAnimatedStyle, withSpring, runOnJS, } from "react-native-reanimated";

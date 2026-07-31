@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { BookOpen } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type Props = {
   title: string;

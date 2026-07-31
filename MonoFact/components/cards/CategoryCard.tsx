@@ -1,5 +1,7 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { LucideIcon } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type CategoryCardProps = {
   title: string;

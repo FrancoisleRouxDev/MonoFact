@@ -1,5 +1,6 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Zap, Flame, Target, LucideIcon } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
 
 import HeaderStatCard from "../cards/HeaderStatCard";
 
@@ -57,7 +58,7 @@ export default function HomeHeader() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#8A8A8A",
+    backgroundColor: Colors.primary,
 
     paddingHorizontal: 20,
     paddingTop: 30,

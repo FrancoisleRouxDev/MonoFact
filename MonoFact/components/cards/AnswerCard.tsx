@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Check, X } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type Props = {
     isCorrect: boolean;

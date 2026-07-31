@@ -1,6 +1,8 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable } from "react-native";
 import { Check } from "lucide-react-native";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+
 
 import AnswerCard from "@/components/cards/AnswerCard";
 import FactExplanation from "@/components/gameplay/FactExplanation";

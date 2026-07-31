@@ -1,5 +1,7 @@
 import { Pressable, Text, StyleSheet } from "react-native";
 import { X, Check } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type AnswerButtonProps = {
     answer: "myth" | "fact";

@@ -1,6 +1,8 @@
 import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
 import { useRouter } from "expo-router";
 import { useState } from "react";
+import { Colors } from "@/constants/Colors";
+
 
 import BottomNav from "@/components/navigation/BottomNav";
 

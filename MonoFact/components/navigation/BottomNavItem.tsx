@@ -1,5 +1,7 @@
 import { Pressable, Text, StyleSheet, View } from "react-native";
 import { LucideIcon } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type BottomNavItemProps = {
   label: string;

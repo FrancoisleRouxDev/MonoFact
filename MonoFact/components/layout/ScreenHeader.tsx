@@ -1,5 +1,7 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { ChevronRight, LucideIcon } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+
 
 type ScreenHeaderProps = {
   title: string;

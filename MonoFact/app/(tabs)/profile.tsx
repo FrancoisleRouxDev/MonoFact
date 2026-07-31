@@ -1,4 +1,5 @@
 import { SafeAreaView, ScrollView, View, StyleSheet, } from "react-native";
+import { Colors } from "@/constants/Colors";
 
 import { Zap, Target, Gamepad2, FlaskConical, } from "lucide-react-native";
 

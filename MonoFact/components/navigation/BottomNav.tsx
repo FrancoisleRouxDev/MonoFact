@@ -1,5 +1,7 @@
 import { View, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
+import { Colors } from "@/constants/Colors";
+
 
 import BottomNavItem from "./BottomNavItem";
 
