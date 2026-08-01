@@ -15,7 +15,11 @@ export const unstable_settings = {
 export default function RootLayout() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
-      <Stack />
+      <Stack 
+        screenOptions={{
+          headerShown: false,
+        }}
+      />
     </GestureHandlerRootView>
   );
 }
