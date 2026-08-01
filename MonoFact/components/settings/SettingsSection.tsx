@@ -1,4 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
+import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 type SettingsSectionProps = {
   title: string;
@@ -20,22 +23,26 @@ export default function SettingsSection({
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "#FFFFFF",
+    backgroundColor: Colors.surface,
     borderRadius: 24,
-    padding: 18,
-    marginBottom: 20,
+    padding: Spacing.lg,
+    marginBottom: Spacing.md,
 
-    shadowColor: "#000",
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 10,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
     elevation: 4,
   },
 
   heading: {
-    fontSize: 12,
+    ...Typography.small,
     fontWeight: "700",
-    letterSpacing: 1,
-    color: "#A5ADC7",
-    marginBottom: 15,
+    letterSpacing: 1.2,
+    color: Colors.textSecondary,
+    marginBottom: Spacing.md,
   },
 });

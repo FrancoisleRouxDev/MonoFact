@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { BookOpen } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type Props = {
@@ -16,10 +18,13 @@ export default function FactExplanation({
     <View style={styles.card}>
 
       <View style={styles.header}>
-        <BookOpen
-          size={20}
-          color="#222"
-        />
+
+        <View style={styles.iconBubble}>
+          <BookOpen
+            size={14}
+            color={Colors.primary}
+          />
+        </View>
 
         <Text style={styles.heading}>
           {title}
@@ -36,31 +41,44 @@ export default function FactExplanation({
 
 const styles = StyleSheet.create({
   card: {
-    backgroundColor: "#FFF",
-    borderRadius: 28,
-    padding: 24,
-    shadowColor: "#000",
+    backgroundColor: Colors.surface,
+    borderRadius: 26,
+    padding: Spacing.lg,
+    marginTop: Spacing.sm,
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 12,
+    shadowRadius: 18,
+    shadowOffset: {
+      width: 0,
+      height: 10,
+    },
     elevation: 5,
   },
 
   header: {
     flexDirection: "row",
     alignItems: "center",
-    marginBottom: 18,
+    marginBottom: Spacing.md,
   },
 
   heading: {
-    marginLeft: 10,
-    fontWeight: "700",
-    fontSize: 18,
-    color: "#222",
+    marginLeft: Spacing.sm,
+    ...Typography.title,
+    color: Colors.primary,
   },
 
   body: {
-    fontSize: 17,
-    lineHeight: 30,
-    color: "#555",
+    ...Typography.body,
+    lineHeight: 28,
+    color: Colors.textSecondary,
+  },
+
+  iconBubble: {
+    width: 26,
+    height: 26,
+    borderRadius: 999,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: "#EEF8FF",
   },
 });

@@ -1,6 +1,6 @@
-import { Pressable, StyleSheet, Text, View } from "react-native";
-import { ChevronRight, LucideIcon } from "lucide-react-native";
+import { StyleSheet, Text, View } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Typography } from "@/constants/Typography";
 
 
 type ScreenHeaderProps = {
@@ -17,7 +17,7 @@ export default function ScreenHeader({
       <Text style={styles.title}>{title}</Text>
 
       {subtitle && (
-        <Text>{subtitle}</Text>
+        <Text style={styles.subtitle}>{subtitle}</Text>
       )}
     </View>
   );
@@ -25,44 +25,17 @@ export default function ScreenHeader({
 
 const styles = StyleSheet.create({
   container: {
-    paddingTop: 50,
-    height: 70,
-
-    flexDirection: "row",
-    alignItems: "center",
-    justifyContent: "space-between",
-
-    borderBottomWidth: 1,
-    borderBottomColor: "#ECEEF4",
-  },
-
-  left: {
-    flexDirection: "row",
-    alignItems: "center",
-  },
-
-  iconContainer: {
-    width: 44,
-    height: 44,
-
-    borderRadius: 12,
-
-    backgroundColor: "#EEF3FB",
-
-    justifyContent: "center",
-    alignItems: "center",
-
-    marginRight: 15,
+    marginBottom: 20,
   },
 
   title: {
-    fontSize: 20,
-    fontWeight: "600",
-    color: "#20233D",
+    ...Typography.h1,
+    color: Colors.primaryDark,
   },
 
   subtitle: {
-    color: "#97A1C2",
-    marginTop: 2,
+    ...Typography.caption,
+    color: Colors.textSecondary,
+    marginTop: 4,
   },
 });

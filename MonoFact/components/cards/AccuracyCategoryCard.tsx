@@ -1,23 +1,29 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 const categories = [
   {
     name: "Science",
     accuracy: 84,
+    color: Colors.categories.science,
   },
   {
     name: "Nature",
     accuracy: 78,
+    color: Colors.categories.nature,
   },
   {
     name: "Animals",
     accuracy: 91,
+    color: Colors.categories.animals,
   },
   {
     name: "Space",
     accuracy: 65,
+    color: Colors.categories.space,
   },
 ];
 
@@ -39,6 +45,7 @@ export default function AccuracyCategoryCard() {
                 styles.barFill,
                 {
                   width: `${item.accuracy}%`,
+                  backgroundColor: item.color,
                 },
               ]}
             />
@@ -53,41 +60,44 @@ const styles = StyleSheet.create({
   card: {
     backgroundColor: Colors.surface,
     borderRadius: 24,
-    padding: 20,
-    marginHorizontal: 20,
-    marginTop: 20,
+    padding: Spacing.lg,
+    marginHorizontal: Spacing.lg,
+    marginTop: Spacing.lg,
 
-    shadowColor: "#000",
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 10,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
     elevation: 4,
   },
 
   title: {
-    fontSize: 20,
-    fontWeight: "700",
+    ...Typography.h3,
     color: Colors.text,
-    marginBottom: 20,
+    marginBottom: Spacing.lg,
   },
 
   row: {
-    marginBottom: 18,
+    marginBottom: Spacing.md,
   },
 
   rowHeader: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 8,
+    marginBottom: Spacing.xs,
   },
 
   category: {
-    fontSize: 16,
-    color: "#4B5563",
+    ...Typography.body,
+    color: Colors.text,
     fontWeight: "500",
   },
 
   percent: {
-    fontSize: 16,
+    ...Typography.body,
     fontWeight: "700",
     color: Colors.text,
   },
@@ -101,7 +111,6 @@ const styles = StyleSheet.create({
 
   barFill: {
     height: "100%",
-    backgroundColor: Colors.primary,
     borderRadius: 999,
   },
 });

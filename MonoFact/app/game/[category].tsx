@@ -37,13 +37,13 @@ export default function GameplayScreen() {
 
                     onSwipeLeft={() => {
 
-                        router.push("/game/result");
+                        router.push("/game/results");
 
                     }}
 
                     onSwipeRight={() => {
 
-                        router.push("/game/result");
+                        router.push("/game/results");
 
                     }}
 
@@ -67,12 +67,12 @@ export default function GameplayScreen() {
 
                     <AnswerButton
                         answer="myth"
-                        onPress={() => router.push("/game/result")}
+                        onPress={() => router.push("/game/results")}
                     />
 
                     <AnswerButton
                         answer="fact"
-                        onPress={() => router.push("/game/result")}
+                        onPress={() => router.push("/game/results")}
                     />
 
             </View>

@@ -1,5 +1,7 @@
 import { Pressable, StyleSheet, Text } from "react-native";
 import { LogOut } from "lucide-react-native";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 type LogoutButtonProps = {
   onPress?: () => void;
@@ -15,7 +17,7 @@ export default function LogoutButton({
     >
       <LogOut
         size={22}
-        color="#555"
+        color="#FF4D57"
       />
 
       <Text style={styles.text}>
@@ -27,9 +29,9 @@ export default function LogoutButton({
 
 const styles = StyleSheet.create({
   button: {
-    height: 60,
+    minHeight: 62,
 
-    backgroundColor: "#D9D9D9",
+    backgroundColor: "#FCE2E4",
 
     borderRadius: 20,
 
@@ -38,13 +40,13 @@ const styles = StyleSheet.create({
 
     flexDirection: "row",
 
-    marginTop: 10,
+    marginTop: Spacing.xs,
   },
 
   text: {
-    marginLeft: 10,
-    fontSize: 18,
+    marginLeft: Spacing.sm,
+    ...Typography.body,
     fontWeight: "700",
-    color: "#555",
+    color: "#FF4D57",
   },
 });

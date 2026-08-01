@@ -1,5 +1,8 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { ChevronRight, LucideIcon } from "lucide-react-native";
+import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 type SettingsItemProps = {
   title: string;
@@ -23,7 +26,7 @@ export default function SettingsItem({
         <View style={styles.iconContainer}>
           <Icon
             size={26}
-            color="#20233D"
+            color={Colors.primaryDark}
           />
         </View>
 
@@ -42,7 +45,7 @@ export default function SettingsItem({
 
       <ChevronRight
         size={20}
-        color="#C9CEDD"
+        color={Colors.textSecondary}
       />
     </Pressable>
   );
@@ -50,14 +53,15 @@ export default function SettingsItem({
 
 const styles = StyleSheet.create({
   container: {
-    height: 70,
+    minHeight: 72,
 
     flexDirection: "row",
     alignItems: "center",
     justifyContent: "space-between",
 
     borderBottomWidth: 1,
-    borderBottomColor: "#ECEEF4",
+    borderBottomColor: Colors.border,
+    paddingVertical: Spacing.sm,
   },
 
   left: {
@@ -71,22 +75,23 @@ const styles = StyleSheet.create({
 
     borderRadius: 12,
 
-    backgroundColor: "#EEF3FB",
+    backgroundColor: Colors.surfaceLight,
 
     justifyContent: "center",
     alignItems: "center",
 
-    marginRight: 15,
+    marginRight: Spacing.md,
   },
 
   title: {
-    fontSize: 18,
+    ...Typography.body,
     fontWeight: "600",
-    color: "#20233D",
+    color: Colors.text,
   },
 
   subtitle: {
-    color: "#97A1C2",
+    ...Typography.caption,
+    color: Colors.textSecondary,
     marginTop: 2,
   },
 });

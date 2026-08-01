@@ -1,7 +1,8 @@
-import { SafeAreaView, ScrollView, View, StyleSheet, } from "react-native";
+import { SafeAreaView, ScrollView, View, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
 
-import { Zap, Target, Gamepad2, FlaskConical, } from "lucide-react-native";
+import { Zap, Target, Gamepad2, FlaskConical } from "lucide-react-native";
 
 import ProfileHeader from "@/components/newcomps/ProfileHeader";
 import ProfileStatCard from "@/components/cards/ProfileStatCard";
@@ -38,6 +39,7 @@ export default function ProfileScreen() {
 
       <ScrollView
         showsVerticalScrollIndicator={false}
+        contentContainerStyle={styles.scrollContent}
       >
 
         <ProfileHeader
@@ -70,7 +72,11 @@ export default function ProfileScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F5F5",
+    backgroundColor: Colors.background,
+  },
+
+  scrollContent: {
+    paddingBottom: Spacing.xl,
   },
 
   statsContainer: {
@@ -78,7 +84,7 @@ const styles = StyleSheet.create({
     flexWrap: "wrap",
     justifyContent: "space-between",
 
-    paddingHorizontal: 20,
-    marginVertical: 24,
+    paddingHorizontal: Spacing.lg,
+    marginVertical: Spacing.lg,
   },
 });

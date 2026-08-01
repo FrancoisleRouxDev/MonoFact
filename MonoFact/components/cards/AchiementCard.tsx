@@ -1,5 +1,7 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 import {
   Flame,
@@ -58,27 +60,31 @@ export default function AchievementsCard() {
 
 const styles = StyleSheet.create({
   container: {
-    backgroundColor: "white",
+    backgroundColor: Colors.surface,
     borderRadius: 28,
-    padding: 20,
-    marginHorizontal: 20,
+    padding: Spacing.lg,
+    marginHorizontal: Spacing.lg,
 
-    shadowColor: "#000",
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 8,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
     elevation: 5,
   },
 
   heading: {
-    fontSize: 24,
-    fontWeight: "700",
-    marginBottom: 20,
+    ...Typography.h3,
+    color: Colors.primaryDark,
+    marginBottom: Spacing.lg,
   },
 
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 12,
+    marginBottom: Spacing.sm,
   },
 
   badge: {
@@ -86,16 +92,17 @@ const styles = StyleSheet.create({
     flexDirection: "row",
     alignItems: "center",
 
-    backgroundColor: "#EEF2FA",
+    backgroundColor: Colors.surfaceLight,
 
-    padding: 12,
+    padding: Spacing.sm,
 
     borderRadius: 14,
   },
 
   badgeText: {
-    marginLeft: 8,
-    color: "#555",
+    marginLeft: Spacing.xs,
+    ...Typography.caption,
+    color: Colors.text,
     fontWeight: "500",
   },
 });

@@ -1,6 +1,8 @@
 import { Pressable, View, Text, StyleSheet } from "react-native";
 import { LucideIcon } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type StatCardProps = {
@@ -18,8 +20,8 @@ export default function StatCard({
 }: StatCardProps) {
   return (
     <Pressable style={styles.card}>
-      <View style={styles.iconContainer}>
-        <Icon size={26} color="#1F2937" />
+      <View style={[styles.iconContainer, { backgroundColor: iconBackgroundColor }]}>
+        <Icon size={26} color={Colors.primaryDark} />
       </View>
 
       <Text style={styles.title}>{title}</Text>
@@ -32,36 +34,38 @@ export default function StatCard({
 const styles = StyleSheet.create({
   card: {
     width: "47%",
-    backgroundColor: "#EEF2FF",
-    borderRadius: 22,
-    padding: 18,
-    marginBottom: 16,
+    backgroundColor: Colors.surface,
+    borderRadius: 20,
+    padding: Spacing.lg,
+    marginBottom: Spacing.md,
 
-    shadowColor: "#000",
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 10,
-    elevation: 3,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
+    elevation: 4,
   },
 
   iconContainer: {
-    width: 46,
-    height: 46,
+    width: 48,
+    height: 48,
     borderRadius: 14,
-    backgroundColor: Colors.surface,
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 18,
+    marginBottom: Spacing.lg,
   },
 
   title: {
-    fontSize: 18,
-    fontWeight: "700",
-    color: "#111827",
+    ...Typography.h3,
+    color: Colors.text,
   },
 
   subtitle: {
     marginTop: 4,
-    fontSize: 14,
-    color: "#9CA3AF",
+    ...Typography.caption,
+    color: Colors.textSecondary,
   },
 });

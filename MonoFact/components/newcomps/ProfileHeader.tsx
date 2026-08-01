@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { UserRound, Star } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 type ProfileHeaderProps = {
   username: string;
@@ -18,8 +20,8 @@ export default function ProfileHeader({
 
       <View style={styles.avatar}>
         <UserRound
-          size={48}
-          color="#000"
+          size={50}
+          color={Colors.primaryDark}
           strokeWidth={2}
         />
       </View>
@@ -35,7 +37,7 @@ export default function ProfileHeader({
       <View style={styles.levelBadge}>
         <Star
           size={16}
-          color="#FFF"
+          color={Colors.surface}
         />
 
         <Text style={styles.levelText}>
@@ -52,46 +54,50 @@ const styles = StyleSheet.create({
   container: {
     backgroundColor: Colors.primary,
     alignItems: "center",
-    paddingTop: 40,
-    paddingBottom: 40,
+    paddingTop: Spacing.xl,
+    paddingBottom: Spacing.xl,
+    paddingHorizontal: Spacing.lg,
+    borderBottomLeftRadius: 28,
+    borderBottomRightRadius: 28,
   },
 
   avatar: {
-    width: 90,
-    height: 90,
-    borderRadius: 24,
+    width: 88,
+    height: 88,
+    borderRadius: 22,
     backgroundColor: Colors.primaryLight,
-    borderWidth: 5,
-    borderColor: Colors.primaryDark,
+    borderWidth: 1,
+    borderColor: "rgba(255, 255, 255, 0.18)",
     justifyContent: "center",
     alignItems: "center",
-    marginBottom: 18,
+    marginBottom: Spacing.md,
   },
 
   username: {
-    color: "white",
-    fontSize: 28,
-    fontWeight: "700",
+    ...Typography.h3,
+    color: Colors.surface,
   },
 
   email: {
-    color: "#E5E5E5",
-    marginTop: 6,
+    ...Typography.caption,
+    color: "rgba(255, 255, 255, 0.65)",
+    marginTop: 4,
   },
 
   levelBadge: {
     flexDirection: "row",
     alignItems: "center",
-    backgroundColor: Colors.primaryLight,
-    paddingHorizontal: 16,
+    backgroundColor: "rgba(255, 255, 255, 0.12)",
+    paddingHorizontal: 14,
     paddingVertical: 8,
-    borderRadius: 15,
-    marginTop: 18,
+    borderRadius: 14,
+    marginTop: Spacing.md,
   },
 
   levelText: {
-    color: "white",
+    ...Typography.small,
+    color: Colors.surface,
     fontWeight: "600",
-    marginLeft: 8,
+    marginLeft: Spacing.xs,
   },
 });

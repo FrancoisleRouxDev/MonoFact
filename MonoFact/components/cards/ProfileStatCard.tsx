@@ -1,6 +1,8 @@
 import { View, Text, StyleSheet } from "react-native";
 import { LucideIcon } from "lucide-react-native";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 type Props = {
@@ -19,7 +21,7 @@ export default function ProfileStatCard({
 
       <Icon
         size={28}
-        color="#000"
+        color={Colors.primaryDark}
       />
 
       <Text style={styles.value}>
@@ -37,26 +39,30 @@ export default function ProfileStatCard({
 const styles = StyleSheet.create({
   card: {
     width: "47%",
-    backgroundColor: "#FFF",
+    backgroundColor: Colors.surface,
     borderRadius: 24,
-    padding: 18,
-    marginBottom: 16,
+    padding: Spacing.lg,
+    marginBottom: Spacing.md,
 
-    shadowColor: "#000",
+    shadowColor: Colors.shadow,
     shadowOpacity: 0.08,
-    shadowRadius: 8,
+    shadowRadius: 16,
+    shadowOffset: {
+      width: 0,
+      height: 8,
+    },
     elevation: 5,
   },
 
   value: {
-    fontSize: 32,
-    fontWeight: "700",
-    marginTop: 16,
-    color: "#555",
+    ...Typography.h2,
+    marginTop: Spacing.md,
+    color: Colors.textSecondary,
   },
 
   label: {
-    color: "#9A9A9A",
-    marginTop: 6,
+    ...Typography.caption,
+    color: Colors.textSecondary,
+    marginTop: 4,
   },
 });

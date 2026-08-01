@@ -2,6 +2,8 @@ import { SafeAreaView, ScrollView, StyleSheet, Text } from "react-native";
 import { useRouter } from "expo-router";
 import { useState } from "react";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 import BottomNav from "@/components/navigation/BottomNav";
@@ -89,17 +91,19 @@ export default function SettingsScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#F5F6FA",
+    backgroundColor: Colors.background,
   },
 
   content: {
-    padding: 20,
+    paddingHorizontal: Spacing.lg,
+    paddingTop: Spacing.lg,
     paddingBottom: 120,
   },
 
   version: {
     textAlign: "center",
-    marginTop: 20,
-    color: "#C6CAD6",
+    ...Typography.small,
+    color: Colors.textSecondary,
+    marginTop: Spacing.lg,
   },
 });

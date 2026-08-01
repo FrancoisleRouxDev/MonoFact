@@ -1,7 +1,6 @@
-import { SafeAreaView, View, Text, StyleSheet, Pressable } from "react-native";
+import { SafeAreaView, View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-
 
 import {
 Trophy,
@@ -15,7 +14,7 @@ import ResultStatCard from "@/components/cards/ResultStatCard";
 import RoundStats from "@/components/gameplay/RoundStats";
 
 
-export default function CompleteScreen(){
+export default function FeedbackScreen(){
 
 const router = useRouter();
 
@@ -23,6 +22,10 @@ return(
 
 <SafeAreaView style={styles.container}>
 
+<ScrollView
+        contentContainerStyle={styles.container}
+        showsVerticalScrollIndicator={false}
+>
 <View style={styles.header}>
 
 <Trophy
@@ -102,6 +105,9 @@ Return Home
 </Text>
 
 </Pressable>
+
+</ScrollView>
+
 
 </SafeAreaView>
 

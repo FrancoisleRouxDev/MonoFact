@@ -1,6 +1,7 @@
 import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
-import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
 // Components
@@ -17,50 +18,59 @@ const stats = [
     icon: Trophy,
     title: "47",
     subtitle: "Total Games",
+    iconBackgroundColor: "#EEF2FA",
   },
   {
     icon: Check,
     title: "187",
     subtitle: "Correct Answers",
+    iconBackgroundColor: "#E4F7F4",
   },
   {
     icon: X,
     title: "48",
     subtitle: "Incorrect Answers",
+    iconBackgroundColor: "#FDEEEF",
   },
   {
     icon: Target,
     title: "79.6%",
     subtitle: "Accuracy",
+    iconBackgroundColor: "#E6F2FA",
   },
   {
     icon: Flame,
     title: "12",
     subtitle: "Best Streak",
+    iconBackgroundColor: "#FFF3DE",
   },
   {
     icon: FlaskConical,
     title: "Science",
     subtitle: "Fav. Category",
+    iconBackgroundColor: "#EAE6FF",
   },
 ];
 
-export default function HomeScreen() {
-
-  const router = useRouter();
+export default function StatsScreen() {
 
   return (
     <SafeAreaView style={styles.container}>
 
-          <ScrollView showsVerticalScrollIndicator={false}>
+          <ScrollView
+            showsVerticalScrollIndicator={false}
+            contentContainerStyle={styles.scrollContent}
+          >
 
-              <Text style={styles.categoryTitle}>
-                Statistics
-              </Text>
+              <View style={styles.header}>
+                <Text style={styles.categoryTitle}>
+                  Statistics
+                </Text>
 
-              <Text style={styles.categorySubtitle}>
-                Your performance at a glance
-              </Text>
+                <Text style={styles.categorySubtitle}>
+                  Your performance at a glance
+                </Text>
+              </View>
 
             <View style={styles.statsGrid}>
               {stats.map((stat) => (
@@ -69,6 +79,7 @@ export default function HomeScreen() {
                   icon={stat.icon}
                   title={stat.title}
                   subtitle={stat.subtitle}
+                  iconBackgroundColor={stat.iconBackgroundColor}
                 />
               ))}
             </View>
@@ -86,56 +97,30 @@ export default function HomeScreen() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: "#FFFFFF",
-    paddingTop: 50,
+    backgroundColor: Colors.background,
   },
-  header:{
-    backgroundColor: "#8A8A8A",
-    paddingHorizontal: 20,
-    paddingTop: 20,
-    height: 300,
-    borderBottomLeftRadius: 30,
-    borderBottomRightRadius: 30,
-
+  scrollContent: {
+    paddingHorizontal: Spacing.lg,
+    paddingTop: Spacing.xl,
+    paddingBottom: Spacing.xl,
   },
-  title: {
-    fontSize: 32,
-    fontWeight: "bold",
-    color: "white",
-    marginBottom: 10,
+  header: {
+    marginBottom: Spacing.lg,
   },
-  subtitle: {
-    fontSize: 18,
-    color: "white",
-    marginBottom: 20,
-  },
-  statsContainer: {
-    flexDirection: "row",
-    justifyContent: "space-between",
-    marginTop: 20,
-  },
-
-  //body section
   categoryTitle: {
-    fontSize: 30,
-    fontWeight: "bold",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    
+    ...Typography.h2,
+    color: Colors.primaryDark,
   },
   categorySubtitle: {
-    fontSize: 18,
-    color: "black",
-    paddingHorizontal: 20,
-    marginLeft: 20,
-    marginBottom: 20,
+    ...Typography.caption,
+    color: Colors.textSecondary,
+    marginTop: Spacing.xs,
   },
   statsGrid: {
-  flexDirection: "row",
-  flexWrap: "wrap",
-  justifyContent: "space-between",
-  paddingHorizontal: 20,
-  marginTop: 20,
-},
+    flexDirection: "row",
+    flexWrap: "wrap",
+    justifyContent: "space-between",
+    gap: Spacing.sm,
+  },
 
 });
