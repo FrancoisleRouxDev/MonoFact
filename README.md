@@ -8,14 +8,14 @@ Users swipe **right** if they believe a statement is a **Fact** and **left** if 
 
 ## Features
 
-- 🎯 Swipe-based Fact or Myth gameplay
-- 📚 Multiple learning categories
-- ⭐ XP and level progression
-- 📊 Statistics dashboard
-- 👤 User profile
-- ⚙️ Settings screen
-- 📱 Responsive cross-platform design
-- 🎨 Custom design system with reusable components
+- Swipe-based Fact or Myth gameplay
+- Multiple learning categories
+- XP and level progression
+- Statistics dashboard
+- User profile
+- Settings screen
+- Responsive cross-platform design
+- Custom design system with reusable components
 
 ---
 
