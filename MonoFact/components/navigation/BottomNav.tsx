@@ -2,7 +2,7 @@ import { View, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
-
+import { useSafeAreaInsets } from "react-native-safe-area-context";
 
 import BottomNavItem from "./BottomNavItem";
 
@@ -28,9 +28,17 @@ export default function BottomNav({
 }: BottomNavProps) {
 
   const router = useRouter();
+  const insets = useSafeAreaInsets();
 
-  return (
-    <View style={styles.container}>
+    return (
+        <View
+            style={[
+                styles.container,
+                {
+                    paddingBottom: insets.bottom,
+                },
+            ]}
+        >
 
     <BottomNavItem
         label="Home"
@@ -74,22 +82,17 @@ export default function BottomNav({
 const styles = StyleSheet.create({
   container: {
     flexDirection: "row",
-
     justifyContent: "space-around",
-
     alignItems: "center",
-
     backgroundColor: Colors.surface,
-
-    paddingVertical: Spacing.sm,
-    paddingHorizontal: Spacing.sm,
-
+    paddingTop: Spacing.sm,
+    paddingHorizontal: Spacing.lg,
+    position: "absolute",
+    left: 0,
+    right: 0,
+    bottom: 0,
     elevation: 12,
-
     shadowColor: "#000",
-
-    shadowOpacity: 0.08,
-
     shadowRadius: 16,
     shadowOffset: {
       width: 0,

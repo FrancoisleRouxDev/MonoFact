@@ -20,10 +20,10 @@ const router = useRouter();
 
 return(
 
-<SafeAreaView style={styles.container}>
+<SafeAreaView style={styles.safeArea}>
 
 <ScrollView
-        contentContainerStyle={styles.container}
+        contentContainerStyle={styles.content}
         showsVerticalScrollIndicator={false}
 >
 <View style={styles.header}>
@@ -117,10 +117,14 @@ Return Home
 
 const styles=StyleSheet.create({
 
-container:{
-flex:1,
-backgroundColor:"#F5F6FA",
-padding:24,
+safeArea: {
+flex: 1,
+backgroundColor: Colors.background,
+},
+
+content: {
+padding: 24,
+paddingBottom: 40,
 },
 
 header:{
