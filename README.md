@@ -1,4 +1,4 @@
-# 📱 MonoFact
+# MonoFact
 
 MonoFact is a cross-platform educational mobile application built with **React Native** and **Expo**. The app teaches users interesting facts through an engaging swipe-based quiz experience inspired by modern learning apps.
 
@@ -6,7 +6,7 @@ Users swipe **right** if they believe a statement is a **Fact** and **left** if 
 
 ---
 
-## ✨ Features
+## Features
 
 - 🎯 Swipe-based Fact or Myth gameplay
 - 📚 Multiple learning categories
@@ -19,7 +19,7 @@ Users swipe **right** if they believe a statement is a **Fact** and **left** if 
 
 ---
 
-## 🛠 Tech Stack
+## Tech Stack
 
 - React Native
 - Expo Router
@@ -30,7 +30,7 @@ Users swipe **right** if they believe a statement is a **Fact** and **left** if 
 
 ---
 
-## 📂 Project Structure
+## Project Structure
 
 ```
 app/
@@ -51,7 +51,7 @@ documents/
 
 ---
 
-## 📸 Screens
+## Screens
 
 Current implemented screens include:
 
@@ -69,9 +69,9 @@ Current implemented screens include:
 
 ---
 
-## 🚧 Current Progress
+## Current Progress
 
-### ✅ Completed
+### Completed
 
 - User interface redesign
 - Custom design system
@@ -81,7 +81,7 @@ Current implemented screens include:
 - Responsive layouts
 - Reusable components
 
-### 🔄 In Progress
+### In Progress
 
 - Firebase Authentication
 - Database integration
@@ -91,7 +91,7 @@ Current implemented screens include:
 
 ---
 
-## 🚀 Running the Project
+## Running the Project
 
 Clone the repository
 
@@ -113,7 +113,7 @@ npx expo start
 
 ---
 
-## 📖 Documentation
+## Documentation
 
 Project documentation can be found inside the **documents/** folder.
 
