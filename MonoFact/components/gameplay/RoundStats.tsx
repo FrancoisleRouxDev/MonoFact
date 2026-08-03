@@ -21,7 +21,7 @@ export default function RoundStats({
 
       <View style={styles.row}>
         <Text style={styles.level}>
-          Level 7 → Level 8
+          Level {level} → Level {level = 1}
         </Text>
 
         <Text style={styles.points}>
@@ -51,33 +51,35 @@ export default function RoundStats({
 const styles = StyleSheet.create({
   card: {
     backgroundColor: "#FFF",
-    borderRadius: 22,
-    padding: 20,
+    borderRadius: 18,
+    paddingVertical: 16,
+    paddingHorizontal: 20,
     shadowColor: "#000",
-    shadowOpacity: 0.08,
+    shadowOpacity: 0.06,
     shadowRadius: 12,
-    elevation: 5,
+    elevation: 4,
   },
 
   row: {
     flexDirection: "row",
     justifyContent: "space-between",
-    marginBottom: 14,
+    marginBottom: 10,
   },
 
   level: {
     fontWeight: "700",
-    fontSize: 16,
+    fontSize: 15,
     color: "#444",
   },
 
   points: {
+    fontSize: 13,
     color: "#99A2B0",
     fontWeight: "600",
   },
 
   barBackground: {
-    height: 8,
+    height: 6,
     backgroundColor: "#E9EDF5",
     borderRadius: 20,
     overflow: "hidden",
@@ -90,8 +92,8 @@ const styles = StyleSheet.create({
   },
 
   remaining: {
-    marginTop: 10,
+    marginTop: 8,
+    fontSize: 13,
     color: "#99A2B0",
-    fontSize: 14,
   },
 });
