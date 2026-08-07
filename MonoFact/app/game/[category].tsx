@@ -21,6 +21,9 @@ export default function GameplayScreen() {
         question: "Bees can recognize human faces and remember them for several days.",
     };
 
+    //     const currentQuestion = facts[currentIndex];
+    // const currentQuestion = questions[currentIndex];
+
     return (
         <SafeAreaView style={styles.container}>
 
@@ -35,26 +38,35 @@ export default function GameplayScreen() {
 
                 <SwipeableQuestionCard
 
-                    onSwipeLeft={() => {
+                                onSwipeLeft={() =>
+                                router.push({
+                                    pathname: "/game/feedback",
+                                    params: {
+                                    correct: "false",
+                                    statement: currentQuestion.question,
+                                    explanation:
+                                        "Bees use configural processing to recognise faces.",
+                                    },
+                                })
+                                }
 
-                        router.push("/game/results");
-
-                    }}
-
-                    onSwipeRight={() => {
-
-                        router.push("/game/results");
-
-                    }}
+                                onSwipeRight={() =>
+                                router.push({
+                                    pathname: "/game/feedback",
+                                    params: {
+                                    correct: "true",
+                                    statement: currentQuestion.question,
+                                    explanation:
+                                        "Bees use configural processing to recognise faces.",
+                                    },
+                                })
+                                }
 
                 >
 
                     <QuestionCard
-
-                        category="Science"
-
-                        question="Bees can recognize human faces and remember them for several days."
-
+                        category={currentQuestion.category}
+                        question={currentQuestion.question}
                     />
 
                 </SwipeableQuestionCard>
@@ -65,15 +77,35 @@ export default function GameplayScreen() {
 
             <View style={styles.buttonRow}>
 
-                    <AnswerButton
-                        answer="myth"
-                        onPress={() => router.push("/game/results")}
-                    />
+                <AnswerButton
+                    answer="myth"
+                    onPress={() => {
+                        router.push({
+                            pathname: "/game/feedback",
+                            params: {
+                                correct: "false",
+                                statement: currentQuestion.question,
+                                explanation:
+                                    "Bees use configural processing to recognise faces.",
+                            },
+                        });
+                    }}
+                />
 
-                    <AnswerButton
-                        answer="fact"
-                        onPress={() => router.push("/game/results")}
-                    />
+                <AnswerButton
+                    answer="fact"
+                    onPress={() => {
+                        router.push({
+                            pathname: "/game/feedback",
+                            params: {
+                                correct: "true",
+                                statement: currentQuestion.question,
+                                explanation:
+                                    "Bees use configural processing to recognise faces.",
+                            },
+                        });
+                    }}
+                />
 
             </View>
             

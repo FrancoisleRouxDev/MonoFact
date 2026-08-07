@@ -105,7 +105,7 @@ export default function PlayScreen() {
               icon={category.icon}
               subtitle={category.subtitle}
               progress={category.progress}
-              onPress={() => router.push("/game/[category]")}
+              onPress={() => router.push({pathname: "/game/[category]", params: {category: "Science"}})}
               color={category.color}
               iconBackgroundColor={category.iconBackgroundColor}
             />

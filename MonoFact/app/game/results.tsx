@@ -1,74 +1,113 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
-import { Check } from "lucide-react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-import { Spacing } from "@/constants/Spacing";
-import { Typography } from "@/constants/Typography";
+
+import {
+Trophy,
+Target,
+BarChart3,
+Zap,
+Flame,
+} from "lucide-react-native";
+
+import ResultStatCard from "@/components/cards/ResultStatCard";
+import RoundStats from "@/components/gameplay/RoundStats";
 
 
-import AnswerCard from "@/components/cards/AnswerCard";
-import FactExplanation from "@/components/gameplay/FactExplanation";
+export default function FeedbackScreen(){
 
-
-export default function ResultsScreen(){
-
-    const router = useRouter();
+const router = useRouter();
 
 return(
 
-<SafeAreaView style={styles.container}>
+<SafeAreaView style={styles.safeArea}>
 
 <ScrollView
-showsVerticalScrollIndicator={false}
-contentContainerStyle={styles.scrollContent}
+        contentContainerStyle={styles.content}
+        showsVerticalScrollIndicator={false}
 >
+<View style={styles.header}>
 
-<View style={styles.content}>
+<Trophy
+size={90}
+color="#1F2337"
+/>
 
-<View style={styles.icon}>
+<Text style={styles.title}>
 
-<Check size={54} color={Colors.surface} strokeWidth={3.5} />
-
-</View>
-
-<Text style={styles.correct}>
-
-Correct!
+Round Complete!
 
 </Text>
 
-<Text style={styles.xp}>
+<Text style={styles.subtitle}>
 
-+10 XP earned
+Science • 5 Questions
 
 </Text>
 
-<AnswerCard
-isCorrect={true}
-answer="MYTH"
-statement="Bees can recognize human faces and remember them for several days."
+</View>
+
+<View style={styles.grid}>
+
+<ResultStatCard
+icon={Target}
+value="4 / 5"
+label="Final Score"
 />
 
-<FactExplanation
-    title="Did you know?"
-    description="Bees use a process called configural processing — the same way humans recognize faces — and can recall faces for up to 2 days."
+<ResultStatCard
+icon={BarChart3}
+value="80%"
+label="Accuracy"
+/>
+
+<ResultStatCard
+icon={Zap}
+value="+240"
+label="XP"
+/>
+
+<ResultStatCard
+icon={Flame}
+value="3"
+label="Best Streak"
 />
 
 </View>
 
-<Pressable style={styles.button}
-            onPress={() => router.push("/game/feedback")}
+<RoundStats
+currentXP={4820}
+requiredXP={5000}
+level={7}
+/>
+
+<Pressable style={styles.primary}
+           onPress={() => router.push("/(tabs)/play")}
+
 >
 
-<Text style={styles.buttonText}>
+<Text style={styles.primaryText}>
 
-Continue →
+Play Again
+
+</Text>
+
+</Pressable>
+
+<Pressable style={styles.secondary}
+        onPress={() => router.push("/(tabs)")}
+>
+
+<Text style={styles.secondaryText}>
+
+Return Home
 
 </Text>
 
 </Pressable>
 
 </ScrollView>
+
 
 </SafeAreaView>
 
@@ -78,75 +117,65 @@ Continue →
 
 const styles=StyleSheet.create({
 
-container:{
-flex:1,
-paddingHorizontal:Spacing.lg,
-paddingVertical:Spacing.md,
-backgroundColor:"#EDF9F4",
+safeArea: {
+flex: 1,
+backgroundColor: Colors.background,
 },
 
-content:{
-flex:1,
+content: {
+padding: 24,
+paddingBottom: 40,
+},
+
+header:{
 alignItems:"center",
-paddingTop:Spacing.xl,
+paddingVertical:40,
 },
 
-scrollContent: {
-paddingBottom: Spacing.xl,
+title:{
+fontSize:42,
+fontWeight:"700",
+marginTop:20,
 },
 
-icon:{
-alignItems:"center",
-justifyContent:"center",
-width:92,
-height:92,
-borderRadius:28,
-backgroundColor:Colors.cardDaily,
-shadowColor:Colors.success,
-shadowOpacity:0.16,
-shadowRadius:20,
-shadowOffset:{
-width:0,
-height:12,
-},
-elevation:6,
+subtitle:{
+marginTop:8,
+color:"#777",
 },
 
-correct:{
-...Typography.h1,
-color:Colors.cardDaily,
-textAlign:"center",
-marginTop:Spacing.md,
+grid:{
+flexDirection:"row",
+flexWrap:"wrap",
+justifyContent:"space-between",
+gap:15,
+marginVertical:30,
 },
 
-xp:{
-textAlign:"center",
-...Typography.caption,
-color:Colors.textSecondary,
-marginTop:Spacing.xs,
-marginBottom:Spacing.md,
-},
-
-button:{
+primary:{
 height:60,
-backgroundColor:Colors.primary,
+borderRadius:18,
+backgroundColor:"#868D9A",
 justifyContent:"center",
 alignItems:"center",
-borderRadius:20,
-shadowColor:Colors.shadow,
-shadowOpacity:0.12,
-shadowRadius:16,
-shadowOffset:{
-width:0,
-height:8,
-},
-elevation:5,
-marginTop:Spacing.lg,
+marginTop:30,
 },
 
-buttonText:{
-...Typography.title,
-color:Colors.surface,
+secondary:{
+height:60,
+justifyContent:"center",
+alignItems:"center",
+},
+
+primaryText:{
+color:"#FFF",
+fontWeight:"700",
+fontSize:20,
+},
+
+secondaryText:{
+fontWeight:"700",
+fontSize:20,
+color:"#243A5A",
 }
 
 });

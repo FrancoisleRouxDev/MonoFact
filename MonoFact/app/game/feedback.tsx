@@ -1,113 +1,74 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
+import { Check } from "lucide-react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-
-import {
-Trophy,
-Target,
-BarChart3,
-Zap,
-Flame,
-} from "lucide-react-native";
-
-import ResultStatCard from "@/components/cards/ResultStatCard";
-import RoundStats from "@/components/gameplay/RoundStats";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
 
 
-export default function FeedbackScreen(){
+import AnswerCard from "@/components/cards/AnswerCard";
+import FactExplanation from "@/components/gameplay/FactExplanation";
 
-const router = useRouter();
+
+export default function ResultsScreen(){
+
+    const router = useRouter();
 
 return(
 
-<SafeAreaView style={styles.safeArea}>
+<SafeAreaView style={styles.container}>
 
 <ScrollView
-        contentContainerStyle={styles.content}
-        showsVerticalScrollIndicator={false}
+showsVerticalScrollIndicator={false}
+contentContainerStyle={styles.scrollContent}
 >
-<View style={styles.header}>
 
-<Trophy
-size={90}
-color="#1F2337"
-/>
+<View style={styles.content}>
 
-<Text style={styles.title}>
+<View style={styles.icon}>
 
-Round Complete!
-
-</Text>
-
-<Text style={styles.subtitle}>
-
-Science • 5 Questions
-
-</Text>
+<Check size={54} color={Colors.surface} strokeWidth={3.5} />
 
 </View>
 
-<View style={styles.grid}>
+<Text style={styles.correct}>
 
-<ResultStatCard
-icon={Target}
-value="4 / 5"
-label="Final Score"
+Correct!
+
+</Text>
+
+<Text style={styles.xp}>
+
++10 XP earned
+
+</Text>
+
+<AnswerCard
+isCorrect={true}
+answer="MYTH"
+statement="Bees can recognize human faces and remember them for several days."
 />
 
-<ResultStatCard
-icon={BarChart3}
-value="80%"
-label="Accuracy"
-/>
-
-<ResultStatCard
-icon={Zap}
-value="+240"
-label="XP"
-/>
-
-<ResultStatCard
-icon={Flame}
-value="3"
-label="Best Streak"
+<FactExplanation
+    title="Did you know?"
+    description="Bees use a process called configural processing — the same way humans recognize faces — and can recall faces for up to 2 days."
 />
 
 </View>
 
-<RoundStats
-currentXP={4820}
-requiredXP={5000}
-level={7}
-/>
-
-<Pressable style={styles.primary}
-           onPress={() => router.push("/(tabs)/play")}
-
+<Pressable style={styles.button}
+            onPress={() => router.push("/game/results")}
 >
 
-<Text style={styles.primaryText}>
+<Text style={styles.buttonText}>
 
-Play Again
-
-</Text>
-
-</Pressable>
-
-<Pressable style={styles.secondary}
-        onPress={() => router.push("/(tabs)")}
->
-
-<Text style={styles.secondaryText}>
-
-Return Home
+Continue →
 
 </Text>
 
 </Pressable>
 
 </ScrollView>
-
 
 </SafeAreaView>
 
@@ -117,65 +78,75 @@ Return Home
 
 const styles=StyleSheet.create({
 
-safeArea: {
-flex: 1,
-backgroundColor: Colors.background,
+container:{
+flex:1,
+paddingHorizontal:Spacing.lg,
+paddingVertical:Spacing.md,
+backgroundColor:"#EDF9F4",
 },
 
-content: {
-padding: 24,
-paddingBottom: 40,
-},
-
-header:{
+content:{
+flex:1,
 alignItems:"center",
-paddingVertical:40,
+paddingTop:Spacing.xl,
 },
 
-title:{
-fontSize:42,
-fontWeight:"700",
-marginTop:20,
+scrollContent: {
+paddingBottom: Spacing.xl,
 },
 
-subtitle:{
-marginTop:8,
-color:"#777",
+icon:{
+alignItems:"center",
+justifyContent:"center",
+width:92,
+height:92,
+borderRadius:28,
+backgroundColor:Colors.cardDaily,
+shadowColor:Colors.success,
+shadowOpacity:0.16,
+shadowRadius:20,
+shadowOffset:{
+width:0,
+height:12,
+},
+elevation:6,
 },
 
-grid:{
-flexDirection:"row",
-flexWrap:"wrap",
-justifyContent:"space-between",
-gap:15,
-marginVertical:30,
+correct:{
+...Typography.h1,
+color:Colors.cardDaily,
+textAlign:"center",
+marginTop:Spacing.md,
 },
 
-primary:{
+xp:{
+textAlign:"center",
+...Typography.caption,
+color:Colors.textSecondary,
+marginTop:Spacing.xs,
+marginBottom:Spacing.md,
+},
+
+button:{
 height:60,
-borderRadius:18,
-backgroundColor:"#868D9A",
+backgroundColor:Colors.primary,
 justifyContent:"center",
 alignItems:"center",
-marginTop:30,
+borderRadius:20,
+shadowColor:Colors.shadow,
+shadowOpacity:0.12,
+shadowRadius:16,
+shadowOffset:{
+width:0,
+height:8,
+},
+elevation:5,
+marginTop:Spacing.lg,
 },
 
-secondary:{
-height:60,
-justifyContent:"center",
-alignItems:"center",
-},
-
-primaryText:{
-color:"#FFF",
-fontWeight:"700",
-fontSize:20,
-},
-
-secondaryText:{
-fontWeight:"700",
-fontSize:20,
-color:"#243A5A",
+buttonText:{
+...Typography.title,
+color:Colors.surface,
 }
 
 });
