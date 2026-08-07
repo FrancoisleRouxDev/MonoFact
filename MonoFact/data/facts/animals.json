@@ -1,0 +1,12 @@
+[
+  {
+    "statement": "Octopuses have three hearts.",
+    "isFact": true,
+    "explanation": "Two pump blood to the gills while one pumps blood to the body."
+  },
+  {
+    "statement": "Bats are blind.",
+    "isFact": false,
+    "explanation": "Bats can see and many species have good eyesight."
+  }
+]
