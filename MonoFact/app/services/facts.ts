@@ -10,7 +10,7 @@ import { db } from "./config";
 export async function getFacts(category: string) {
 
     const q = query(
-        collection(db, "facts"),
+        collection(db, "categories", "science", "facts"),
         where("category", "==", category)
     );
 

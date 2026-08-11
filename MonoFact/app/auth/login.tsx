@@ -9,6 +9,7 @@ import {
   Text,
   Pressable,
   StyleSheet,
+  Alert,
 } from "react-native";
 import { router } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -16,9 +17,26 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 import InputField from "@/components/newcomps/InputField";
 import PrimaryButton from "@/components/buttons/Primary-Button";
 
+import { loginUser } from "@/app/services/auth";
+
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+
+  const handleLogin = async () => {
+    if (!email || !password) {
+      Alert.alert("Missing Information", "Please enter your email and password.");
+      return;
+    }
+
+    try {
+      await loginUser(email, password);
+
+      router.replace("/(tabs)");
+    } catch (error: any) {
+      Alert.alert("Login Failed", error.message);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -74,9 +92,7 @@ export default function LoginScreen() {
           <PrimaryButton
             title="Log In"
             variant="dark"
-            onPress={() => {
-              router.replace("/(tabs)");
-            }}
+            onPress={handleLogin}
           />
 
           <View style={styles.dividerRow}>

@@ -6,32 +6,32 @@ import { Typography } from "@/constants/Typography";
 
 import HeaderStatCard from "../cards/HeaderStatCard";
 
-export default function HomeHeader() {
+  type HomeHeaderProps = {
+    username: string;
+    xp: number;
+    streak: number;
+    accuracy: number;
+  };
 
-  const username = "Alex Rivera";
+export default function HomeHeader({ username, xp, streak, accuracy }: HomeHeaderProps) {
 
-  const stats: {
-    icon: LucideIcon;
-    value: string;
-    label: string;
-  }[] = [
-    {
-      icon: Zap,
-      value: "4,820",
-      label: "XP",
-    },
-    {
-      icon: Flame,
-      value: "12d",
-      label: "Streak",
-    },
-    {
-      icon: Target,
-      value: "84%",
-      label: "Accuracy",
-    },
-  ];
-
+const stats = [
+  {
+    icon: Zap,
+    value: xp.toString(),
+    label: "XP",
+  },
+  {
+    icon: Flame,
+    value: `${streak}d`,
+    label: "Streak",
+  },
+  {
+    icon: Target,
+    value: `${accuracy}%`,
+    label: "Accuracy",
+  },
+];
   return (
     <View style={styles.container}>
 

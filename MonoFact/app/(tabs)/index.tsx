@@ -13,6 +13,8 @@ export default function HomeScreen() {
 
   const router = useRouter();
 
+  // const user = await getCurrentUserProfile();
+  
   return (
     <SafeAreaView style={styles.container}>
 
@@ -21,7 +23,22 @@ export default function HomeScreen() {
         contentContainerStyle={styles.scrollContent}
       >
 
-        <HomeHeader />
+        {/* <HomeHeader
+            username={user.username}
+            xp={user.xp}
+            streak={user.currentStreak}
+            accuracy={Math.round(
+                (user.totalCorrect /
+                (user.totalCorrect + user.totalIncorrect)) * 100
+            )}
+        /> */}
+
+        <HomeHeader
+    username="Francois"
+    xp={1250}
+    streak={5}
+    accuracy={92}
+/>
 
         <ContinueCard 
           title="Continue where you left off"

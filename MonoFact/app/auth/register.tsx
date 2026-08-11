@@ -16,6 +16,9 @@ import InputField from "@/components/newcomps/InputField";
 import { useRouter } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
+import { Alert } from "react-native";
+import { registerUser } from "@/app/services/auth";
+
 export default function RegisterScreen() {
   const router = useRouter();
 
@@ -23,6 +26,29 @@ export default function RegisterScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
+
+  const handleRegister = async () => {
+    // Basic validation
+    if (!username || !email || !password || !confirmPassword) {
+      Alert.alert("Missing Information", "Please fill in all fields.");
+      return;
+    }
+
+    if (password !== confirmPassword) {
+      Alert.alert("Passwords don't match");
+      return;
+    }
+
+    try {
+      await registerUser(username, email, password);
+
+      Alert.alert("Success", "Account created successfully!");
+
+      router.replace("/(tabs)");
+    } catch (error: any) {
+      Alert.alert("Registration Failed", error.message);
+    }
+  };
 
   return (
     <SafeAreaView style={styles.container}>
@@ -116,10 +142,7 @@ export default function RegisterScreen() {
           <PrimaryButton
             title="Create Account"
             variant="dark"
-            onPress={() => {
-              // Firebase later
-              router.push("/(tabs)");
-            }}
+            onPress={handleRegister}
           />
 
           <Pressable onPress={() => router.push("/auth/login")}>
