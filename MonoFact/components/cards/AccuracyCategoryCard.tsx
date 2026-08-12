@@ -3,40 +3,37 @@ import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
 
+type CategoryStat = {
+  accuracy: number;
+  gamesPlayed: number;
+};
 
-const categories = [
-  {
-    name: "Science",
-    accuracy: 84,
-    color: Colors.categories.science,
-  },
-  {
-    name: "Nature",
-    accuracy: 78,
-    color: Colors.categories.nature,
-  },
-  {
-    name: "Animals",
-    accuracy: 91,
-    color: Colors.categories.animals,
-  },
-  {
-    name: "Space",
-    accuracy: 65,
-    color: Colors.categories.space,
-  },
-];
+type Props = {
+  data?: Record<string, CategoryStat>;
+};
 
-export default function AccuracyCategoryCard() {
+const categoryColors: Record<string, string> = {
+  Science: Colors.categories.science,
+  Nature: Colors.categories.nature,
+  Animals: Colors.categories.animals,
+  Space: Colors.categories.space,
+  Photography: Colors.categories.photography,
+  Technology: Colors.categories.technology,
+};
+
+export default function AccuracyCategoryCard({ data }: Props) {
+  if (!data) return null;
+
   return (
     <View style={styles.card}>
       <Text style={styles.title}>Accuracy by Category</Text>
 
-      {categories.map((item) => (
-        <View key={item.name} style={styles.row}>
+      {Object.entries(data).map(([name, stats]) => (
+        <View key={name} style={styles.row}>
           <View style={styles.rowHeader}>
-            <Text style={styles.category}>{item.name}</Text>
-            <Text style={styles.percent}>{item.accuracy}%</Text>
+            <Text style={styles.category}>{name}</Text>
+
+            <Text style={styles.percent}>{stats.accuracy}%</Text>
           </View>
 
           <View style={styles.barBackground}>
@@ -44,8 +41,8 @@ export default function AccuracyCategoryCard() {
               style={[
                 styles.barFill,
                 {
-                  width: `${item.accuracy}%`,
-                  backgroundColor: item.color,
+                  width: `${stats.accuracy}%`,
+                  backgroundColor: categoryColors[name] ?? Colors.primary,
                 },
               ]}
             />
@@ -61,7 +58,6 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.surface,
     borderRadius: 24,
     padding: Spacing.lg,
-    marginHorizontal: Spacing.lg,
     marginTop: Spacing.lg,
 
     shadowColor: Colors.shadow,
