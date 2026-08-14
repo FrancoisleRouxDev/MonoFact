@@ -1,7 +1,10 @@
-import { SafeAreaView, StyleSheet, View } from "react-native";
+import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 
+import { collection, getDocs, query, where, orderBy, } from "firebase/firestore";
+import { db } from "@/app/services/config";
+import { useState, useEffect } from "react";
 
 //components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";
@@ -10,63 +13,108 @@ import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
 
+
 export default function GameplayScreen() {
+
+    type Fact = {
+        id: string;
+        category: string;
+        statement: string;
+        isFact: boolean;
+        explanation: string;
+        order: number;
+    };
+
+    const [facts, setFacts] = useState<Fact[]>([]);
+    const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
 
     const router = useRouter();
 
     const { category } = useLocalSearchParams();
-
-    const currentQuestion = {
-        category: String(category),
-        question: "Bees can recognize human faces and remember them for several days.",
-    };
+    console.log("Category:", category);
 
     //     const currentQuestion = facts[currentIndex];
     // const currentQuestion = questions[currentIndex];
 
+    const loadFacts = async () => {
+        try {
+            console.log("Loading category:", String(category));
+
+            const snapshot = await getDocs(collection(db, "facts"));
+
+            console.log("Documents found:", snapshot.size);
+
+            const loadedFacts = snapshot.docs.map(doc => ({
+                id: doc.id,
+                ...(doc.data() as Omit<Fact, "id">),
+            }));
+
+            console.log("All facts:");
+            console.log(loadedFacts);
+
+            const filtered = loadedFacts.filter(
+                fact => fact.category === String(category)
+            );
+
+            console.log("Filtered facts:");
+            console.log(filtered);
+
+            setFacts(filtered);
+
+        } catch (err) {
+            console.error(err);
+        } finally {
+            setLoading(false);
+        }
+    };
+
+    if (loading) return null;
+
+    if (facts.length === 0) {
+        return (
+            <SafeAreaView>
+                <Text>No facts found.</Text>
+            </SafeAreaView>
+        );
+    }
+    const currentQuestion = facts[currentIndex];
+
+    const submitAnswer = (userAnswer: boolean) => {
+
+        const isCorrect = userAnswer === currentQuestion.isFact;
+
+        router.push({
+            pathname: "/game/feedback",
+            params: {
+                correct: String(isCorrect),
+                statement: currentQuestion.statement,
+                explanation: currentQuestion.explanation,
+            },
+        });
+    };
+
     return (
         <SafeAreaView style={styles.container}>
 
-            <QuestionProgress 
+            <QuestionProgress
                 category={String(category)}
-                current={1}
-                total={5}
-                onBack={() => router.back()}    
+                current={currentIndex + 1}
+                total={facts.length}
+                onBack={() => router.back()}
             />
 
             <View style={styles.content}>
 
                 <SwipeableQuestionCard
+                    onSwipeRight={() => submitAnswer(true)}
 
-                                onSwipeLeft={() =>
-                                router.push({
-                                    pathname: "/game/feedback",
-                                    params: {
-                                    correct: "false",
-                                    statement: currentQuestion.question,
-                                    explanation:
-                                        "Bees use configural processing to recognise faces.",
-                                    },
-                                })
-                                }
-
-                                onSwipeRight={() =>
-                                router.push({
-                                    pathname: "/game/feedback",
-                                    params: {
-                                    correct: "true",
-                                    statement: currentQuestion.question,
-                                    explanation:
-                                        "Bees use configural processing to recognise faces.",
-                                    },
-                                })
-                                }
-
+                    onSwipeLeft={() => submitAnswer(false)}
                 >
 
                     <QuestionCard
                         category={currentQuestion.category}
-                        question={currentQuestion.question}
+                        question={currentQuestion.statement}
                     />
 
                 </SwipeableQuestionCard>
@@ -78,37 +126,17 @@ export default function GameplayScreen() {
             <View style={styles.buttonRow}>
 
                 <AnswerButton
-                    answer="myth"
-                    onPress={() => {
-                        router.push({
-                            pathname: "/game/feedback",
-                            params: {
-                                correct: "false",
-                                statement: currentQuestion.question,
-                                explanation:
-                                    "Bees use configural processing to recognise faces.",
-                            },
-                        });
-                    }}
+                    answer="fact"
+                    onPress={() => submitAnswer(true)}
                 />
 
                 <AnswerButton
-                    answer="fact"
-                    onPress={() => {
-                        router.push({
-                            pathname: "/game/feedback",
-                            params: {
-                                correct: "true",
-                                statement: currentQuestion.question,
-                                explanation:
-                                    "Bees use configural processing to recognise faces.",
-                            },
-                        });
-                    }}
+                    answer="myth"
+                    onPress={() => submitAnswer(false)}
                 />
 
             </View>
-            
+
 
         </SafeAreaView>
     );

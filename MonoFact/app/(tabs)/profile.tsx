@@ -34,12 +34,19 @@ export default function ProfileScreen() {
     loadUser();
   }, []);
   
-  // 👇 Move this here
   if (!userData) {
     return null;
   }
   
   if (!userData) return null;
+
+  const totalAnswers = 
+    userData.totalCorrect + userData.totalIncorrect;
+
+  const accuracy = 
+    totalAnswers === 0
+    ? 0
+    : Math.round((userData.totalCorrect / totalAnswers) * 100);
 
   const stats = [
     {
@@ -49,13 +56,7 @@ export default function ProfileScreen() {
     },
     {
       icon: Target,
-      value: `${Math.round(
-        (userData.totalCorrect /
-          Math.max(
-            1,
-            userData.totalCorrect + userData.totalIncorrect
-          )) * 100
-      )}%`,
+      value: '${accuracy}%',
       label: "Accuracy",
     },
     {

@@ -12,6 +12,10 @@ import BottomNav from "@/components/navigation/BottomNav";
 // Icons
 import { FlaskConical, Leaf, PawPrint, Telescope, Camera, Cpu } from "lucide-react-native";
 
+import { useEffect, useState } from "react";
+import { doc, getDoc } from "firebase/firestore";
+import { auth, db } from "@/app/services/config"; 
+
 type CategoryItem = {
   title: string;
   subtitle: string;
@@ -25,11 +29,32 @@ export default function PlayScreen() {
 
   const router = useRouter();
 
+  
+  const [userData, setUserData] = useState<any>(null);
+  
+  useEffect(() => {
+    const loadUser = async () => {
+      const currentUser = auth.currentUser;
+      
+      if (!currentUser) return;
+      
+      const snapshot = await getDoc(doc(db, "users", currentUser.uid));
+      
+      if (snapshot.exists()) {
+        setUserData(snapshot.data());
+      }
+    };
+    
+    loadUser();
+  }, []);
+  
+  if (!userData) return null;
+  
   const categories: CategoryItem[] = [
     {
       title: "Nature",
       subtitle: "25 facts • ~5 min",
-      progress: 65,
+      progress: userData.progress?.Nature ?? 0,
       icon: Leaf,
       color: Colors.categories.nature,
       iconBackgroundColor: "#E5F7F5",
@@ -37,7 +62,7 @@ export default function PlayScreen() {
     {
       title: "Science",
       subtitle: "25 facts • ~5 min",
-      progress: 40,
+      progress: userData.progress?.Science ?? 0,
       icon: FlaskConical,
       color: Colors.categories.science,
       iconBackgroundColor: "#E7F0F8",
@@ -45,7 +70,7 @@ export default function PlayScreen() {
     {
       title: "Animals",
       subtitle: "25 facts • ~5 min",
-      progress: 80,
+      progress: userData.progress?.Animals ?? 0,
       icon: PawPrint,
       color: Colors.categories.animals,
       iconBackgroundColor: "#FFF3DC",
@@ -53,7 +78,7 @@ export default function PlayScreen() {
     {
       title: "Space",
       subtitle: "25 facts • ~5 min",
-      progress: 20,
+      progress: userData.progress?.Space ?? 0,
       icon: Telescope,
       color: Colors.categories.space,
       iconBackgroundColor: "#E7ECF6",
@@ -61,7 +86,7 @@ export default function PlayScreen() {
     {
       title: "Photography",
       subtitle: "25 facts • ~5 min",
-      progress: 55,
+      progress: userData.progress?.Photography ?? 0,
       icon: Camera,
       color: Colors.categories.photography,
       iconBackgroundColor: "#FDE7EB",
@@ -69,13 +94,13 @@ export default function PlayScreen() {
     {
       title: "Technology",
       subtitle: "25 facts • ~5 min",
-      progress: 90,
+      progress: userData.progress?.Technology ?? 0,
       icon: Cpu,
       color: Colors.categories.technology,
       iconBackgroundColor: "#ECE9FF",
     },
   ];
-
+  
   return (
     <SafeAreaView style={styles.container}>
 
