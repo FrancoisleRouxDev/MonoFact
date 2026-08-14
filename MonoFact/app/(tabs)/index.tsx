@@ -14,7 +14,7 @@ export default function HomeScreen() {
   const router = useRouter();
 
   // const user = await getCurrentUserProfile();
-  
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -34,26 +34,26 @@ export default function HomeScreen() {
         /> */}
 
         <HomeHeader
-    username="Francois"
-    xp={1250}
-    streak={5}
-    accuracy={92}
-/>
+        // username="Francois"
+        // xp={1250}
+        // streak={5}
+        // accuracy={92}
+        />
 
-        <ContinueCard 
+        <ContinueCard
           title="Continue where you left off"
           category="Science - Round 3"
-          onPress={() => {}}
+          onPress={() => { }}
         />
 
         <CategoriesGrid />
 
         <DailyChallengeCard
-            title="Mixed Facts"
-            description="+500 bonus XP today only"
-            reward="Reward: +500 XP"
-            onPress={() => router.push("/")}
-          />
+          title="Mixed Facts"
+          description="+500 bonus XP today only"
+          reward="Reward: +500 XP"
+          onPress={() => router.push("/")}
+        />
 
       </ScrollView>
 

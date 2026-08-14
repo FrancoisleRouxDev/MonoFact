@@ -6,32 +6,60 @@ import { Typography } from "@/constants/Typography";
 
 import HeaderStatCard from "../cards/HeaderStatCard";
 
-  type HomeHeaderProps = {
-    username: string;
-    xp: number;
-    streak: number;
-    accuracy: number;
-  };
+import { useEffect, useState, } from "react";
+import { auth, db } from "@/app/services/config";
+import { doc, getDoc } from "firebase/firestore";
 
-export default function HomeHeader({ username, xp, streak, accuracy }: HomeHeaderProps) {
+export default function HomeHeader() {
+  const [userData, setUserData] = useState<any>(null);
 
-const stats = [
-  {
-    icon: Zap,
-    value: xp.toString(),
-    label: "XP",
-  },
-  {
-    icon: Flame,
-    value: `${streak}d`,
-    label: "Streak",
-  },
-  {
-    icon: Target,
-    value: `${accuracy}%`,
-    label: "Accuracy",
-  },
-];
+  useEffect(() => {
+    const loadUser = async () => {
+      const currentUser = auth.currentUser;
+
+      if (!currentUser) return;
+
+      const snapshot = await getDoc(doc(db, "users", currentUser.uid));
+
+      if (snapshot.exists()) {
+        setUserData(snapshot.data());
+      }
+    };
+
+    loadUser();
+  }, []);
+
+  if (!userData) return null;
+
+  const totalAnswers =
+    userData.totalCorrect + userData.totalIncorrect;
+
+  const accuracy =
+    totalAnswers === 0
+      ? "0%"
+      : `${Math.round(
+        (userData.totalCorrect / totalAnswers) * 100
+      )}%`;
+
+
+  const stats = [
+    {
+      icon: Zap,
+      value: userData.xp.toString(),
+      label: "XP",
+    },
+    {
+      icon: Flame,
+      value: `${userData.currentStreak}d`,
+      label: "Streak",
+    },
+    {
+      icon: Target,
+      value: accuracy,
+      label: "Accuracy",
+    },
+  ];
+
   return (
     <View style={styles.container}>
 
@@ -41,7 +69,7 @@ const stats = [
 
       <View style={styles.usernameRow}>
         <Text style={styles.username}>
-          {username}
+          {userData.username.charAt(0).toUpperCase() + userData.username.slice(1)}
         </Text>
 
         <Hand size={22} color={Colors.surface} strokeWidth={2.2} />
