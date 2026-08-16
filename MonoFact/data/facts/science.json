@@ -1,16 +1,23 @@
 [
   {
     "category": "Science",
-    "order": 1,
     "statement": "Water boils at 100°C at sea level.",
     "isFact": true,
-    "explanation": "At standard atmospheric pressure, water boils at 100°C."
+    "explanation": "At standard atmospheric pressure, water boils at 100°C.",
+    "order": 1
   },
   {
     "category": "Science",
-    "order": 2,
     "statement": "Humans only use 10% of their brains.",
     "isFact": false,
-    "explanation": "Brain scans show nearly every part of the brain has a purpose."
+    "explanation": "Brain scans show that nearly all regions of the brain have known functions.",
+    "order": 2
+  },
+  {
+    "category": "Science",
+    "statement": "The Earth is the center of the Solar System.",
+    "isFact": false,
+    "explanation": "The Sun is at the center of the Solar System.",
+    "order": 3
   }
 ]

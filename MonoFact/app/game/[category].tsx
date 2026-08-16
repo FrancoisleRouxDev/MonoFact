@@ -1,30 +1,32 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { Colors } from "@/constants/Colors";
-
-import { collection, getDocs, query, where, orderBy, } from "firebase/firestore";
+import {
+    collection,
+    getDocs,
+    query,
+    where,
+    orderBy,
+} from "firebase/firestore";
 import { db } from "@/app/services/config";
 import { useState, useEffect } from "react";
 
-//components
+// Components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";
 import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
 
+type Fact = {
+    id: string;
+    category: string;
+    statement: string;
+    isFact: boolean;
+    explanation: string;
+    order: number;
+};
 
 export default function GameplayScreen() {
-
-    type Fact = {
-        id: string;
-        category: string;
-        statement: string;
-        isFact: boolean;
-        explanation: string;
-        order: number;
-    };
-
     const [facts, setFacts] = useState<Fact[]>([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
@@ -32,57 +34,78 @@ export default function GameplayScreen() {
     const router = useRouter();
 
     const { category } = useLocalSearchParams();
-    console.log("Category:", category);
 
-    //     const currentQuestion = facts[currentIndex];
-    // const currentQuestion = questions[currentIndex];
+    const categoryName = String(category);
 
-    const loadFacts = async () => {
-        try {
-            console.log("Loading category:", String(category));
+    useEffect(() => {
+        const loadFacts = async () => {
+            try {
+                const categoryId = String(category).toLowerCase();
 
-            const snapshot = await getDocs(collection(db, "facts"));
+                console.log("Loading facts from category:", categoryId);
 
-            console.log("Documents found:", snapshot.size);
+                const factsRef = collection(
+                    db,
+                    "categories",
+                    categoryId,
+                    "facts"
+                );
 
-            const loadedFacts = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...(doc.data() as Omit<Fact, "id">),
-            }));
+                const q = query(
+                    factsRef,
+                    orderBy("order")
+                );
 
-            console.log("All facts:");
-            console.log(loadedFacts);
+                const snapshot = await getDocs(q);
 
-            const filtered = loadedFacts.filter(
-                fact => fact.category === String(category)
-            );
+                console.log("Number of facts found:", snapshot.size);
 
-            console.log("Filtered facts:");
-            console.log(filtered);
+                const loadedFacts: Fact[] = snapshot.docs.map((document) => ({
+                    id: document.id,
+                    ...(document.data() as Omit<Fact, "id">),
+                }));
 
-            setFacts(filtered);
+                console.log("Loaded facts:", loadedFacts);
 
-        } catch (err) {
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
-    };
+                setFacts(loadedFacts);
 
-    if (loading) return null;
+            } catch (error) {
+                console.error("Failed to load facts:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
 
-    if (facts.length === 0) {
+        loadFacts();
+    }, [category]);
+
+    if (loading) {
         return (
-            <SafeAreaView>
-                <Text>No facts found.</Text>
+            <SafeAreaView style={styles.center}>
+                <Text>Loading facts...</Text>
             </SafeAreaView>
         );
     }
+
+    if (facts.length === 0) {
+        return (
+            <SafeAreaView style={styles.center}>
+                <Text style={styles.noFactsTitle}>
+                    No facts found
+                </Text>
+
+                <Text style={styles.noFactsText}>
+                    No facts were found for {categoryName}.
+                </Text>
+            </SafeAreaView>
+        );
+    }
+
     const currentQuestion = facts[currentIndex];
 
     const submitAnswer = (userAnswer: boolean) => {
-
-        const isCorrect = userAnswer === currentQuestion.isFact;
+        const isCorrect =
+            userAnswer === currentQuestion.isFact;
 
         router.push({
             pathname: "/game/feedback",
@@ -98,7 +121,7 @@ export default function GameplayScreen() {
         <SafeAreaView style={styles.container}>
 
             <QuestionProgress
-                category={String(category)}
+                category={categoryName}
                 current={currentIndex + 1}
                 total={facts.length}
                 onBack={() => router.back()}
@@ -108,15 +131,12 @@ export default function GameplayScreen() {
 
                 <SwipeableQuestionCard
                     onSwipeRight={() => submitAnswer(true)}
-
                     onSwipeLeft={() => submitAnswer(false)}
                 >
-
                     <QuestionCard
                         category={currentQuestion.category}
                         question={currentQuestion.statement}
                     />
-
                 </SwipeableQuestionCard>
 
             </View>
@@ -137,10 +157,8 @@ export default function GameplayScreen() {
 
             </View>
 
-
         </SafeAreaView>
     );
-
 }
 
 const styles = StyleSheet.create({
@@ -149,10 +167,30 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         padding: 20,
     },
+
+    center: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#fff",
+        padding: 20,
+    },
+
+    noFactsTitle: {
+        fontSize: 22,
+        fontWeight: "700",
+        marginBottom: 8,
+    },
+
+    noFactsText: {
+        fontSize: 16,
+    },
+
     content: {
         flex: 1,
         justifyContent: "center",
     },
+
     buttonRow: {
         flexDirection: "row",
         justifyContent: "space-between",

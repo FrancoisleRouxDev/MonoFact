@@ -14,7 +14,7 @@ import { FlaskConical, Leaf, PawPrint, Telescope, Camera, Cpu } from "lucide-rea
 
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config"; 
+import { auth, db } from "@/app/services/config";
 
 type CategoryItem = {
   title: string;
@@ -29,27 +29,27 @@ export default function PlayScreen() {
 
   const router = useRouter();
 
-  
+
   const [userData, setUserData] = useState<any>(null);
-  
+
   useEffect(() => {
     const loadUser = async () => {
       const currentUser = auth.currentUser;
-      
+
       if (!currentUser) return;
-      
+
       const snapshot = await getDoc(doc(db, "users", currentUser.uid));
-      
+
       if (snapshot.exists()) {
         setUserData(snapshot.data());
       }
     };
-    
+
     loadUser();
   }, []);
-  
+
   if (!userData) return null;
-  
+
   const categories: CategoryItem[] = [
     {
       title: "Nature",
@@ -100,7 +100,7 @@ export default function PlayScreen() {
       iconBackgroundColor: "#ECE9FF",
     },
   ];
-  
+
   return (
     <SafeAreaView style={styles.container}>
 
@@ -130,7 +130,7 @@ export default function PlayScreen() {
               icon={category.icon}
               subtitle={category.subtitle}
               progress={category.progress}
-              onPress={() => router.push({pathname: "/game/[category]", params: {category: "Science"}})}
+              onPress={() => router.push({ pathname: "/game/[category]", params: { category: "Science" } })}
               color={category.color}
               iconBackgroundColor={category.iconBackgroundColor}
             />
