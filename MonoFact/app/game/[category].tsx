@@ -4,7 +4,6 @@ import {
     collection,
     getDocs,
     query,
-    where,
     orderBy,
 } from "firebase/firestore";
 import { db } from "@/app/services/config";
@@ -28,14 +27,23 @@ type Fact = {
 
 export default function GameplayScreen() {
     const [facts, setFacts] = useState<Fact[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
 
     const router = useRouter();
 
-    const { category } = useLocalSearchParams();
+    const {
+        category,
+        index,
+        correctAnswers,
+    } = useLocalSearchParams();
 
     const categoryName = String(category);
+
+    // Which question are we currently on?
+    const currentIndex = Number(index ?? 0);
+
+    // Current score
+    const currentCorrectAnswers = Number(correctAnswers ?? 0);
 
     useEffect(() => {
         const loadFacts = async () => {
@@ -68,7 +76,6 @@ export default function GameplayScreen() {
                 console.log("Loaded facts:", loadedFacts);
 
                 setFacts(loadedFacts);
-
             } catch (error) {
                 console.error("Failed to load facts:", error);
             } finally {
@@ -101,18 +108,47 @@ export default function GameplayScreen() {
         );
     }
 
+    // Make sure the index is valid
+    if (currentIndex >= facts.length) {
+        return (
+            <SafeAreaView style={styles.center}>
+                <Text>No more questions.</Text>
+            </SafeAreaView>
+        );
+    }
+
     const currentQuestion = facts[currentIndex];
+
+    // Is this the final question?
+    const isLastQuestion =
+        currentIndex === facts.length - 1;
 
     const submitAnswer = (userAnswer: boolean) => {
         const isCorrect =
             userAnswer === currentQuestion.isFact;
 
+        // Add this answer to the score
+        const newCorrectAnswers =
+            currentCorrectAnswers + (isCorrect ? 1 : 0);
+
         router.push({
             pathname: "/game/feedback",
             params: {
                 correct: String(isCorrect),
+
                 statement: currentQuestion.statement,
+
                 explanation: currentQuestion.explanation,
+
+                category: categoryName,
+
+                currentIndex: String(currentIndex),
+
+                totalQuestions: String(facts.length),
+
+                correctAnswers: String(newCorrectAnswers),
+
+                isLastQuestion: String(isLastQuestion),
             },
         });
     };
@@ -133,10 +169,12 @@ export default function GameplayScreen() {
                     onSwipeRight={() => submitAnswer(true)}
                     onSwipeLeft={() => submitAnswer(false)}
                 >
+
                     <QuestionCard
                         category={currentQuestion.category}
                         question={currentQuestion.statement}
                     />
+
                 </SwipeableQuestionCard>
 
             </View>
