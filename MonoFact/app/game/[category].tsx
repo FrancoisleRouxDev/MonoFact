@@ -15,6 +15,7 @@ import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
+import { recordAnswer, recordStreak, } from "@/app/services/stats";
 
 type Fact = {
     id: string;
@@ -123,34 +124,48 @@ export default function GameplayScreen() {
     const isLastQuestion =
         currentIndex === facts.length - 1;
 
-    const submitAnswer = (userAnswer: boolean) => {
+    const submitAnswer = async (userAnswer: boolean) => {
+
         const isCorrect =
             userAnswer === currentQuestion.isFact;
 
-        // Add this answer to the score
         const newCorrectAnswers =
-            currentCorrectAnswers + (isCorrect ? 1 : 0);
+            currentCorrectAnswers +
+            (isCorrect ? 1 : 0);
 
-        router.push({
-            pathname: "/game/feedback",
-            params: {
-                correct: String(isCorrect),
+        try {
 
-                statement: currentQuestion.statement,
+            await recordAnswer(
+                isCorrect,
+                currentQuestion.category
+            );
 
-                explanation: currentQuestion.explanation,
+            await recordStreak(
+                isCorrect
+            );
 
-                category: categoryName,
+            router.push({
+                pathname: "/game/feedback",
+                params: {
+                    correct: String(isCorrect),
+                    statement: currentQuestion.statement,
+                    explanation: currentQuestion.explanation,
+                    category: categoryName,
+                    currentIndex: String(currentIndex),
+                    totalQuestions: String(facts.length),
+                    correctAnswers: String(newCorrectAnswers),
+                    isLastQuestion: String(isLastQuestion),
+                },
+            });
 
-                currentIndex: String(currentIndex),
+        } catch (error) {
 
-                totalQuestions: String(facts.length),
+            console.error(
+                "Failed to record answer:",
+                error
+            );
 
-                correctAnswers: String(newCorrectAnswers),
-
-                isLastQuestion: String(isLastQuestion),
-            },
-        });
+        }
     };
 
     return (

@@ -7,7 +7,7 @@ import { Typography } from "@/constants/Typography";
 
 import AnswerCard from "@/components/cards/AnswerCard";
 import FactExplanation from "@/components/gameplay/FactExplanation";
-
+import { recordGameCompleted } from "@/app/services/stats";
 
 export default function ResultsScreen() {
 
@@ -78,18 +78,32 @@ export default function ResultsScreen() {
 
                 <Pressable
                     style={styles.button}
-                    onPress={() => {
+                    onPress={async () => {
 
                         if (lastQuestion) {
 
-                            router.replace({
-                                pathname: "/game/results",
-                                params: {
-                                    category: String(category),
-                                    totalQuestions: String(total),
-                                    correctAnswers: String(score),
-                                },
-                            });
+                            try {
+                                // Only count the game once the final question
+                                // has been completed.
+                                await recordGameCompleted();
+
+                                router.replace({
+                                    pathname: "/game/results",
+                                    params: {
+                                        category: String(category),
+                                        totalQuestions: String(total),
+                                        correctAnswers: String(score),
+                                    },
+                                });
+
+                            } catch (error) {
+
+                                console.error(
+                                    "Failed to record completed game:",
+                                    error
+                                );
+
+                            }
 
                         } else {
 
