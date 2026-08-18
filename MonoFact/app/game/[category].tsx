@@ -1,104 +1,178 @@
 import { SafeAreaView, StyleSheet, View, Text } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
-import { Colors } from "@/constants/Colors";
-
-import { collection, getDocs, query, where, orderBy, } from "firebase/firestore";
+import {
+    collection,
+    getDocs,
+    query,
+    orderBy,
+} from "firebase/firestore";
 import { db } from "@/app/services/config";
 import { useState, useEffect } from "react";
 
-//components
+// Components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";
 import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
+import { recordAnswer, recordStreak, } from "@/app/services/stats";
 
+type Fact = {
+    id: string;
+    category: string;
+    statement: string;
+    isFact: boolean;
+    explanation: string;
+    order: number;
+};
 
 export default function GameplayScreen() {
-
-    type Fact = {
-        id: string;
-        category: string;
-        statement: string;
-        isFact: boolean;
-        explanation: string;
-        order: number;
-    };
-
     const [facts, setFacts] = useState<Fact[]>([]);
-    const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
 
     const router = useRouter();
 
-    const { category } = useLocalSearchParams();
-    console.log("Category:", category);
+    const {
+        category,
+        index,
+        correctAnswers,
+    } = useLocalSearchParams();
 
-    //     const currentQuestion = facts[currentIndex];
-    // const currentQuestion = questions[currentIndex];
+    const categoryName = String(category);
 
-    const loadFacts = async () => {
-        try {
-            console.log("Loading category:", String(category));
+    // Which question are we currently on?
+    const currentIndex = Number(index ?? 0);
 
-            const snapshot = await getDocs(collection(db, "facts"));
+    // Current score
+    const currentCorrectAnswers = Number(correctAnswers ?? 0);
 
-            console.log("Documents found:", snapshot.size);
+    useEffect(() => {
+        const loadFacts = async () => {
+            try {
+                const categoryId = String(category).toLowerCase();
 
-            const loadedFacts = snapshot.docs.map(doc => ({
-                id: doc.id,
-                ...(doc.data() as Omit<Fact, "id">),
-            }));
+                console.log("Loading facts from category:", categoryId);
 
-            console.log("All facts:");
-            console.log(loadedFacts);
+                const factsRef = collection(
+                    db,
+                    "categories",
+                    categoryId,
+                    "facts"
+                );
 
-            const filtered = loadedFacts.filter(
-                fact => fact.category === String(category)
-            );
+                const q = query(
+                    factsRef,
+                    orderBy("order")
+                );
 
-            console.log("Filtered facts:");
-            console.log(filtered);
+                const snapshot = await getDocs(q);
 
-            setFacts(filtered);
+                console.log("Number of facts found:", snapshot.size);
 
-        } catch (err) {
-            console.error(err);
-        } finally {
-            setLoading(false);
-        }
-    };
+                const loadedFacts: Fact[] = snapshot.docs.map((document) => ({
+                    id: document.id,
+                    ...(document.data() as Omit<Fact, "id">),
+                }));
 
-    if (loading) return null;
+                console.log("Loaded facts:", loadedFacts);
 
-    if (facts.length === 0) {
+                setFacts(loadedFacts);
+            } catch (error) {
+                console.error("Failed to load facts:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        loadFacts();
+    }, [category]);
+
+    if (loading) {
         return (
-            <SafeAreaView>
-                <Text>No facts found.</Text>
+            <SafeAreaView style={styles.center}>
+                <Text>Loading facts...</Text>
             </SafeAreaView>
         );
     }
+
+    if (facts.length === 0) {
+        return (
+            <SafeAreaView style={styles.center}>
+                <Text style={styles.noFactsTitle}>
+                    No facts found
+                </Text>
+
+                <Text style={styles.noFactsText}>
+                    No facts were found for {categoryName}.
+                </Text>
+            </SafeAreaView>
+        );
+    }
+
+    // Make sure the index is valid
+    if (currentIndex >= facts.length) {
+        return (
+            <SafeAreaView style={styles.center}>
+                <Text>No more questions.</Text>
+            </SafeAreaView>
+        );
+    }
+
     const currentQuestion = facts[currentIndex];
 
-    const submitAnswer = (userAnswer: boolean) => {
+    // Is this the final question?
+    const isLastQuestion =
+        currentIndex === facts.length - 1;
 
-        const isCorrect = userAnswer === currentQuestion.isFact;
+    const submitAnswer = async (userAnswer: boolean) => {
 
-        router.push({
-            pathname: "/game/feedback",
-            params: {
-                correct: String(isCorrect),
-                statement: currentQuestion.statement,
-                explanation: currentQuestion.explanation,
-            },
-        });
+        const isCorrect =
+            userAnswer === currentQuestion.isFact;
+
+        const newCorrectAnswers =
+            currentCorrectAnswers +
+            (isCorrect ? 1 : 0);
+
+        try {
+
+            await recordAnswer(
+                isCorrect,
+                currentQuestion.category
+            );
+
+            await recordStreak(
+                isCorrect
+            );
+
+            router.push({
+                pathname: "/game/feedback",
+                params: {
+                    correct: String(isCorrect),
+                    statement: currentQuestion.statement,
+                    explanation: currentQuestion.explanation,
+                    category: categoryName,
+                    currentIndex: String(currentIndex),
+                    totalQuestions: String(facts.length),
+                    correctAnswers: String(newCorrectAnswers),
+                    isLastQuestion: String(isLastQuestion),
+                },
+            });
+
+        } catch (error) {
+
+            console.error(
+                "Failed to record answer:",
+                error
+            );
+
+        }
     };
 
     return (
         <SafeAreaView style={styles.container}>
 
             <QuestionProgress
-                category={String(category)}
+                category={categoryName}
                 current={currentIndex + 1}
                 total={facts.length}
                 onBack={() => router.back()}
@@ -108,7 +182,6 @@ export default function GameplayScreen() {
 
                 <SwipeableQuestionCard
                     onSwipeRight={() => submitAnswer(true)}
-
                     onSwipeLeft={() => submitAnswer(false)}
                 >
 
@@ -137,10 +210,8 @@ export default function GameplayScreen() {
 
             </View>
 
-
         </SafeAreaView>
     );
-
 }
 
 const styles = StyleSheet.create({
@@ -149,10 +220,30 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         padding: 20,
     },
+
+    center: {
+        flex: 1,
+        justifyContent: "center",
+        alignItems: "center",
+        backgroundColor: "#fff",
+        padding: 20,
+    },
+
+    noFactsTitle: {
+        fontSize: 22,
+        fontWeight: "700",
+        marginBottom: 8,
+    },
+
+    noFactsText: {
+        fontSize: 16,
+    },
+
     content: {
         flex: 1,
         justifyContent: "center",
     },
+
     buttonRow: {
         flexDirection: "row",
         justifyContent: "space-between",

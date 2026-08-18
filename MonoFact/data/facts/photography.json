@@ -1,0 +1,177 @@
+[
+  {
+    "category": "Photography",
+    "statement": "The first surviving photograph was taken in 1826 or 1827.",
+    "isFact": true,
+    "explanation": "Joseph Nicéphore Niépce created 'View from the Window at Le Gras' using a pewter plate coated with bitumen. It required an exposure of several hours.",
+    "order": 1
+  },
+  {
+    "category": "Photography",
+    "statement": "The word 'photography' means 'drawing with light'.",
+    "isFact": true,
+    "explanation": "The word is derived from the Greek 'phōs' (light) and 'graphé' (drawing or writing), literally meaning 'drawing with light'.",
+    "order": 2
+  },
+  {
+    "category": "Photography",
+    "statement": "Kodak invented the first digital camera.",
+    "isFact": true,
+    "explanation": "In 1975, Kodak engineer Steve Sasson built the first self-contained digital camera, which captured a 0.01-megapixel image onto a cassette tape.",
+    "order": 3
+  },
+  {
+    "category": "Photography",
+    "statement": "Megapixels are the most important factor in image quality.",
+    "isFact": false,
+    "explanation": "Sensor size, dynamic range, lens quality, and image processing are equally or more important than pixel count alone.",
+    "order": 4
+  },
+  {
+    "category": "Photography",
+    "statement": "The most viewed photograph in history is the Windows XP default wallpaper.",
+    "isFact": true,
+    "explanation": "'Bliss', photographed by Charles O'Rear in Sonoma County, California in 1996, was seen by billions of Windows XP users worldwide.",
+    "order": 5
+  },
+  {
+    "category": "Photography",
+    "statement": "Smiling in early photographs was common practice.",
+    "isFact": false,
+    "explanation": "Early photographic exposures required subjects to remain still for minutes. Holding a smile for that long was impractical, and formal painted portraiture norms also discouraged smiling.",
+    "order": 6
+  },
+  {
+    "category": "Photography",
+    "statement": "The first color photograph was taken in 1861.",
+    "isFact": true,
+    "explanation": "Physicist James Clerk Maxwell demonstrated the first color photograph — an image of a tartan ribbon taken by Thomas Sutton — at the Royal Institution of Great Britain.",
+    "order": 7
+  },
+  {
+    "category": "Photography",
+    "statement": "A larger f-number on a lens means a larger aperture opening.",
+    "isFact": false,
+    "explanation": "The f-number is a fraction of focal length divided by aperture diameter. A larger f-number (e.g., f/16) means a smaller physical opening, and vice versa.",
+    "order": 8
+  },
+  {
+    "category": "Photography",
+    "statement": "The first known photographic self-portrait was taken in 1839.",
+    "isFact": true,
+    "explanation": "Robert Cornelius, a chemist and photographer from Philadelphia, took a daguerreotype of himself in October 1839, making it one of the earliest known photographs of a person.",
+    "order": 9
+  },
+  {
+    "category": "Photography",
+    "statement": "Red-eye in photographs is caused by camera flash reflecting off blood vessels.",
+    "isFact": true,
+    "explanation": "The flash illuminates the blood-rich retina at the back of the eye. The red light reflects back through the dilated pupil and is captured by the camera sensor.",
+    "order": 10
+  },
+  {
+    "category": "Photography",
+    "statement": "Polaroid introduced the world's first commercially available instant camera.",
+    "isFact": true,
+    "explanation": "Edwin Land's Polaroid Land Camera Model 95, launched in 1948, was the first commercially available instant camera and sold out on its first day.",
+    "order": 11
+  },
+  {
+    "category": "Photography",
+    "statement": "A camera's shutter speed controls the depth of field.",
+    "isFact": false,
+    "explanation": "Depth of field is primarily controlled by aperture. A wider aperture produces a shallower depth of field. Shutter speed controls motion blur and exposure time.",
+    "order": 12
+  },
+  {
+    "category": "Photography",
+    "statement": "ISO measures a camera sensor's (or film's) sensitivity to light.",
+    "isFact": true,
+    "explanation": "ISO stands for International Organization for Standardization. A higher ISO value means greater sensitivity to light, which is useful in low-light conditions but introduces more noise.",
+    "order": 13
+  },
+  {
+    "category": "Photography",
+    "statement": "The Rule of Thirds is the definitive law of photographic composition.",
+    "isFact": false,
+    "explanation": "The Rule of Thirds is a widely taught guideline, not a rule. Many iconic and award-winning photographs deliberately break it for artistic effect.",
+    "order": 14
+  },
+  {
+    "category": "Photography",
+    "statement": "Camera lenses are constructed from multiple glass elements.",
+    "isFact": true,
+    "explanation": "Modern lenses use multiple glass elements arranged in groups. Each element is shaped and coated to correct optical aberrations like chromatic distortion and vignetting.",
+    "order": 15
+  },
+  {
+    "category": "Photography",
+    "statement": "Humanity now takes more photos every two minutes than were taken in all of the 1800s.",
+    "isFact": true,
+    "explanation": "With smartphone cameras and social media, over 1.4 trillion photos are taken each year. The total photographs taken in the entire 19th century is estimated in the millions.",
+    "order": 16
+  },
+  {
+    "category": "Photography",
+    "statement": "The first digital camera had a megapixel sensor.",
+    "isFact": false,
+    "explanation": "Steve Sasson's 1975 prototype Kodak camera produced a 0.01-megapixel (100×100 pixel) black-and-white image stored on a digital cassette tape.",
+    "order": 17
+  },
+  {
+    "category": "Photography",
+    "statement": "Exposure compensation adjusts the brightness of an image.",
+    "isFact": true,
+    "explanation": "Exposure compensation (+/-) allows photographers to intentionally over or underexpose an image relative to what the camera's metering system recommends.",
+    "order": 18
+  },
+  {
+    "category": "Photography",
+    "statement": "The daguerreotype process produced images on glass plates.",
+    "isFact": false,
+    "explanation": "Daguerreotypes were produced on silver-coated copper plates that had been exposed to iodine vapour. Glass plates were used by later processes like the wet collodion process.",
+    "order": 19
+  },
+  {
+    "category": "Photography",
+    "statement": "A mirrorless camera has no reflex mirror inside the body.",
+    "isFact": true,
+    "explanation": "Unlike a DSLR, a mirrorless camera removes the reflex mirror and optical viewfinder, using instead a digital sensor for both image capture and live preview.",
+    "order": 20
+  },
+  {
+    "category": "Photography",
+    "statement": "RAW image files contain processed, compressed image data.",
+    "isFact": false,
+    "explanation": "RAW files contain minimally processed, uncompressed (or losslessly compressed) data directly from the camera sensor, giving photographers maximum flexibility in post-processing.",
+    "order": 21
+  },
+  {
+    "category": "Photography",
+    "statement": "Long exposure photography can make moving water appear silky and smooth.",
+    "isFact": true,
+    "explanation": "Using a slow shutter speed (typically 0.5 seconds or longer) blurs the motion of flowing water, creating a smooth, mist-like effect.",
+    "order": 22
+  },
+  {
+    "category": "Photography",
+    "statement": "Henri Cartier-Bresson coined the term 'the decisive moment'.",
+    "isFact": true,
+    "explanation": "French photographer Henri Cartier-Bresson used this concept to describe the precise instant when all visual and emotional elements of a scene align perfectly in a single frame.",
+    "order": 23
+  },
+  {
+    "category": "Photography",
+    "statement": "White balance has no effect on RAW files.",
+    "isFact": false,
+    "explanation": "While white balance can be fully corrected in post-processing for RAW files, the camera still embeds a white balance setting in the metadata that affects the preview.",
+    "order": 24
+  },
+  {
+    "category": "Photography",
+    "statement": "Ansel Adams developed the Zone System for controlling exposure and development.",
+    "isFact": true,
+    "explanation": "Ansel Adams and Fred Archer developed the Zone System in 1940 to give photographers precise control over exposure and development to achieve a desired tonal range.",
+    "order": 25
+  }
+]

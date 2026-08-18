@@ -1,0 +1,177 @@
+[
+  {
+    "category": "Technology",
+    "statement": "The first computer mouse was made of wood.",
+    "isFact": true,
+    "explanation": "Doug Engelbart and Bill English built the first prototype mouse at SRI in 1964. It had a rectangular wooden shell housing two perpendicular metal wheels.",
+    "order": 1
+  },
+  {
+    "category": "Technology",
+    "statement": "The QWERTY keyboard layout was designed to slow typists down.",
+    "isFact": false,
+    "explanation": "QWERTY was designed to reduce mechanical jamming on typewriters by placing frequently paired letters away from each other, not to slow the typist.",
+    "order": 2
+  },
+  {
+    "category": "Technology",
+    "statement": "The name 'Google' was originally a typo.",
+    "isFact": true,
+    "explanation": "The founders intended to name it 'Googol' (1 followed by 100 zeros), but a spelling error during the domain registration led to 'Google', which they kept.",
+    "order": 3
+  },
+  {
+    "category": "Technology",
+    "statement": "Apple invented the graphical user interface (GUI).",
+    "isFact": false,
+    "explanation": "The GUI was pioneered at Xerox PARC in the 1970s. Apple licensed and further developed the concept for the Apple Lisa (1983) and Macintosh (1984).",
+    "order": 4
+  },
+  {
+    "category": "Technology",
+    "statement": "Bluetooth is named after a 10th-century Danish king.",
+    "isFact": true,
+    "explanation": "Harald 'Bluetooth' Gormsson unified warring Danish tribes in the 10th century. The technology was named after him to symbolise the unification of communication protocols.",
+    "order": 5
+  },
+  {
+    "category": "Technology",
+    "statement": "More people in the world own a smartphone than a toothbrush.",
+    "isFact": true,
+    "explanation": "GSMA Intelligence data suggests there are over 5 billion unique mobile subscribers globally, while the World Health Organisation estimates roughly 3.5 billion people use a toothbrush.",
+    "order": 6
+  },
+  {
+    "category": "Technology",
+    "statement": "Incognito mode prevents websites from tracking you.",
+    "isFact": false,
+    "explanation": "Incognito mode only prevents the local browser from saving history and cookies. Websites, ISPs, employers, and network administrators can still log your activity.",
+    "order": 7
+  },
+  {
+    "category": "Technology",
+    "statement": "The first email was sent by Ray Tomlinson in 1971.",
+    "isFact": true,
+    "explanation": "Ray Tomlinson sent the first networked email between two computers using ARPANET in 1971. He also introduced the '@' symbol to separate the user name from the host machine.",
+    "order": 8
+  },
+  {
+    "category": "Technology",
+    "statement": "Wi-Fi stands for 'Wireless Fidelity'.",
+    "isFact": false,
+    "explanation": "Wi-Fi is a trademark and does not stand for anything. It was coined by the marketing firm Interbrand in 1999 and was never intended as an acronym.",
+    "order": 9
+  },
+  {
+    "category": "Technology",
+    "statement": "The first website ever created is still accessible online.",
+    "isFact": true,
+    "explanation": "CERN's original World Wide Web site, created by Tim Berners-Lee, went live on 6 August 1991 and is preserved at its original URL: info.cern.ch.",
+    "order": 10
+  },
+  {
+    "category": "Technology",
+    "statement": "Closing background apps on a smartphone improves battery life.",
+    "isFact": false,
+    "explanation": "Modern mobile operating systems (iOS and Android) suspend background apps. Force-quitting them means the app must be fully reloaded the next time, using more energy overall.",
+    "order": 11
+  },
+  {
+    "category": "Technology",
+    "statement": "The IBM 3380 — the first 1 GB hard drive — weighed over 250 kg.",
+    "isFact": true,
+    "explanation": "Released in 1980, the IBM 3380 had a capacity of 2.52 GB and weighed approximately 250 kg (550 lbs). It cost between $81,000 and $142,400.",
+    "order": 12
+  },
+  {
+    "category": "Technology",
+    "statement": "Amazon was founded as an online bookstore.",
+    "isFact": true,
+    "explanation": "Jeff Bezos launched Amazon.com on 5 July 1994 as an online bookstore operating from his garage in Bellevue, Washington.",
+    "order": 13
+  },
+  {
+    "category": "Technology",
+    "statement": "Modern smartphones stop charging automatically once they reach 100%.",
+    "isFact": true,
+    "explanation": "Lithium-ion batteries in smartphones are managed by a Battery Management System (BMS) that stops charging at full capacity to prevent overcharging and prolong battery lifespan.",
+    "order": 14
+  },
+  {
+    "category": "Technology",
+    "statement": "The floppy disk icon used for 'Save' was invented by Microsoft.",
+    "isFact": false,
+    "explanation": "The floppy disk as a save icon became a standard across many software applications in the 1980s. No single company invented it — it emerged organically from the software industry.",
+    "order": 15
+  },
+  {
+    "category": "Technology",
+    "statement": "The first YouTube video was uploaded on 23 April 2005.",
+    "isFact": true,
+    "explanation": "'Me at the zoo', an 18-second clip featuring co-founder Jawed Karim at San Diego Zoo, was uploaded on 23 April 2005 and remains live on the platform.",
+    "order": 16
+  },
+  {
+    "category": "Technology",
+    "statement": "HTTPS connections are fully immune to hacking.",
+    "isFact": false,
+    "explanation": "HTTPS encrypts data in transit between client and server, but it does not protect against server-side vulnerabilities, phishing attacks, or malware on the user's device.",
+    "order": 17
+  },
+  {
+    "category": "Technology",
+    "statement": "The first iPhone was released in 2007.",
+    "isFact": true,
+    "explanation": "Steve Jobs announced the original iPhone on 9 January 2007, and it went on sale in the United States on 29 June 2007.",
+    "order": 18
+  },
+  {
+    "category": "Technology",
+    "statement": "RAM is used for long-term data storage in computers.",
+    "isFact": false,
+    "explanation": "RAM (Random Access Memory) is volatile short-term storage that holds data currently in use by the processor. It is cleared when the computer loses power. Long-term storage uses drives (SSD, HDD).",
+    "order": 19
+  },
+  {
+    "category": "Technology",
+    "statement": "The first commercially successful camera phone launched in Japan in 2000.",
+    "isFact": true,
+    "explanation": "The Sharp J-SH04, released in November 2000 in Japan by J-Phone, was the first commercially successful camera phone with a built-in CCD sensor.",
+    "order": 20
+  },
+  {
+    "category": "Technology",
+    "statement": "5G radio waves cause biological harm to humans.",
+    "isFact": false,
+    "explanation": "5G operates on non-ionising radio frequencies. Extensive scientific reviews by the WHO and ICNIRP have found no evidence of harm at the levels used in telecommunications.",
+    "order": 21
+  },
+  {
+    "category": "Technology",
+    "statement": "The term 'bug' in computing originates from an actual insect.",
+    "isFact": true,
+    "explanation": "In 1947, engineers debugging a Harvard Mark II computer found a moth lodged in a relay. Grace Hopper's team taped it into their logbook with the note 'First actual case of bug being found'.",
+    "order": 22
+  },
+  {
+    "category": "Technology",
+    "statement": "A bit and a byte represent the same amount of digital data.",
+    "isFact": false,
+    "explanation": "A bit is the smallest unit of digital data and represents a single binary value (0 or 1). A byte consists of 8 bits and can represent 256 distinct values.",
+    "order": 23
+  },
+  {
+    "category": "Technology",
+    "statement": "The Apollo 11 Guidance Computer had less processing power than a modern USB stick.",
+    "isFact": true,
+    "explanation": "The AGC had 4 KB of RAM and ran at 0.043 MHz. A basic USB flash drive's controller chip vastly exceeds this. A modern phone's processor is billions of times faster.",
+    "order": 24
+  },
+  {
+    "category": "Technology",
+    "statement": "The internet and the World Wide Web are the same thing.",
+    "isFact": false,
+    "explanation": "The internet is the global network infrastructure connecting millions of computers. The World Wide Web is one service that runs on top of the internet, consisting of interlinked web pages accessed via browsers.",
+    "order": 25
+  }
+]

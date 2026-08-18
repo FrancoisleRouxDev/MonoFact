@@ -1,0 +1,177 @@
+[
+  {
+    "category": "Nature",
+    "statement": "There are more trees on Earth than stars in the Milky Way.",
+    "isFact": true,
+    "explanation": "A 2015 study in Nature estimated approximately 3 trillion trees on Earth, compared to an estimated 100–400 billion stars in the Milky Way.",
+    "order": 1
+  },
+  {
+    "category": "Nature",
+    "statement": "The Amazon rainforest produces 20% of the world's oxygen.",
+    "isFact": false,
+    "explanation": "The Amazon absorbs roughly as much oxygen as it produces through decomposition. The net oxygen contribution to the atmosphere is near zero.",
+    "order": 2
+  },
+  {
+    "category": "Nature",
+    "statement": "Bamboo is the fastest-growing plant on Earth.",
+    "isFact": true,
+    "explanation": "Certain species of bamboo can grow up to 91 cm (36 inches) in a single 24-hour period under ideal conditions.",
+    "order": 3
+  },
+  {
+    "category": "Nature",
+    "statement": "The Sahara is the world's largest desert.",
+    "isFact": false,
+    "explanation": "Antarctica is the world's largest desert at 14.2 million km². A desert is defined by low precipitation, not heat and sand.",
+    "order": 4
+  },
+  {
+    "category": "Nature",
+    "statement": "Peanuts grow underground.",
+    "isFact": true,
+    "explanation": "Peanuts are legumes. After flowering above ground, the plant's ovary pushes into the soil where the peanut pod develops underground.",
+    "order": 5
+  },
+  {
+    "category": "Nature",
+    "statement": "Bananas grow on trees.",
+    "isFact": false,
+    "explanation": "Bananas grow on large herbaceous plants. The 'trunk' is made of tightly packed leaf bases, not wood, making it a plant rather than a tree.",
+    "order": 6
+  },
+  {
+    "category": "Nature",
+    "statement": "Strawberries are not true berries.",
+    "isFact": true,
+    "explanation": "Botanically, a strawberry is an 'accessory fruit'. True berries include bananas, kiwis, and avocados, as they develop from a single flower with one ovary.",
+    "order": 7
+  },
+  {
+    "category": "Nature",
+    "statement": "The rings of a tree always accurately indicate its age.",
+    "isFact": false,
+    "explanation": "While useful, a tree can produce multiple rings in one year if it experiences two growing seasons, and may skip rings in years of extreme stress.",
+    "order": 8
+  },
+  {
+    "category": "Nature",
+    "statement": "Some species of jellyfish are considered biologically immortal.",
+    "isFact": true,
+    "explanation": "Turritopsis dohrnii, the 'immortal jellyfish', can revert to its juvenile polyp stage after reaching sexual maturity, theoretically cycling indefinitely.",
+    "order": 9
+  },
+  {
+    "category": "Nature",
+    "statement": "Sunflowers track the sun across the sky throughout their entire lives.",
+    "isFact": false,
+    "explanation": "Only young, growing sunflowers exhibit heliotropism. Once a sunflower matures, it permanently faces east to attract pollinators with morning warmth.",
+    "order": 10
+  },
+  {
+    "category": "Nature",
+    "statement": "Hawaii moves approximately 7.5 cm closer to Alaska every year.",
+    "isFact": true,
+    "explanation": "The Pacific Plate on which Hawaii sits is moving northwest at roughly 7–9 cm per year due to plate tectonics.",
+    "order": 11
+  },
+  {
+    "category": "Nature",
+    "statement": "The Great Wall of China is visible from space with the naked eye.",
+    "isFact": false,
+    "explanation": "NASA and Chinese astronaut Yang Liwei have confirmed that the wall is not visible from low Earth orbit without magnification.",
+    "order": 12
+  },
+  {
+    "category": "Nature",
+    "statement": "Pineapples take about two years to grow to maturity.",
+    "isFact": true,
+    "explanation": "A pineapple plant only produces one fruit at a time, and each fruit takes between 18 to 24 months to fully develop.",
+    "order": 13
+  },
+  {
+    "category": "Nature",
+    "statement": "Lightning never strikes the same place twice.",
+    "isFact": false,
+    "explanation": "Lightning frequently strikes the same location repeatedly. The Empire State Building is struck by lightning approximately 23 times per year.",
+    "order": 14
+  },
+  {
+    "category": "Nature",
+    "statement": "Mushrooms are more closely related to animals than to plants.",
+    "isFact": true,
+    "explanation": "Genetically, fungi share a more recent common ancestor with animals than with plants, classifying them in their own kingdom: Fungi.",
+    "order": 15
+  },
+  {
+    "category": "Nature",
+    "statement": "Raindrops are shaped like teardrops.",
+    "isFact": false,
+    "explanation": "Small raindrops are nearly spherical. Larger ones flatten into a hamburger-bun shape from air resistance. The teardrop shape is a myth.",
+    "order": 16
+  },
+  {
+    "category": "Nature",
+    "statement": "Oxygen is the most abundant element in the Earth's crust.",
+    "isFact": true,
+    "explanation": "By mass, oxygen makes up approximately 46.6% of the Earth's crust, primarily bonded within silicate rocks and minerals.",
+    "order": 17
+  },
+  {
+    "category": "Nature",
+    "statement": "Cracking your knuckles causes arthritis.",
+    "isFact": false,
+    "explanation": "A study in which a researcher cracked the knuckles of one hand for 60 years found no difference in arthritis rates. The sound is from collapsing gas bubbles.",
+    "order": 18
+  },
+  {
+    "category": "Nature",
+    "statement": "The loudest natural sound ever recorded was the 1883 Krakatoa eruption.",
+    "isFact": true,
+    "explanation": "The explosion was heard over 4,800 km away and was so powerful it ruptured the eardrums of sailors 64 km from the source.",
+    "order": 19
+  },
+  {
+    "category": "Nature",
+    "statement": "Water can boil and freeze simultaneously.",
+    "isFact": true,
+    "explanation": "At the 'triple point' of water (0.01°C and 611.73 Pa), all three phases — solid, liquid, and gas — coexist in thermodynamic equilibrium.",
+    "order": 20
+  },
+  {
+    "category": "Nature",
+    "statement": "The Dead Sea is actually a sea.",
+    "isFact": false,
+    "explanation": "The Dead Sea is a hypersaline lake. It has no outlet, so minerals accumulate, making it about 10 times saltier than the ocean.",
+    "order": 21
+  },
+  {
+    "category": "Nature",
+    "statement": "Diamonds can be found in meteorites.",
+    "isFact": true,
+    "explanation": "Nano-diamonds have been found in carbonaceous meteorites, formed through the shock of high-velocity collisions in space.",
+    "order": 22
+  },
+  {
+    "category": "Nature",
+    "statement": "The Earth's core is as hot as the surface of the Sun.",
+    "isFact": true,
+    "explanation": "The Earth's inner core reaches approximately 5,400°C, comparable to the surface temperature of the Sun at around 5,500°C.",
+    "order": 23
+  },
+  {
+    "category": "Nature",
+    "statement": "All deserts are hot and sandy.",
+    "isFact": false,
+    "explanation": "Deserts are defined by low annual precipitation (under 250mm). Cold deserts like the Gobi and Antarctic are covered in rock, ice, or gravel, not sand.",
+    "order": 24
+  },
+  {
+    "category": "Nature",
+    "statement": "A day on Earth is exactly 24 hours long.",
+    "isFact": false,
+    "explanation": "A sidereal day — one full rotation relative to distant stars — is 23 hours, 56 minutes, and 4 seconds, not exactly 24 hours.",
+    "order": 25
+  }
+]
