@@ -1,5 +1,5 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
-import { Check } from "lucide-react-native";
+import { Check, X } from "lucide-react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
@@ -22,9 +22,11 @@ export default function ResultsScreen() {
         totalQuestions,
         correctAnswers,
         isLastQuestion,
+        isFact,
     } = useLocalSearchParams();
 
     const wasCorrect = correct === "true";
+    const statementIsFact = isFact === "true";
 
     const currentQuestion = Number(currentIndex ?? 0);
     const total = Number(totalQuestions ?? 0);
@@ -36,7 +38,7 @@ export default function ResultsScreen() {
 
     return (
 
-        <SafeAreaView style={styles.container}>
+        <SafeAreaView style={[styles.container, { backgroundColor: wasCorrect ? "#EDF9F4" : "#FDF2F2" }]}>
 
             <ScrollView
                 showsVerticalScrollIndicator={false}
@@ -45,13 +47,23 @@ export default function ResultsScreen() {
 
                 <View style={styles.content}>
 
-                    <View style={styles.icon}>
+                    <View style={[
+                        styles.icon,
+                        {
+                            backgroundColor: wasCorrect ? Colors.success : Colors.error,
+                            shadowColor: wasCorrect ? Colors.success : Colors.error,
+                        }
+                    ]}>
 
-                        <Check size={54} color={Colors.surface} strokeWidth={3.5} />
+                        {wasCorrect ? (
+                            <Check size={54} color={Colors.surface} strokeWidth={3.5} />
+                        ) : (
+                            <X size={54} color={Colors.surface} strokeWidth={3.5} />
+                        )}
 
                     </View>
 
-                    <Text style={styles.correct}>
+                    <Text style={[styles.correct, { color: wasCorrect ? Colors.success : Colors.error }]}>
 
                         {wasCorrect ? "Correct!" : "Incorrect!"}
 
@@ -65,7 +77,7 @@ export default function ResultsScreen() {
 
                     <AnswerCard
                         isCorrect={wasCorrect}
-                        answer={wasCorrect ? "FACT" : "MYTH"}
+                        answer={statementIsFact ? "FACT" : "MYTH"}
                         statement={String(statement)}
                     />
 
@@ -141,7 +153,6 @@ const styles = StyleSheet.create({
         flex: 1,
         paddingHorizontal: Spacing.lg,
         paddingVertical: Spacing.md,
-        backgroundColor: "#EDF9F4",
     },
 
     content: {
@@ -160,8 +171,6 @@ const styles = StyleSheet.create({
         width: 92,
         height: 92,
         borderRadius: 28,
-        backgroundColor: Colors.cardDaily,
-        shadowColor: Colors.success,
         shadowOpacity: 0.16,
         shadowRadius: 20,
         shadowOffset: {
@@ -173,7 +182,6 @@ const styles = StyleSheet.create({
 
     correct: {
         ...Typography.h1,
-        color: Colors.cardDaily,
         textAlign: "center",
         marginTop: Spacing.md,
     },

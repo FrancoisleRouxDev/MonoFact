@@ -155,6 +155,7 @@ export default function GameplayScreen() {
                     totalQuestions: String(facts.length),
                     correctAnswers: String(newCorrectAnswers),
                     isLastQuestion: String(isLastQuestion),
+                    isFact: String(currentQuestion.isFact),
                 },
             });
 
@@ -199,13 +200,13 @@ export default function GameplayScreen() {
             <View style={styles.buttonRow}>
 
                 <AnswerButton
-                    answer="fact"
-                    onPress={() => submitAnswer(true)}
+                    answer="myth"
+                    onPress={() => submitAnswer(false)}
                 />
 
                 <AnswerButton
-                    answer="myth"
-                    onPress={() => submitAnswer(false)}
+                    answer="fact"
+                    onPress={() => submitAnswer(true)}
                 />
 
             </View>
