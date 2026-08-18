@@ -1,20 +1,35 @@
-import { SafeAreaView, View, Text, StyleSheet, ScrollView } from "react-native";
+import {
+  SafeAreaView,
+  View,
+  Text,
+  StyleSheet,
+  ScrollView,
+} from "react-native";
+
 import { useRouter } from "expo-router";
+
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
-
 
 // Components
 import CategoryCard from "@/components/cards/CategoryCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
 // Icons
-import { FlaskConical, Leaf, PawPrint, Telescope, Camera, Cpu } from "lucide-react-native";
+import {
+  FlaskConical,
+  Leaf,
+  PawPrint,
+  Telescope,
+  Camera,
+  Cpu,
+} from "lucide-react-native";
 
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "@/app/services/config";
+
 
 type CategoryItem = {
   title: string;
@@ -25,81 +40,139 @@ type CategoryItem = {
   iconBackgroundColor: string;
 };
 
+
+// Converts the number of answered facts into a percentage.
+const getProgressPercentage = (
+  answered: number,
+  total: number
+): number => {
+  if (total === 0) return 0;
+
+  return Math.min(
+    100,
+    Math.round((answered / total) * 100)
+  );
+};
+
+
 export default function PlayScreen() {
 
   const router = useRouter();
 
-
   const [userData, setUserData] = useState<any>(null);
 
+
   useEffect(() => {
+
     const loadUser = async () => {
+
       const currentUser = auth.currentUser;
 
       if (!currentUser) return;
 
-      const snapshot = await getDoc(doc(db, "users", currentUser.uid));
+      try {
 
-      if (snapshot.exists()) {
-        setUserData(snapshot.data());
+        const snapshot = await getDoc(
+          doc(db, "users", currentUser.uid)
+        );
+
+        if (snapshot.exists()) {
+          setUserData(snapshot.data());
+        }
+
+      } catch (error) {
+
+        console.error(
+          "Failed to load user data:",
+          error
+        );
+
       }
+
     };
 
     loadUser();
+
   }, []);
 
+
   if (!userData) return null;
+
 
   const categories: CategoryItem[] = [
     {
       title: "Nature",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Nature ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Nature ?? 0,
+        25
+      ),
       icon: Leaf,
       color: Colors.categories.nature,
       iconBackgroundColor: "#E5F7F5",
     },
+
     {
       title: "Science",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Science ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Science ?? 0,
+        25
+      ),
       icon: FlaskConical,
       color: Colors.categories.science,
       iconBackgroundColor: "#E7F0F8",
     },
+
     {
       title: "Animals",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Animals ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Animals ?? 0,
+        25
+      ),
       icon: PawPrint,
       color: Colors.categories.animals,
       iconBackgroundColor: "#FFF3DC",
     },
+
     {
       title: "Space",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Space ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Space ?? 0,
+        25
+      ),
       icon: Telescope,
       color: Colors.categories.space,
       iconBackgroundColor: "#E7ECF6",
     },
+
     {
       title: "Photography",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Photography ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Photography ?? 0,
+        25
+      ),
       icon: Camera,
       color: Colors.categories.photography,
       iconBackgroundColor: "#FDE7EB",
     },
+
     {
       title: "Technology",
       subtitle: "25 facts • ~5 min",
-      progress: userData.progress?.Technology ?? 0,
+      progress: getProgressPercentage(
+        userData.progress?.Technology ?? 0,
+        25
+      ),
       icon: Cpu,
       color: Colors.categories.technology,
       iconBackgroundColor: "#ECE9FF",
     },
   ];
+
 
   return (
     <SafeAreaView style={styles.container}>
@@ -121,24 +194,44 @@ export default function PlayScreen() {
 
         </View>
 
+
         <View style={styles.categoryGrid}>
 
           {categories.map((category) => (
+
             <CategoryCard
               key={category.title}
+
               title={category.title}
+
               icon={category.icon}
+
               subtitle={category.subtitle}
+
               progress={category.progress}
-              onPress={() => router.push({ pathname: "/game/[category]", params: { category: "Science" } })}
+
+              onPress={() =>
+                router.push({
+                  pathname: "/game/[category]",
+                  params: {
+                    category: category.title,
+                  },
+                })
+              }
+
               color={category.color}
-              iconBackgroundColor={category.iconBackgroundColor}
+
+              iconBackgroundColor={
+                category.iconBackgroundColor
+              }
             />
+
           ))}
 
         </View>
 
       </ScrollView>
+
 
       <BottomNav current="play" />
 
@@ -146,11 +239,14 @@ export default function PlayScreen() {
   );
 }
 
+
 const styles = StyleSheet.create({
+
   container: {
     flex: 1,
     backgroundColor: Colors.background,
   },
+
   scrollContent: {
     paddingHorizontal: Spacing.lg,
     paddingTop: Spacing.xl,

@@ -19,5 +19,19 @@
     "isFact": false,
     "explanation": "The Sun is at the center of the Solar System.",
     "order": 3
+  },
+  {
+    "category": "Science",
+    "statement": "Sound travels faster in water than in air.",
+    "isFact": true,
+    "explanation": "Sound travels about 4.3 times faster in water because water particles are packed denser than air.",
+    "order": 4
+  },
+  {
+    "category": "Science",
+    "statement": "Lightning never strikes the same place twice.",
+    "isFact": false,
+    "explanation": "Lightning often strikes the same place repeatedly, especially tall objects like the Empire State Building.",
+    "order": 5
   }
 ]

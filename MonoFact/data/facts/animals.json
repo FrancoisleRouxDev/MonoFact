@@ -8,5 +8,15 @@
     "statement": "Bats are blind.",
     "isFact": false,
     "explanation": "Bats can see and many species have good eyesight."
+  },
+  {
+    "statement": "Sloths can hold their breath longer than dolphins.",
+    "isFact": true,
+    "explanation": "Sloths can hold their breath for up to 40 minutes by slowing their heart rate."
+  },
+  {
+    "statement": "Elephants are the only animals that can't jump.",
+    "isFact": true,
+    "explanation": "Adult elephants do not jump, as they need to keep at least one foot on the ground."
   }
 ]

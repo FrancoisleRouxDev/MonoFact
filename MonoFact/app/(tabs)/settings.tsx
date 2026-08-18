@@ -104,7 +104,7 @@ export default function SettingsScreen() {
             title={userData.username}
             subtitle={userData.email}
             icon={UserRound}
-            onPress={() => {}}
+            onPress={() => router.push("/settings/account")}
           />
 
         </SettingsSection>
@@ -131,13 +131,13 @@ export default function SettingsScreen() {
           <SettingsItem
             title="About MonoFact"
             icon={Info}
-            onPress={() => {}}
+            onPress={() => router.push("/settings/about")}
           />
 
           <SettingsItem
             title="Privacy Policy"
             icon={Shield}
-            onPress={() => {}}
+            onPress={() => router.push("/settings/privacy")}
           />
 
         </SettingsSection>

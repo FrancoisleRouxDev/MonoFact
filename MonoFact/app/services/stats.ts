@@ -87,6 +87,9 @@ export const recordAnswer = async (
         [categoryIncorrectPath]: increment(
             isCorrect ? 0 : 1
         ),
+
+        //Category progress
+        [`progress.${categoryKey}`]: increment(1),
     });
 };
 
