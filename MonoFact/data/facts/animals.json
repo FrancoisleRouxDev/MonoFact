@@ -1,22 +1,177 @@
 [
   {
+    "category": "Animals",
     "statement": "Octopuses have three hearts.",
     "isFact": true,
-    "explanation": "Two pump blood to the gills while one pumps blood to the body."
+    "explanation": "Two branchial hearts pump blood through the gills, while the third (systemic heart) pumps oxygenated blood to the rest of the body.",
+    "order": 1
   },
   {
-    "statement": "Bats are blind.",
+    "category": "Animals",
+    "statement": "Bats are completely blind.",
     "isFact": false,
-    "explanation": "Bats can see and many species have good eyesight."
+    "explanation": "All bat species can see. Most have perfectly functional eyesight, and some species of fruit bats have exceptional night vision.",
+    "order": 2
   },
   {
-    "statement": "Sloths can hold their breath longer than dolphins.",
+    "category": "Animals",
+    "statement": "Wombat droppings are cube-shaped.",
     "isFact": true,
-    "explanation": "Sloths can hold their breath for up to 40 minutes by slowing their heart rate."
+    "explanation": "Wombats produce uniquely cube-shaped feces due to the elastic nature of their intestinal walls, which helps mark territory.",
+    "order": 3
   },
   {
-    "statement": "Elephants are the only animals that can't jump.",
+    "category": "Animals",
+    "statement": "A group of flamingos is called a flamboyance.",
     "isFact": true,
-    "explanation": "Adult elephants do not jump, as they need to keep at least one foot on the ground."
+    "explanation": "The collective noun for a group of flamingos is indeed a 'flamboyance', reflecting their vivid pink plumage.",
+    "order": 4
+  },
+  {
+    "category": "Animals",
+    "statement": "Elephants are the only mammals that cannot jump.",
+    "isFact": true,
+    "explanation": "Due to their enormous body mass and leg bone structure, adult elephants keep at least one foot on the ground at all times and cannot jump.",
+    "order": 5
+  },
+  {
+    "category": "Animals",
+    "statement": "Bulls are enraged by the color red.",
+    "isFact": false,
+    "explanation": "Cattle are red-green colorblind. Bulls in bullfighting react to the movement of the cape, not its color.",
+    "order": 6
+  },
+  {
+    "category": "Animals",
+    "statement": "A snail can sleep for up to three years.",
+    "isFact": true,
+    "explanation": "Snails can enter a state of hibernation or estivation for up to three years to survive drought or cold conditions.",
+    "order": 7
+  },
+  {
+    "category": "Animals",
+    "statement": "Goldfish have a memory span of only three seconds.",
+    "isFact": false,
+    "explanation": "Scientific studies have demonstrated goldfish can retain memories for months and can be trained to complete tasks.",
+    "order": 8
+  },
+  {
+    "category": "Animals",
+    "statement": "Koala fingerprints are nearly indistinguishable from human fingerprints.",
+    "isFact": true,
+    "explanation": "Koalas independently evolved fingerprints that are so similar to human ones they can confuse forensic investigators.",
+    "order": 9
+  },
+  {
+    "category": "Animals",
+    "statement": "A shrimp's heart is located in its head.",
+    "isFact": true,
+    "explanation": "Shrimp have an open circulatory system, and their heart is situated in the cephalothorax — the fused head and thorax region.",
+    "order": 10
+  },
+  {
+    "category": "Animals",
+    "statement": "Polar bears have white fur.",
+    "isFact": false,
+    "explanation": "Polar bear fur is actually transparent and hollow. It appears white because it reflects visible light. Their skin underneath is black.",
+    "order": 11
+  },
+  {
+    "category": "Animals",
+    "statement": "Frogs absorb water through their skin.",
+    "isFact": true,
+    "explanation": "Frogs do not drink water with their mouths. They absorb water directly through a permeable area on their belly called the 'drinking patch'.",
+    "order": 12
+  },
+  {
+    "category": "Animals",
+    "statement": "Tigers have striped skin under their striped fur.",
+    "isFact": true,
+    "explanation": "The stripe pattern of a tiger is not only on its fur but is also pigmented into the skin, so a shaved tiger would still show stripes.",
+    "order": 13
+  },
+  {
+    "category": "Animals",
+    "statement": "Camels store water in their humps.",
+    "isFact": false,
+    "explanation": "Camel humps store fat, not water. This fat can be metabolised for energy and produces water as a byproduct during digestion.",
+    "order": 14
+  },
+  {
+    "category": "Animals",
+    "statement": "Butterflies taste with their feet.",
+    "isFact": true,
+    "explanation": "Butterflies have chemoreceptors on their tarsi (feet), allowing them to taste plants the moment they land on them.",
+    "order": 15
+  },
+  {
+    "category": "Animals",
+    "statement": "A crocodile cannot stick its tongue out.",
+    "isFact": true,
+    "explanation": "A crocodile's tongue is attached along its entire length to the floor of its mouth, making it impossible to stick out.",
+    "order": 16
+  },
+  {
+    "category": "Animals",
+    "statement": "Owls can rotate their heads 360 degrees.",
+    "isFact": false,
+    "explanation": "Owls can rotate their heads up to 270 degrees in either direction, but not a full 360 degrees.",
+    "order": 17
+  },
+  {
+    "category": "Animals",
+    "statement": "Ostriches bury their heads in the sand when frightened.",
+    "isFact": false,
+    "explanation": "This is a popular myth. Ostriches dig holes in the ground for nests, and when tending to eggs may appear to have their heads down, but they do not hide from predators this way.",
+    "order": 18
+  },
+  {
+    "category": "Animals",
+    "statement": "The mantis shrimp has 16 types of color receptors.",
+    "isFact": true,
+    "explanation": "While humans have 3 types of color-detecting cones, the mantis shrimp has 16, enabling it to see a vast spectrum including UV and infrared light.",
+    "order": 19
+  },
+  {
+    "category": "Animals",
+    "statement": "Penguins propose to their mates with a pebble.",
+    "isFact": true,
+    "explanation": "Male Gentoo penguins search for the perfect pebble to present to a female. If she accepts it, they mate and use it to help build their nest.",
+    "order": 20
+  },
+  {
+    "category": "Animals",
+    "statement": "Dolphins sleep with one eye open.",
+    "isFact": true,
+    "explanation": "Dolphins practice unihemispheric sleep — one half of their brain sleeps while the other remains conscious, allowing them to breathe and watch for threats.",
+    "order": 21
+  },
+  {
+    "category": "Animals",
+    "statement": "Sharks are the only fish that can blink.",
+    "isFact": true,
+    "explanation": "Some shark species have a nictitating membrane — a protective third eyelid — that closes over the eye while feeding, which functions like a blink.",
+    "order": 22
+  },
+  {
+    "category": "Animals",
+    "statement": "Cows have four stomachs.",
+    "isFact": false,
+    "explanation": "Cows have one stomach with four distinct compartments: the rumen, reticulum, omasum, and abomasum.",
+    "order": 23
+  },
+  {
+    "category": "Animals",
+    "statement": "Lemmings commit mass suicide by jumping off cliffs.",
+    "isFact": false,
+    "explanation": "This myth was largely popularized by a 1958 Disney documentary that staged the event. Lemmings do not deliberately kill themselves.",
+    "order": 24
+  },
+  {
+    "category": "Animals",
+    "statement": "An octopus can edit its own genetic code.",
+    "isFact": true,
+    "explanation": "Octopuses (and some other cephalopods) can recode their own RNA to alter protein function, allowing rapid adaptation to environmental changes like temperature.",
+    "order": 25
   }
 ]

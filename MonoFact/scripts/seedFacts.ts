@@ -1,5 +1,5 @@
 import "dotenv/config";
-import { addDoc, collection } from "firebase/firestore";
+import { addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../app/services/config";
 
 import animals from "../data/facts/animals.json";
@@ -20,14 +20,20 @@ const allFacts = {
 
 async function uploadAll() {
   for (const [category, facts] of Object.entries(allFacts)) {
+    console.log(`Clearing existing ${category}...`);
+    const factsCollection = collection(db, "categories", category, "facts");
+    const existingDocs = await getDocs(factsCollection);
+    for (const d of existingDocs.docs) {
+      await deleteDoc(doc(db, "categories", category, "facts", d.id));
+    }
+
     console.log(`Uploading ${category}...`);
     for (const fact of facts as any[]) {
-      await addDoc(collection(db, "categories", category, "facts"), {
-        category: category.charAt(0).toUpperCase() + category.slice(1),
+      await addDoc(factsCollection, {
         ...fact,
       });
     }
-    console.log(`${category} uploaded`);
+    console.log(`${category} uploaded successfully (${facts.length} facts)`);
   }
 }
 

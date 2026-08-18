@@ -3,35 +3,175 @@
     "category": "Science",
     "statement": "Water boils at 100°C at sea level.",
     "isFact": true,
-    "explanation": "At standard atmospheric pressure, water boils at 100°C.",
+    "explanation": "At standard atmospheric pressure (101.325 kPa), the boiling point of water is exactly 100°C (212°F).",
     "order": 1
   },
   {
     "category": "Science",
     "statement": "Humans only use 10% of their brains.",
     "isFact": false,
-    "explanation": "Brain scans show that nearly all regions of the brain have known functions.",
+    "explanation": "Neuroimaging studies show that virtually all brain regions are active, and over a single day, essentially 100% of the brain is used at some point.",
     "order": 2
   },
   {
     "category": "Science",
-    "statement": "The Earth is the center of the Solar System.",
-    "isFact": false,
-    "explanation": "The Sun is at the center of the Solar System.",
+    "statement": "DNA is shaped like a double helix.",
+    "isFact": true,
+    "explanation": "James Watson and Francis Crick described the double helix structure of DNA in 1953, a model confirmed by Rosalind Franklin's X-ray diffraction data.",
     "order": 3
+  },
+  {
+    "category": "Science",
+    "statement": "Antibiotics are effective against viral infections.",
+    "isFact": false,
+    "explanation": "Antibiotics target bacterial cell structures and processes. They have no effect on viruses, which require antiviral medications or vaccines.",
+    "order": 4
+  },
+  {
+    "category": "Science",
+    "statement": "Adult humans have 206 bones.",
+    "isFact": true,
+    "explanation": "Infants are born with approximately 270 to 300 bones. Many of these fuse during childhood and adolescence, leaving adults with 206.",
+    "order": 5
+  },
+  {
+    "category": "Science",
+    "statement": "Different regions of the tongue taste different flavours.",
+    "isFact": false,
+    "explanation": "The 'tongue map' is a mistranslation of a 1901 German study. Taste receptors for all five basic tastes exist across all regions of the tongue.",
+    "order": 6
+  },
+  {
+    "category": "Science",
+    "statement": "Stomach acid is strong enough to dissolve metals.",
+    "isFact": true,
+    "explanation": "Hydrochloric acid in the stomach has a pH of 1 to 2. At that concentration it can dissolve zinc and, given enough time, even some steel alloys.",
+    "order": 7
+  },
+  {
+    "category": "Science",
+    "statement": "Shaving hair makes it grow back thicker and darker.",
+    "isFact": false,
+    "explanation": "Shaving cuts hair at the shaft, creating a blunt tip that can feel coarser. It does not affect the follicle, so it cannot change the colour or rate of growth.",
+    "order": 8
+  },
+  {
+    "category": "Science",
+    "statement": "Bananas are mildly radioactive.",
+    "isFact": true,
+    "explanation": "Bananas contain potassium-40, a naturally occurring radioactive isotope of potassium. The dose is minuscule and harmless.",
+    "order": 9
   },
   {
     "category": "Science",
     "statement": "Sound travels faster in water than in air.",
     "isFact": true,
-    "explanation": "Sound travels about 4.3 times faster in water because water particles are packed denser than air.",
-    "order": 4
+    "explanation": "Sound travels at approximately 343 m/s in air but around 1,480 m/s in water, because water molecules are closer together and transmit compressions more efficiently.",
+    "order": 10
   },
   {
     "category": "Science",
-    "statement": "Lightning never strikes the same place twice.",
+    "statement": "Glass is a slow-moving liquid at room temperature.",
     "isFact": false,
-    "explanation": "Lightning often strikes the same place repeatedly, especially tall objects like the Empire State Building.",
-    "order": 5
+    "explanation": "Glass is an amorphous solid. Old window panes appear thicker at the bottom due to manufacturing methods of the era, not flow over time.",
+    "order": 11
+  },
+  {
+    "category": "Science",
+    "statement": "Humans share approximately 50% of their DNA with bananas.",
+    "isFact": true,
+    "explanation": "The genes we share with bananas are mostly those involved in basic cellular functions such as transcription and cell division.",
+    "order": 12
+  },
+  {
+    "category": "Science",
+    "statement": "Helium is the lightest element.",
+    "isFact": false,
+    "explanation": "Hydrogen is the lightest element with an atomic mass of approximately 1.008 u. Helium is the second lightest at 4.003 u.",
+    "order": 13
+  },
+  {
+    "category": "Science",
+    "statement": "It takes approximately 8 minutes and 20 seconds for sunlight to reach Earth.",
+    "isFact": true,
+    "explanation": "Light travels at 299,792 km/s. Given the average Earth–Sun distance of about 150 million km, the journey takes 8 minutes and 20 seconds.",
+    "order": 14
+  },
+  {
+    "category": "Science",
+    "statement": "Vaccines cause autism.",
+    "isFact": false,
+    "explanation": "The original 1998 study making this claim was retracted and its author lost his medical licence. Dozens of large-scale studies involving millions of children have found no link.",
+    "order": 15
+  },
+  {
+    "category": "Science",
+    "statement": "Diamond is the hardest known natural material.",
+    "isFact": true,
+    "explanation": "Diamond scores 10 on the Mohs hardness scale, the maximum value. Its hardness is due to the strong covalent bonding structure in its cubic crystal lattice.",
+    "order": 16
+  },
+  {
+    "category": "Science",
+    "statement": "The human body contains more bacterial cells than human cells.",
+    "isFact": true,
+    "explanation": "A 2016 study estimated the ratio of bacteria to human cells is approximately 1.3:1, meaning our body hosts slightly more bacterial than human cells.",
+    "order": 17
+  },
+  {
+    "category": "Science",
+    "statement": "Dropping a penny from the Empire State Building would kill a pedestrian.",
+    "isFact": false,
+    "explanation": "A penny weighs about 2.5 grams and is aerodynamically flat. Air resistance limits its terminal velocity to around 40 km/h — enough to sting, but not kill.",
+    "order": 18
+  },
+  {
+    "category": "Science",
+    "statement": "Venus is the hottest planet in the solar system.",
+    "isFact": true,
+    "explanation": "Despite being further from the Sun than Mercury, Venus reaches surface temperatures of ~465°C due to a runaway greenhouse effect from its thick CO₂ atmosphere.",
+    "order": 19
+  },
+  {
+    "category": "Science",
+    "statement": "There is no gravity in space.",
+    "isFact": false,
+    "explanation": "Gravity extends throughout the universe. Astronauts aboard the ISS experience ~90% of Earth's gravity — they appear weightless because they are in continuous freefall around Earth.",
+    "order": 20
+  },
+  {
+    "category": "Science",
+    "statement": "A single sneeze travels at approximately 160 km/h.",
+    "isFact": true,
+    "explanation": "Expelled droplets from a sneeze have been measured at speeds between 140 and 165 km/h (about 100 mph).",
+    "order": 21
+  },
+  {
+    "category": "Science",
+    "statement": "All of the universe's matter is concentrated in visible stars and planets.",
+    "isFact": false,
+    "explanation": "Only about 5% of the universe is ordinary (baryonic) matter. About 27% is dark matter and 68% is dark energy, both of which are not directly visible.",
+    "order": 22
+  },
+  {
+    "category": "Science",
+    "statement": "Electrons have a negative electric charge.",
+    "isFact": true,
+    "explanation": "By convention established by Benjamin Franklin (though later modified), electrons carry a negative charge of −1.6 × 10⁻¹⁹ coulombs.",
+    "order": 23
+  },
+  {
+    "category": "Science",
+    "statement": "The speed of light is the same in all materials.",
+    "isFact": false,
+    "explanation": "Light travels at its maximum speed (c ≈ 299,792 km/s) only in a vacuum. In glass it slows to about 200,000 km/s, which is why lenses can bend and focus light.",
+    "order": 24
+  },
+  {
+    "category": "Science",
+    "statement": "Absolute zero is the lowest possible temperature.",
+    "isFact": true,
+    "explanation": "Absolute zero (0 K, −273.15°C) is the theoretical lower limit of thermodynamic temperature, at which particles have minimal kinetic energy. It has never been fully achieved.",
+    "order": 25
   }
 ]
