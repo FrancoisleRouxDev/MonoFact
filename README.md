@@ -5,6 +5,9 @@ MonoFact is a cross-platform educational mobile application built with **React N
 Users swipe **right** if they believe a statement is a **Fact** and **left** if they believe it is a **Myth**, receiving immediate feedback while earning XP and tracking their progress across different knowledge categories.
 
 ---
+## Preview
+![MonoFact app screens](assets/monofact-preview.png)
+---
 
 ## Features
 
@@ -114,31 +117,26 @@ npx expo start
 ---
 
 ## Documentation
-
 Project documentation can be found inside the **documents/** folder.
-
 This includes:
-
 - Project Proposal
 - Wireframes
 - Design System
 - Database Design
 - Planning Documents
-
 ---
-
+## Acknowledgement
+Special thanks to my lecturer, **Tsungai Katsuro**, for their guidance and support throughout this project.
+---
 ## 👨‍💻 Developer
-
 **Francois le Roux**
-
 Interactive Development Student
-
 Open Window Institute
-
 2026
-
 ---
-
+---
+## Demo video link
+https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQeUqCz0y?usp=sharing 
+---
 ## 📄 License
-
 This project was developed for educational purposes.
