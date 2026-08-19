@@ -5,22 +5,30 @@ import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
 import ScreenHeader from "@/components/layout/ScreenHeader";
-import { ChevronLeft, KeyRound, Mail, Trash2, UserPen } from "lucide-react-native";
+import { ChevronLeft, ImagePlus, KeyRound, Mail, Trash2, UserPen } from "lucide-react-native";
 import SettingsSection from "@/components/settings/SettingsSection";
 import SettingsItem from "@/components/settings/SettingsItem";
 import { auth, db } from "@/app/services/config";
 import { doc, getDoc, updateDoc, deleteDoc } from "firebase/firestore";
 import { verifyBeforeUpdateEmail, updatePassword, deleteUser } from "firebase/auth";
 
+// ---- NEW IMPORT ----
+import { useProfilePhoto } from "@/hooks/useProfilePhoto";
+// --------------------
+
 export default function AccountScreen() {
   const router = useRouter();
   const [userData, setUserData] = useState<any>(null);
   const [loading, setLoading] = useState(true);
-  
+
   const [modalVisible, setModalVisible] = useState(false);
   const [modalType, setModalType] = useState<"username" | "email" | "password" | null>(null);
   const [inputValue, setInputValue] = useState("");
   const [saving, setSaving] = useState(false);
+
+  // ---- NEW: profile photo hook ----
+  const { pickAndUpload, uploading } = useProfilePhoto();
+  // ---------------------------------
 
   useEffect(() => {
     loadUser();
@@ -94,8 +102,8 @@ export default function AccountScreen() {
       "Are you sure you want to delete your account? This action cannot be undone and will permanently erase all your data.",
       [
         { text: "Cancel", style: "cancel" },
-        { 
-          text: "Delete", 
+        {
+          text: "Delete",
           style: "destructive",
           onPress: async () => {
             try {
@@ -133,39 +141,47 @@ export default function AccountScreen() {
       </View>
       <ScrollView contentContainerStyle={styles.content}>
         <ScreenHeader title="Account Management" subtitle="Update your account details and security settings." />
-        
+
         {loading ? (
           <ActivityIndicator size="large" color={Colors.primary} style={{ marginTop: 40 }} />
         ) : (
           <>
             <SettingsSection title="PROFILE">
-              <SettingsItem 
-                title="Edit Username" 
-                subtitle={userData?.username || "Not set"} 
-                icon={UserPen} 
-                onPress={() => openModal("username", userData?.username || "")} 
+              {/* ---- NEW: Change Profile Picture item ---- */}
+              <SettingsItem
+                title="Change Profile Picture"
+                subtitle={uploading ? "Uploading..." : "Tap to update your photo"}
+                icon={ImagePlus}
+                onPress={pickAndUpload}
               />
-              <SettingsItem 
-                title="Change Email" 
-                subtitle={userData?.email || "Not set"} 
-                icon={Mail} 
-                onPress={() => openModal("email", userData?.email || "")} 
+              {/* ----------------------------------------- */}
+              <SettingsItem
+                title="Edit Username"
+                subtitle={userData?.username || "Not set"}
+                icon={UserPen}
+                onPress={() => openModal("username", userData?.username || "")}
+              />
+              <SettingsItem
+                title="Change Email"
+                subtitle={userData?.email || "Not set"}
+                icon={Mail}
+                onPress={() => openModal("email", userData?.email || "")}
               />
             </SettingsSection>
 
             <SettingsSection title="SECURITY">
-              <SettingsItem 
-                title="Change Password" 
-                icon={KeyRound} 
-                onPress={() => openModal("password")} 
+              <SettingsItem
+                title="Change Password"
+                icon={KeyRound}
+                onPress={() => openModal("password")}
               />
             </SettingsSection>
 
             <SettingsSection title="DANGER ZONE">
-              <SettingsItem 
-                title="Delete Account" 
-                icon={Trash2} 
-                onPress={handleDeleteAccount} 
+              <SettingsItem
+                title="Delete Account"
+                icon={Trash2}
+                onPress={handleDeleteAccount}
               />
             </SettingsSection>
           </>
@@ -182,7 +198,7 @@ export default function AccountScreen() {
         <View style={styles.modalOverlay}>
           <View style={styles.modalContent}>
             <Text style={styles.modalTitle}>{getModalTitle()}</Text>
-            
+
             <TextInput
               style={styles.input}
               value={inputValue}
@@ -195,16 +211,16 @@ export default function AccountScreen() {
             />
 
             <View style={styles.modalActions}>
-              <TouchableOpacity 
-                style={styles.modalButton} 
+              <TouchableOpacity
+                style={styles.modalButton}
                 onPress={() => setModalVisible(false)}
                 disabled={saving}
               >
                 <Text style={styles.modalButtonText}>Cancel</Text>
               </TouchableOpacity>
-              
-              <TouchableOpacity 
-                style={[styles.modalButton, styles.modalButtonPrimary]} 
+
+              <TouchableOpacity
+                style={[styles.modalButton, styles.modalButtonPrimary]}
                 onPress={handleSave}
                 disabled={saving}
               >
