@@ -10,6 +10,9 @@ import {
   Pressable,
   StyleSheet,
   Alert,
+  KeyboardAvoidingView,
+  ScrollView,
+  Platform,
 } from "react-native";
 import { router } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
@@ -39,81 +42,93 @@ export default function LoginScreen() {
   };
 
   return (
-    <SafeAreaView style={styles.container}>
-      <View style={styles.content}>
+    <KeyboardAvoidingView
+      style={{ flex: 1 }}
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
+    >
+      <SafeAreaView style={styles.container}>
+        <ScrollView
+          contentContainerStyle={{ flexGrow: 1 }}
+          keyboardShouldPersistTaps="handled"
+          showsVerticalScrollIndicator={false}
+        >
+          <View style={styles.content}>
 
-        <View style={styles.header}>
-          <Text style={styles.title}>Welcome back</Text>
+            <View style={styles.header}>
+              <Text style={styles.title}>Welcome back</Text>
 
-          <Text style={styles.subtitle}>
-            Sign in to continue your learning streak
-          </Text>
-        </View>
+              <Text style={styles.subtitle}>
+                Sign in to continue your learning streak
+              </Text>
+            </View>
 
-        <View style={styles.form}>
-          <InputField
-            placeholder="Email address"
-            value={email}
-            onChangeText={setEmail}
-            leftIcon={
-              <MaterialCommunityIcons
-                name="email-outline"
-                size={22}
-                color={Colors.textSecondary}
+            <View style={styles.form}>
+              <InputField
+                placeholder="Email address"
+                value={email}
+                onChangeText={setEmail}
+                leftIcon={
+                  <MaterialCommunityIcons
+                    name="email-outline"
+                    size={22}
+                    color={Colors.textSecondary}
+                  />
+                }
               />
-            }
-          />
 
-          <InputField
-            placeholder="Password"
-            value={password}
-            onChangeText={setPassword}
-            secureTextEntry
-            leftIcon={
-              <MaterialCommunityIcons
-                name="lock-outline"
-                size={22}
-                color={Colors.textSecondary}
+              <InputField
+                placeholder="Password"
+                value={password}
+                onChangeText={setPassword}
+                secureTextEntry
+                leftIcon={
+                  <MaterialCommunityIcons
+                    name="lock-outline"
+                    size={22}
+                    color={Colors.textSecondary}
+                  />
+                }
+                rightIcon={
+                  <MaterialCommunityIcons
+                    name="eye-outline"
+                    size={20}
+                    color={Colors.textSecondary}
+                  />
+                }
               />
-            }
-            rightIcon={
-              <MaterialCommunityIcons
-                name="eye-outline"
-                size={20}
-                color={Colors.textSecondary}
+
+              <Pressable style={styles.forgotPassword}>
+                <Text style={styles.link}>Forgot Password?</Text>
+              </Pressable>
+
+              <PrimaryButton
+                title="Log In"
+                variant="dark"
+                onPress={handleLogin}
               />
-            }
-          />
 
-          <Pressable style={styles.forgotPassword}>
-            <Text style={styles.link}>Forgot Password?</Text>
-          </Pressable>
+              <View style={styles.dividerRow}>
+                <View style={styles.dividerLine} />
+                <Text style={styles.dividerText}>or</Text>
+                <View style={styles.dividerLine} />
+              </View>
 
-          <PrimaryButton
-            title="Log In"
-            variant="dark"
-            onPress={handleLogin}
-          />
+              <PrimaryButton
+                title="Create Account"
+                variant="outline"
+                onPress={() => router.push("/auth/register")}
+              />
+            </View>
 
-          <View style={styles.dividerRow}>
-            <View style={styles.dividerLine} />
-            <Text style={styles.dividerText}>or</Text>
-            <View style={styles.dividerLine} />
           </View>
 
-          <PrimaryButton
-            title="Create Account"
-            variant="outline"
-            onPress={() => router.push("/auth/register")}
-          />
-        </View>
-
-      </View>
-
-      <Text style={styles.footer}>
-        By continuing, you agree to our Terms & Privacy Policy
-      </Text>
-    </SafeAreaView>
+          <Text style={styles.footer}>
+            By continuing, you agree to our Terms & Privacy Policy
+          </Text>
+        </ScrollView>
+      </SafeAreaView>
+    </KeyboardAvoidingView>
   );
 }
 
