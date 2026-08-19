@@ -55,6 +55,26 @@ const getProgressPercentage = (
 };
 
 
+// ---- NEW: builds the subtitle string from categoryStats ----
+const getCategorySubtitle = (
+  categoryStats: { correct?: number; incorrect?: number } | undefined,
+  total: number
+): string => {
+  const correct = categoryStats?.correct ?? 0;
+  const incorrect = categoryStats?.incorrect ?? 0;
+  const answered = correct + incorrect;
+
+  if (answered === 0) {
+    return `${total} facts • ~5 min`;
+  }
+
+  const accuracy = Math.round((correct / answered) * 100);
+
+  return `${answered} / ${total} answered • ${accuracy}% correct`;
+};
+// ------------------------------------------------------------
+
+
 export default function PlayScreen() {
 
   const router = useRouter();
@@ -102,7 +122,10 @@ export default function PlayScreen() {
   const categories: CategoryItem[] = [
     {
       title: "Nature",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Nature,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Nature ?? 0,
         25
@@ -114,7 +137,10 @@ export default function PlayScreen() {
 
     {
       title: "Science",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Science,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Science ?? 0,
         25
@@ -126,7 +152,10 @@ export default function PlayScreen() {
 
     {
       title: "Animals",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Animals,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Animals ?? 0,
         25
@@ -138,7 +167,10 @@ export default function PlayScreen() {
 
     {
       title: "Space",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Space,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Space ?? 0,
         25
@@ -150,7 +182,10 @@ export default function PlayScreen() {
 
     {
       title: "Photography",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Photography,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Photography ?? 0,
         25
@@ -162,7 +197,10 @@ export default function PlayScreen() {
 
     {
       title: "Technology",
-      subtitle: "25 facts • ~5 min",
+      subtitle: getCategorySubtitle(
+        userData.categoryStats?.Technology,
+        25
+      ),
       progress: getProgressPercentage(
         userData.progress?.Technology ?? 0,
         25

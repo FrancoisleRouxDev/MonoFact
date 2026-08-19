@@ -54,10 +54,9 @@ documents/
 
 ---
 
+---
 ## Screens
-
 Current implemented screens include:
-
 - Splash Screen
 - Login
 - Register
@@ -69,13 +68,9 @@ Current implemented screens include:
 - Profile
 - Statistics
 - Settings
-
 ---
-
 ## Current Progress
-
 ### Completed
-
 - User interface redesign
 - Custom design system
 - Navigation
@@ -83,39 +78,27 @@ Current implemented screens include:
 - Gameplay flow
 - Responsive layouts
 - Reusable components
-
 ### In Progress
-
 - Firebase Authentication
 - Database integration
 - XP persistence
 - User statistics
 - Category progress saving
-
 ---
-
 ## Running the Project
-
 Clone the repository
-
 ```bash
 git clone <repository-url>
 ```
-
 Install dependencies
-
 ```bash
 npm install
 ```
-
 Start Expo
-
 ```bash
 npx expo start
 ```
-
 ---
-
 ## Documentation
 Project documentation can be found inside the **documents/** folder.
 This includes:
