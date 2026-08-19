@@ -20,6 +20,10 @@ import ProfileStatCard from "@/components/cards/ProfileStatCard";
 import AchievementsCard from "@/components/cards/AchiementCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
+// ---- NEW IMPORT ----
+import { useProfilePhoto } from "@/hooks/useProfilePhoto";
+// --------------------
+
 import { useEffect, useState } from "react";
 import { doc, getDoc } from "firebase/firestore";
 import { auth, db } from "@/app/services/config";
@@ -27,6 +31,12 @@ import { auth, db } from "@/app/services/config";
 export default function ProfileScreen() {
 
   const [userData, setUserData] = useState<any>(null);
+
+  // ---- NEW: track photoURL locally so avatar updates immediately after upload ----
+  const [photoURL, setPhotoURL] = useState<string | null>(null);
+
+  const { pickAndUpload, uploading } = useProfilePhoto((url) => setPhotoURL(url));
+  // -------------------------------------------------------------------------------
 
   useEffect(() => {
     const loadUser = async () => {
@@ -40,7 +50,11 @@ export default function ProfileScreen() {
         );
 
         if (snapshot.exists()) {
-          setUserData(snapshot.data());
+          const data = snapshot.data();
+          setUserData(data);
+          // ---- NEW: seed photoURL from Firestore ----
+          setPhotoURL(data.photoURL ?? null);
+          // -------------------------------------------
         }
       } catch (error) {
         console.error(
@@ -111,6 +125,9 @@ export default function ProfileScreen() {
           username={userData.username ?? "User"}
           email={userData.email ?? ""}
           level={`Level ${userData.level ?? 1} • Fact Explorer`}
+          photoURL={photoURL}
+          onPhotoPress={pickAndUpload}
+          uploadingPhoto={uploading}
         />
 
         <View style={styles.statsContainer}>
