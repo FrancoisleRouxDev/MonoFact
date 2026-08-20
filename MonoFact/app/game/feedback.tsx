@@ -23,6 +23,7 @@ export default function ResultsScreen() {
         correctAnswers,
         isLastQuestion,
         isFact,
+        streakBonus,
     } = useLocalSearchParams();
 
     const wasCorrect = correct === "true";
@@ -34,7 +35,9 @@ export default function ResultsScreen() {
 
     const lastQuestion = isLastQuestion === "true";
 
-    const xpEarned = wasCorrect ? 10 : 0;
+    const baseXP = wasCorrect ? 15 : 0;
+    const bonusXP = Number(streakBonus ?? 0);
+    const totalXPEarned = baseXP + bonusXP;
 
     return (
 
@@ -70,9 +73,11 @@ export default function ResultsScreen() {
                     </Text>
 
                     <Text style={styles.xp}>
-
-                        {wasCorrect ? "+10 XP earned" : "No XP earned"}
-
+                        {wasCorrect
+                            ? bonusXP > 0
+                                ? `+${totalXPEarned} XP earned (${bonusXP} streak bonus!)`
+                                : `+15 XP earned`
+                            : "No XP earned"}
                     </Text>
 
                     <AnswerCard

@@ -135,7 +135,7 @@ export default function GameplayScreen() {
 
         try {
 
-            await recordAnswer(
+            const streakBonus = await recordAnswer(
                 isCorrect,
                 currentQuestion.category
             );
@@ -156,6 +156,8 @@ export default function GameplayScreen() {
                     correctAnswers: String(newCorrectAnswers),
                     isLastQuestion: String(isLastQuestion),
                     isFact: String(currentQuestion.isFact),
+                    streakBonus: String(streakBonus),
+
                 },
             });
 

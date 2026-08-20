@@ -8,20 +8,19 @@ type RoundStatsProps = {
 };
 
 export default function RoundStats({
-    level,
-    currentXP,
-    requiredXP,
-}:RoundStatsProps){
+  level,
+  currentXP,
+  requiredXP,
+}: RoundStatsProps) {
 
-  const percentage =
-    (currentXP / requiredXP) * 100;
+  const percentage = (currentXP / requiredXP) * 100;
 
   return (
     <View style={styles.card}>
 
       <View style={styles.row}>
         <Text style={styles.level}>
-          Level {level} → Level {level = 1}
+          Level {level} → Level {level + 1}
         </Text>
 
         <Text style={styles.points}>
