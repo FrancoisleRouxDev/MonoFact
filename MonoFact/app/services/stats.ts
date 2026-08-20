@@ -11,14 +11,8 @@ import { auth, db } from "./config";
 // Level thresholds
 // --------------------------------------------------
 
-const LEVEL_THRESHOLDS: Record<number, number> = {
-    1: 0,
-    2: 200,
-    3: 400,
-    4: 800,
-    5: 1600,
-    6: 3200,
-    7: 6400,
+const getXPForLevel = (level: number): number => {
+    return Math.round(200 * Math.pow(1.8, level - 1));
 };
 
 // --------------------------------------------------
@@ -27,19 +21,14 @@ const LEVEL_THRESHOLDS: Record<number, number> = {
 
 const getLevelFromXP = (xp: number): number => {
     let level = 1;
-
-    for (const [lvl, threshold] of Object.entries(LEVEL_THRESHOLDS)) {
-        if (xp >= threshold) {
-            level = Number(lvl);
-        }
+    while (xp >= getXPForLevel(level + 1)) {
+        level++;
     }
-
     return level;
-};
+}
 
 export const getRequiredXPForLevel = (level: number): number => {
-    const nextLevel = level = 1;
-    return LEVEL_THRESHOLDS[nextLevel] ?? LEVEL_THRESHOLDS[7];
+    return getXPForLevel(level + 1);
 };
 
 // --------------------------------------------------
@@ -143,19 +132,49 @@ export const recordAnswer = async (
 
 export const recordGameCompleted = async () => {
     const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
 
-    if (!currentUser) {
-        throw new Error("No authenticated user.");
-    }
-
-    const userRef = doc(
-        db,
-        "users",
-        currentUser.uid
-    );
+    const userRef = doc(db, "users", currentUser.uid);
 
     await updateDoc(userRef, {
         gamesPlayed: increment(1),
+        lastCategory: null,
+        lastQuestionIndex: null,
+    });
+};
+
+// --------------------------------------------------
+// Save mid-game position
+// --------------------------------------------------
+
+export const saveLastPosition = async (
+    category: string,
+    index: number
+) => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+
+    await updateDoc(userRef, {
+        lastCategory: category,
+        lastQuestionIndex: index,
+    });
+};
+
+// --------------------------------------------------
+// Clear mid-game position
+// --------------------------------------------------
+
+export const clearLastPosition = async () => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+
+    await updateDoc(userRef, {
+        lastCategory: null,
+        lastQuestionIndex: null,
     });
 };
 

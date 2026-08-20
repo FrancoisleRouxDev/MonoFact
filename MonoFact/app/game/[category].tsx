@@ -15,7 +15,7 @@ import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
-import { recordAnswer, recordStreak, } from "@/app/services/stats";
+import { recordAnswer, saveLastPosition } from "@/app/services/stats";
 
 type Fact = {
     id: string;
@@ -140,10 +140,6 @@ export default function GameplayScreen() {
                 currentQuestion.category
             );
 
-            await recordStreak(
-                isCorrect
-            );
-
             router.push({
                 pathname: "/game/feedback",
                 params: {
@@ -178,7 +174,10 @@ export default function GameplayScreen() {
                 category={categoryName}
                 current={currentIndex + 1}
                 total={facts.length}
-                onBack={() => router.back()}
+                onBack={async () => {
+                    await saveLastPosition(categoryName, currentIndex);
+                    router.replace("/(tabs)/play");
+                }}
             />
 
             <View style={styles.content}>
