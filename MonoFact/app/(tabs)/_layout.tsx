@@ -1,39 +1,52 @@
-import { Tabs } from 'expo-router';
-import React from 'react';
+import { Tabs } from "expo-router";
+import React from "react";
 
-
-import { HapticTab } from '@/components/haptic-tab';
-import { IconSymbol } from '@/components/ui/icon-symbol';
-import { Colors } from '@/constants/Colors';
-import { useColorScheme } from '@/hooks/use-color-scheme';
-
+// ---------------------------------------------------------------------------
+// TabLayout (file: app/(tabs)/_layout.tsx)
+// ---------------------------------------------------------------------------
+// Defines the tab routes for the main navigation stack.
+// The default tab bar is hidden (`tabBarStyle: { display: "none" }`)
+// because MonoFact uses a custom `<BottomNav />` component on each screen
+// with custom styling and haptics.
+// ---------------------------------------------------------------------------
 export default function TabLayout() {
-
   return (
-        <Tabs
-        screenOptions={{
+    <Tabs
+      screenOptions={{
+        headerShown: false,
         tabBarStyle: {
           display: "none",
         },
-        tabBarActiveTintColor: Colors.primary,
-        tabBarInactiveTintColor: Colors.textSecondary,
-
-        headerShown:false,
-
-        }}
-        >
+      }}
+    >
       <Tabs.Screen
         name="index"
         options={{
-          title: 'Home',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="house.fill" color={color} />,
+          title: "Home",
         }}
       />
       <Tabs.Screen
-        name="explore"
+        name="play"
         options={{
-          title: 'Explore',
-          tabBarIcon: ({ color }) => <IconSymbol size={28} name="paperplane.fill" color={color} />,
+          title: "Play",
+        }}
+      />
+      <Tabs.Screen
+        name="profile"
+        options={{
+          title: "Profile",
+        }}
+      />
+      <Tabs.Screen
+        name="stats"
+        options={{
+          title: "Stats",
+        }}
+      />
+      <Tabs.Screen
+        name="settings"
+        options={{
+          title: "Settings",
         }}
       />
     </Tabs>

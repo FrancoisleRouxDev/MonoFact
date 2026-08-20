@@ -1,192 +1,187 @@
 import { SafeAreaView, View, Text, StyleSheet, Pressable, ScrollView } from "react-native";
 import { useLocalSearchParams, useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config";
+import { Spacing } from "@/constants/Spacing";
+import { Typography } from "@/constants/Typography";
+import { useUser } from "@/app/context/UserContext";
 import { getRequiredXPForLevel } from "@/app/services/stats";
 
 import {
-        Trophy,
-        Target,
-        BarChart3,
-        Zap,
+    Trophy,
+    Target,
+    BarChart3,
+    Zap,
 } from "lucide-react-native";
 
 import ResultStatCard from "@/components/cards/ResultStatCard";
 import RoundStats from "@/components/gameplay/RoundStats";
 
+// ---------------------------------------------------------------------------
+// ResultsScreen (file: app/game/results.tsx)
+// ---------------------------------------------------------------------------
+// Shown after the player completes all questions in a category.
+// Receives category name, total question count, and correct-answer count
+// as route params (passed from feedback.tsx via router.replace).
+//
+// Reads XP and level from shared UserContext — no extra Firestore fetch needed
+// since onSnapshot in the context keeps data up to date automatically.
+// ---------------------------------------------------------------------------
 export default function FeedbackScreen() {
-        const router = useRouter();
+    const router = useRouter();
 
-        const {
-                category,
-                totalQuestions,
-                correctAnswers,
-        } = useLocalSearchParams();
+    // Pull user data from shared context instead of fetching Firebase directly
+    const { userData } = useUser();
 
-        const total = Number(totalQuestions ?? 0);
-        const correct = Number(correctAnswers ?? 0);
+    // Route params injected by feedback.tsx when the last question is answered.
+    const {
+        category,
+        totalQuestions,
+        correctAnswers,
+    } = useLocalSearchParams();
 
-        const accuracy =
-                total === 0
-                        ? 0
-                        : Math.round((correct / total) * 100);
+    // Parse params from strings to numbers.
+    const total = Number(totalQuestions ?? 0);
+    const correct = Number(correctAnswers ?? 0);
 
-        const [userLevel, setUserLevel] = useState(1);
-        const [userXP, setUserXP] = useState(0);
-        const [requiredXP, setRequiredXP] = useState(200);
+    // Derive accuracy percentage for display (0 if no questions).
+    const accuracy =
+        total === 0
+            ? 0
+            : Math.round((correct / total) * 100);
 
-        useEffect(() => {
-                const loadUser = async () => {
-                        const currentUser = auth.currentUser;
+    // Read XP and level directly from context — already up to date via onSnapshot
+    const userLevel = userData?.level ?? 1;
+    const userXP = userData?.xp ?? 0;
 
-                        if (!currentUser) return;
+    // getRequiredXPForLevel returns the XP threshold for the NEXT level.
+    const requiredXP = getRequiredXPForLevel(userLevel);
 
-                        try {
-                                const snapshot = await getDoc(
-                                        doc(db, "users", currentUser.uid)
-                                );
+    return (
+        <SafeAreaView style={styles.safeArea}>
 
-                                if (snapshot.exists()) {
-                                        const data = snapshot.data();
-                                        const level = data.level ?? 1;
-                                        const xp = data.xp ?? 0;
+            <ScrollView
+                contentContainerStyle={styles.content}
+                showsVerticalScrollIndicator={false}
+            >
+                {/* Trophy header */}
+                <View style={styles.header}>
+                    <Trophy size={90} color={Colors.primaryDark} />
+                    <Text style={styles.title}>Round Complete!</Text>
+                    <Text style={styles.subtitle}>
+                        {String(category)} • {total} Questions
+                    </Text>
+                </View>
 
-                                        setUserLevel(level);
-                                        setUserXP(xp);
-                                        setRequiredXP(getRequiredXPForLevel(level));
-                                }
-                        } catch (error) {
-                                console.error("Failed to load user data:", error);
-                        }
-                };
+                {/* Three quick-stat cards: score, accuracy, total XP */}
+                <View style={styles.grid}>
+                    <ResultStatCard
+                        icon={Target}
+                        value={`${correct} / ${total}`}
+                        label="Final Score"
+                    />
 
-                loadUser();
-        }, []);
+                    <ResultStatCard
+                        icon={BarChart3}
+                        value={`${accuracy}%`}
+                        label="Accuracy"
+                    />
 
-        return (
-                <SafeAreaView style={styles.safeArea}>
+                    <ResultStatCard
+                        icon={Zap}
+                        value={`${userXP} XP`}
+                        label="Total XP"
+                    />
+                </View>
 
-                        <ScrollView
-                                contentContainerStyle={styles.content}
-                                showsVerticalScrollIndicator={false}
-                        >
-                                <View style={styles.header}>
-                                        <Trophy size={90} color="#1F2337" />
-                                        <Text style={styles.title}>Round Complete!</Text>
-                                        <Text style={styles.subtitle}>
-                                                {String(category)} • {total} Questions
-                                        </Text>
-                                </View>
+                {/* XP progress bar showing progress toward next level */}
+                <RoundStats
+                    currentXP={userXP}
+                    requiredXP={requiredXP}
+                    level={userLevel}
+                />
 
-                                <View style={styles.grid}>
+                {/* Play Again — goes back to the category selection screen */}
+                <Pressable
+                    style={styles.primary}
+                    onPress={() => router.push("/(tabs)/play")}
+                >
+                    <Text style={styles.primaryText}>Play Again</Text>
+                </Pressable>
 
-                                        <ResultStatCard
-                                                icon={Target}
-                                                value={`${correct} / ${total}`}
-                                                label="Final Score"
-                                        />
+                {/* Return Home — goes to the main home tab */}
+                <Pressable
+                    style={styles.secondary}
+                    onPress={() => router.push("/(tabs)")}
+                >
+                    <Text style={styles.secondaryText}>Return Home</Text>
+                </Pressable>
 
-                                        <ResultStatCard
-                                                icon={BarChart3}
-                                                value={`${accuracy}%`}
-                                                label="Accuracy"
-                                        />
+            </ScrollView>
 
-                                        <ResultStatCard
-                                                icon={Zap}
-                                                value={`${userXP} XP`}
-                                                label="Total XP"
-                                        />
-
-                                </View>
-
-                                <RoundStats
-                                        currentXP={userXP}
-                                        requiredXP={requiredXP}
-                                        level={userLevel}
-                                />
-
-                                <Pressable
-                                        style={styles.primary}
-                                        onPress={() => router.push("/(tabs)/play")}
-                                >
-                                        <Text style={styles.primaryText}>Play Again</Text>
-                                </Pressable>
-
-                                <Pressable
-                                        style={styles.secondary}
-                                        onPress={() => router.push("/(tabs)")}
-                                >
-                                        <Text style={styles.secondaryText}>Return Home</Text>
-                                </Pressable>
-
-                        </ScrollView>
-
-                </SafeAreaView>
-        );
+        </SafeAreaView>
+    );
 }
 
 const styles = StyleSheet.create({
-        safeArea: {
-                flex: 1,
-                backgroundColor: Colors.background,
-        },
+    safeArea: {
+        flex: 1,
+        backgroundColor: Colors.background,
+    },
 
-        content: {
-                padding: 24,
-                paddingBottom: 40,
-        },
+    content: {
+        padding: Spacing.lg,
+        paddingBottom: Spacing.xxl,
+    },
 
-        header: {
-                alignItems: "center",
-                paddingVertical: 40,
-        },
+    header: {
+        alignItems: "center",
+        paddingVertical: Spacing.xxl,
+    },
 
-        title: {
-                fontSize: 42,
-                fontWeight: "700",
-                marginTop: 20,
-        },
+    title: {
+        ...Typography.h1,
+        color: Colors.primaryDark,
+        marginTop: Spacing.lg,
+    },
 
-        subtitle: {
-                marginTop: 8,
-                color: "#777",
-        },
+    subtitle: {
+        ...Typography.caption,
+        color: Colors.textSecondary,
+        marginTop: Spacing.xs,
+    },
 
-        grid: {
-                flexDirection: "row",
-                flexWrap: "wrap",
-                justifyContent: "space-between",
-                gap: 15,
-                marginVertical: 30,
-        },
+    grid: {
+        flexDirection: "row",
+        flexWrap: "wrap",
+        justifyContent: "space-between",
+        gap: Spacing.sm,
+        marginVertical: Spacing.lg,
+    },
 
-        primary: {
-                height: 60,
-                borderRadius: 18,
-                backgroundColor: "#868D9A",
-                justifyContent: "center",
-                alignItems: "center",
-                marginTop: 30,
-        },
+    // Primary CTA — "Play Again"
+    primary: {
+        height: 60,
+        borderRadius: 18,
+        backgroundColor: Colors.primary,
+        justifyContent: "center",
+        alignItems: "center",
+        marginTop: Spacing.lg,
+    },
 
-        secondary: {
-                height: 60,
-                justifyContent: "center",
-                alignItems: "center",
-        },
+    // Secondary CTA — "Return Home" (no background, just text)
+    secondary: {
+        height: 60,
+        justifyContent: "center",
+        alignItems: "center",
+    },
 
-        primaryText: {
-                color: "#FFF",
-                fontWeight: "700",
-                fontSize: 20,
-        },
+    primaryText: {
+        ...Typography.title,
+        color: Colors.surface,
+    },
 
-        secondaryText: {
-                fontWeight: "700",
-                fontSize: 20,
-                color: "#243A5A",
-        },
+    secondaryText: {
+        ...Typography.title,
+        color: Colors.primaryDark,
+    },
 });

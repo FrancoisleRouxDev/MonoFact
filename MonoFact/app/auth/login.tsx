@@ -21,11 +21,29 @@ import InputField from "@/components/newcomps/InputField";
 import PrimaryButton from "@/components/buttons/Primary-Button";
 
 import { loginUser } from "@/app/services/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "@/app/services/config";
 
+// ---------------------------------------------------------------------------
+// LoginScreen (file: app/auth/login.tsx)
+// ---------------------------------------------------------------------------
+// Handles user sign-in and routes to the main app on success.
+// Also provides navigation to the registration screen and a
+// working "Forgot Password" flow via Firebase's reset email.
+// ---------------------------------------------------------------------------
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Controls whether the password field shows plain text or ••••••
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  // ---------------------------------------------------------------------------
+  // handleLogin
+  // ---------------------------------------------------------------------------
+  // Validates inputs, calls Firebase Auth, then navigates to the main tabs.
+  // On failure, shows the Firebase error message in an Alert.
+  // ---------------------------------------------------------------------------
   const handleLogin = async () => {
     if (!email || !password) {
       Alert.alert("Missing Information", "Please enter your email and password.");
@@ -34,10 +52,36 @@ export default function LoginScreen() {
 
     try {
       await loginUser(email, password);
-
       router.replace("/(tabs)");
     } catch (error: any) {
       Alert.alert("Login Failed", error.message);
+    }
+  };
+
+  // ---------------------------------------------------------------------------
+  // handleForgotPassword
+  // ---------------------------------------------------------------------------
+  // Sends a Firebase password-reset email to the address in the email field.
+  // If the field is empty, prompts the user to enter their email first.
+  // Firebase will not reveal whether the email exists (security best practice).
+  // ---------------------------------------------------------------------------
+  const handleForgotPassword = async () => {
+    if (!email.trim()) {
+      Alert.alert(
+        "Enter your email",
+        "Please type your email address in the field above, then tap 'Forgot Password?' again."
+      );
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email.trim());
+      Alert.alert(
+        "Reset Email Sent",
+        "If an account exists for that email, you'll receive a password reset link shortly."
+      );
+    } catch (error: any) {
+      Alert.alert("Error", error.message);
     }
   };
 
@@ -77,11 +121,12 @@ export default function LoginScreen() {
                 }
               />
 
+              {/* Password field — eye icon toggles visibility */}
               <InputField
                 placeholder="Password"
                 value={password}
                 onChangeText={setPassword}
-                secureTextEntry
+                secureTextEntry={!passwordVisible}
                 leftIcon={
                   <MaterialCommunityIcons
                     name="lock-outline"
@@ -90,15 +135,21 @@ export default function LoginScreen() {
                   />
                 }
                 rightIcon={
-                  <MaterialCommunityIcons
-                    name="eye-outline"
-                    size={20}
-                    color={Colors.textSecondary}
-                  />
+                  <Pressable onPress={() => setPasswordVisible((v) => !v)}>
+                    <MaterialCommunityIcons
+                      name={passwordVisible ? "eye-off-outline" : "eye-outline"}
+                      size={20}
+                      color={Colors.textSecondary}
+                    />
+                  </Pressable>
                 }
               />
 
-              <Pressable style={styles.forgotPassword}>
+              {/* Forgot Password — sends a Firebase reset email to the typed address */}
+              <Pressable
+                style={styles.forgotPassword}
+                onPress={handleForgotPassword}
+              >
                 <Text style={styles.link}>Forgot Password?</Text>
               </Pressable>
 
@@ -124,7 +175,7 @@ export default function LoginScreen() {
           </View>
 
           <Text style={styles.footer}>
-            By continuing, you agree to our Terms & Privacy Policy
+            By continuing, you agree to our Terms &amp; Privacy Policy
           </Text>
         </ScrollView>
       </SafeAreaView>

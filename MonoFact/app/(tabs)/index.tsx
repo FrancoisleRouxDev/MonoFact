@@ -1,9 +1,7 @@
 import { SafeAreaView, ScrollView, StyleSheet } from "react-native";
 import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config";
+import { useUser } from "@/app/context/UserContext";
 
 import HomeHeader from "@/components/layout/HomeHeader";
 import ContinueCard from "@/components/cards/ContinueCard";
@@ -11,41 +9,24 @@ import CategoriesGrid from "@/components/layout/CategoryGrid";
 import DailyChallengeCard from "@/components/cards/DailyChallengeCard";
 import BottomNav from "@/components/navigation/BottomNav";
 
+// ---------------------------------------------------------------------------
+// HomeScreen (file: app/(tabs)/index.tsx)
+// ---------------------------------------------------------------------------
+// The main landing screen after user login.
+// Displays:
+//   1. HomeHeader with live XP, streak, and accuracy metrics
+//   2. ContinueCard (if the player paused mid-game in a previous session)
+//   3. CategoriesGrid with direct game links and a "See all" link to the Play tab
+//   4. DailyChallengeCard for quick engagement
+//   5. BottomNav persistent bar
+// ---------------------------------------------------------------------------
 export default function HomeScreen() {
   const router = useRouter();
 
-  const [userData, setUserData] = useState<any>(null);
+  // Pull user data from shared context instead of fetching Firebase directly
+  const { userData } = useUser();
 
-  useEffect(() => {
-    const loadUser = async () => {
-      const currentUser = auth.currentUser;
-      if (!currentUser) return;
-
-      try {
-        const snapshot = await getDoc(
-          doc(db, "users", currentUser.uid)
-        );
-
-        if (snapshot.exists()) {
-          setUserData(snapshot.data());
-        }
-      } catch (error) {
-        console.error("Failed to load user data:", error);
-      }
-    };
-
-    loadUser();
-  }, []);
-
-  const totalAnswers =
-    (userData?.totalCorrect ?? 0) +
-    (userData?.totalIncorrect ?? 0);
-
-  const accuracy =
-    totalAnswers === 0
-      ? 0
-      : Math.round(((userData?.totalCorrect ?? 0) / totalAnswers) * 100);
-
+  // Check whether the user has a saved mid-game position to resume
   const hasLastPosition =
     userData?.lastCategory != null &&
     userData?.lastQuestionIndex != null;
@@ -57,24 +38,20 @@ export default function HomeScreen() {
         showsVerticalScrollIndicator={false}
         contentContainerStyle={styles.scrollContent}
       >
+        {/* Dynamic header showing user greeting and quick stats */}
+        <HomeHeader />
 
-        <HomeHeader
-          username={userData?.username ?? ""}
-          xp={userData?.xp ?? 0}
-          streak={userData?.currentStreak ?? 0}
-          accuracy={accuracy}
-        />
-
+        {/* Continue where you left off - only visible when a game was paused */}
         {hasLastPosition && (
           <ContinueCard
             title="Continue where you left off"
-            category={userData.lastCategory}
+            category={userData!.lastCategory!}
             onPress={() =>
               router.push({
                 pathname: "/game/[category]",
                 params: {
-                  category: userData.lastCategory,
-                  index: String(userData.lastQuestionIndex),
+                  category: userData!.lastCategory!,
+                  index: String(userData!.lastQuestionIndex),
                   correctAnswers: "0",
                 },
               })
@@ -82,17 +59,20 @@ export default function HomeScreen() {
           />
         )}
 
+        {/* Categories preview grid: tapping a card starts the game; "See all" opens the full Play tab */}
         <CategoriesGrid />
 
+        {/* Daily Challenge Card - navigates to the Play tab */}
         <DailyChallengeCard
           title="Mixed Facts"
           description="+500 bonus XP today only"
           reward="Reward: +500 XP"
-          onPress={() => router.push("/")}
+          onPress={() => router.push("/(tabs)/play")}
         />
 
       </ScrollView>
 
+      {/* Persistent bottom navigation bar */}
       <BottomNav current="home" />
 
     </SafeAreaView>
