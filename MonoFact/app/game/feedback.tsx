@@ -102,7 +102,7 @@ export default function ResultsScreen() {
                             try {
                                 // Only count the game once the final question
                                 // has been completed.
-                                await recordGameCompleted();
+                                await recordGameCompleted(score);
 
                                 router.replace({
                                     pathname: "/game/results",

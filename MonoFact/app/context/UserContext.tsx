@@ -23,6 +23,9 @@ type UserData = {
     photoURL?: string;
     lastCategory?: string;
     lastQuestionIndex?: number;
+    swipeAnswers?: number;
+    dailyChallengeCompleted?: number;
+    achievements?: Record<string, boolean>;
     categoryStats?: Record<string, { correct: number; incorrect: number }>;
     progress?: Record<string, number>;
 };

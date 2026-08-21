@@ -63,7 +63,8 @@ export const getUserStats = async () => {
 
 export const recordAnswer = async (
     isCorrect: boolean,
-    category: string
+    category: string,
+    source: "swipe" | "button" = "button",
 ): Promise<number> => {
     const currentUser = auth.currentUser;
 
@@ -93,6 +94,7 @@ export const recordAnswer = async (
         [categoryCorrectPath]: increment(isCorrect ? 1 : 0),
         [categoryIncorrectPath]: increment(isCorrect ? 0 : 1),
         [`progress.${categoryKey}`]: increment(1),
+        swipeAnswers: increment(source === "swipe" ? 1 : 0),
     });
 
     // Step 2 — calculate and apply streak bonus
@@ -123,6 +125,9 @@ export const recordAnswer = async (
         });
     }
 
+    // Step 6 - check achievements after every answer
+    await checkAchievements();
+
     return streakBonus;
 };
 
@@ -130,7 +135,9 @@ export const recordAnswer = async (
 // Record a completed game
 // --------------------------------------------------
 
-export const recordGameCompleted = async () => {
+export const recordGameCompleted = async (
+    correctAnswersInRound: number
+) => {
     const currentUser = auth.currentUser;
     if (!currentUser) throw new Error("No authenticated user.");
 
@@ -141,6 +148,9 @@ export const recordGameCompleted = async () => {
         lastCategory: null,
         lastQuestionIndex: null,
     });
+
+    // Check achievements after every completed game
+    await checkAchievements(correctAnswersInRound);
 };
 
 // --------------------------------------------------
@@ -224,4 +234,183 @@ export const recordStreak = async (
     });
 
     return newCurrentStreak;
+};
+
+// --------------------------------------------------
+// Achievement definitions
+// --------------------------------------------------
+
+const HIDDEN_ACHIEVEMENTS = [
+    "night_owl",
+    "early_bird",
+    "fact_addict",
+    "quick_draw",
+    "swipe_master",
+];
+
+// --------------------------------------------------
+// Check and unlock achievements
+// --------------------------------------------------
+
+export const checkAchievements = async (
+    correctAnswersInRound?: number
+) => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+    const snapshot = await getDoc(userRef);
+
+    if (!snapshot.exists()) throw new Error("User document does not exist.");
+
+    const data = snapshot.data();
+
+    // Already earned achievements — we never overwrite these
+    const earned: Record<string, boolean> =
+        data.achievements ?? {};
+
+    // Collect newly unlocked achievements this check
+    const newlyUnlocked: Record<string, boolean> = {};
+
+    // Helper — only unlock if not already earned
+    const unlock = (id: string) => {
+        if (!earned[id]) {
+            newlyUnlocked[id] = true;
+        }
+    };
+
+    // ---- Current time for hidden achievements ----
+    const hour = new Date().getHours();
+
+    // ---- Category completion helpers ----
+    const progress = data.progress ?? {};
+    const categoryKeys = [
+        "Nature",
+        "Science",
+        "Animals",
+        "Space",
+        "Photography",
+        "Technology",
+    ];
+
+    const completedCategories = categoryKeys.filter(
+        (key) => (progress[key] ?? 0) >= 25
+    ).length;
+
+    const hasStartedAnyCategory = categoryKeys.some(
+        (key) => (progress[key] ?? 0) >= 1
+    );
+
+    // ---- Overall accuracy ----
+    const totalCorrect = data.totalCorrect ?? 0;
+    const totalIncorrect = data.totalIncorrect ?? 0;
+    const totalAnswers = totalCorrect + totalIncorrect;
+    const accuracy = totalAnswers === 0
+        ? 0
+        : Math.round((totalCorrect / totalAnswers) * 100);
+
+    // ---- Games played today ----
+    const today = new Date().toISOString().split("T")[0];
+    const lastPlayedDate = data.lastPlayedDate ?? "";
+    let gamesPlayedToday = data.gamesPlayedToday ?? 0;
+
+    if (lastPlayedDate !== today) {
+        // New day — reset counter
+        gamesPlayedToday = 1;
+        await updateDoc(userRef, {
+            gamesPlayedToday: 1,
+            lastPlayedDate: today,
+        });
+    } else {
+        gamesPlayedToday = data.gamesPlayedToday ?? 1;
+    }
+
+    // --------------------------------------------------
+    // Streak based
+    // --------------------------------------------------
+    const currentStreak = data.currentStreak ?? 0;
+    if (currentStreak >= 3) unlock("first_spark");
+    if (currentStreak >= 7) unlock("on_fire");
+    if (currentStreak >= 15) unlock("unstoppable");
+    if (currentStreak >= 30) unlock("legendary");
+
+    // --------------------------------------------------
+    // Daily challenge based
+    // --------------------------------------------------
+    const dailyChallengesCompleted = data.dailyChallengesCompleted ?? 0;
+    if (dailyChallengesCompleted >= 1) unlock("daily_devotee");
+    if (dailyChallengesCompleted >= 7) unlock("consistent");
+    if (dailyChallengesCompleted >= 30) unlock("dedicated_scholar");
+
+    // --------------------------------------------------
+    // Score based
+    // --------------------------------------------------
+
+    // Perfect Round — 25/25 correct in a category this round
+    if (correctAnswersInRound === 25) unlock("perfect_round");
+
+    // Sharp Mind — 80%+ overall accuracy
+    if (accuracy >= 80) unlock("sharp_mind");
+
+    // --------------------------------------------------
+    // Exploration based
+    // --------------------------------------------------
+    if (hasStartedAnyCategory) unlock("curious_mind");
+    if (completedCategories >= 1) unlock("explorer");
+    if (completedCategories >= 3) unlock("globetrotter");
+    if (completedCategories >= 6) unlock("completionist");
+
+    // --------------------------------------------------
+    // XP / Level based
+    // --------------------------------------------------
+    const level = data.level ?? 1;
+    if (level >= 2) unlock("first_steps");
+    if (level >= 5) unlock("rising_star");
+    if (level >= 10) unlock("fact_machine");
+    if (level >= 20) unlock("enlightened");
+
+    // --------------------------------------------------
+    // Games based
+    // --------------------------------------------------
+    const gamesPlayed = data.gamesPlayed ?? 0;
+    if (gamesPlayed >= 1) unlock("rookie");
+    if (gamesPlayed >= 10) unlock("dedicated");
+    if (gamesPlayed >= 50) unlock("veteran");
+    if (gamesPlayed >= 100) unlock("elite");
+
+    // --------------------------------------------------
+    // Swipe based
+    // --------------------------------------------------
+    const swipeAnswers = data.swipeAnswers ?? 0;
+    if (swipeAnswers >= 10) unlock("quick_draw");
+    if (swipeAnswers >= 100) unlock("swipe_master");
+
+    // --------------------------------------------------
+    // Hidden achievements
+    // --------------------------------------------------
+
+    // Night Owl — playing between midnight and 3am
+    if (hour >= 0 && hour < 3) unlock("night_owl");
+
+    // Early Bird — playing between 3am and 7am
+    if (hour >= 3 && hour < 7) unlock("early_bird");
+
+    // Fact Addict — 3 or more games in one day
+    if (gamesPlayedToday >= 3) unlock("fact_addict");
+
+    // --------------------------------------------------
+    // Write newly unlocked achievements to Firestore
+    // --------------------------------------------------
+
+    if (Object.keys(newlyUnlocked).length > 0) {
+        const achievementUpdates: Record<string, boolean> = {};
+
+        for (const id of Object.keys(newlyUnlocked)) {
+            achievementUpdates[`achievements.${id}`] = true;
+        }
+
+        await updateDoc(userRef, achievementUpdates);
+    }
+
+    return newlyUnlocked;
 };

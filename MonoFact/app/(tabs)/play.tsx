@@ -15,6 +15,7 @@ import { Typography } from "@/constants/Typography";
 // Components
 import CategoryCard from "@/components/cards/CategoryCard";
 import BottomNav from "@/components/navigation/BottomNav";
+import { useUser } from "@/app/context/UserContext";
 
 // Icons
 import {
@@ -25,10 +26,6 @@ import {
   Camera,
   Cpu,
 } from "lucide-react-native";
-
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config";
 
 // ---------------------------------------------------------------------------
 // FACTS_PER_CATEGORY
@@ -66,7 +63,6 @@ const getProgressPercentage = (
   return Math.min(100, Math.round((answered / total) * 100));
 };
 
-
 // ---------------------------------------------------------------------------
 // getCategorySubtitle
 // ---------------------------------------------------------------------------
@@ -90,56 +86,22 @@ const getCategorySubtitle = (
   return `${answered} / ${total} answered • ${accuracy}% correct`;
 };
 
-
 // ---------------------------------------------------------------------------
 // PlayScreen (file: app/(tabs)/play.tsx)
 // ---------------------------------------------------------------------------
 // Shows all 6 categories as cards. Each card displays the user's progress
 // and accuracy for that category. Tapping a card starts a game.
+// Reads from shared UserContext instead of fetching Firestore directly —
+// no duplicate network calls when switching tabs.
 // ---------------------------------------------------------------------------
 export default function PlayScreen() {
 
   const router = useRouter();
 
-  const [userData, setUserData] = useState<any>(null);
-
-
-  useEffect(() => {
-
-    const loadUser = async () => {
-
-      const currentUser = auth.currentUser;
-
-      if (!currentUser) return;
-
-      try {
-
-        const snapshot = await getDoc(
-          doc(db, "users", currentUser.uid)
-        );
-
-        if (snapshot.exists()) {
-          setUserData(snapshot.data());
-        }
-
-      } catch (error) {
-
-        console.error(
-          "Failed to load user data:",
-          error
-        );
-
-      }
-
-    };
-
-    loadUser();
-
-  }, []);
-
+  // Pull user data from shared context instead of fetching Firebase directly
+  const { userData } = useUser();
 
   if (!userData) return null;
-
 
   // Build the category list using FACTS_PER_CATEGORY so all counts
   // update automatically if the fact library grows.
@@ -194,7 +156,6 @@ export default function PlayScreen() {
     },
   ];
 
-
   return (
     <SafeAreaView style={styles.container}>
 
@@ -215,22 +176,16 @@ export default function PlayScreen() {
 
         </View>
 
-
         <View style={styles.categoryGrid}>
 
           {categories.map((category) => (
 
             <CategoryCard
               key={category.title}
-
               title={category.title}
-
               icon={category.icon}
-
               subtitle={category.subtitle}
-
               progress={category.progress}
-
               onPress={() =>
                 router.push({
                   pathname: "/game/[category]",
@@ -239,12 +194,8 @@ export default function PlayScreen() {
                   },
                 })
               }
-
               color={category.color}
-
-              iconBackgroundColor={
-                category.iconBackgroundColor
-              }
+              iconBackgroundColor={category.iconBackgroundColor}
             />
 
           ))}
@@ -253,13 +204,11 @@ export default function PlayScreen() {
 
       </ScrollView>
 
-
       <BottomNav current="play" />
 
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
 

@@ -159,7 +159,10 @@ export default function GameplayScreen() {
     // 2. Writes the result to Firestore (XP, streaks, category stats)
     // 3. Navigates to the feedback screen with all the data it needs
     // -------------------------------------------------------------------------
-    const submitAnswer = async (userAnswer: boolean) => {
+    const submitAnswer = async (
+        userAnswer: boolean,
+        source: "swipe" | "button" = "button",
+    ) => {
         const isCorrect = userAnswer === currentQuestion.isFact;
 
         const newCorrectAnswers =
@@ -170,7 +173,8 @@ export default function GameplayScreen() {
             // It returns the streak bonus earned this answer (0 if no bonus).
             const streakBonus = await recordAnswer(
                 isCorrect,
-                currentQuestion.category
+                currentQuestion.category,
+                source,
             );
 
             router.push({
@@ -211,8 +215,8 @@ export default function GameplayScreen() {
             {/* Swipeable card — right = Fact, left = Myth */}
             <View style={styles.content}>
                 <SwipeableQuestionCard
-                    onSwipeRight={() => submitAnswer(true)}
-                    onSwipeLeft={() => submitAnswer(false)}
+                    onSwipeRight={() => submitAnswer(true, "swipe")}
+                    onSwipeLeft={() => submitAnswer(false, "swipe")}
                 >
                     <QuestionCard
                         category={currentQuestion.category}
@@ -228,11 +232,11 @@ export default function GameplayScreen() {
             <View style={styles.buttonRow}>
                 <AnswerButton
                     answer="myth"
-                    onPress={() => submitAnswer(false)}
+                    onPress={() => submitAnswer(false, "button")}
                 />
                 <AnswerButton
                     answer="fact"
-                    onPress={() => submitAnswer(true)}
+                    onPress={() => submitAnswer(true, "button")}
                 />
             </View>
 
