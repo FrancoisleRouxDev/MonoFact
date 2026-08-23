@@ -4,10 +4,12 @@ import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
 import { useUser } from "@/app/context/UserContext";
-import { getRequiredXPForLevel } from "@/app/services/stats";
+import { getRequiredXPForLevel, recordDailyBonus } from "@/app/services/stats";
+import { useState, useEffect } from "react";
 
 import {
     Trophy,
+    Star,
     Target,
     BarChart3,
     Zap,
@@ -19,12 +21,14 @@ import RoundStats from "@/components/gameplay/RoundStats";
 // ---------------------------------------------------------------------------
 // ResultsScreen (file: app/game/results.tsx)
 // ---------------------------------------------------------------------------
-// Shown after the player completes all questions in a category.
-// Receives category name, total question count, and correct-answer count
-// as route params (passed from feedback.tsx via router.replace).
+// Shown after the player completes all questions in a category or daily challenge.
+// Receives category name, total question count, correct-answer count,
+// and an optional isDailyChallenge flag as route params.
 //
 // Reads XP and level from shared UserContext — no extra Firestore fetch needed
 // since onSnapshot in the context keeps data up to date automatically.
+//
+// If isDailyChallenge is true, awards +500 bonus XP and shows a special banner.
 // ---------------------------------------------------------------------------
 export default function FeedbackScreen() {
     const router = useRouter();
@@ -32,18 +36,23 @@ export default function FeedbackScreen() {
     // Pull user data from shared context instead of fetching Firebase directly
     const { userData } = useUser();
 
-    // Route params injected by feedback.tsx when the last question is answered.
+    // Track whether the daily bonus has been awarded to avoid double-awarding
+    const [bonusAwarded, setBonusAwarded] = useState(false);
+
+    // Route params injected by feedback.tsx or daily.tsx
     const {
         category,
         totalQuestions,
         correctAnswers,
+        isDailyChallenge,
     } = useLocalSearchParams();
 
-    // Parse params from strings to numbers.
+    // Parse params from strings to numbers
     const total = Number(totalQuestions ?? 0);
     const correct = Number(correctAnswers ?? 0);
+    const isDaily = isDailyChallenge === "true";
 
-    // Derive accuracy percentage for display (0 if no questions).
+    // Derive accuracy percentage for display (0 if no questions)
     const accuracy =
         total === 0
             ? 0
@@ -53,8 +62,18 @@ export default function FeedbackScreen() {
     const userLevel = userData?.level ?? 1;
     const userXP = userData?.xp ?? 0;
 
-    // getRequiredXPForLevel returns the XP threshold for the NEXT level.
+    // getRequiredXPForLevel returns the XP threshold for the NEXT level
     const requiredXP = getRequiredXPForLevel(userLevel);
+
+    // -------------------------------------------------------------------------
+    // Award daily bonus XP on mount if this is a daily challenge
+    // -------------------------------------------------------------------------
+    useEffect(() => {
+        if (isDaily && !bonusAwarded) {
+            recordDailyBonus();
+            setBonusAwarded(true);
+        }
+    }, []);
 
     return (
         <SafeAreaView style={styles.safeArea}>
@@ -66,11 +85,23 @@ export default function FeedbackScreen() {
                 {/* Trophy header */}
                 <View style={styles.header}>
                     <Trophy size={90} color={Colors.primaryDark} />
-                    <Text style={styles.title}>Round Complete!</Text>
+                    <Text style={styles.title}>
+                        {isDaily ? "Challenge Complete!" : "Round Complete!"}
+                    </Text>
                     <Text style={styles.subtitle}>
                         {String(category)} • {total} Questions
                     </Text>
                 </View>
+
+                {/* Daily challenge bonus banner */}
+                {isDaily && (
+                    <View style={styles.bonusBanner}>
+                        <Star size={20} color={Colors.surface} />
+                        <Text style={styles.bonusText}>
+                            +500 Daily Challenge Bonus XP!
+                        </Text>
+                    </View>
+                )}
 
                 {/* Three quick-stat cards: score, accuracy, total XP */}
                 <View style={styles.grid}>
@@ -100,12 +131,16 @@ export default function FeedbackScreen() {
                     level={userLevel}
                 />
 
-                {/* Play Again — goes back to the category selection screen */}
+                {/* Play Again — goes back to home for daily, play screen for regular */}
                 <Pressable
                     style={styles.primary}
-                    onPress={() => router.push("/(tabs)/play")}
+                    onPress={() =>
+                        router.push(isDaily ? "/(tabs)" : "/(tabs)/play")
+                    }
                 >
-                    <Text style={styles.primaryText}>Play Again</Text>
+                    <Text style={styles.primaryText}>
+                        {isDaily ? "Back to Home" : "Play Again"}
+                    </Text>
                 </Pressable>
 
                 {/* Return Home — goes to the main home tab */}
@@ -150,6 +185,25 @@ const styles = StyleSheet.create({
         marginTop: Spacing.xs,
     },
 
+    // Daily bonus banner shown below the header
+    bonusBanner: {
+        flexDirection: "row",
+        alignItems: "center",
+        justifyContent: "center",
+        gap: Spacing.xs,
+        backgroundColor: Colors.cardDaily,
+        borderRadius: 16,
+        paddingVertical: Spacing.sm,
+        paddingHorizontal: Spacing.lg,
+        marginBottom: Spacing.lg,
+    },
+
+    bonusText: {
+        ...Typography.caption,
+        color: Colors.surface,
+        fontWeight: "700",
+    },
+
     grid: {
         flexDirection: "row",
         flexWrap: "wrap",
@@ -158,7 +212,7 @@ const styles = StyleSheet.create({
         marginVertical: Spacing.lg,
     },
 
-    // Primary CTA — "Play Again"
+    // Primary CTA — "Play Again" or "Back to Home"
     primary: {
         height: 60,
         borderRadius: 18,

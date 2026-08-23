@@ -67,7 +67,7 @@ export default function HomeScreen() {
           title="Mixed Facts"
           description="+500 bonus XP today only"
           reward="Reward: +500 XP"
-          onPress={() => router.push("/(tabs)/play")}
+          onPress={() => router.push("/game/daily")}
         />
 
       </ScrollView>

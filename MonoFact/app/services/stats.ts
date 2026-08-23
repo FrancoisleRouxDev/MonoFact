@@ -1,6 +1,8 @@
 import {
+    collection,
     doc,
     getDoc,
+    getDocs,
     increment,
     updateDoc,
 } from "firebase/firestore";
@@ -414,3 +416,89 @@ export const checkAchievements = async (
 
     return newlyUnlocked;
 };
+
+// --------------------------------------------------
+// Get today's daily challenge facts
+// --------------------------------------------------
+
+export const getDailyFacts = async () => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+    const snapshot = await getDoc(userRef);
+
+    if (!snapshot.exists()) throw new Error("User document does not exist.");
+
+    const data = snapshot.data();
+    const today = new Date().toISOString().split("T")[0];
+
+    // Return cached facts if already selected today
+    if (data.dailyFactDate === today && data.dailyFactIds?.length === 5) {
+        return data.dailyFactIds as string[];
+    }
+
+    // Fetch all daily facts from Firestore
+    const factsRef = collection(db, "categories", "daily", "facts");
+    const factsSnapshot = await getDocs(factsRef);
+    const allIds = factsSnapshot.docs.map((d) => d.id);
+
+    // Pick 5 random fact IDs
+    const shuffled = allIds.sort(() => Math.random() - 0.5);
+    const selectedIds = shuffled.slice(0, 5);
+
+    // Cache them against today's date
+    await updateDoc(userRef, {
+        dailyFactIds: selectedIds,
+        dailyFactDate: today,
+    });
+
+    return selectedIds;
+};
+
+// --------------------------------------------------
+// Record a completed daily challenge
+// --------------------------------------------------
+
+export const recordDailyChallengeCompleted = async (
+    correctAnswers: number
+) => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+
+    await updateDoc(userRef, {
+        dailyChallengesCompleted: increment(1),
+    });
+
+    // Check flawless achievement — 5/5 correct
+    await checkAchievements(correctAnswers);
+};
+
+// ---------------------------------------
+// Award daily challenge bonus XP
+// ---------------------------------------
+
+export const recordDailyBonus = async () => {
+    const currentUser = auth.currentUser;
+    if (!currentUser) throw new Error("No authenticated user.");
+
+    const userRef = doc(db, "users", currentUser.uid);
+
+    await updateDoc(userRef, {
+        xp: increment(500),
+    });
+
+    const updated = await getDoc(userRef);
+    const updatedData = updated.data();
+    const currentXP = updatedData?.xp ?? 0;
+    const currentLevel = updatedData?.level ?? 1;
+    const correctLevel = getLevelFromXP(currentXP);
+
+    if (correctLevel !== currentLevel) {
+        await updateDoc(userRef, {
+            level: correctLevel,
+        });
+    }
+}

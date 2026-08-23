@@ -25,6 +25,8 @@ type UserData = {
     lastQuestionIndex?: number;
     swipeAnswers?: number;
     dailyChallengeCompleted?: number;
+    dailyFactIds?: string[];
+    dailyFactDate?: string;
     achievements?: Record<string, boolean>;
     categoryStats?: Record<string, { correct: number; incorrect: number }>;
     progress?: Record<string, number>;
