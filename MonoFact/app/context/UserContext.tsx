@@ -30,6 +30,7 @@ type UserData = {
     achievements?: Record<string, boolean>;
     categoryStats?: Record<string, { correct: number; incorrect: number }>;
     progress?: Record<string, number>;
+    dailyCompletedDate?: string;
 };
 
 type UserContextType = {

@@ -466,13 +466,16 @@ export const recordDailyChallengeCompleted = async (
     const currentUser = auth.currentUser;
     if (!currentUser) throw new Error("No authenticated user.");
 
+    const today = new Date().toISOString().split("T")[0];
     const userRef = doc(db, "users", currentUser.uid);
 
+    // Mark challenge as completed today
     await updateDoc(userRef, {
         dailyChallengesCompleted: increment(1),
+        dailyCompletedDate: today,
     });
 
-    // Check flawless achievement — 5/5 correct
+    // Check achievements including flawless (5/5)
     await checkAchievements(correctAnswers);
 };
 
