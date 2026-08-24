@@ -242,13 +242,16 @@ export const recordStreak = async (
 // Achievement definitions
 // --------------------------------------------------
 
-const HIDDEN_ACHIEVEMENTS = [
+/**
+ * Secret achievement identifiers that remain hidden until unlocked.
+ */
+export const HIDDEN_ACHIEVEMENTS = [
     "night_owl",
     "early_bird",
     "fact_addict",
     "quick_draw",
     "swipe_master",
-];
+] as const;
 
 // --------------------------------------------------
 // Check and unlock achievements

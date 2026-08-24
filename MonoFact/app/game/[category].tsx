@@ -105,7 +105,7 @@ export default function GameplayScreen() {
         };
 
         loadFacts();
-    }, [category]);
+    }, [categoryName]);
 
     // -------------------------------------------------------------------------
     // Loading state — shown while Firestore fetch is in progress.

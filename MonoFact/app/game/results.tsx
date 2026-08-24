@@ -73,7 +73,7 @@ export default function FeedbackScreen() {
             recordDailyBonus();
             setBonusAwarded(true);
         }
-    }, []);
+    }, [isDaily, bonusAwarded]);
 
     return (
         <SafeAreaView style={styles.safeArea}>

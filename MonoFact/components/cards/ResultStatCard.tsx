@@ -1,19 +1,24 @@
 import { View, Text, StyleSheet } from "react-native";
 import { LucideIcon } from "lucide-react-native";
-import { Colors } from "@/constants/Colors";
 
-
-type Props={
-    icon:LucideIcon;
-    value:string;
-    label:string;
+/**
+ * Props for ResultStatCard displayed on round summary and completed screens.
+ */
+type Props = {
+    icon: LucideIcon;
+    value: string;
+    label: string;
 };
 
+/**
+ * ResultStatCard renders an individual stat metric (accuracy %, score, XP earned)
+ * in a stylized grid card.
+ */
 export default function ResultStatCard({
-    icon:Icon,
+    icon: Icon,
     value,
     label,
-}:Props){
+}: Props) {
 
     return(
 

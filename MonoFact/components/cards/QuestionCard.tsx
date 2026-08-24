@@ -1,18 +1,18 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Lightbulb } from "lucide-react-native";
-import { Colors } from "@/constants/Colors";
 
-
-//Animation imports
-import Animated, { useSharedValue, useAnimatedStyle, withSpring, runOnJS, } from "react-native-reanimated";
-
-import { Gesture, GestureDetector, } from "react-native-gesture-handler";
-
+/**
+ * Props for the static QuestionCard display component.
+ */
 type QuestionCardProps = {
   category: string;
   question: string;
 };
 
+/**
+ * QuestionCard displays a clean, static presentation of the fact/myth question.
+ * For swipeable animated gesture interaction, see SwipeableQuestionCard.
+ */
 export default function QuestionCard({
   category,
   question,

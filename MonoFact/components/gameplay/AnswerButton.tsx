@@ -1,13 +1,18 @@
 import { Pressable, Text, StyleSheet } from "react-native";
 import { X, Check } from "lucide-react-native";
-import { Colors } from "@/constants/Colors";
 
-
+/**
+ * Props for AnswerButton allowing button-based answer selection (Fact or Myth).
+ */
 type AnswerButtonProps = {
     answer: "myth" | "fact";
     onPress: () => void;
 };
 
+/**
+ * AnswerButton provides an alternative, accessible tap interaction
+ * alongside card swipe gestures.
+ */
 export default function AnswerButton({
     answer,
     onPress,

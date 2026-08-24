@@ -1,29 +1,25 @@
 import { Pressable, StyleSheet, Text, View } from "react-native";
 import { ArrowLeft } from "lucide-react-native";
-import { Colors } from "@/constants/Colors";
 
-
+/**
+ * Props for QuestionProgress header showing current/total count and back action.
+ */
 type Props = {
-
   category: string;
-
   current: number;
-
   total: number;
-
   onBack: () => void;
 };
 
+/**
+ * QuestionProgress renders the top navigation row during an active quiz round,
+ * including category name, question count, and a divider line.
+ */
 export default function QuestionProgress({
-
   category,
-
   current,
-
   total,
-
   onBack,
-
 }: Props) {
 
   return (

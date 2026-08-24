@@ -1,7 +1,5 @@
 import { ReactNode } from "react";
 import { Dimensions } from "react-native";
-import { Colors } from "@/constants/Colors";
-
 
 import Animated, {
     useAnimatedStyle,
@@ -17,22 +15,25 @@ import {
 
 const SCREEN_WIDTH = Dimensions.get("window").width;
 
+/**
+ * Props for SwipeableQuestionCard wrapper component.
+ */
 type Props = {
     children: ReactNode;
-
     onSwipeLeft: () => void;
-
     onSwipeRight: () => void;
 };
 
+/**
+ * SwipeableQuestionCard wraps question content in a gesture detector with
+ * Reanimated 60fps spring physics.
+ * Swiping Left (< -120px) triggers onSwipeLeft (Myth).
+ * Swiping Right (> 120px) triggers onSwipeRight (Fact).
+ */
 export default function SwipeableQuestionCard({
-
     children,
-
     onSwipeLeft,
-
     onSwipeRight,
-
 }: Props) {
 
     const translateX = useSharedValue(0);

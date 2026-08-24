@@ -24,22 +24,26 @@ import { useProfilePhoto } from "@/hooks/useProfilePhoto";
 import { useUser } from "@/app/context/UserContext";
 import { useState } from "react";
 
+/**
+ * ProfileScreen (file: app/(tabs)/profile.tsx)
+ * Displays user identity, custom avatar with picker, XP progression,
+ * 4 summary stat cards, and the 27 achievements breakdown.
+ */
 export default function ProfileScreen() {
-
-  // Pull user data from shared context instead of fetching Firebase directly
+  // Pull live user data from shared context
   const { userData } = useUser();
 
-  // ---- track photoURL locally so avatar updates immediately after upload ----
-  const [photoURL, setPhotoURL] = useState<string | null>(
-    userData?.photoURL ?? null
-  );
+  // Track photoURL locally so avatar updates immediately after upload
+  const [photoURL, setPhotoURL] = useState<string | null>(null);
 
   const { pickAndUpload, uploading } = useProfilePhoto((url) => setPhotoURL(url));
-  // ---------------------------------------------------------------------------
 
   if (!userData) {
     return null;
   }
+
+  // Active photo URL preferring local immediate state, then remote Firestore URL
+  const activePhotoURL = photoURL ?? userData.photoURL ?? null;
 
   // -----------------------------
   // Accuracy
@@ -95,7 +99,7 @@ export default function ProfileScreen() {
           username={userData.username ?? "User"}
           email={userData.email ?? ""}
           level={`Level ${userData.level ?? 1} • Fact Explorer`}
-          photoURL={photoURL}
+          photoURL={activePhotoURL}
           onPhotoPress={pickAndUpload}
           uploadingPhoto={uploading}
         />
