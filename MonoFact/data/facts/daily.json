@@ -288,9 +288,9 @@
     },
     {
         "category": "Daily",
-        "statement": "The average cloud weighs more than a million kilograms.",
+        "statement": "The average cumulus cloud weighs over a million pounds (about 500,000 kg).",
         "isFact": true,
-        "explanation": "A typical cumulus cloud contains about 500,000 kg of water droplets. Some storm clouds can weigh over a million kg.",
+        "explanation": "A typical 1-cubic-kilometer cumulus cloud contains approximately 500,000 kg of water droplets, which equals roughly 1.1 million pounds.",
         "order": 42
     },
     {
@@ -395,7 +395,7 @@
         "category": "Daily",
         "statement": "The letter 'Q' does not appear in any US state name.",
         "isFact": true,
-        "explanation": "None of the 50 US state names contain the letter Q. Q is one of only two letters (along with B) not found in any state name.",
+        "explanation": "None of the 50 US state names contain the letter Q. Q is the only letter in the English alphabet not found in any US state name (letters like B appear in Alabama and Nebraska).",
         "order": 57
     },
     {
@@ -414,9 +414,9 @@
     },
     {
         "category": "Daily",
-        "statement": "Pluto is smaller than Russia.",
-        "isFact": true,
-        "explanation": "Pluto has a surface area of about 17.7 million km². Russia's land area is 17.1 million km². They are remarkably similar in size.",
+        "statement": "Pluto is smaller in surface area than Russia.",
+        "isFact": false,
+        "explanation": "Following measurements from NASA's New Horizons mission, Pluto's surface area is estimated at approximately 17.7 million km², making it slightly larger than Russia's total land area of roughly 17.1 million km².",
         "order": 60
     },
     {
@@ -752,7 +752,7 @@
         "category": "Daily",
         "statement": "Dogs can understand more than 1,000 human words.",
         "isFact": true,
-        "explanation": "Border Collies and some other breeds have demonstrated the ability to understand over 1,000 words. Rico the Border Collie learned over 200 object names.",
+        "explanation": "Border Collies have demonstrated the ability to understand hundreds to over 1,000 words. For example, Chaser the Border Collie famously learned the names of 1,022 unique toys and objects.",
         "order": 108
     },
     {
@@ -982,8 +982,8 @@
     {
         "category": "Daily",
         "statement": "The typewriter keyboard was designed to slow typists down.",
-        "isFact": true,
-        "explanation": "The QWERTY layout was designed by Christopher Sholes in the 1870s partly to prevent mechanical typewriter keys from jamming by separating commonly used letter pairs.",
+        "isFact": false,
+        "explanation": "The QWERTY layout was designed by Christopher Sholes in the 1870s to prevent mechanical typewriter keys from jamming by separating commonly paired letters, not to deliberately slow typists down.",
         "order": 141
     },
     {
@@ -1129,15 +1129,15 @@
     {
         "category": "Daily",
         "statement": "The Pyramid of Giza is located in the centre of Earth's landmass.",
-        "isFact": true,
-        "explanation": "Calculations show that the Pyramid of Giza is located at the geographical centre of Earth's land surface — though this is considered coincidental.",
+        "isFact": false,
+        "explanation": "The idea that Giza sits at the exact geographical center of Earth's landmass stems from 19th-century estimates and is not supported by modern geodesy, where the center varies based on map projection and land definitions.",
         "order": 162
     },
     {
         "category": "Daily",
         "statement": "A group of pandas is called an embarrassment.",
-        "isFact": false,
-        "explanation": "A group of pandas is called an embarrassment in some sources, but more commonly they are referred to as a cupboard or bamboo of pandas.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of pandas is an 'embarrassment', reflecting their charmingly clumsy behavior, though terms like a 'bamboo' or 'cupboard' of pandas are also recognized.",
         "order": 163
     },
     {
@@ -1156,9 +1156,9 @@
     },
     {
         "category": "Daily",
-        "statement": "The first product advertised on TV was a watch.",
+        "statement": "The first product advertised on TV was a car.",
         "isFact": false,
-        "explanation": "The first TV advertisement aired on July 1, 1941 in the USA — it was for Bulova watches, so this is actually true.",
+        "explanation": "The first television commercial in the United States aired on July 1, 1941, and was for Bulova watches, not an automobile.",
         "order": 166
     },
     {

@@ -162,9 +162,9 @@
   },
   {
     "category": "Space",
-    "statement": "All stars in the night sky are in our galaxy.",
-    "isFact": false,
-    "explanation": "The Andromeda Galaxy (M31) is visible to the naked eye from Earth as a faint smudge. It is located approximately 2.537 million light-years away.",
+    "statement": "Every individual star visible to the naked eye is in our galaxy.",
+    "isFact": true,
+    "explanation": "Every single individual star resolved by the unaided human eye resides within the Milky Way. Distant galaxies like Andromeda appear only as diffuse, hazy smudges rather than individual stars.",
     "order": 24
   },
   {

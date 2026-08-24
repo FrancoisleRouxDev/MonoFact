@@ -148,9 +148,9 @@
   },
   {
     "category": "Technology",
-    "statement": "The term 'bug' in computing originates from an actual insect.",
-    "isFact": true,
-    "explanation": "In 1947, engineers debugging a Harvard Mark II computer found a moth lodged in a relay. Grace Hopper's team taped it into their logbook with the note 'First actual case of bug being found'.",
+    "statement": "The term 'bug' in engineering and computing originated from an actual insect.",
+    "isFact": false,
+    "explanation": "The term 'bug' had been established engineering jargon for mechanical glitches since at least the 1870s (used by Thomas Edison). In 1947, Grace Hopper's team found a real moth in the Harvard Mark II and famously logged it as the 'First actual case of bug being found'.",
     "order": 22
   },
   {
