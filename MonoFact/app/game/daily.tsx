@@ -8,8 +8,8 @@ import {
     ScrollView,
 } from "react-native";
 import { useRouter } from "expo-router";
-import { collection, getDocs } from "firebase/firestore";
-import { db } from "@/app/services/config";
+import { collection, getDocs, doc, getDoc } from "firebase/firestore";
+import { db, auth } from "@/app/services/config";
 import { useState, useEffect } from "react";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
@@ -30,8 +30,6 @@ import {
     recordDailyChallengeCompleted,
     recordDailyBonus,
 } from "@/app/services/stats";
-import { auth } from "@/app/services/config";
-import { doc, getDoc } from "firebase/firestore";
 
 // ---------------------------------------------------------------------------
 // Fact type — matches the Firestore document structure
@@ -172,7 +170,7 @@ export default function DailyGameplayScreen() {
             <SafeAreaView style={styles.center}>
                 <ActivityIndicator size="large" color={Colors.primary} />
                 <Text style={styles.loadingText}>
-                    Loading today's challenge…
+                    {"Loading today's challenge…"}
                 </Text>
             </SafeAreaView>
         );
@@ -189,8 +187,7 @@ export default function DailyGameplayScreen() {
                     Challenge Complete!
                 </Text>
                 <Text style={styles.noFactsText}>
-                    You've already completed today's challenge.{"\n"}
-                    Come back tomorrow for a new one!
+                    {"You've already completed today's challenge.\nCome back tomorrow for a new one!"}
                 </Text>
                 <Pressable
                     style={styles.homeButton}

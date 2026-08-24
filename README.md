@@ -1,174 +1,171 @@
-# MonoFact
+# MonoFact 
 
-MonoFact is a cross-platform educational mobile application built with **React Native** and **Expo**. The app teaches users interesting facts through an engaging swipe-based quiz experience inspired by modern learning apps.
+<div align="center">
 
-Users swipe **right** if they believe a statement is a **Fact** and **left** if they believe it is a **Myth**, receiving immediate feedback while earning XP, building streaks, and tracking their progress across different knowledge categories.
+![MonoFact Banner](assets/monofact-preview.png)
 
----
+### *Test your intuition. Discover the truth.*
 
-## Preview
+A modern, swipe-based educational quiz application built with **React Native**, **Expo**, and **Firebase**.
 
-![MonoFact app screens](assets/monofact-preview.png)
+[![React Native](https://img.shields.io/badge/React_Native-0.81.5-61DAFB?style=for-the-badge&logo=react&logoColor=black)](https://reactnative.dev/)
+[![Expo](https://img.shields.io/badge/Expo_SDK-54-000020?style=for-the-badge&logo=expo&logoColor=white)](https://expo.dev/)
+[![TypeScript](https://img.shields.io/badge/TypeScript-5.9-3178C6?style=for-the-badge&logo=typescript&logoColor=white)](https://www.typescriptlang.org/)
+[![Firebase](https://img.shields.io/badge/Firebase-Firestore_%26_Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
+[![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)](LICENSE)
 
----
-
-## Screenshots
-
-| Home | Play | Gameplay |
-|------|------|----------|
-| ![Home Screen](assets/screenshots/home.png) | ![Play Screen](assets/screenshots/play.png) | ![Gameplay Screen](assets/screenshots/gameplay.png) |
-
-| Feedback | Results | Profile |
-|----------|---------|---------|
-| ![Feedback Screen](assets/screenshots/feedback.png) | ![Results Screen](assets/screenshots/results.png) | ![Profile Screen](assets/screenshots/profile.png) |
-
-> Screenshots can be added by placing images in the `assets/screenshots/` folder and updating the paths above.
+[ Watch Demo Video](https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQez0y?usp=sharing) · [ Project Documentation](#-documentation) · [ Getting Started](#-getting-started)
 
 ---
 
-## Features
+</div>
 
-- Swipe-based Fact or Myth gameplay
-- 6 knowledge categories — Nature, Science, Animals, Space, Photography, Technology
-- Daily Challenge with a fresh mixed-fact round every day
-- XP and unlimited level progression with streak bonuses
-- 27 unlockable achievements across 8 categories including hidden secret achievements
-- Explorer meter for category completion rewards
-- Real-time statistics dashboard
-- User profile with photo upload
-- Category progress tracking with accuracy stats
-- Continue where you left off
-- Responsive cross-platform design (iOS and Android)
-- Custom design system with reusable components
+##  About MonoFact
+
+**MonoFact** is a cross-platform educational mobile app inspired by modern gamified learning experiences. 
+
+Users are presented with statements and must swipe **Right** if they believe it is a **Fact** or **Left** if it is a **Myth**. With immediate interactive feedback, streak multipliers, rich sound & haptic feedback, an exponential level progression system, and a suite of 27 unlockable achievements, learning becomes addictive and rewarding.
 
 ---
 
-## Tech Stack
+##  Key Features
 
-| Technology | Purpose |
-|---|---|
-| React Native | Cross-platform mobile framework |
-| Expo & Expo Router | Build tooling and file-based navigation |
-| TypeScript | Type-safe development |
-| Firebase Firestore | Real-time database and user data |
-| Firebase Auth | User authentication |
-| Firebase Storage | Profile photo uploads |
-| React Native Gesture Handler | Swipe gesture recognition |
-| Lucide React Native | Icon library |
+-  **Intuitive Gesture Gameplay:** Fluid card swiping mechanics powered by React Native Gesture Handler & Reanimated.
+-  **6 Knowledge Decks:** Comprehensive fact pools across Nature, Science, Animals, Space, Photography, and Technology.
+-  **Daily Challenge:** A unique set of 5 mixed-topic facts every 24 hours awarding +500 bonus XP.
+-  **Streak Multiplier & Dynamic XP:** Earn progressive bonus XP for consecutive correct answers (up to 9x streak bonus).
+-  **Achievement Engine:** 27 unlockable badges across 8 categories (Streak, Score, Level, Games, Explorer, Daily, Swipe, and Hidden).
+-  **Real-Time Analytics:** Track accuracy, category mastery, total games played, and completion rate.
+-  **User Profiles & Customization:** Secure authentication, avatar upload support, and real-time cloud data sync via Firebase.
+-  **Sleek Custom Design System:** Curated dark/light accessible palette, refined typography, and responsive layouts.
 
 ---
 
-## Project Structure
+##  Gameplay Systems
 
-app/
-(tabs)/ # Main tab screens (Home, Play, Profile, Stats, Settings)
-game/ # Gameplay screens (category, daily, feedback, results)
-services/ # Firebase config and stats logic
-context/ # Shared UserContext for global state
+###  XP & Progression Formula
+* **Base Reward:** `15 XP` per correct answer.
+* **Streak Bonus:** `Streak Count × 10 XP` (capped at streak 9 for `+90 XP` bonus).
+* **Daily Challenge:** `+500 XP` upon round completion.
+* **Exponential Levelling:** Level progression dynamically scales using an exponential curve:
+  $$\text{XP Required for Level } n = \lfloor 100 \times 1.8^{(n - 1)} \rfloor$$
 
-components/
-cards/ # Reusable card components
-gameplay/ # In-game UI components
-layout/ # Screen layout components
-navigation/ # Bottom navigation
-newcomps/ # Profile header components
-
-constants/ # Design tokens (Colors, Typography, Spacing)
-data/facts/ # Local JSON fact files used for seeding
-documents/ # Project documentation
-
-
----
-
-## Screens
-
-| Screen | Description |
-|---|---|
-| Splash | App entry and branding |
-| Login | User authentication |
-| Register | New user registration |
-| Home | Dashboard with daily challenge, continue card, and category grid |
-| Play | Category selection with progress indicators |
-| Gameplay | Swipe-based fact or myth question screen |
-| Daily Challenge | Daily mixed-fact round, resets every 24 hours |
-| Feedback | Per-question result with explanation and XP earned |
-| Round Complete | End-of-round summary with score, accuracy, and XP progress |
-| Profile | User stats, level, achievements, and photo |
-| Statistics | Detailed performance breakdown |
-| Settings | App preferences and account management |
+###  Achievements (27 Unlockables)
+| Category | Achievements | Description |
+|---|---|---|
+|  **Streak** | *First Spark, On Fire, Unstoppable, Legendary* | Maintained high-accuracy answer streaks |
+|  **Score** | *Perfect Round, Sharp Mind, Flawless* | Mastered game rounds with zero mistakes |
+|  **Level** | *First Steps, Rising Star, Fact Machine, Enlightened* | Reached milestone level tiers |
+|  **Games** | *Rookie, Dedicated, Veteran, Elite* | Played total games milestones |
+|  **Explorer** | *Curious Mind, Explorer, Globetrotter, Completionist* | Discovered and completed multiple categories |
+|  **Daily** | *Daily Devotee, Consistent, Dedicated Scholar* | Played daily challenges consistently |
+|  **Swipe** | *Quick Draw, Swipe Master* | Speed and swiping volume milestones |
+|  **Hidden** | *Secret Achievements* | Special hidden conditions revealed on unlock |
 
 ---
 
-## Gameplay Systems
+##  Tech Stack & Architecture
 
-### XP & Levelling
-- 15 XP per correct answer
-- Streak bonus XP — streak number × 10, capped at streak 9 (max 90 XP bonus)
-- Unlimited levels using an exponential formula — each level requires roughly 1.8× the XP of the previous
-- Daily Challenge awards +500 bonus XP on completion
-
-### Achievements
-27 unlockable achievements across 8 categories:
-- **Streak** — First Spark, On Fire, Unstoppable, Legendary
-- **Score** — Perfect Round, Sharp Mind, Flawless
-- **Level** — First Steps, Rising Star, Fact Machine, Enlightened
-- **Games** — Rookie, Dedicated, Veteran, Elite
-- **Explorer** — Curious Mind, Explorer, Globetrotter, Completionist
-- **Daily** — Daily Devotee, Consistent, Dedicated Scholar
-- **Swipe** — Quick Draw, Swipe Master
-- **Hidden** — secret achievements revealed only when earned
-
-### Daily Challenge
-- 5 random facts selected daily from a pool of 200 mixed-topic facts
-- Same facts shown to the user all day regardless of when they play
-- Can only be completed once per day
-- Resets automatically at midnight
+| Layer | Technology | Role |
+|---|---|---|
+| **Framework** | [React Native](https://reactnative.dev/) | Cross-platform native runtime |
+| **Tooling & Router** | [Expo](https://expo.dev/) (SDK 54) & Expo Router | File-based navigation and universal native runtime |
+| **Language** | [TypeScript](https://www.typescriptlang.org/) | End-to-end type safety and maintainability |
+| **Backend & Auth** | [Firebase](https://firebase.google.com/) (Firestore & Auth) | User identity, persistent stats, and cloud database |
+| **Gestures & Animations** | `react-native-gesture-handler` & `react-native-reanimated` | High performance 60fps swipe gestures |
+| **Icons** | [Lucide React Native](https://lucide.dev/) | Modern and clean iconography |
 
 ---
 
-## Running the Project
+##  Project Structure
 
-Clone the repository:
-```bash
-git clone <repository-url>
+```text
+MonoFact/
+├── app/
+│   ├── (tabs)/              # Primary navigation tabs (Home, Play, Profile, Stats, Settings)
+│   ├── auth/                # Authentication screens (Login, Register)
+│   ├── context/             # Global state (UserContext, AuthContext)
+│   ├── game/                # Active gameplay flows (Category Quiz, Daily Challenge, Results)
+│   └── services/            # Firebase config, stats calculations, and user operations
+├── components/
+│   ├── buttons/             # Primary and secondary button components
+│   ├── cards/               # Reusable card UI (Achievement, Question, Stats, Answer)
+│   ├── gameplay/            # Swipeable cards, progress bars, answer hints
+│   └── layout/              # SafeArea containers, headers, and navigation bars
+├── constants/               # Design tokens (Colors, Typography, Spacing, Theme)
+├── data/facts/              # Raw JSON dataset categorized by topic
+├── documents/               # Wireframes, branding guide, and project planning docs
+└── scripts/                 # Firestore seed and database migration scripts
 ```
 
-Install dependencies:
+---
+
+##  Getting Started
+
+### Prerequisites
+* [Node.js](https://nodejs.org/) (v18.x or later recommended)
+* [Expo Go](https://expo.dev/go) app on your iOS / Android device or an Emulator
+
+### 1. Clone the Repository
+```bash
+git clone https://github.com/FrancoisleRouxDev/MonoFact.git
+cd MonoFact/MonoFact
+```
+
+### 2. Install Dependencies
 ```bash
 npm install
 ```
 
-Set up environment variables by creating a `.env` file in the root:
+### 3. Configure Environment Variables
+Create a `.env` file in the `MonoFact/` directory with your Firebase configuration:
 
-EXPO_PUBLIC_FIREBASE_API_KEY=your_key
-EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_domain
+```env
+EXPO_PUBLIC_FIREBASE_API_KEY=your_api_key
+EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN=your_auth_domain
 EXPO_PUBLIC_FIREBASE_PROJECT_ID=your_project_id
-EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=your_bucket
-EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_sender_id
+EXPO_PUBLIC_FIREBASE_STORAGE_BUCKET=your_storage_bucket
+EXPO_PUBLIC_FIREBASE_MESSAGING_SENDER_ID=your_messaging_sender_id
 EXPO_PUBLIC_FIREBASE_APP_ID=your_app_id
-
-
-Start Expo:
-```bash
-npx expo start
+EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
 ```
 
-Seed the database (first time setup):
+### 4. Seed the Database
+Populate your Firestore instance with the starter fact pool:
+
 ```bash
-npx ts-node scripts/seed.ts
+npm run seed
 ```
+
+### 5. Launch the Development Server
+```bash
+npm start
+```
+Scan the QR code with your mobile camera (iOS) or the **Expo Go** app (Android).
+
+---
+
+##  Available Scripts
+
+Inside the `MonoFact/` directory:
+
+| Command | Action |
+|---|---|
+| `npm start` | Starts the Expo development server |
+| `npm run android` | Builds and opens the app on Android |
+| `npm run ios` | Builds and opens the app on iOS Simulator |
+| `npm run web` | Launches the app in the web browser |
+| `npm run lint` | Runs ESLint across the application code |
+| `npm run seed` | Seeds Firestore with the question decks |
 
 ---
 
 ## Documentation
 
-Project documentation can be found inside the **documents/** folder. This includes:
-
-- Project Proposal
-- Wireframes
-- Design System
-- Database Design
-- Planning Documents
+Full project deliverables and documentation are available in the [`documents/`](file:///c:/Users/flr21/Desktop/MonoFact/MonoFact/documents) folder:
+* **[Branding & Design System](file:///c:/Users/flr21/Desktop/MonoFact/MonoFact/documents/branding)** — Color tokens, typography, and UI guidelines.
+* **[Wireframes & Architecture](file:///c:/Users/flr21/Desktop/MonoFact/MonoFact/documents/wireframes)** — Screen flows and navigation hierarchy.
+* **[Planning & Database Design](file:///c:/Users/flr21/Desktop/MonoFact/MonoFact/documents/planning)** — Firestore schema specifications and milestone tracking.
 
 ---
 
@@ -183,21 +180,6 @@ Special thanks to:
 
 ---
 
-## 👨‍💻 Developer
-
-**Francois le Roux**
-Interactive Development Student
-Open Window Institute
-2026
-
----
-
-## Demo
-
-[Watch the demo video](https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQez0y?usp=sharing)
-
----
-
 ## 📄 License
 
-This project was developed for educational purposes as part of the Bachelor of Creative Technologies programme at The Open Window Institute.
+This project was developed for educational purposes as part of the Bachelor of Creative Technologies programme at **The Open Window Institute**.

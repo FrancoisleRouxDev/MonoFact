@@ -12,6 +12,7 @@ import {
   KeyboardAvoidingView,
   ScrollView,
   Platform,
+  Alert,
 } from "react-native";
 
 import PrimaryButton from "@/components/buttons/Primary-Button";
@@ -19,7 +20,6 @@ import InputField from "@/components/newcomps/InputField";
 import { useRouter } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
 
-import { Alert } from "react-native";
 import { registerUser } from "@/app/services/auth";
 
 type PasswordStrength = {

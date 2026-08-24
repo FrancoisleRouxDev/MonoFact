@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, ScrollView } from "react-native";
+import { View, Text, StyleSheet } from "react-native";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
@@ -17,7 +17,6 @@ import {
   Swords,
   Medal,
   Crown,
-  Fingerprint,
   FlaskConical,
   Moon,
   Sun,
