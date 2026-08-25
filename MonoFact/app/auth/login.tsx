@@ -9,7 +9,6 @@ import {
   Text,
   Pressable,
   StyleSheet,
-  Alert,
   KeyboardAvoidingView,
   ScrollView,
   Platform,
@@ -19,6 +18,7 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import InputField from "@/components/newcomps/InputField";
 import PrimaryButton from "@/components/buttons/Primary-Button";
+import { Toast, useToast } from "@/components/ui/Toast";
 
 import { loginUser } from "@/app/services/auth";
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -38,15 +38,17 @@ export default function LoginScreen() {
   // Controls whether the password field shows plain text or ••••••
   const [passwordVisible, setPasswordVisible] = useState(false);
 
+  const { toast, showToast, hideToast } = useToast();
+
   // ---------------------------------------------------------------------------
   // handleLogin
   // ---------------------------------------------------------------------------
   // Validates inputs, calls Firebase Auth, then navigates to the main tabs.
-  // On failure, shows the Firebase error message in an Alert.
+  // On failure, shows a toast with the Firebase error message.
   // ---------------------------------------------------------------------------
   const handleLogin = async () => {
     if (!email || !password) {
-      Alert.alert("Missing Information", "Please enter your email and password.");
+      showToast("Please enter your email and password.", "error");
       return;
     }
 
@@ -54,7 +56,7 @@ export default function LoginScreen() {
       await loginUser(email, password);
       router.replace("/(tabs)");
     } catch (error: any) {
-      Alert.alert("Login Failed", error.message);
+      showToast(error.message, "error");
     }
   };
 
@@ -67,21 +69,21 @@ export default function LoginScreen() {
   // ---------------------------------------------------------------------------
   const handleForgotPassword = async () => {
     if (!email.trim()) {
-      Alert.alert(
-        "Enter your email",
-        "Please type your email address in the field above, then tap 'Forgot Password?' again."
+      showToast(
+        "Enter your email above then tap Forgot Password again.",
+        "info"
       );
       return;
     }
 
     try {
       await sendPasswordResetEmail(auth, email.trim());
-      Alert.alert(
-        "Reset Email Sent",
-        "If an account exists for that email, you'll receive a password reset link shortly."
+      showToast(
+        "Reset link sent — check your inbox.",
+        "success"
       );
     } catch (error: any) {
-      Alert.alert("Error", error.message);
+      showToast(error.message, "error");
     }
   };
 
@@ -89,9 +91,17 @@ export default function LoginScreen() {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
     >
       <SafeAreaView style={styles.container}>
+
+        {/* Toast notification — sits above all content */}
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onHide={hideToast}
+        />
+
         <ScrollView
           contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
@@ -101,7 +111,6 @@ export default function LoginScreen() {
 
             <View style={styles.header}>
               <Text style={styles.title}>Welcome back</Text>
-
               <Text style={styles.subtitle}>
                 Sign in to continue your learning streak
               </Text>
@@ -135,9 +144,15 @@ export default function LoginScreen() {
                   />
                 }
                 rightIcon={
-                  <Pressable onPress={() => setPasswordVisible((v) => !v)}>
+                  <Pressable
+                    onPress={() => setPasswordVisible((v) => !v)}
+                  >
                     <MaterialCommunityIcons
-                      name={passwordVisible ? "eye-off-outline" : "eye-outline"}
+                      name={
+                        passwordVisible
+                          ? "eye-off-outline"
+                          : "eye-outline"
+                      }
                       size={20}
                       color={Colors.textSecondary}
                     />
@@ -145,7 +160,7 @@ export default function LoginScreen() {
                 }
               />
 
-              {/* Forgot Password — sends a Firebase reset email to the typed address */}
+              {/* Forgot Password — sends a Firebase reset email */}
               <Pressable
                 style={styles.forgotPassword}
                 onPress={handleForgotPassword}

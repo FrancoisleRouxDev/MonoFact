@@ -1,10 +1,9 @@
-// Firebase SDK imports — we only import what we use.
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
-import { getAuth } from "firebase/auth";
+// @ts-expect-error - getReactNativePersistence exists in React Native entrypoint of firebase/auth
+import { initializeAuth, getReactNativePersistence } from "firebase/auth";
+import AsyncStorage from "@react-native-async-storage/async-storage";
 
-// Firebase project configuration — values come from .env so they are
-// never hard-coded in source code. Expo exposes EXPO_PUBLIC_* vars at build time.
 const firebaseConfig = {
   apiKey: process.env.EXPO_PUBLIC_FIREBASE_API_KEY,
   authDomain: process.env.EXPO_PUBLIC_FIREBASE_AUTH_DOMAIN,
@@ -15,11 +14,10 @@ const firebaseConfig = {
   measurementId: process.env.EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID,
 };
 
-// Initialise Firebase — this runs once when the app starts.
-export const app = initializeApp(firebaseConfig);
-
-// Firestore database instance — used for all reads/writes to user data and facts.
+export const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 export const db = getFirestore(app);
 
-// Firebase Auth instance — used for login, register, logout, and auth state.
-export const auth = getAuth(app);
+// Persist session across app restarts with AsyncStorage
+export const auth = initializeAuth(app, {
+  persistence: getReactNativePersistence(AsyncStorage),
+});

@@ -19,6 +19,7 @@ import ProfileHeader from "@/components/newcomps/ProfileHeader";
 import ProfileStatCard from "@/components/cards/ProfileStatCard";
 import AchievementsCard from "@/components/cards/AchiementCard";
 import BottomNav from "@/components/navigation/BottomNav";
+import { Toast, useToast } from "@/components/ui/Toast";
 
 import { useProfilePhoto } from "@/hooks/useProfilePhoto";
 import { useUser } from "@/app/context/UserContext";
@@ -36,8 +37,14 @@ export default function ProfileScreen() {
   // Track photoURL locally so avatar updates immediately after upload
   const [photoURL, setPhotoURL] = useState<string | null>(null);
 
-  const { pickAndUpload, uploading } = useProfilePhoto((url) => setPhotoURL(url));
-
+  const { toast, showToast, hideToast } = useToast();
+  const { pickAndUpload, uploading } = useProfilePhoto(
+    (url) => {
+      setPhotoURL(url);
+      showToast("Profile picture updated.", "success");
+    },
+    (message) => showToast(message, "error")
+  );
   if (!userData) {
     return null;
   }
@@ -116,6 +123,13 @@ export default function ProfileScreen() {
           ))}
 
         </View>
+
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onHide={hideToast}
+        />
 
         <AchievementsCard />
 
