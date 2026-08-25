@@ -223,7 +223,7 @@ export default function DailyGameplayScreen() {
                     <View style={styles.bonusBanner}>
                         <Star size={18} color={Colors.surface} />
                         <Text style={styles.bonusText}>
-                            +500 Daily Challenge Bonus XP!
+                            +100 Daily Challenge Bonus XP!
                         </Text>
                     </View>
 

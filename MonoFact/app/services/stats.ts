@@ -493,7 +493,7 @@ export const recordDailyBonus = async () => {
     const userRef = doc(db, "users", currentUser.uid);
 
     await updateDoc(userRef, {
-        xp: increment(500),
+        xp: increment(100),
     });
 
     const updated = await getDoc(userRef);

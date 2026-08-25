@@ -28,7 +28,7 @@ import RoundStats from "@/components/gameplay/RoundStats";
 // Reads XP and level from shared UserContext — no extra Firestore fetch needed
 // since onSnapshot in the context keeps data up to date automatically.
 //
-// If isDailyChallenge is true, awards +500 bonus XP and shows a special banner.
+// If isDailyChallenge is true, awards +100 bonus XP and shows a special banner.
 // ---------------------------------------------------------------------------
 export default function FeedbackScreen() {
     const router = useRouter();
@@ -98,7 +98,7 @@ export default function FeedbackScreen() {
                     <View style={styles.bonusBanner}>
                         <Star size={20} color={Colors.surface} />
                         <Text style={styles.bonusText}>
-                            +500 Daily Challenge Bonus XP!
+                            +100 Daily Challenge Bonus XP!
                         </Text>
                     </View>
                 )}

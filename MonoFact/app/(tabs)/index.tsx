@@ -65,8 +65,8 @@ export default function HomeScreen() {
         {/* Daily Challenge Card - navigates to the Play tab */}
         <DailyChallengeCard
           title="Mixed Facts"
-          description="+500 bonus XP today only"
-          reward="Reward: +500 XP"
+          description="+100 bonus XP today only"
+          reward="Reward: +100 XP"
           onPress={() => router.push("/game/daily")}
         />
 
