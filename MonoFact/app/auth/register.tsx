@@ -18,14 +18,19 @@ import PrimaryButton from "@/components/buttons/Primary-Button";
 import InputField from "@/components/newcomps/InputField";
 import { useRouter } from "expo-router";
 import { MaterialCommunityIcons } from "@expo/vector-icons";
+import { Toast, useToast } from "@/components/ui/Toast";
 
-import { Alert } from "react-native";
 import { registerUser } from "@/app/services/auth";
 
 type PasswordStrength = {
-  score: number; // 0-4
+  score: number;
   label: string;
-  barStyleKey: "strengthWeak" | "strengthMid" | "strengthFill" | "strengthStrong" | null;
+  barStyleKey:
+  | "strengthWeak"
+  | "strengthMid"
+  | "strengthFill"
+  | "strengthStrong"
+  | null;
 };
 
 function calculatePasswordStrength(password: string): PasswordStrength {
@@ -40,18 +45,33 @@ function calculatePasswordStrength(password: string): PasswordStrength {
   if (/\d/.test(password)) score++;
   if (/[^A-Za-z0-9]/.test(password)) score++;
 
-  // Clamp to 1-4 once there's any input
   score = Math.max(1, Math.min(score, 4));
 
   switch (score) {
     case 1:
-      return { score, label: "Weak - try a longer password", barStyleKey: "strengthWeak" };
+      return {
+        score,
+        label: "Weak - try a longer password",
+        barStyleKey: "strengthWeak",
+      };
     case 2:
-      return { score, label: "Fair - add numbers or symbols", barStyleKey: "strengthMid" };
+      return {
+        score,
+        label: "Fair - add numbers or symbols",
+        barStyleKey: "strengthMid",
+      };
     case 3:
-      return { score, label: "Medium strength - add symbols to strengthen", barStyleKey: "strengthFill" };
+      return {
+        score,
+        label: "Medium strength - add symbols to strengthen",
+        barStyleKey: "strengthFill",
+      };
     default:
-      return { score, label: "Strong password", barStyleKey: "strengthStrong" };
+      return {
+        score,
+        label: "Strong password",
+        barStyleKey: "strengthStrong",
+      };
   }
 }
 
@@ -63,31 +83,34 @@ export default function RegisterScreen() {
   const [password, setPassword] = useState("");
   const [confirmPassword, setConfirmPassword] = useState("");
 
+  const { toast, showToast, hideToast } = useToast();
+
   const passwordStrength = useMemo(
     () => calculatePasswordStrength(password),
     [password]
   );
 
   const handleRegister = async () => {
-    // Basic validation
     if (!username || !email || !password || !confirmPassword) {
-      Alert.alert("Missing Information", "Please fill in all fields.");
+      showToast("Please fill in all fields.", "error");
       return;
     }
 
     if (password !== confirmPassword) {
-      Alert.alert("Passwords don't match");
+      showToast("Passwords don't match.", "error");
       return;
     }
 
     try {
       await registerUser(username, email, password);
+      showToast("Account created successfully!", "success");
 
-      Alert.alert("Success", "Account created successfully!");
-
-      router.replace("/(tabs)");
+      // Small delay so the user sees the success toast before navigating
+      setTimeout(() => {
+        router.replace("/(tabs)");
+      }, 1000);
     } catch (error: any) {
-      Alert.alert("Registration Failed", error.message);
+      showToast(error.message, "error");
     }
   };
 
@@ -95,9 +118,17 @@ export default function RegisterScreen() {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
     >
       <SafeAreaView style={styles.container}>
+
+        {/* Toast notification — sits above all content */}
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onHide={hideToast}
+        />
+
         <ScrollView
           contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
@@ -105,8 +136,10 @@ export default function RegisterScreen() {
         >
           <View style={styles.content}>
 
-
-            <Pressable onPress={() => router.back()} style={styles.backButton}>
+            <Pressable
+              onPress={() => router.back()}
+              style={styles.backButton}
+            >
               <MaterialCommunityIcons
                 name="arrow-left"
                 size={22}
@@ -117,7 +150,6 @@ export default function RegisterScreen() {
 
             <View style={styles.header}>
               <Text style={styles.title}>Create account</Text>
-
               <Text style={styles.subtitle}>
                 Join thousands of fact-checkers
               </Text>
@@ -186,8 +218,13 @@ export default function RegisterScreen() {
                         key={position}
                         style={[
                           styles.strengthBar,
-                          position <= passwordStrength.score && passwordStrength.barStyleKey
-                            ? styles[passwordStrength.barStyleKey]
+                          position <=
+                            passwordStrength.score &&
+                            passwordStrength.barStyleKey
+                            ? styles[
+                            passwordStrength
+                              .barStyleKey
+                            ]
                             : null,
                         ]}
                       />
@@ -206,9 +243,12 @@ export default function RegisterScreen() {
                 onPress={handleRegister}
               />
 
-              <Pressable onPress={() => router.push("/auth/login")}>
+              <Pressable
+                onPress={() => router.push("/auth/login")}
+              >
                 <Text style={styles.link}>
-                  Already have an account? <Text style={styles.linkBold}>Log in</Text>
+                  Already have an account?{" "}
+                  <Text style={styles.linkBold}>Log in</Text>
                 </Text>
               </Pressable>
             </View>
@@ -288,21 +328,10 @@ const styles = StyleSheet.create({
     marginRight: 4,
   },
 
-  strengthWeak: {
-    backgroundColor: "#BEDFD7",
-  },
-
-  strengthMid: {
-    backgroundColor: "#C9D7AE",
-  },
-
-  strengthFill: {
-    backgroundColor: "#D3C7A3",
-  },
-
-  strengthStrong: {
-    backgroundColor: "#7CB88F",
-  },
+  strengthWeak: { backgroundColor: "#BEDFD7" },
+  strengthMid: { backgroundColor: "#C9D7AE" },
+  strengthFill: { backgroundColor: "#D3C7A3" },
+  strengthStrong: { backgroundColor: "#7CB88F" },
 
   strengthText: {
     marginTop: Spacing.xs,

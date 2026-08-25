@@ -3,6 +3,7 @@ import { addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore"
 import { db } from "../app/services/config";
 
 import animals from "../data/facts/animals.json";
+import daily from "../data/facts/daily.json";
 import nature from "../data/facts/nature.json";
 import photography from "../data/facts/photography.json";
 import science from "../data/facts/science.json";
@@ -15,7 +16,8 @@ const allFacts = {
   photography,
   science,
   space,
-  technology
+  technology,
+  daily,
 };
 
 async function uploadAll() {

@@ -30,8 +30,8 @@
   {
     "category": "Animals",
     "statement": "Elephants are the only mammals that cannot jump.",
-    "isFact": true,
-    "explanation": "Due to their enormous body mass and leg bone structure, adult elephants keep at least one foot on the ground at all times and cannot jump.",
+    "isFact": false,
+    "explanation": "While adult elephants cannot jump due to their massive body mass and skeletal structure, they are not the only mammals unable to do so; sloths, hippos, and rhinos also cannot jump.",
     "order": 5
   },
   {
@@ -149,8 +149,8 @@
   {
     "category": "Animals",
     "statement": "Sharks are the only fish that can blink.",
-    "isFact": true,
-    "explanation": "Some shark species have a nictitating membrane — a protective third eyelid — that closes over the eye while feeding, which functions like a blink.",
+    "isFact": false,
+    "explanation": "Sharks are not the only fish that blink. Mudskippers can genuinely blink by lowering their eyes into dermal cups to keep them moist on land. Most sharks don't blink, though some have a protective nictitating membrane.",
     "order": 22
   },
   {

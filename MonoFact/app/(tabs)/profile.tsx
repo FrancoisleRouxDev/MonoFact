@@ -19,57 +19,38 @@ import ProfileHeader from "@/components/newcomps/ProfileHeader";
 import ProfileStatCard from "@/components/cards/ProfileStatCard";
 import AchievementsCard from "@/components/cards/AchiementCard";
 import BottomNav from "@/components/navigation/BottomNav";
+import { Toast, useToast } from "@/components/ui/Toast";
 
-// ---- NEW IMPORT ----
 import { useProfilePhoto } from "@/hooks/useProfilePhoto";
-// --------------------
+import { useUser } from "@/app/context/UserContext";
+import { useState } from "react";
 
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config";
-
+/**
+ * ProfileScreen (file: app/(tabs)/profile.tsx)
+ * Displays user identity, custom avatar with picker, XP progression,
+ * 4 summary stat cards, and the 27 achievements breakdown.
+ */
 export default function ProfileScreen() {
+  // Pull live user data from shared context
+  const { userData } = useUser();
 
-  const [userData, setUserData] = useState<any>(null);
-
-  // ---- NEW: track photoURL locally so avatar updates immediately after upload ----
+  // Track photoURL locally so avatar updates immediately after upload
   const [photoURL, setPhotoURL] = useState<string | null>(null);
 
-  const { pickAndUpload, uploading } = useProfilePhoto((url) => setPhotoURL(url));
-  // -------------------------------------------------------------------------------
-
-  useEffect(() => {
-    const loadUser = async () => {
-      const currentUser = auth.currentUser;
-
-      if (!currentUser) return;
-
-      try {
-        const snapshot = await getDoc(
-          doc(db, "users", currentUser.uid)
-        );
-
-        if (snapshot.exists()) {
-          const data = snapshot.data();
-          setUserData(data);
-          // ---- NEW: seed photoURL from Firestore ----
-          setPhotoURL(data.photoURL ?? null);
-          // -------------------------------------------
-        }
-      } catch (error) {
-        console.error(
-          "Failed to load profile:",
-          error
-        );
-      }
-    };
-
-    loadUser();
-  }, []);
-
+  const { toast, showToast, hideToast } = useToast();
+  const { pickAndUpload, uploading } = useProfilePhoto(
+    (url) => {
+      setPhotoURL(url);
+      showToast("Profile picture updated.", "success");
+    },
+    (message) => showToast(message, "error")
+  );
   if (!userData) {
     return null;
   }
+
+  // Active photo URL preferring local immediate state, then remote Firestore URL
+  const activePhotoURL = photoURL ?? userData.photoURL ?? null;
 
   // -----------------------------
   // Accuracy
@@ -125,7 +106,7 @@ export default function ProfileScreen() {
           username={userData.username ?? "User"}
           email={userData.email ?? ""}
           level={`Level ${userData.level ?? 1} • Fact Explorer`}
-          photoURL={photoURL}
+          photoURL={activePhotoURL}
           onPhotoPress={pickAndUpload}
           uploadingPhoto={uploading}
         />
@@ -142,6 +123,13 @@ export default function ProfileScreen() {
           ))}
 
         </View>
+
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onHide={hideToast}
+        />
 
         <AchievementsCard />
 

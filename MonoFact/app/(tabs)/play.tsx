@@ -15,6 +15,7 @@ import { Typography } from "@/constants/Typography";
 // Components
 import CategoryCard from "@/components/cards/CategoryCard";
 import BottomNav from "@/components/navigation/BottomNav";
+import { useUser } from "@/app/context/UserContext";
 
 // Icons
 import {
@@ -26,11 +27,19 @@ import {
   Cpu,
 } from "lucide-react-native";
 
-import { useEffect, useState } from "react";
-import { doc, getDoc } from "firebase/firestore";
-import { auth, db } from "@/app/services/config";
+// ---------------------------------------------------------------------------
+// FACTS_PER_CATEGORY
+// ---------------------------------------------------------------------------
+// How many facts exist in each category in Firestore.
+// Changing this one value updates progress bars and subtitles everywhere.
+// ---------------------------------------------------------------------------
+const FACTS_PER_CATEGORY = 25;
 
-
+// ---------------------------------------------------------------------------
+// CategoryItem
+// ---------------------------------------------------------------------------
+// Internal type for the category list rendered on this screen.
+// ---------------------------------------------------------------------------
 type CategoryItem = {
   title: string;
   subtitle: string;
@@ -40,22 +49,27 @@ type CategoryItem = {
   iconBackgroundColor: string;
 };
 
-
-// Converts the number of answered facts into a percentage.
+// ---------------------------------------------------------------------------
+// getProgressPercentage
+// ---------------------------------------------------------------------------
+// Converts a raw answered-count into a 0–100 percentage.
+// Caps at 100% in case answered somehow exceeds the total.
+// ---------------------------------------------------------------------------
 const getProgressPercentage = (
   answered: number,
   total: number
 ): number => {
   if (total === 0) return 0;
-
-  return Math.min(
-    100,
-    Math.round((answered / total) * 100)
-  );
+  return Math.min(100, Math.round((answered / total) * 100));
 };
 
-
-// ---- NEW: builds the subtitle string from categoryStats ----
+// ---------------------------------------------------------------------------
+// getCategorySubtitle
+// ---------------------------------------------------------------------------
+// Builds the subtitle string shown under each category card.
+//   - First visit: "25 facts • ~5 min"
+//   - Returning:   "12 / 25 answered • 83% correct"
+// ---------------------------------------------------------------------------
 const getCategorySubtitle = (
   categoryStats: { correct?: number; incorrect?: number } | undefined,
   total: number
@@ -69,148 +83,78 @@ const getCategorySubtitle = (
   }
 
   const accuracy = Math.round((correct / answered) * 100);
-
   return `${answered} / ${total} answered • ${accuracy}% correct`;
 };
-// ------------------------------------------------------------
 
-
+// ---------------------------------------------------------------------------
+// PlayScreen (file: app/(tabs)/play.tsx)
+// ---------------------------------------------------------------------------
+// Shows all 6 categories as cards. Each card displays the user's progress
+// and accuracy for that category. Tapping a card starts a game.
+// Reads from shared UserContext instead of fetching Firestore directly —
+// no duplicate network calls when switching tabs.
+// ---------------------------------------------------------------------------
 export default function PlayScreen() {
 
   const router = useRouter();
 
-  const [userData, setUserData] = useState<any>(null);
-
-
-  useEffect(() => {
-
-    const loadUser = async () => {
-
-      const currentUser = auth.currentUser;
-
-      if (!currentUser) return;
-
-      try {
-
-        const snapshot = await getDoc(
-          doc(db, "users", currentUser.uid)
-        );
-
-        if (snapshot.exists()) {
-          setUserData(snapshot.data());
-        }
-
-      } catch (error) {
-
-        console.error(
-          "Failed to load user data:",
-          error
-        );
-
-      }
-
-    };
-
-    loadUser();
-
-  }, []);
-
+  // Pull user data from shared context instead of fetching Firebase directly
+  const { userData } = useUser();
 
   if (!userData) return null;
 
-
+  // Build the category list using FACTS_PER_CATEGORY so all counts
+  // update automatically if the fact library grows.
   const categories: CategoryItem[] = [
     {
       title: "Nature",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Nature,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Nature ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Nature, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Nature ?? 0, FACTS_PER_CATEGORY),
       icon: Leaf,
       color: Colors.categories.nature,
       iconBackgroundColor: "#E5F7F5",
     },
-
     {
       title: "Science",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Science,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Science ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Science, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Science ?? 0, FACTS_PER_CATEGORY),
       icon: FlaskConical,
       color: Colors.categories.science,
       iconBackgroundColor: "#E7F0F8",
     },
-
     {
       title: "Animals",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Animals,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Animals ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Animals, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Animals ?? 0, FACTS_PER_CATEGORY),
       icon: PawPrint,
       color: Colors.categories.animals,
       iconBackgroundColor: "#FFF3DC",
     },
-
     {
       title: "Space",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Space,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Space ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Space, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Space ?? 0, FACTS_PER_CATEGORY),
       icon: Telescope,
       color: Colors.categories.space,
       iconBackgroundColor: "#E7ECF6",
     },
-
     {
       title: "Photography",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Photography,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Photography ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Photography, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Photography ?? 0, FACTS_PER_CATEGORY),
       icon: Camera,
       color: Colors.categories.photography,
       iconBackgroundColor: "#FDE7EB",
     },
-
     {
       title: "Technology",
-      subtitle: getCategorySubtitle(
-        userData.categoryStats?.Technology,
-        25
-      ),
-      progress: getProgressPercentage(
-        userData.progress?.Technology ?? 0,
-        25
-      ),
+      subtitle: getCategorySubtitle(userData.categoryStats?.Technology, FACTS_PER_CATEGORY),
+      progress: getProgressPercentage(userData.progress?.Technology ?? 0, FACTS_PER_CATEGORY),
       icon: Cpu,
       color: Colors.categories.technology,
       iconBackgroundColor: "#ECE9FF",
     },
   ];
-
 
   return (
     <SafeAreaView style={styles.container}>
@@ -232,22 +176,16 @@ export default function PlayScreen() {
 
         </View>
 
-
         <View style={styles.categoryGrid}>
 
           {categories.map((category) => (
 
             <CategoryCard
               key={category.title}
-
               title={category.title}
-
               icon={category.icon}
-
               subtitle={category.subtitle}
-
               progress={category.progress}
-
               onPress={() =>
                 router.push({
                   pathname: "/game/[category]",
@@ -256,12 +194,8 @@ export default function PlayScreen() {
                   },
                 })
               }
-
               color={category.color}
-
-              iconBackgroundColor={
-                category.iconBackgroundColor
-              }
+              iconBackgroundColor={category.iconBackgroundColor}
             />
 
           ))}
@@ -270,13 +204,11 @@ export default function PlayScreen() {
 
       </ScrollView>
 
-
       <BottomNav current="play" />
 
     </SafeAreaView>
   );
 }
-
 
 const styles = StyleSheet.create({
 

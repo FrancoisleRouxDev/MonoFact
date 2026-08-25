@@ -1,0 +1,1402 @@
+[
+    {
+        "category": "Daily",
+        "statement": "The Great Wall of China is visible from space with the naked eye.",
+        "isFact": false,
+        "explanation": "This is a popular myth. The Great Wall is too narrow to be seen from space with the naked eye. Even astronauts have confirmed this.",
+        "order": 1
+    },
+    {
+        "category": "Daily",
+        "statement": "Cleopatra lived closer in time to the Moon landing than to the construction of the Great Pyramid.",
+        "isFact": true,
+        "explanation": "The Great Pyramid was built around 2560 BC. Cleopatra lived around 30 BC — about 2,500 years after the pyramid, but only about 2,000 years before the 1969 Moon landing.",
+        "order": 2
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans have more than five senses.",
+        "isFact": true,
+        "explanation": "Beyond the classic five, humans have senses including proprioception (body position), thermoception (temperature), equilibrioception (balance), and nociception (pain).",
+        "order": 3
+    },
+    {
+        "category": "Daily",
+        "statement": "The Eiffel Tower is taller in summer than in winter.",
+        "isFact": true,
+        "explanation": "Heat causes the iron to expand. The Eiffel Tower can grow by up to 15 cm in summer due to thermal expansion.",
+        "order": 4
+    },
+    {
+        "category": "Daily",
+        "statement": "Napoleon Bonaparte was unusually short for his time.",
+        "isFact": false,
+        "explanation": "Napoleon stood around 5'7\" (170 cm), which was average for a French man of his era. The myth of his short stature stems from a mix-up between French and English inch measurements.",
+        "order": 5
+    },
+    {
+        "category": "Daily",
+        "statement": "Honey never spoils.",
+        "isFact": true,
+        "explanation": "Archaeologists have found 3,000-year-old honey in Egyptian tombs that was still perfectly edible. Its low moisture content and acidic pH prevent bacterial growth.",
+        "order": 6
+    },
+    {
+        "category": "Daily",
+        "statement": "The human brain uses 10% of its capacity.",
+        "isFact": false,
+        "explanation": "Brain imaging shows that virtually all areas of the brain are active almost all the time. The 10% myth has no scientific basis.",
+        "order": 7
+    },
+    {
+        "category": "Daily",
+        "statement": "A day on Venus is longer than a year on Venus.",
+        "isFact": true,
+        "explanation": "Venus rotates so slowly that it takes 243 Earth days to complete one rotation, but only 225 Earth days to orbit the Sun.",
+        "order": 8
+    },
+    {
+        "category": "Daily",
+        "statement": "The tongue has distinct zones for different tastes.",
+        "isFact": false,
+        "explanation": "The tongue map showing separate zones for sweet, salty, sour, and bitter is a myth. All taste buds across the tongue can detect all basic tastes.",
+        "order": 9
+    },
+    {
+        "category": "Daily",
+        "statement": "Oxford University is older than the Aztec Empire.",
+        "isFact": true,
+        "explanation": "Teaching at Oxford began around 1096 AD. The Aztec Empire was founded in 1428 AD — making Oxford over 300 years older.",
+        "order": 10
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans share 50% of their DNA with bananas.",
+        "isFact": true,
+        "explanation": "About 50% of human DNA is shared with bananas because both organisms share basic cellular functions that have been conserved through evolution.",
+        "order": 11
+    },
+    {
+        "category": "Daily",
+        "statement": "Lightning never strikes the same place twice.",
+        "isFact": false,
+        "explanation": "Lightning frequently strikes the same place multiple times. Tall structures like the Empire State Building are struck dozens of times per year.",
+        "order": 12
+    },
+    {
+        "category": "Daily",
+        "statement": "The shortest war in history lasted 38 minutes.",
+        "isFact": true,
+        "explanation": "The Anglo-Zanzibar War of 1896 lasted between 38 and 45 minutes, making it the shortest recorded war in history.",
+        "order": 13
+    },
+    {
+        "category": "Daily",
+        "statement": "Water drains in opposite directions in the Northern and Southern hemispheres.",
+        "isFact": false,
+        "explanation": "The Coriolis effect is far too weak to affect something as small as a draining sink. The direction water drains depends on the shape of the basin.",
+        "order": 14
+    },
+    {
+        "category": "Daily",
+        "statement": "The inventor of the Pringles can is buried in one.",
+        "isFact": true,
+        "explanation": "Fredric Baur invented the Pringles can and was so proud of it that, per his wishes, part of his ashes were buried in one after his death in 2008.",
+        "order": 15
+    },
+    {
+        "category": "Daily",
+        "statement": "Diamonds are the hardest natural substance on Earth.",
+        "isFact": true,
+        "explanation": "Diamonds score 10 on the Mohs hardness scale, making them the hardest known natural material. They can only be scratched by other diamonds.",
+        "order": 16
+    },
+    {
+        "category": "Daily",
+        "statement": "Carrots improve your night vision.",
+        "isFact": false,
+        "explanation": "While carrots contain Vitamin A which supports eye health, eating extra carrots won't give you better night vision unless you have a deficiency. This myth was British WWII propaganda.",
+        "order": 17
+    },
+    {
+        "category": "Daily",
+        "statement": "The human body contains enough carbon to make about 900 pencils.",
+        "isFact": true,
+        "explanation": "The human body is about 18% carbon by mass. For an average adult, that's roughly 16 kg of carbon — enough to make around 900 pencil leads.",
+        "order": 18
+    },
+    {
+        "category": "Daily",
+        "statement": "Toilet paper was invented before indoor plumbing.",
+        "isFact": true,
+        "explanation": "Toilet paper was invented in China around the 6th century AD. Modern indoor plumbing became widespread in the 19th century.",
+        "order": 19
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'set' has the most definitions in the English language.",
+        "isFact": true,
+        "explanation": "According to the Oxford English Dictionary, 'set' has 430 definitions, making it the word with the most meanings in the English language.",
+        "order": 20
+    },
+    {
+        "category": "Daily",
+        "statement": "Mount Everest is the tallest mountain on Earth measured from sea level.",
+        "isFact": true,
+        "explanation": "Everest reaches 8,849 metres above sea level, making it the highest point on Earth's surface relative to sea level.",
+        "order": 21
+    },
+    {
+        "category": "Daily",
+        "statement": "Mount Everest is the tallest mountain on Earth measured from its base.",
+        "isFact": false,
+        "explanation": "Mauna Kea in Hawaii is taller when measured from its oceanic base — over 10,000 metres total, though most lies underwater.",
+        "order": 22
+    },
+    {
+        "category": "Daily",
+        "statement": "Glass is a slow-moving liquid.",
+        "isFact": false,
+        "explanation": "Glass is an amorphous solid, not a liquid. Old windows appear thicker at the bottom because of old manufacturing techniques, not because glass flows.",
+        "order": 23
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more possible chess games than atoms in the observable universe.",
+        "isFact": true,
+        "explanation": "The number of possible chess games is estimated at 10^120, known as the Shannon number. The observable universe contains an estimated 10^80 atoms.",
+        "order": 24
+    },
+    {
+        "category": "Daily",
+        "statement": "The first computer bug was an actual insect.",
+        "isFact": true,
+        "explanation": "In 1947, Grace Hopper's team found a moth stuck in a relay of the Harvard Mark II computer. The taped insect in the logbook is considered the first literal computer bug.",
+        "order": 25
+    },
+    {
+        "category": "Daily",
+        "statement": "Shakespeare invented the word 'bedroom'.",
+        "isFact": true,
+        "explanation": "Shakespeare coined hundreds of words still used today, including bedroom, which first appeared in A Midsummer Night's Dream.",
+        "order": 26
+    },
+    {
+        "category": "Daily",
+        "statement": "Sound travels faster in water than in air.",
+        "isFact": true,
+        "explanation": "Sound travels at about 343 m/s in air but around 1,480 m/s in water — roughly four times faster — due to water's higher density and elasticity.",
+        "order": 27
+    },
+    {
+        "category": "Daily",
+        "statement": "The dot above the letters 'i' and 'j' is called a tittle.",
+        "isFact": true,
+        "explanation": "The small distinguishing mark above lowercase i and j has a formal name: a tittle. The word has been used since at least the 1590s.",
+        "order": 28
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only animals that blush.",
+        "isFact": true,
+        "explanation": "Charles Darwin called blushing the most peculiar and most human of all expressions. No other animal is known to blush from emotional causes.",
+        "order": 29
+    },
+    {
+        "category": "Daily",
+        "statement": "The Great Fire of London destroyed most of the city's population.",
+        "isFact": false,
+        "explanation": "The Great Fire of London in 1666 destroyed around 13,000 houses but killed only 6 people officially, though the real number may be slightly higher.",
+        "order": 30
+    },
+    {
+        "category": "Daily",
+        "statement": "Taste buds are only found on the tongue.",
+        "isFact": false,
+        "explanation": "While most taste buds are on the tongue, they are also found on the roof of the mouth, the throat, and even the epiglottis.",
+        "order": 31
+    },
+    {
+        "category": "Daily",
+        "statement": "The Sahara Desert is the largest desert on Earth.",
+        "isFact": false,
+        "explanation": "Antarctica is the largest desert on Earth at 14.2 million square kilometres. The Sahara is the largest hot desert but third overall.",
+        "order": 32
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are born with 270 bones and end up with 206.",
+        "isFact": true,
+        "explanation": "Babies are born with around 270 bones. As they grow, many of these fuse together, resulting in the 206 bones adults have.",
+        "order": 33
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'muscle' comes from the Latin word for mouse.",
+        "isFact": true,
+        "explanation": "The Latin word 'musculus' means both muscle and little mouse. Romans thought the movement of muscles under the skin resembled a mouse moving under fabric.",
+        "order": 34
+    },
+    {
+        "category": "Daily",
+        "statement": "Hot water freezes faster than cold water.",
+        "isFact": true,
+        "explanation": "This is known as the Mpemba effect. While not fully understood, hot water can freeze faster than cold water under certain conditions.",
+        "order": 35
+    },
+    {
+        "category": "Daily",
+        "statement": "The average person swallows eight spiders per year while sleeping.",
+        "isFact": false,
+        "explanation": "This is a complete myth. Spiders have no reason to approach a sleeping human's mouth, and vibrations from breathing would deter them.",
+        "order": 36
+    },
+    {
+        "category": "Daily",
+        "statement": "Finland has more saunas than cars.",
+        "isFact": true,
+        "explanation": "Finland has around 3.3 million saunas for a population of 5.5 million people, and fewer than 3 million registered vehicles.",
+        "order": 37
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of crows is called a murder.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of crows is a murder. The origin of this term is unclear but dates back to at least the 15th century.",
+        "order": 38
+    },
+    {
+        "category": "Daily",
+        "statement": "Vikings wore horned helmets.",
+        "isFact": false,
+        "explanation": "Horned helmets are largely a myth popularised by 19th century romanticists. Actual Viking helmets were simple iron or leather caps.",
+        "order": 39
+    },
+    {
+        "category": "Daily",
+        "statement": "The human eye can distinguish about 10 million different colours.",
+        "isFact": true,
+        "explanation": "The human visual system, combining the three types of cone cells, is estimated to differentiate between 7 to 10 million distinct colours.",
+        "order": 40
+    },
+    {
+        "category": "Daily",
+        "statement": "Coca-Cola was originally green.",
+        "isFact": false,
+        "explanation": "Coca-Cola has always been a caramel brown colour. This myth likely originated from the green colour of the original glass bottles.",
+        "order": 41
+    },
+    {
+        "category": "Daily",
+        "statement": "The average cumulus cloud weighs over a million pounds (about 500,000 kg).",
+        "isFact": true,
+        "explanation": "A typical 1-cubic-kilometer cumulus cloud contains approximately 500,000 kg of water droplets, which equals roughly 1.1 million pounds.",
+        "order": 42
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a country with no rivers.",
+        "isFact": true,
+        "explanation": "Saudi Arabia is the largest country in the world with no permanent rivers. It has wadis — dry riverbeds that fill temporarily during rare rainfall.",
+        "order": 43
+    },
+    {
+        "category": "Daily",
+        "statement": "The letters in the word 'listen' can be rearranged to spell 'silent'.",
+        "isFact": true,
+        "explanation": "LISTEN and SILENT are anagrams of each other — they contain exactly the same letters: L, I, S, T, E, N.",
+        "order": 44
+    },
+    {
+        "category": "Daily",
+        "statement": "Tomatoes are classified as vegetables.",
+        "isFact": false,
+        "explanation": "Botanically, tomatoes are fruits because they develop from the flower of a plant and contain seeds. However, they are often classified as vegetables in culinary contexts.",
+        "order": 45
+    },
+    {
+        "category": "Daily",
+        "statement": "The longest English word without a vowel is 'rhythms'.",
+        "isFact": true,
+        "explanation": "'Rhythms' is seven letters long and contains no traditional vowels (a, e, i, o, u), making it one of the longest such words in English.",
+        "order": 46
+    },
+    {
+        "category": "Daily",
+        "statement": "It is possible to cry in space.",
+        "isFact": true,
+        "explanation": "You can produce tears in space, but in microgravity they don't fall — they form a bubble on your eye and can sting before being wiped away.",
+        "order": 47
+    },
+    {
+        "category": "Daily",
+        "statement": "The average human heart beats about 100,000 times per day.",
+        "isFact": true,
+        "explanation": "A resting heart rate of around 70 beats per minute equals approximately 100,800 beats per day and over 2.5 billion beats in a lifetime.",
+        "order": 48
+    },
+    {
+        "category": "Daily",
+        "statement": "Bananas are berries but strawberries are not.",
+        "isFact": true,
+        "explanation": "Botanically, a berry develops from a single flower with one ovary. Bananas qualify; strawberries don't because they develop from a flower with multiple ovaries.",
+        "order": 49
+    },
+    {
+        "category": "Daily",
+        "statement": "The Mona Lisa has no eyebrows.",
+        "isFact": true,
+        "explanation": "It was fashionable in Renaissance Florence to shave eyebrows. High-resolution scans have shown faint traces that may have faded over time.",
+        "order": 50
+    },
+    {
+        "category": "Daily",
+        "statement": "All humans share 99.9% of the same DNA.",
+        "isFact": true,
+        "explanation": "Despite visible differences between people, any two humans share approximately 99.9% of their DNA sequence. The 0.1% accounts for all human variation.",
+        "order": 51
+    },
+    {
+        "category": "Daily",
+        "statement": "The moon has its own tectonic activity.",
+        "isFact": true,
+        "explanation": "The Moon experiences moonquakes caused by tidal forces from Earth's gravity and the cooling and shrinking of its interior.",
+        "order": 52
+    },
+    {
+        "category": "Daily",
+        "statement": "A jiffy is a real unit of time.",
+        "isFact": true,
+        "explanation": "In physics and computing, a jiffy is a real unit — typically 1/100th of a second in computing, or the time it takes light to travel one centimetre in physics.",
+        "order": 53
+    },
+    {
+        "category": "Daily",
+        "statement": "The first alarm clock could only ring at 4 AM.",
+        "isFact": true,
+        "explanation": "The mechanical alarm clock invented by Levi Hutchins in 1787 could only ring at 4 AM — the time he needed to wake for work.",
+        "order": 54
+    },
+    {
+        "category": "Daily",
+        "statement": "The average person walks about 100,000 km in their lifetime.",
+        "isFact": true,
+        "explanation": "The average person takes around 7,500 steps per day. Over a 70-year lifespan, that adds up to roughly 100,000 km — more than twice the circumference of the Earth.",
+        "order": 55
+    },
+    {
+        "category": "Daily",
+        "statement": "Hawaii is moving toward Japan.",
+        "isFact": true,
+        "explanation": "The Hawaiian Islands sit on the Pacific Plate, which is moving northwest at about 5–10 cm per year — slowly heading toward Japan.",
+        "order": 56
+    },
+    {
+        "category": "Daily",
+        "statement": "The letter 'Q' does not appear in any US state name.",
+        "isFact": true,
+        "explanation": "None of the 50 US state names contain the letter Q. Q is the only letter in the English alphabet not found in any US state name (letters like B appear in Alabama and Nebraska).",
+        "order": 57
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only animals that cook their food.",
+        "isFact": true,
+        "explanation": "Cooking is a uniquely human behaviour. No other animal in the wild uses fire or heat to prepare food before eating.",
+        "order": 58
+    },
+    {
+        "category": "Daily",
+        "statement": "The hashtag symbol is called an octothorpe.",
+        "isFact": true,
+        "explanation": "The # symbol has the formal name octothorpe. The 'octo' refers to its eight endpoints. Its exact origin is debated among Bell Labs engineers.",
+        "order": 59
+    },
+    {
+        "category": "Daily",
+        "statement": "Pluto is smaller in surface area than Russia.",
+        "isFact": false,
+        "explanation": "Following measurements from NASA's New Horizons mission, Pluto's surface area is estimated at approximately 17.7 million km², making it slightly larger than Russia's total land area of roughly 17.1 million km².",
+        "order": 60
+    },
+    {
+        "category": "Daily",
+        "statement": "The first product to have a barcode scanned was a pack of Wrigley's gum.",
+        "isFact": true,
+        "explanation": "On June 26, 1974, a 10-pack of Wrigley's Juicy Fruit gum was the first product scanned with a barcode at a Marsh supermarket in Ohio.",
+        "order": 61
+    },
+    {
+        "category": "Daily",
+        "statement": "Ancient Egyptians used sliced onions as pillows.",
+        "isFact": false,
+        "explanation": "While onions held symbolic importance and were found in tombs, there is no evidence they were used as pillows. Headrests were made from wood, stone, or ivory.",
+        "order": 62
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'nerd' was first used by Dr. Seuss.",
+        "isFact": true,
+        "explanation": "The word 'nerd' first appeared in the 1950 Dr. Seuss book 'If I Ran the Zoo', where a nerd was listed among imaginary animals.",
+        "order": 63
+    },
+    {
+        "category": "Daily",
+        "statement": "Russia and the USA are less than 4 km apart at their closest point.",
+        "isFact": true,
+        "explanation": "The Diomede Islands sit in the Bering Strait between Russia and Alaska. Big Diomede (Russia) and Little Diomede (USA) are only about 3.8 km apart.",
+        "order": 64
+    },
+    {
+        "category": "Daily",
+        "statement": "The original Monopoly board was round.",
+        "isFact": false,
+        "explanation": "Monopoly boards have always been square. The game evolved from The Landlord's Game, which was also square.",
+        "order": 65
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more public libraries than McDonald's restaurants in the USA.",
+        "isFact": true,
+        "explanation": "The US has approximately 17,000 public libraries compared to around 14,000 McDonald's locations.",
+        "order": 66
+    },
+    {
+        "category": "Daily",
+        "statement": "The Statue of Liberty was a gift from France.",
+        "isFact": true,
+        "explanation": "The Statue of Liberty was designed by French sculptor Frédéric Auguste Bartholdi and gifted to the United States by France, dedicated in 1886.",
+        "order": 67
+    },
+    {
+        "category": "Daily",
+        "statement": "The average person spends six months of their life waiting at red lights.",
+        "isFact": true,
+        "explanation": "Studies estimate that drivers spend an average of two weeks per year waiting at red lights, which adds up to about six months over a lifetime of driving.",
+        "order": 68
+    },
+    {
+        "category": "Daily",
+        "statement": "The universe is about 13.8 billion years old.",
+        "isFact": true,
+        "explanation": "Based on measurements of the cosmic microwave background radiation and the expansion rate of the universe, scientists estimate its age at approximately 13.8 billion years.",
+        "order": 69
+    },
+    {
+        "category": "Daily",
+        "statement": "Chewing gum was banned in Singapore.",
+        "isFact": true,
+        "explanation": "Singapore banned the import and sale of chewing gum in 1992. Limited exceptions exist for dental or nicotine gum available through pharmacies.",
+        "order": 70
+    },
+    {
+        "category": "Daily",
+        "statement": "An apple a day keeps the doctor away is based on scientific research.",
+        "isFact": false,
+        "explanation": "A 2015 JAMA study found no significant difference in doctor visits between apple eaters and non-apple eaters. The phrase originated as a Welsh proverb.",
+        "order": 71
+    },
+    {
+        "category": "Daily",
+        "statement": "The inventor of the World Wide Web is still alive.",
+        "isFact": true,
+        "explanation": "Tim Berners-Lee invented the World Wide Web in 1989 and is still alive. He has been an advocate for internet privacy and net neutrality.",
+        "order": 72
+    },
+    {
+        "category": "Daily",
+        "statement": "Identical twins have identical fingerprints.",
+        "isFact": false,
+        "explanation": "Identical twins share the same DNA but develop different fingerprints because fingerprint patterns are influenced by random environmental factors in the womb.",
+        "order": 73
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a town in Norway called Hell.",
+        "isFact": true,
+        "explanation": "Hell is a small village in Stjørdal municipality, Norway. It regularly freezes over in winter, giving rise to the joke about Hell freezing over.",
+        "order": 74
+    },
+    {
+        "category": "Daily",
+        "statement": "The human nose can detect over a trillion different smells.",
+        "isFact": true,
+        "explanation": "A 2014 study in Science found that humans can discriminate between more than one trillion olfactory stimuli, far more than the previously estimated 10,000.",
+        "order": 75
+    },
+    {
+        "category": "Daily",
+        "statement": "The first emoji was created in Japan.",
+        "isFact": true,
+        "explanation": "Shigetaka Kurita created the first set of 176 emoji in 1999 for NTT Docomo's mobile internet platform in Japan.",
+        "order": 76
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of flamingos is called a flock.",
+        "isFact": false,
+        "explanation": "A group of flamingos is called a flamboyance, reflecting their vibrant appearance. The term flock is a generic term for birds.",
+        "order": 77
+    },
+    {
+        "category": "Daily",
+        "statement": "The shortest commercial flight in the world lasts about 57 seconds.",
+        "isFact": true,
+        "explanation": "Loganair's flight between Westray and Papa Westray in Scotland covers about 2.7 km and can take as little as 57 seconds in favourable winds.",
+        "order": 78
+    },
+    {
+        "category": "Daily",
+        "statement": "Ancient Romans used urine as a mouthwash.",
+        "isFact": true,
+        "explanation": "Ancient Romans collected and used urine as a teeth-whitening agent due to its ammonia content. It was considered effective enough to be taxed.",
+        "order": 79
+    },
+    {
+        "category": "Daily",
+        "statement": "The first email was sent in 1971.",
+        "isFact": true,
+        "explanation": "Ray Tomlinson sent the first email in 1971 using the ARPANET system. He also chose the @ symbol to separate usernames from host computers.",
+        "order": 80
+    },
+    {
+        "category": "Daily",
+        "statement": "The Pacific Ocean is larger than all of Earth's landmasses combined.",
+        "isFact": true,
+        "explanation": "The Pacific Ocean covers about 165 million km². All of Earth's land combined covers about 149 million km². The Pacific is bigger.",
+        "order": 81
+    },
+    {
+        "category": "Daily",
+        "statement": "Benjamin Franklin discovered electricity.",
+        "isFact": false,
+        "explanation": "Electricity as a phenomenon was known before Franklin. His famous kite experiment demonstrated that lightning is electrical, but he did not discover electricity itself.",
+        "order": 82
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are bioluminescent.",
+        "isFact": true,
+        "explanation": "The human body emits a small amount of light — about 1,000 times weaker than what the naked eye can detect. This bioluminescence fluctuates throughout the day.",
+        "order": 83
+    },
+    {
+        "category": "Daily",
+        "statement": "The first Olympic Games were held in Athens in 1896.",
+        "isFact": true,
+        "explanation": "The first modern Olympic Games were held in Athens, Greece in 1896. Fourteen nations and 241 athletes competed in 43 events.",
+        "order": 84
+    },
+    {
+        "category": "Daily",
+        "statement": "Rubber ducks were originally made of rubber.",
+        "isFact": false,
+        "explanation": "Modern rubber ducks are made from vinyl plastic (PVC), not rubber. The original rubber toys from the late 1800s were solid and not hollow.",
+        "order": 85
+    },
+    {
+        "category": "Daily",
+        "statement": "A jiffy is longer than a second.",
+        "isFact": false,
+        "explanation": "A jiffy in physics is the time it takes light to travel one centimetre — approximately 33.4 picoseconds — far shorter than a second.",
+        "order": 86
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'quiz' was invented as a bet.",
+        "isFact": true,
+        "explanation": "According to legend, a Dublin theatre owner named Daly bet he could introduce a new nonsense word into the language overnight by chalking it on walls. The word quiz appeared everywhere and entered common use.",
+        "order": 87
+    },
+    {
+        "category": "Daily",
+        "statement": "Nintendo was founded in the 1800s.",
+        "isFact": true,
+        "explanation": "Nintendo was founded on September 23, 1889 by Fusajiro Yamauchi — originally as a playing card company producing handmade hanafuda cards.",
+        "order": 88
+    },
+    {
+        "category": "Daily",
+        "statement": "The human skeleton is completely replaced every 10 years.",
+        "isFact": true,
+        "explanation": "Bone is living tissue that is constantly broken down and rebuilt. The entire adult skeleton is replaced approximately every 10 years through a process called remodelling.",
+        "order": 89
+    },
+    {
+        "category": "Daily",
+        "statement": "There are no words in the English language that rhyme with orange.",
+        "isFact": false,
+        "explanation": "The word 'sporange' — a botanical term for a spore sac — is considered a near-perfect rhyme for orange.",
+        "order": 90
+    },
+    {
+        "category": "Daily",
+        "statement": "The colour blue was not recognised in ancient languages.",
+        "isFact": true,
+        "explanation": "Linguist Guy Deutscher noted that ancient texts including Homer's Odyssey never mention the colour blue. Many ancient languages had no word for it.",
+        "order": 91
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only animals that have chins.",
+        "isFact": true,
+        "explanation": "The protruding chin is unique to modern humans. Our closest relatives — chimpanzees, Neanderthals, and other primates — do not have a distinct chin.",
+        "order": 92
+    },
+    {
+        "category": "Daily",
+        "statement": "The 'sixth sick sheik's sixth sheep's sick' is considered the hardest tongue twister in English.",
+        "isFact": true,
+        "explanation": "The Guinness World Records has cited this phrase as the most difficult tongue twister in the English language.",
+        "order": 93
+    },
+    {
+        "category": "Daily",
+        "statement": "The Great Pyramid of Giza was the tallest man-made structure for over 3,800 years.",
+        "isFact": true,
+        "explanation": "Built around 2560 BC at 146.5 metres, the Great Pyramid held the record as the tallest man-made structure until Lincoln Cathedral was completed in 1311 AD.",
+        "order": 94
+    },
+    {
+        "category": "Daily",
+        "statement": "A sneeze travels faster than a car on a motorway.",
+        "isFact": true,
+        "explanation": "Sneezes can travel at up to 160 km/h — faster than the typical motorway speed limit of 120 km/h in most countries.",
+        "order": 95
+    },
+    {
+        "category": "Daily",
+        "statement": "The original name for the colour orange was geoluhread.",
+        "isFact": true,
+        "explanation": "Before the fruit orange was introduced to England in the 16th century, the colour was called geoluhread in Old English, meaning yellow-red.",
+        "order": 96
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more stars in the universe than grains of sand on all Earth's beaches.",
+        "isFact": true,
+        "explanation": "Estimates suggest there are around 10^24 stars in the observable universe versus around 7.5 × 10^18 grains of sand on Earth — stars outnumber sand grains.",
+        "order": 97
+    },
+    {
+        "category": "Daily",
+        "statement": "The first selfie was taken in 1839.",
+        "isFact": true,
+        "explanation": "Robert Cornelius, an American photographer, took what is considered the first selfie in 1839 using a daguerreotype camera set up outside his family's lamp store.",
+        "order": 98
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans lose more heat through their feet than any other body part.",
+        "isFact": false,
+        "explanation": "The idea that we lose most heat through our heads is also a myth. Heat loss is roughly proportional to the surface area of each exposed body part.",
+        "order": 99
+    },
+    {
+        "category": "Daily",
+        "statement": "The fax machine was invented before the telephone.",
+        "isFact": true,
+        "explanation": "Giovanni Caselli demonstrated the pantelegraph — an early fax machine — in 1865. Alexander Graham Bell patented the telephone in 1876.",
+        "order": 100
+    },
+    {
+        "category": "Daily",
+        "statement": "Spaghetti was brought to Italy by Marco Polo from China.",
+        "isFact": false,
+        "explanation": "This is a popular myth. Pasta existed in Italy before Marco Polo's travels. Arab traders likely introduced pasta to Sicily centuries earlier.",
+        "order": 101
+    },
+    {
+        "category": "Daily",
+        "statement": "The average person produces enough saliva in their lifetime to fill two swimming pools.",
+        "isFact": true,
+        "explanation": "Humans produce around 1–2 litres of saliva per day. Over a lifetime, this adds up to approximately 40,000 litres — enough to fill two standard swimming pools.",
+        "order": 102
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a cloud of alcohol floating in space.",
+        "isFact": true,
+        "explanation": "The Sagittarius B2 molecular cloud near the centre of the Milky Way contains vast amounts of ethyl alcohol — enough to fill billions of Earth-sized bottles.",
+        "order": 103
+    },
+    {
+        "category": "Daily",
+        "statement": "Antarctica has an active volcano.",
+        "isFact": true,
+        "explanation": "Mount Erebus on Ross Island, Antarctica is the southernmost active volcano on Earth and has a persistent lava lake.",
+        "order": 104
+    },
+    {
+        "category": "Daily",
+        "statement": "The inventor of the telephone, Alexander Graham Bell, refused to have a telephone in his study.",
+        "isFact": true,
+        "explanation": "Bell found the telephone an intrusive distraction and refused to have one installed in his personal study, preferring uninterrupted work.",
+        "order": 105
+    },
+    {
+        "category": "Daily",
+        "statement": "Pineapples take about two years to grow.",
+        "isFact": true,
+        "explanation": "A pineapple plant typically takes 18 to 24 months to produce its first fruit. Each plant produces only one pineapple at a time.",
+        "order": 106
+    },
+    {
+        "category": "Daily",
+        "statement": "The ampersand (&) was once the 27th letter of the English alphabet.",
+        "isFact": true,
+        "explanation": "Until the mid-1800s, & was taught as the last letter of the alphabet. Schoolchildren would recite 'and per se and' — which eventually became 'ampersand'.",
+        "order": 107
+    },
+    {
+        "category": "Daily",
+        "statement": "Dogs can understand more than 1,000 human words.",
+        "isFact": true,
+        "explanation": "Border Collies have demonstrated the ability to understand hundreds to over 1,000 words. For example, Chaser the Border Collie famously learned the names of 1,022 unique toys and objects.",
+        "order": 108
+    },
+    {
+        "category": "Daily",
+        "statement": "The human liver can regenerate itself completely.",
+        "isFact": true,
+        "explanation": "The liver is the only internal organ capable of natural regeneration. As little as 25% of a liver can regenerate into a whole liver.",
+        "order": 109
+    },
+    {
+        "category": "Daily",
+        "statement": "Japan consists of exactly 100 islands.",
+        "isFact": false,
+        "explanation": "Japan consists of over 6,800 islands, though the four main islands — Honshu, Hokkaido, Kyushu, and Shikoku — make up the vast majority of its land area.",
+        "order": 110
+    },
+    {
+        "category": "Daily",
+        "statement": "The brain cannot feel pain.",
+        "isFact": true,
+        "explanation": "The brain has no pain receptors. Headaches originate from pain-sensitive structures surrounding the brain such as blood vessels, nerves, and muscles.",
+        "order": 111
+    },
+    {
+        "category": "Daily",
+        "statement": "The world's oldest living organism is a tree.",
+        "isFact": true,
+        "explanation": "Methuselah, a Great Basin bristlecone pine in California, is over 4,800 years old and is considered the world's oldest individual living tree.",
+        "order": 112
+    },
+    {
+        "category": "Daily",
+        "statement": "It is possible to sneeze with your eyes open.",
+        "isFact": true,
+        "explanation": "While extremely difficult, it is possible to sneeze with eyes open. The reflex to close eyes during a sneeze is automatic but can be overridden.",
+        "order": 113
+    },
+    {
+        "category": "Daily",
+        "statement": "The letter E is the most used letter in the English language.",
+        "isFact": true,
+        "explanation": "The letter E appears more frequently than any other letter in English text, accounting for about 13% of all letters used.",
+        "order": 114
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of cats is called a clowder.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of cats is a clowder. A group of kittens is called a kindle.",
+        "order": 115
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans share 60% of their DNA with a banana.",
+        "isFact": false,
+        "explanation": "Humans share approximately 50% of their DNA with bananas — not 60%. The figure 60% is commonly misquoted.",
+        "order": 116
+    },
+    {
+        "category": "Daily",
+        "statement": "The first person to be diagnosed with ADHD was a fictional character.",
+        "isFact": true,
+        "explanation": "Heinrich Hoffmann's 1845 children's book featured Fidgety Philip — a boy who couldn't sit still — which many consider the first literary description of ADHD.",
+        "order": 117
+    },
+    {
+        "category": "Daily",
+        "statement": "Iceland has no mosquitoes.",
+        "isFact": true,
+        "explanation": "Iceland is one of the few countries in the world with no native mosquito population, due to its climate and geography.",
+        "order": 118
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'salary' comes from the Latin word for salt.",
+        "isFact": true,
+        "explanation": "The Latin word 'salarium' is linked to salt — possibly because Roman soldiers were paid with salt or given money to buy it. Hence the phrase 'worth his salt'.",
+        "order": 119
+    },
+    {
+        "category": "Daily",
+        "statement": "The strongest muscle in the human body is the tongue.",
+        "isFact": false,
+        "explanation": "The tongue is often cited but this claim is misleading — it depends on how strength is defined. The masseter (jaw muscle) exerts the most force relative to its size.",
+        "order": 120
+    },
+    {
+        "category": "Daily",
+        "statement": "A bolt of lightning is five times hotter than the surface of the Sun.",
+        "isFact": true,
+        "explanation": "Lightning can reach temperatures of around 30,000 K — roughly five times hotter than the Sun's surface temperature of about 5,778 K.",
+        "order": 121
+    },
+    {
+        "category": "Daily",
+        "statement": "The country with the most natural lakes is Canada.",
+        "isFact": true,
+        "explanation": "Canada contains more lakes than any other country — an estimated 879,800 lakes larger than 10 km², representing about 60% of the world's lakes.",
+        "order": 122
+    },
+    {
+        "category": "Daily",
+        "statement": "Earwax has a use-by date.",
+        "isFact": false,
+        "explanation": "Earwax does not expire. It is a natural substance that protects the ear canal from dust, debris, and bacteria and naturally migrates out of the ear.",
+        "order": 123
+    },
+    {
+        "category": "Daily",
+        "statement": "The oldest known recipe is for beer.",
+        "isFact": true,
+        "explanation": "A 3,900-year-old Sumerian poem honouring Ninkasi, the goddess of brewing, contains what is considered the oldest written recipe — a recipe for beer.",
+        "order": 124
+    },
+    {
+        "category": "Daily",
+        "statement": "Astronauts grow taller in space.",
+        "isFact": true,
+        "explanation": "Without gravity compressing the spine, the cartilage between vertebrae expands. Astronauts can grow up to 3% taller in microgravity.",
+        "order": 125
+    },
+    {
+        "category": "Daily",
+        "statement": "The sun is yellow.",
+        "isFact": false,
+        "explanation": "The sun emits white light containing all colours of the spectrum. It appears yellow from Earth because the atmosphere scatters shorter blue wavelengths.",
+        "order": 126
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a species of jellyfish that is considered biologically immortal.",
+        "isFact": true,
+        "explanation": "Turritopsis dohrnii can revert to its juvenile polyp stage after reaching sexual maturity, potentially repeating this cycle indefinitely.",
+        "order": 127
+    },
+    {
+        "category": "Daily",
+        "statement": "The population of the world could fit inside Texas.",
+        "isFact": true,
+        "explanation": "Texas has an area of about 696,000 km². If all 8 billion people stood in Texas, each person would have roughly 87 square metres of space.",
+        "order": 128
+    },
+    {
+        "category": "Daily",
+        "statement": "Sherlock Holmes famously said 'Elementary, my dear Watson' in the original stories.",
+        "isFact": false,
+        "explanation": "This phrase never appears in any of Arthur Conan Doyle's original stories. It was popularised by later film and theatre adaptations.",
+        "order": 129
+    },
+    {
+        "category": "Daily",
+        "statement": "Saudi Arabia imports camels from Australia.",
+        "isFact": true,
+        "explanation": "Australia has the world's largest wild camel population — descendants of camels imported in the 19th century. Saudi Arabia imports them for meat and racing.",
+        "order": 130
+    },
+    {
+        "category": "Daily",
+        "statement": "The Colosseum in Rome could be flooded for naval battles.",
+        "isFact": true,
+        "explanation": "Early in its history, the Colosseum could be flooded to stage mock naval battles called naumachiae, before the underground hypogeum was built.",
+        "order": 131
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more bacteria in the human mouth than people on Earth.",
+        "isFact": true,
+        "explanation": "The human mouth contains between 500 and 1,000 different species of bacteria, with a total count of billions — far exceeding the global human population.",
+        "order": 132
+    },
+    {
+        "category": "Daily",
+        "statement": "The Canary Islands are named after canary birds.",
+        "isFact": false,
+        "explanation": "The Canary Islands are named after dogs — from the Latin 'Insula Canaria' meaning Island of Dogs. The birds were later named after the islands.",
+        "order": 133
+    },
+    {
+        "category": "Daily",
+        "statement": "It would take less than an hour to drive to space.",
+        "isFact": true,
+        "explanation": "Space officially begins at the Kármán line, 100 km above Earth. At a typical motorway speed of 120 km/h, you could reach it in about 50 minutes.",
+        "order": 134
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more possible shuffles of a deck of cards than atoms on Earth.",
+        "isFact": true,
+        "explanation": "The number of ways to shuffle 52 cards is 52! — approximately 8 × 10^67. The number of atoms on Earth is estimated at 10^50. Shuffles win.",
+        "order": 135
+    },
+    {
+        "category": "Daily",
+        "statement": "The first webcam was invented to monitor a coffee pot.",
+        "isFact": true,
+        "explanation": "In 1991, computer scientists at Cambridge University set up a camera to monitor the Trojan Room coffee pot so they could check if coffee was ready without leaving their desks.",
+        "order": 136
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only animals that can get sunburned.",
+        "isFact": false,
+        "explanation": "Many animals can get sunburned, including pigs, hippos, and whales. Hippos secrete a red fluid that acts as a natural sunscreen.",
+        "order": 137
+    },
+    {
+        "category": "Daily",
+        "statement": "The Twitter bird has an official name.",
+        "isFact": true,
+        "explanation": "Twitter's iconic bird logo was officially named Larry after basketball player Larry Bird, in honour of Twitter co-founder Biz Stone's love of the Boston Celtics.",
+        "order": 138
+    },
+    {
+        "category": "Daily",
+        "statement": "The 100 folds in a chef's hat represent 100 ways to cook an egg.",
+        "isFact": true,
+        "explanation": "The traditional toque blanche has exactly 100 pleats, historically said to represent the 100 ways a master chef could prepare eggs.",
+        "order": 139
+    },
+    {
+        "category": "Daily",
+        "statement": "Mount Olympus exists on Mars.",
+        "isFact": true,
+        "explanation": "Olympus Mons on Mars is named after Mount Olympus and is the largest volcano in the solar system — nearly three times the height of Everest.",
+        "order": 140
+    },
+    {
+        "category": "Daily",
+        "statement": "The typewriter keyboard was designed to slow typists down.",
+        "isFact": false,
+        "explanation": "The QWERTY layout was designed by Christopher Sholes in the 1870s to prevent mechanical typewriter keys from jamming by separating commonly paired letters, not to deliberately slow typists down.",
+        "order": 141
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of owls is called a parliament.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of owls is a parliament — possibly because of the association between owls and wisdom, as in the wise deliberations of parliament.",
+        "order": 142
+    },
+    {
+        "category": "Daily",
+        "statement": "The first domain name ever registered was Google.com.",
+        "isFact": false,
+        "explanation": "The first domain name ever registered was Symbolics.com on March 15, 1985 — over a decade before Google was founded.",
+        "order": 143
+    },
+    {
+        "category": "Daily",
+        "statement": "The moon is slowly moving away from Earth.",
+        "isFact": true,
+        "explanation": "The Moon is receding from Earth at a rate of about 3.8 cm per year due to tidal interactions transferring angular momentum from Earth to the Moon.",
+        "order": 144
+    },
+    {
+        "category": "Daily",
+        "statement": "Crows can recognise and remember human faces.",
+        "isFact": true,
+        "explanation": "Research has shown that crows can identify individual human faces, remember people who have treated them poorly, and even alert other crows.",
+        "order": 145
+    },
+    {
+        "category": "Daily",
+        "statement": "The Titanic had a swimming pool.",
+        "isFact": true,
+        "explanation": "The Titanic was equipped with a heated saltwater swimming pool — one of the first ships ever to include such a facility for passengers.",
+        "order": 146
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans share more DNA with chimpanzees than chimpanzees share with gorillas.",
+        "isFact": true,
+        "explanation": "Humans and chimpanzees share about 98.7% of their DNA. Chimpanzees and gorillas share about 98.3%. Humans are genetically closer to chimps than chimps are to gorillas.",
+        "order": 147
+    },
+    {
+        "category": "Daily",
+        "statement": "A jiffy is a unit of time used in computing.",
+        "isFact": true,
+        "explanation": "In computing, a jiffy typically refers to the duration of one tick of the system timer — often 1/100th or 1/1000th of a second depending on the system.",
+        "order": 148
+    },
+    {
+        "category": "Daily",
+        "statement": "The concept of zero was invented in ancient Greece.",
+        "isFact": false,
+        "explanation": "The concept of zero as a number was developed in ancient India, with Brahmagupta formalising its mathematical rules around 628 AD.",
+        "order": 149
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are taller in the morning than in the evening.",
+        "isFact": true,
+        "explanation": "Spinal discs compress throughout the day under the weight of the body. People can be up to 1–2 cm taller in the morning before gravity takes effect.",
+        "order": 150
+    },
+    {
+        "category": "Daily",
+        "statement": "The world's first novel was written by a woman.",
+        "isFact": true,
+        "explanation": "The Tale of Genji, written by Japanese noblewoman Murasaki Shikibu around 1004 AD, is widely considered the world's first novel.",
+        "order": 151
+    },
+    {
+        "category": "Daily",
+        "statement": "There are no rivers in the Arabian Peninsula.",
+        "isFact": false,
+        "explanation": "While Saudi Arabia has no permanent rivers, Yemen and Oman have seasonal rivers and wadis. The Arabian Peninsula does have some river systems.",
+        "order": 152
+    },
+    {
+        "category": "Daily",
+        "statement": "The average person has between 100,000 and 150,000 hairs on their head.",
+        "isFact": true,
+        "explanation": "The average human scalp has approximately 100,000 hairs, though this varies by hair colour and individual genetics.",
+        "order": 153
+    },
+    {
+        "category": "Daily",
+        "statement": "Velcro was inspired by a nature walk.",
+        "isFact": true,
+        "explanation": "In 1941, Swiss engineer George de Mestral noticed burrs from burdock plants sticking to his clothes and his dog's fur. This inspired him to invent Velcro.",
+        "order": 154
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a country that is entirely inside another country.",
+        "isFact": true,
+        "explanation": "Lesotho is a sovereign country completely surrounded by South Africa. San Marino and Vatican City are also entirely surrounded by Italy.",
+        "order": 155
+    },
+    {
+        "category": "Daily",
+        "statement": "Toilet seats are cleaner than most phone screens.",
+        "isFact": true,
+        "explanation": "Studies have found that mobile phone screens can harbour 10 times more bacteria than a toilet seat — because phones are rarely cleaned but touched constantly.",
+        "order": 156
+    },
+    {
+        "category": "Daily",
+        "statement": "The Lego Group is the world's largest tyre manufacturer by number of units.",
+        "isFact": true,
+        "explanation": "Lego produces around 306 million tiny rubber tyres per year for its toy vehicles — more than any other company in the world by unit count.",
+        "order": 157
+    },
+    {
+        "category": "Daily",
+        "statement": "Water can boil and freeze at the same time.",
+        "isFact": true,
+        "explanation": "At the triple point of water (0.01°C and 611.7 Pa), all three phases — solid, liquid, and gas — coexist simultaneously. This is called the triple point.",
+        "order": 158
+    },
+    {
+        "category": "Daily",
+        "statement": "The Great Wall of China took 100 years to build.",
+        "isFact": false,
+        "explanation": "The Great Wall was built over many centuries by various dynasties. Construction spanned from the 7th century BC through the Ming Dynasty ending in 1644 — over 2,000 years.",
+        "order": 159
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'robot' was coined in a Czech play.",
+        "isFact": true,
+        "explanation": "The word robot comes from the 1920 Czech play R.U.R. by Karel Čapek. It derives from the Czech word 'robota' meaning forced labour.",
+        "order": 160
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only primates with a white of the eye.",
+        "isFact": true,
+        "explanation": "Humans are unique among primates in having a visible white sclera. Other primates have dark sclera, which makes it harder to track their gaze — a communication advantage for humans.",
+        "order": 161
+    },
+    {
+        "category": "Daily",
+        "statement": "The Pyramid of Giza is located in the centre of Earth's landmass.",
+        "isFact": false,
+        "explanation": "The idea that Giza sits at the exact geographical center of Earth's landmass stems from 19th-century estimates and is not supported by modern geodesy, where the center varies based on map projection and land definitions.",
+        "order": 162
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of pandas is called an embarrassment.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of pandas is an 'embarrassment', reflecting their charmingly clumsy behavior, though terms like a 'bamboo' or 'cupboard' of pandas are also recognized.",
+        "order": 163
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more trees on Earth than stars in the Milky Way.",
+        "isFact": true,
+        "explanation": "Earth has an estimated 3 trillion trees. The Milky Way contains an estimated 100–400 billion stars. Trees outnumber stars in our galaxy.",
+        "order": 164
+    },
+    {
+        "category": "Daily",
+        "statement": "The average human body contains about 37 trillion cells.",
+        "isFact": true,
+        "explanation": "A 2013 study estimated the human body contains approximately 37.2 trillion cells, though the exact number varies based on individual size and health.",
+        "order": 165
+    },
+    {
+        "category": "Daily",
+        "statement": "The first product advertised on TV was a car.",
+        "isFact": false,
+        "explanation": "The first television commercial in the United States aired on July 1, 1941, and was for Bulova watches, not an automobile.",
+        "order": 166
+    },
+    {
+        "category": "Daily",
+        "statement": "The first TV advertisement was for a Bulova watch.",
+        "isFact": true,
+        "explanation": "On July 1, 1941, Bulova paid $9 for the first television advertisement ever broadcast — a 10-second spot shown before a Brooklyn Dodgers baseball game.",
+        "order": 167
+    },
+    {
+        "category": "Daily",
+        "statement": "Ancient Greeks believed the brain was used for cooling the blood.",
+        "isFact": true,
+        "explanation": "Aristotle believed the heart was the seat of intelligence and that the brain's function was to cool the blood. This view persisted for centuries.",
+        "order": 168
+    },
+    {
+        "category": "Daily",
+        "statement": "Peanuts are technically a nut.",
+        "isFact": false,
+        "explanation": "Peanuts are legumes, not nuts. They grow underground and are more closely related to beans and lentils than to tree nuts like almonds or walnuts.",
+        "order": 169
+    },
+    {
+        "category": "Daily",
+        "statement": "The first computer mouse was made of wood.",
+        "isFact": true,
+        "explanation": "Doug Engelbart's first prototype computer mouse in 1964 was made of wood with a single button, and he called it a mouse because the cord resembled a tail.",
+        "order": 170
+    },
+    {
+        "category": "Daily",
+        "statement": "The smell of rain has a name.",
+        "isFact": true,
+        "explanation": "The pleasant earthy smell after rain is called petrichor — coined in 1964 by Australian scientists who identified oils released by plants and absorbed by dry soil.",
+        "order": 171
+    },
+    {
+        "category": "Daily",
+        "statement": "France is the most visited country in the world.",
+        "isFact": true,
+        "explanation": "France consistently ranks as the world's most visited country, attracting around 90 million international tourists per year — largely due to Paris.",
+        "order": 172
+    },
+    {
+        "category": "Daily",
+        "statement": "The original Ferris wheel was destroyed in a controlled demolition.",
+        "isFact": true,
+        "explanation": "George Washington Gale Ferris Jr.'s original Ferris wheel from the 1893 Chicago World's Fair was demolished with dynamite in 1906 and sold for scrap.",
+        "order": 173
+    },
+    {
+        "category": "Daily",
+        "statement": "Tigers are the largest wild cat species.",
+        "isFact": true,
+        "explanation": "The Siberian (Amur) tiger is the largest wild cat in the world, with males weighing up to 300 kg and measuring over 3 metres in length.",
+        "order": 174
+    },
+    {
+        "category": "Daily",
+        "statement": "Chess was invented in Europe.",
+        "isFact": false,
+        "explanation": "Chess originated in India around the 6th century AD as a game called chaturanga. It spread to Persia, then to the Arab world, and eventually to Europe.",
+        "order": 175
+    },
+    {
+        "category": "Daily",
+        "statement": "The word 'disaster' originally referred to bad stars.",
+        "isFact": true,
+        "explanation": "Disaster comes from the Italian 'disastro' — from 'dis' (bad) and 'astro' (star). It originally referred to the negative influence of a star or planet on one's fate.",
+        "order": 176
+    },
+    {
+        "category": "Daily",
+        "statement": "Humans are the only mammals that cannot breathe and swallow at the same time.",
+        "isFact": true,
+        "explanation": "Because humans have a descended larynx allowing complex speech, we cannot breathe and swallow simultaneously — unlike most other mammals.",
+        "order": 177
+    },
+    {
+        "category": "Daily",
+        "statement": "Fingerprints develop before birth.",
+        "isFact": true,
+        "explanation": "Fingerprints begin forming around week 10 of pregnancy and are complete by around week 24. They are influenced by fetal movement and womb environment.",
+        "order": 178
+    },
+    {
+        "category": "Daily",
+        "statement": "The Amazon River discharges more freshwater than any other river.",
+        "isFact": true,
+        "explanation": "The Amazon River discharges about 20% of all freshwater entering the world's oceans — more than the next seven largest rivers combined.",
+        "order": 179
+    },
+    {
+        "category": "Daily",
+        "statement": "The philosopher Plato was a champion wrestler.",
+        "isFact": true,
+        "explanation": "Plato was said to have competed at the Isthmian Games and was named Plato — meaning broad — possibly because of his broad shoulders from wrestling.",
+        "order": 180
+    },
+    {
+        "category": "Daily",
+        "statement": "The sun makes up 99.8% of the mass of the solar system.",
+        "isFact": true,
+        "explanation": "The Sun contains approximately 99.86% of the total mass of the solar system. Jupiter accounts for most of the remainder.",
+        "order": 181
+    },
+    {
+        "category": "Daily",
+        "statement": "The first country to give women the right to vote was France.",
+        "isFact": false,
+        "explanation": "New Zealand was the first country to grant women the right to vote, in 1893. France did not grant women voting rights until 1944.",
+        "order": 182
+    },
+    {
+        "category": "Daily",
+        "statement": "The human eye is fully developed at birth.",
+        "isFact": false,
+        "explanation": "At birth, human babies can only see clearly about 20–30 cm away. Vision develops significantly over the first few months of life.",
+        "order": 183
+    },
+    {
+        "category": "Daily",
+        "statement": "The shortest place name in the world is a single letter.",
+        "isFact": true,
+        "explanation": "There are several single-letter place names including Å in Norway and Sweden, which means river or small stream.",
+        "order": 184
+    },
+    {
+        "category": "Daily",
+        "statement": "Coca-Cola once contained cocaine.",
+        "isFact": true,
+        "explanation": "Original Coca-Cola contained cocaine from coca leaf extract. Cocaine was removed from the formula around 1903, though decocainised coca leaf extract is still used for flavouring.",
+        "order": 185
+    },
+    {
+        "category": "Daily",
+        "statement": "The human body replaces itself completely every seven years.",
+        "isFact": false,
+        "explanation": "Different cells have vastly different lifespans. Some neurons last a lifetime, while red blood cells last about 120 days. There is no single seven-year cycle.",
+        "order": 186
+    },
+    {
+        "category": "Daily",
+        "statement": "There is enough gold in Earth's core to coat the entire surface of the planet.",
+        "isFact": true,
+        "explanation": "Scientists estimate Earth's core contains enough gold and platinum to cover the entire surface of the planet in a layer about 4 metres deep.",
+        "order": 187
+    },
+    {
+        "category": "Daily",
+        "statement": "The first product sold on eBay was a broken laser pointer.",
+        "isFact": true,
+        "explanation": "In 1995, eBay founder Pierre Omidyar listed a broken laser pointer to test the site. It sold for $14.83 to a collector of broken laser pointers.",
+        "order": 188
+    },
+    {
+        "category": "Daily",
+        "statement": "Elephants are the only animals that cannot jump.",
+        "isFact": false,
+        "explanation": "While elephants cannot jump, they are not the only animals unable to do so. Hippos, rhinos, and sloths also cannot jump.",
+        "order": 189
+    },
+    {
+        "category": "Daily",
+        "statement": "The speed of light is the same in all materials.",
+        "isFact": false,
+        "explanation": "Light travels at its maximum speed only in a vacuum. In water, it slows to about 75% of its vacuum speed. In glass, even slower.",
+        "order": 190
+    },
+    {
+        "category": "Daily",
+        "statement": "There is a basketball court on the top floor of the US Supreme Court building.",
+        "isFact": true,
+        "explanation": "The US Supreme Court building has a basketball court on its fifth floor, informally known as the Highest Court in the Land.",
+        "order": 191
+    },
+    {
+        "category": "Daily",
+        "statement": "The Spanish Flu originated in Spain.",
+        "isFact": false,
+        "explanation": "The 1918 influenza pandemic did not originate in Spain. Spain was among the first to report it openly because it was neutral in WWI and had no wartime censorship.",
+        "order": 192
+    },
+    {
+        "category": "Daily",
+        "statement": "You cannot hum while holding your nose closed.",
+        "isFact": true,
+        "explanation": "Humming requires air to flow through the nasal passages. Pinching your nose shut prevents this airflow, making it impossible to hum.",
+        "order": 193
+    },
+    {
+        "category": "Daily",
+        "statement": "The first James Bond film was Dr. No.",
+        "isFact": true,
+        "explanation": "Dr. No, released in 1962 and starring Sean Connery, was the first James Bond film produced by Eon Productions.",
+        "order": 194
+    },
+    {
+        "category": "Daily",
+        "statement": "There are more possible iterations of a game of Tetris than atoms in the known universe.",
+        "isFact": true,
+        "explanation": "The number of possible Tetris game states is astronomically large — far exceeding the estimated 10^80 atoms in the observable universe.",
+        "order": 195
+    },
+    {
+        "category": "Daily",
+        "statement": "Antarctica is a continent without a native human population.",
+        "isFact": true,
+        "explanation": "Antarctica has no indigenous human population and no permanent residents. It is governed by the Antarctic Treaty and hosts only temporary research station staff.",
+        "order": 196
+    },
+    {
+        "category": "Daily",
+        "statement": "The United States has never lost a war.",
+        "isFact": false,
+        "explanation": "The United States has suffered military defeats, most notably in Vietnam. The Korean War ended in an armistice rather than a clear victory.",
+        "order": 197
+    },
+    {
+        "category": "Daily",
+        "statement": "A group of sharks is called a shiver.",
+        "isFact": true,
+        "explanation": "The collective noun for a group of sharks is a shiver — an evocative term that captures the chill of encountering multiple sharks.",
+        "order": 198
+    },
+    {
+        "category": "Daily",
+        "statement": "The Eiffel Tower was meant to be a permanent structure from the start.",
+        "isFact": false,
+        "explanation": "The Eiffel Tower was built as a temporary structure for the 1889 World's Fair and was originally intended to be dismantled after 20 years.",
+        "order": 199
+    },
+    {
+        "category": "Daily",
+        "statement": "You can lead a cow upstairs but not downstairs.",
+        "isFact": true,
+        "explanation": "Cows' knees can bend enough to walk upstairs but not in the way needed to safely descend. Their leg structure makes walking downstairs nearly impossible.",
+        "order": 200
+    }
+]

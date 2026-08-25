@@ -1,8 +1,9 @@
 import { View, Text, StyleSheet } from "react-native";
 import { Lightbulb } from "lucide-react-native";
-import { Colors } from "@/constants/Colors";
 
-
+/**
+ * SwipeHint displays instructional prompt informing users about swipe gesture mechanics.
+ */
 export default function SwipeHint() {
   return (
     <View style={styles.container}>

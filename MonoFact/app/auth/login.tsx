@@ -9,7 +9,6 @@ import {
   Text,
   Pressable,
   StyleSheet,
-  Alert,
   KeyboardAvoidingView,
   ScrollView,
   Platform,
@@ -19,25 +18,72 @@ import { MaterialCommunityIcons } from "@expo/vector-icons";
 
 import InputField from "@/components/newcomps/InputField";
 import PrimaryButton from "@/components/buttons/Primary-Button";
+import { Toast, useToast } from "@/components/ui/Toast";
 
 import { loginUser } from "@/app/services/auth";
+import { sendPasswordResetEmail } from "firebase/auth";
+import { auth } from "@/app/services/config";
 
+// ---------------------------------------------------------------------------
+// LoginScreen (file: app/auth/login.tsx)
+// ---------------------------------------------------------------------------
+// Handles user sign-in and routes to the main app on success.
+// Also provides navigation to the registration screen and a
+// working "Forgot Password" flow via Firebase's reset email.
+// ---------------------------------------------------------------------------
 export default function LoginScreen() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Controls whether the password field shows plain text or ••••••
+  const [passwordVisible, setPasswordVisible] = useState(false);
+
+  const { toast, showToast, hideToast } = useToast();
+
+  // ---------------------------------------------------------------------------
+  // handleLogin
+  // ---------------------------------------------------------------------------
+  // Validates inputs, calls Firebase Auth, then navigates to the main tabs.
+  // On failure, shows a toast with the Firebase error message.
+  // ---------------------------------------------------------------------------
   const handleLogin = async () => {
     if (!email || !password) {
-      Alert.alert("Missing Information", "Please enter your email and password.");
+      showToast("Please enter your email and password.", "error");
       return;
     }
 
     try {
       await loginUser(email, password);
-
       router.replace("/(tabs)");
     } catch (error: any) {
-      Alert.alert("Login Failed", error.message);
+      showToast(error.message, "error");
+    }
+  };
+
+  // ---------------------------------------------------------------------------
+  // handleForgotPassword
+  // ---------------------------------------------------------------------------
+  // Sends a Firebase password-reset email to the address in the email field.
+  // If the field is empty, prompts the user to enter their email first.
+  // Firebase will not reveal whether the email exists (security best practice).
+  // ---------------------------------------------------------------------------
+  const handleForgotPassword = async () => {
+    if (!email.trim()) {
+      showToast(
+        "Enter your email above then tap Forgot Password again.",
+        "info"
+      );
+      return;
+    }
+
+    try {
+      await sendPasswordResetEmail(auth, email.trim());
+      showToast(
+        "Reset link sent — check your inbox.",
+        "success"
+      );
+    } catch (error: any) {
+      showToast(error.message, "error");
     }
   };
 
@@ -45,9 +91,17 @@ export default function LoginScreen() {
     <KeyboardAvoidingView
       style={{ flex: 1 }}
       behavior={Platform.OS === "ios" ? "padding" : "height"}
-      keyboardVerticalOffset={Platform.OS === "ios" ? 0 : 0}
     >
       <SafeAreaView style={styles.container}>
+
+        {/* Toast notification — sits above all content */}
+        <Toast
+          message={toast.message}
+          type={toast.type}
+          visible={toast.visible}
+          onHide={hideToast}
+        />
+
         <ScrollView
           contentContainerStyle={{ flexGrow: 1 }}
           keyboardShouldPersistTaps="handled"
@@ -57,7 +111,6 @@ export default function LoginScreen() {
 
             <View style={styles.header}>
               <Text style={styles.title}>Welcome back</Text>
-
               <Text style={styles.subtitle}>
                 Sign in to continue your learning streak
               </Text>
@@ -77,11 +130,12 @@ export default function LoginScreen() {
                 }
               />
 
+              {/* Password field — eye icon toggles visibility */}
               <InputField
                 placeholder="Password"
                 value={password}
                 onChangeText={setPassword}
-                secureTextEntry
+                secureTextEntry={!passwordVisible}
                 leftIcon={
                   <MaterialCommunityIcons
                     name="lock-outline"
@@ -90,15 +144,27 @@ export default function LoginScreen() {
                   />
                 }
                 rightIcon={
-                  <MaterialCommunityIcons
-                    name="eye-outline"
-                    size={20}
-                    color={Colors.textSecondary}
-                  />
+                  <Pressable
+                    onPress={() => setPasswordVisible((v) => !v)}
+                  >
+                    <MaterialCommunityIcons
+                      name={
+                        passwordVisible
+                          ? "eye-off-outline"
+                          : "eye-outline"
+                      }
+                      size={20}
+                      color={Colors.textSecondary}
+                    />
+                  </Pressable>
                 }
               />
 
-              <Pressable style={styles.forgotPassword}>
+              {/* Forgot Password — sends a Firebase reset email */}
+              <Pressable
+                style={styles.forgotPassword}
+                onPress={handleForgotPassword}
+              >
                 <Text style={styles.link}>Forgot Password?</Text>
               </Pressable>
 
@@ -124,7 +190,7 @@ export default function LoginScreen() {
           </View>
 
           <Text style={styles.footer}>
-            By continuing, you agree to our Terms & Privacy Policy
+            By continuing, you agree to our Terms &amp; Privacy Policy
           </Text>
         </ScrollView>
       </SafeAreaView>
