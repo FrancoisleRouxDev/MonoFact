@@ -14,8 +14,6 @@ A modern, swipe-based educational quiz application built with **React Native**, 
 [![Firebase](https://img.shields.io/badge/Firebase-Firestore_%26_Auth-FFCA28?style=for-the-badge&logo=firebase&logoColor=black)](https://firebase.google.com/)
 [![License](https://img.shields.io/badge/License-Educational-green?style=for-the-badge)](LICENSE)
 
-[Watch Demo Video](https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQez0y?usp=sharing) · [Project Documentation](#documentation) · [Getting Started](#getting-started)
-
 ---
 
 </div>
@@ -185,6 +183,28 @@ Full project deliverables and documentation are available in the `documents/` fo
 
 ---
 
+## Demo Video
+
+<div align="center">
+
+### Watch MonoFact in Action
+
+[![MonoFact Demo](assets/monofact-preview.png)](https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQeUqCz0y?usp=drive_link)
+
+> Click the image above or [here](https://drive.google.com/drive/folders/1cpskZdVN8eDnTDrasaUTKInUQeUqCz0y?usp=drive_link) to watch the full demo video.
+
+The demo covers:
+- App launch and persistent authentication
+- Home screen and Daily Challenge
+- Category gameplay with swipe mechanics and streak bonuses
+- Feedback and results screens with live XP updates
+- Profile screen with achievements and level progression
+- Settings and account management
+
+</div>
+
+---
+
 ## Acknowledgements
 
 Special thanks to:
@@ -193,6 +213,7 @@ Special thanks to:
 - **Expo** — for the React Native toolchain and development environment
 - **Firebase** — for real-time database, authentication, and storage infrastructure
 - **Lucide** — for the open-source icon library used throughout the UI
+- **Claude** and **ChatGPT** — AI tools used during development
 
 ---
 
