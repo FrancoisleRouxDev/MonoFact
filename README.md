@@ -205,6 +205,15 @@ Full project deliverables and documentation are available in the `documents/` fo
 * **Wireframes and Architecture** — Screen flows and navigation hierarchy.
 * **Planning and Database Design** — Firestore schema specifications and milestone tracking.
 
+
+### System Architecture
+ 
+![System Architecture](assets/System-Architecture.jpg)
+ 
+### User Flow
+ 
+![User Flow](assets/User-Flow.jpg)
+ 
 ---
 
 ## Demo Video
