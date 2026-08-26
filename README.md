@@ -41,17 +41,21 @@ Users are presented with statements and must swipe **Right** if they believe it 
 
 ## Screenshots
  
-| Splash | Login | Register |
+| Onboarding | Onboarding | Onboarding |
 |---|---|---|
-| <img src="assets/Splash%20screen.jpg" width="200"/> | <img src="assets/Login%20screen.jpg" width="200"/> | <img src="assets/Register%20screen.jpg" width="200"/> |
+| <img src="assets/Splash_screen_3.jpg" width="200"/> | <img src="assets/Splash_screen_3-1.jpg" width="200"/> | <img src="assets/Splash_screen_3-2.jpg" width="200"/> |
  
-| Home | Categories | Gameplay |
+| Login | Register | Home |
 |---|---|---|
-| <img src="assets/Home%20screen.jpg" width="200"/> | <img src="assets/Categories%20screen.jpg" width="200"/> | <img src="assets/Gameplay%20screen.jpg" width="200"/> |
+| <img src="assets/Login%20screen.jpg" width="200"/> | <img src="assets/Register%20screen.jpg" width="200"/> | <img src="assets/Home%20screen.jpg" width="200"/> |
  
-| Feedback | Results | Profile |
+| Categories | Gameplay | Feedback |
 |---|---|---|
-| <img src="assets/Feedback%20screen.jpg" width="200"/> | <img src="assets/Results%20screen.jpg" width="200"/> | <img src="assets/Profile%20screen.jpg" width="200"/> |
+| <img src="assets/Categories%20screen.jpg" width="200"/> | <img src="assets/Gameplay%20screen.jpg" width="200"/> | <img src="assets/Feedback%20screen.jpg" width="200"/> |
+ 
+| Daily Feedback | Results | Profile |
+|---|---|---|
+| <img src="assets/Daily_Feedback_screen.jpg" width="200"/> | <img src="assets/Results%20screen.jpg" width="200"/> | <img src="assets/Profile%20screen.jpg" width="200"/> |
  
 | Statistics | Settings | |
 |---|---|---|
@@ -171,7 +175,7 @@ npm run seed
 ### 5. Launch the Development Server
 
 ```bash
-npm start
+npx expo start
 ```
 
 Scan the QR code with your mobile camera (iOS) or the **Expo Go** app (Android).
@@ -184,7 +188,7 @@ Inside the `MonoFact/` directory:
 
 | Command | Action |
 |---|---|
-| `npm start` | Starts the Expo development server |
+| `npx expo start` | Starts the Expo development server |
 | `npm run android` | Builds and opens the app on Android |
 | `npm run ios` | Builds and opens the app on iOS Simulator |
 | `npm run web` | Launches the app in the web browser |
