@@ -39,6 +39,26 @@ Users are presented with statements and must swipe **Right** if they believe it 
 
 ---
 
+## Screenshots
+ 
+| Splash | Login | Register |
+|---|---|---|
+| <img src="assets/Splash%20screen.jpg" width="200"/> | <img src="assets/Login%20screen.jpg" width="200"/> | <img src="assets/Register%20screen.jpg" width="200"/> |
+ 
+| Home | Categories | Gameplay |
+|---|---|---|
+| <img src="assets/Home%20screen.jpg" width="200"/> | <img src="assets/Categories%20screen.jpg" width="200"/> | <img src="assets/Gameplay%20screen.jpg" width="200"/> |
+ 
+| Feedback | Results | Profile |
+|---|---|---|
+| <img src="assets/Feedback%20screen.jpg" width="200"/> | <img src="assets/Results%20screen.jpg" width="200"/> | <img src="assets/Profile%20screen.jpg" width="200"/> |
+ 
+| Statistics | Settings | |
+|---|---|---|
+| <img src="assets/Statistics%20screen.jpg" width="200"/> | <img src="assets/Settings%20screen.jpg" width="200"/> | |
+ 
+---
+
 ## Gameplay Systems
 
 ### XP and Progression Formula
