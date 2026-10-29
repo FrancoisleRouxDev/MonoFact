@@ -4,8 +4,8 @@ import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
 
 type CategoryStat = {
-  accuracy: number;
-  gamesPlayed: number;
+  correct: number;
+  incorrect: number;
 };
 
 type Props = {
@@ -28,12 +28,17 @@ export default function AccuracyCategoryCard({ data }: Props) {
     <View style={styles.card}>
       <Text style={styles.title}>Accuracy by Category</Text>
 
-      {Object.entries(data).map(([name, stats]) => (
+      {Object.entries(data).map(([name, stats]) => {
+        const answered = (stats.correct ?? 0) + (stats.incorrect ?? 0);
+        const accuracy =
+          answered === 0 ? 0 : Math.round((stats.correct / answered) * 100);
+
+        return (
         <View key={name} style={styles.row}>
           <View style={styles.rowHeader}>
             <Text style={styles.category}>{name}</Text>
 
-            <Text style={styles.percent}>{stats.accuracy}%</Text>
+            <Text style={styles.percent}>{accuracy}%</Text>
           </View>
 
           <View style={styles.barBackground}>
@@ -41,14 +46,15 @@ export default function AccuracyCategoryCard({ data }: Props) {
               style={[
                 styles.barFill,
                 {
-                  width: `${stats.accuracy}%`,
+                  width: `${accuracy}%`,
                   backgroundColor: categoryColors[name] ?? Colors.primary,
                 },
               ]}
             />
           </View>
         </View>
-      ))}
+        );
+      })}
     </View>
   );
 }

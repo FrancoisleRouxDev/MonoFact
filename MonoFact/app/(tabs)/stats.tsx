@@ -9,28 +9,11 @@ import AccuracyCategoryCard from "@/components/cards/AccuracyCategoryCard";
 
 import { Trophy, Check, X, Target, Flame, FlaskConical } from "lucide-react-native";
 
-import { useEffect, useState } from "react";
-import { auth, db } from "@/app/services/config";
-import { doc, getDoc } from "firebase/firestore";
+import { useUser } from "@/app/context/UserContext";
 
 export default function StatsScreen() {
-  const [userData, setUserData] = useState<any>(null);
-
-  useEffect(() => {
-    const loadUser = async () => {
-      const currentUser = auth.currentUser;
-
-      if (!currentUser) return;
-
-      const snapshot = await getDoc(doc(db, "users", currentUser.uid));
-
-      if (snapshot.exists()) {
-        setUserData(snapshot.data());
-      }
-    };
-
-    loadUser();
-  }, []);
+  // Live user data from the shared context (same source as the other tabs)
+  const { userData } = useUser();
 
   if (!userData) return null;
 
