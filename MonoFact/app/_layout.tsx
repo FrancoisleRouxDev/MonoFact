@@ -7,6 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/app/services/config';
 import { View, ActivityIndicator } from 'react-native';
 import { Colors } from '@/constants/Colors';
+import { setupNotifications } from '@/app/services/notificationService';
 
 function AuthGate({ children }: { children: React.ReactNode }) {
   const [authLoading, setAuthLoading] = useState(true);
@@ -55,10 +56,14 @@ function AuthGate({ children }: { children: React.ReactNode }) {
 }
 
 export const unstable_settings = {
-  anchor: '/intro',
+  anchor: 'intro/index',
 };
 
 export default function RootLayout() {
+  useEffect(() => {
+    setupNotifications();
+  }, []);
+
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <UserProvider>
