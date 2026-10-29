@@ -38,28 +38,28 @@ export default function CategoriesGrid() {
   const categories: Category[] = [
     {
       title: "Nature",
-      facts: 25,
+      facts: 100,
       icon: Leaf,
       color: Colors.categories.nature,
       iconBackgroundColor: "#E5F7F5",
     },
     {
       title: "Science",
-      facts: 25,
+      facts: 100,
       icon: FlaskConical,
       color: Colors.categories.science,
       iconBackgroundColor: "#E7F0F8",
     },
     {
       title: "Animals",
-      facts: 25,
+      facts: 100,
       icon: PawPrint,
       color: Colors.categories.animals,
       iconBackgroundColor: "#FFF3DC",
     },
     {
       title: "Space",
-      facts: 25,
+      facts: 100,
       icon: Telescope,
       color: Colors.categories.space,
       iconBackgroundColor: "#E7ECF6",

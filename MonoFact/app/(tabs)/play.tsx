@@ -11,6 +11,7 @@ import { useRouter } from "expo-router";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
+import { estimateMinutes } from "@/app/services/deck";
 
 // Components
 import CategoryCard from "@/components/cards/CategoryCard";
@@ -33,7 +34,7 @@ import {
 // How many facts exist in each category in Firestore.
 // Changing this one value updates progress bars and subtitles everywhere.
 // ---------------------------------------------------------------------------
-const FACTS_PER_CATEGORY = 25;
+const FACTS_PER_CATEGORY = 100;
 
 // ---------------------------------------------------------------------------
 // CategoryItem
@@ -67,8 +68,8 @@ const getProgressPercentage = (
 // getCategorySubtitle
 // ---------------------------------------------------------------------------
 // Builds the subtitle string shown under each category card.
-//   - First visit: "25 facts • ~5 min"
-//   - Returning:   "12 / 25 answered • 83% correct"
+//   - First visit: "100 facts • ~25 min"
+//   - Returning:   "12 / 100 answered • 83% correct"
 // ---------------------------------------------------------------------------
 const getCategorySubtitle = (
   categoryStats: { correct?: number; incorrect?: number } | undefined,
@@ -79,7 +80,7 @@ const getCategorySubtitle = (
   const answered = correct + incorrect;
 
   if (answered === 0) {
-    return `${total} facts • ~5 min`;
+    return `${total} facts • ~${estimateMinutes(total)} min`;
   }
 
   const accuracy = Math.round((correct / answered) * 100);

@@ -11,6 +11,14 @@ import { useState, useEffect } from "react";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
 import { Typography } from "@/constants/Typography";
+import {
+    CARD_COUNT_OPTIONS,
+    Fact,
+    buildDeck,
+    getDeckSession,
+    restoreDeckSession,
+    saveDeckSession,
+} from "@/app/services/deck";
 
 // Components
 import QuestionProgress from "@/components/gameplay/QuestionProgress";
@@ -18,20 +26,8 @@ import SwipeableQuestionCard from "@/components/gameplay/SwipeableQuestionCard";
 import QuestionCard from "@/components/cards/QuestionCard";
 import SwipeHint from "@/components/gameplay/SwipeHint";
 import AnswerButton from "@/components/gameplay/AnswerButton";
+import CardCountSelector from "@/components/gameplay/CardCountSelector";
 import { recordAnswer, saveLastPosition } from "@/app/services/stats";
-
-// ---------------------------------------------------------------------------
-// Fact type — matches the Firestore document structure under
-// categories/{categoryId}/facts/{factId}
-// ---------------------------------------------------------------------------
-type Fact = {
-    id: string;
-    category: string;
-    statement: string;  // the question text shown on the card
-    isFact: boolean;    // true = fact, false = myth — this is the correct answer
-    explanation: string; // shown on the feedback screen after answering
-    order: number;      // determines the question sequence
-};
 
 // ---------------------------------------------------------------------------
 // GameplayScreen (file: app/game/[category].tsx)
@@ -44,15 +40,23 @@ type Fact = {
 //   correctAnswers — running score passed through from previous questions
 //
 // Flow:
-//   1. Load all facts for this category from Firestore (ordered by `order`)
-//   2. Show one question at a time via SwipeableQuestionCard
-//   3. User swipes right (Fact) or left (Myth) — or taps the buttons
-//   4. Record the answer in Firestore, then navigate to /game/feedback
-//   5. feedback.tsx navigates back here with index+1 until the last question
-//   6. After the last question, feedback.tsx navigates to /game/results
+//   1. Load the full fact pool for this category from Firestore
+//   2. Player picks a card count (10 / 25 / 50 / 100); the pool is shuffled
+//      (Fisher-Yates) and sliced to that count to form this round's deck.
+//      The deck is kept in services/deck.ts because this screen is re-mounted
+//      for every question; resuming reuses the saved deck instead.
+//   3. Show one question at a time via SwipeableQuestionCard
+//   4. User swipes right (Fact) or left (Myth) — or taps the buttons
+//   5. Record the answer in Firestore, then navigate to /game/feedback
+//   6. feedback.tsx navigates back here with index+1 until the last question
+//   7. After the last question, feedback.tsx navigates to /game/results
 // ---------------------------------------------------------------------------
 export default function GameplayScreen() {
-    const [facts, setFacts] = useState<Fact[]>([]);
+    // Full fact pool for the category (only loaded when a new deck is needed).
+    const [pool, setPool] = useState<Fact[]>([]);
+    // The shuffled cards for this round; null until the player has picked a count.
+    const [facts, setFacts] = useState<Fact[] | null>(null);
+    const [selectedCount, setSelectedCount] = useState<number>(25);
     const [loading, setLoading] = useState(true);
 
     const router = useRouter();
@@ -72,12 +76,24 @@ export default function GameplayScreen() {
     const currentCorrectAnswers = Number(correctAnswers ?? 0);
 
     // -------------------------------------------------------------------------
-    // Load facts from Firestore on mount (re-runs if category changes).
-    // Facts are ordered by the `order` field so questions are always consistent.
+    // On mount (re-runs if category changes):
+    //   - Mid-round (index param present): reuse the deck drawn at round start —
+    //     from memory, or rebuilt from storage after an app restart.
+    //   - Otherwise load the fact pool so the card count selector can draw a deck.
     // -------------------------------------------------------------------------
     useEffect(() => {
         const loadFacts = async () => {
+            const isResuming = index !== undefined;
+
             try {
+                if (isResuming) {
+                    const existing = getDeckSession(categoryName);
+                    if (existing) {
+                        setFacts(existing);
+                        return;
+                    }
+                }
+
                 // Firestore path: categories/{lowercase-category}/facts
                 const categoryId = categoryName.toLowerCase();
 
@@ -96,7 +112,24 @@ export default function GameplayScreen() {
                     ...(document.data() as Omit<Fact, "id">),
                 }));
 
-                setFacts(loadedFacts);
+                setPool(loadedFacts);
+                // Default to the largest offered count up to 25 that the pool can supply.
+                setSelectedCount(
+                    CARD_COUNT_OPTIONS.filter(
+                        (count) => count <= Math.min(25, loadedFacts.length)
+                    ).pop() ?? loadedFacts.length
+                );
+
+                if (isResuming) {
+                    const restored = await restoreDeckSession(categoryName, loadedFacts);
+                    if (restored) {
+                        setFacts(restored);
+                    } else {
+                        // The saved deck is gone, so the saved position is
+                        // meaningless — start over from the card count selector.
+                        router.setParams({ index: "0", correctAnswers: "0" });
+                    }
+                }
             } catch (error) {
                 console.error("Failed to load facts:", error);
             } finally {
@@ -122,13 +155,39 @@ export default function GameplayScreen() {
     // -------------------------------------------------------------------------
     // Empty state — shown if no facts exist for this category in Firestore.
     // -------------------------------------------------------------------------
-    if (facts.length === 0) {
+    if (!facts && pool.length === 0) {
         return (
             <SafeAreaView style={styles.center}>
                 <Text style={styles.noFactsTitle}>No facts found</Text>
                 <Text style={styles.noFactsText}>
                     No facts were found for {categoryName}.
                 </Text>
+            </SafeAreaView>
+        );
+    }
+
+    // -------------------------------------------------------------------------
+    // Pre-game screen — pick how many cards to play, then draw the deck.
+    // -------------------------------------------------------------------------
+    if (!facts) {
+        const options = CARD_COUNT_OPTIONS.filter((count) => count <= pool.length);
+        const availableOptions = options.length > 0 ? options : [pool.length];
+
+        return (
+            <SafeAreaView style={styles.container}>
+                <CardCountSelector
+                    category={categoryName}
+                    poolSize={pool.length}
+                    options={availableOptions}
+                    selected={selectedCount}
+                    onSelect={setSelectedCount}
+                    onStart={async () => {
+                        const deck = buildDeck(pool, selectedCount);
+                        await saveDeckSession(categoryName, deck);
+                        setFacts(deck);
+                    }}
+                    onBack={() => router.replace("/(tabs)/play")}
+                />
             </SafeAreaView>
         );
     }
