@@ -1,7 +1,7 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
 import { getFirestore } from "firebase/firestore";
 // @ts-expect-error - getReactNativePersistence exists in React Native entrypoint of firebase/auth
-import { initializeAuth, getReactNativePersistence } from "firebase/auth";
+import { getAuth, initializeAuth, getReactNativePersistence } from "firebase/auth";
 import AsyncStorage from "@react-native-async-storage/async-storage";
 
 const firebaseConfig = {
@@ -17,7 +17,13 @@ const firebaseConfig = {
 export const app = getApps().length === 0 ? initializeApp(firebaseConfig) : getApp();
 export const db = getFirestore(app);
 
-// Persist session across app restarts with AsyncStorage
-export const auth = initializeAuth(app, {
-  persistence: getReactNativePersistence(AsyncStorage),
-});
+// Persist session across app restarts with AsyncStorage.
+// getReactNativePersistence only exists in the React Native build of
+// firebase/auth; web (including Expo's server render) and Node get the
+// standard build, which persists on its own, so fall back to getAuth there.
+export const auth =
+  typeof getReactNativePersistence === "function"
+    ? initializeAuth(app, {
+        persistence: getReactNativePersistence(AsyncStorage),
+      })
+    : getAuth(app);
