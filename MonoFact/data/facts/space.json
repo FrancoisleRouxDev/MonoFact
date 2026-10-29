@@ -173,5 +173,530 @@
     "isFact": true,
     "explanation": "Sound requires a medium to travel through. Interstellar space is an extremely high vacuum, meaning there are not enough molecules to propagate sound waves.",
     "order": 25
+  },
+  {
+    "category": "Space",
+    "statement": "Jupiter is the largest planet in the solar system.",
+    "isFact": true,
+    "explanation": "Jupiter is more than twice as massive as all the other planets combined, and about 11 times wider than Earth.",
+    "order": 26
+  },
+  {
+    "category": "Space",
+    "statement": "Mercury is the closest planet to the Sun.",
+    "isFact": true,
+    "explanation": "It orbits at an average distance of about 58 million kilometres and completes a lap around the Sun every 88 days.",
+    "order": 27
+  },
+  {
+    "category": "Space",
+    "statement": "Neptune has the fastest winds of any planet in the solar system.",
+    "isFact": true,
+    "explanation": "Winds on Neptune can exceed 2,000 km/h, far stronger than the strongest storms on Earth.",
+    "order": 28
+  },
+  {
+    "category": "Space",
+    "statement": "Mercury rotates exactly three times for every two orbits around the Sun.",
+    "isFact": true,
+    "explanation": "This 3:2 spin-orbit resonance means that a solar day on Mercury lasts two Mercury years.",
+    "order": 29
+  },
+  {
+    "category": "Space",
+    "statement": "A light-year is a unit of distance.",
+    "isFact": true,
+    "explanation": "It is the distance light travels in one year, about 9.46 trillion kilometres.",
+    "order": 30
+  },
+  {
+    "category": "Space",
+    "statement": "Proxima Centauri is the nearest known star to the Sun.",
+    "isFact": true,
+    "explanation": "It is about 4.24 light-years away, which would take tens of thousands of years to reach with current spacecraft.",
+    "order": 31
+  },
+  {
+    "category": "Space",
+    "statement": "The Milky Way is a barred spiral galaxy.",
+    "isFact": true,
+    "explanation": "Our galaxy has a central bar-shaped structure of stars, with spiral arms extending outward.",
+    "order": 32
+  },
+  {
+    "category": "Space",
+    "statement": "The Moon is slowly moving away from Earth.",
+    "isFact": true,
+    "explanation": "It drifts away by about 3.8 centimetres a year, measured using mirrors left on the lunar surface by Apollo astronauts.",
+    "order": 33
+  },
+  {
+    "category": "Space",
+    "statement": "Yuri Gagarin was the first human in space.",
+    "isFact": true,
+    "explanation": "He orbited Earth aboard Vostok 1 on 12 April 1961, in a flight that lasted 108 minutes.",
+    "order": 34
+  },
+  {
+    "category": "Space",
+    "statement": "Neil Armstrong was the first person to walk on the Moon.",
+    "isFact": true,
+    "explanation": "He stepped onto the lunar surface on 20 July 1969, followed by Buzz Aldrin.",
+    "order": 35
+  },
+  {
+    "category": "Space",
+    "statement": "Valentina Tereshkova was the first woman in space.",
+    "isFact": true,
+    "explanation": "She flew aboard Vostok 6 in June 1963 and orbited Earth 48 times.",
+    "order": 36
+  },
+  {
+    "category": "Space",
+    "statement": "Sputnik 1 was the first artificial satellite.",
+    "isFact": true,
+    "explanation": "The Soviet Union launched it in October 1957, starting the space age.",
+    "order": 37
+  },
+  {
+    "category": "Space",
+    "statement": "The International Space Station orbits Earth about every 90 minutes.",
+    "isFact": true,
+    "explanation": "It travels at roughly 28,000 km/h, so astronauts see about 16 sunrises and sunsets every day.",
+    "order": 38
+  },
+  {
+    "category": "Space",
+    "statement": "The Hubble Space Telescope was launched in 1990.",
+    "isFact": true,
+    "explanation": "Orbiting above the atmosphere, it has produced some of the sharpest views of the universe, including the Hubble Deep Field.",
+    "order": 39
+  },
+  {
+    "category": "Space",
+    "statement": "The James Webb Space Telescope observes mainly in infrared light.",
+    "isFact": true,
+    "explanation": "Infrared lets it peer through dust and see very distant galaxies whose light has been stretched by the universe's expansion.",
+    "order": 40
+  },
+  {
+    "category": "Space",
+    "statement": "Voyager 1 is the most distant human-made object from Earth.",
+    "isFact": true,
+    "explanation": "Launched in 1977, it entered interstellar space in 2012 and is now more than 24 billion kilometres away.",
+    "order": 41
+  },
+  {
+    "category": "Space",
+    "statement": "Saturn is less dense than water.",
+    "isFact": true,
+    "explanation": "Its average density is about 0.69 g/cm³, so it would float in a bathtub big enough to hold it.",
+    "order": 42
+  },
+  {
+    "category": "Space",
+    "statement": "Saturn's moon Titan has lakes and rivers of liquid methane and ethane.",
+    "isFact": true,
+    "explanation": "Titan is the only moon with a thick atmosphere, and it has weather cycles like Earth's but with hydrocarbons instead of water.",
+    "order": 43
+  },
+  {
+    "category": "Space",
+    "statement": "Jupiter's moon Europa is thought to have a salty ocean under its icy crust.",
+    "isFact": true,
+    "explanation": "Scientists think this ocean contains about twice as much water as all of Earth's oceans, making Europa a target in the search for life.",
+    "order": 44
+  },
+  {
+    "category": "Space",
+    "statement": "Saturn's moon Enceladus shoots plumes of water vapour into space.",
+    "isFact": true,
+    "explanation": "The Cassini spacecraft flew through the geysers and found salts and organic molecules in the spray.",
+    "order": 45
+  },
+  {
+    "category": "Space",
+    "statement": "Ganymede is the largest moon in the solar system.",
+    "isFact": true,
+    "explanation": "This moon of Jupiter is bigger than the planet Mercury, although it has less mass.",
+    "order": 46
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun contains about 99.8% of the mass of the solar system.",
+    "isFact": true,
+    "explanation": "Everything else, including all the planets, moons and asteroids, makes up just the remaining 0.2%.",
+    "order": 47
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun is about 4.6 billion years old.",
+    "isFact": true,
+    "explanation": "It is roughly halfway through its life and will eventually swell into a red giant in about 5 billion years.",
+    "order": 48
+  },
+  {
+    "category": "Space",
+    "statement": "A teaspoon of neutron star material would weigh billions of tonnes.",
+    "isFact": true,
+    "explanation": "Neutron stars pack more than the mass of the Sun into a ball about 20 km across.",
+    "order": 49
+  },
+  {
+    "category": "Space",
+    "statement": "Nothing, not even light, can escape once it passes a black hole's event horizon.",
+    "isFact": true,
+    "explanation": "The event horizon is the boundary where the escape velocity exceeds the speed of light.",
+    "order": 50
+  },
+  {
+    "category": "Space",
+    "statement": "The first image of a black hole was released in 2019.",
+    "isFact": true,
+    "explanation": "The Event Horizon Telescope captured the supermassive black hole in the galaxy M87 by linking radio telescopes around the world.",
+    "order": 51
+  },
+  {
+    "category": "Space",
+    "statement": "The universe is expanding.",
+    "isFact": true,
+    "explanation": "Observations of distant galaxies moving away from us, first by Edwin Hubble, show that space itself is stretching.",
+    "order": 52
+  },
+  {
+    "category": "Space",
+    "statement": "The universe is about 13.8 billion years old.",
+    "isFact": true,
+    "explanation": "This estimate comes from measurements of the cosmic microwave background, the afterglow of the Big Bang.",
+    "order": 53
+  },
+  {
+    "category": "Space",
+    "statement": "Mars has two small moons called Phobos and Deimos.",
+    "isFact": true,
+    "explanation": "Both are irregular and potato-shaped, and may be captured asteroids.",
+    "order": 54
+  },
+  {
+    "category": "Space",
+    "statement": "Sunsets on Mars appear blue.",
+    "isFact": true,
+    "explanation": "Fine dust in the Martian atmosphere scatters red light away from the Sun, so the sky around the setting Sun looks bluish.",
+    "order": 55
+  },
+  {
+    "category": "Space",
+    "statement": "Earth is the densest planet in the solar system.",
+    "isFact": true,
+    "explanation": "Earth's average density is about 5.5 g/cm³, slightly higher than that of any other planet.",
+    "order": 56
+  },
+  {
+    "category": "Space",
+    "statement": "Venus rotates in the opposite direction to most planets.",
+    "isFact": true,
+    "explanation": "Venus spins clockwise, backwards compared with Earth, so the Sun rises in the west there.",
+    "order": 57
+  },
+  {
+    "category": "Space",
+    "statement": "A comet's tail always points away from the Sun.",
+    "isFact": true,
+    "explanation": "The solar wind and sunlight push material away from the comet, so the tail trails behind on the way in and leads on the way out.",
+    "order": 58
+  },
+  {
+    "category": "Space",
+    "statement": "Ceres is a dwarf planet in the asteroid belt.",
+    "isFact": true,
+    "explanation": "It is the largest object in the belt between Mars and Jupiter, and holds a large share of the belt's total mass.",
+    "order": 59
+  },
+  {
+    "category": "Space",
+    "statement": "The Moon always shows the same face to Earth.",
+    "isFact": true,
+    "explanation": "It rotates once for every orbit, so one side always faces us, an effect known as tidal locking.",
+    "order": 60
+  },
+  {
+    "category": "Space",
+    "statement": "There are more stars in the observable universe than grains of sand on Earth's beaches.",
+    "isFact": true,
+    "explanation": "Astronomers estimate at least 10 sextillion stars, which is far more than the number of sand grains on all of Earth's beaches.",
+    "order": 61
+  },
+  {
+    "category": "Space",
+    "statement": "Saturn's rings are made mostly of water ice.",
+    "isFact": true,
+    "explanation": "The rings are billions of pieces of ice and rock, ranging from dust grains to boulders the size of houses.",
+    "order": 62
+  },
+  {
+    "category": "Space",
+    "statement": "A solar eclipse happens when the Moon passes between the Earth and the Sun.",
+    "isFact": true,
+    "explanation": "The Moon's shadow falls on Earth, and in the path of totality the day briefly turns dark.",
+    "order": 63
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun's core reaches about 15 million degrees Celsius.",
+    "isFact": true,
+    "explanation": "That heat and pressure fuses hydrogen into helium, releasing the energy that powers the Sun.",
+    "order": 64
+  },
+  {
+    "category": "Space",
+    "statement": "Sunspots are cooler than the rest of the Sun's surface.",
+    "isFact": true,
+    "explanation": "They are about 1,500 °C cooler and appear dark only by contrast with the brighter surroundings.",
+    "order": 65
+  },
+  {
+    "category": "Space",
+    "statement": "NASA's Ingenuity helicopter made the first powered flight on another planet.",
+    "isFact": true,
+    "explanation": "It flew above the surface of Mars on 19 April 2021, and went on to make dozens of flights.",
+    "order": 66
+  },
+  {
+    "category": "Space",
+    "statement": "There are 88 officially recognised constellations.",
+    "isFact": true,
+    "explanation": "The International Astronomical Union set the modern list and boundaries in 1922, which cover the entire sky.",
+    "order": 67
+  },
+  {
+    "category": "Space",
+    "statement": "Gravitational waves were first detected in 2015.",
+    "isFact": true,
+    "explanation": "The LIGO observatory picked up ripples in spacetime from two merging black holes, a century after Einstein predicted them.",
+    "order": 68
+  },
+  {
+    "category": "Space",
+    "statement": "Mercury has water ice at its poles.",
+    "isFact": true,
+    "explanation": "Permanently shadowed craters near Mercury's poles stay cold enough to preserve ice, despite the planet being so close to the Sun.",
+    "order": 69
+  },
+  {
+    "category": "Space",
+    "statement": "Mercury is the hottest planet because it is the closest to the Sun.",
+    "isFact": false,
+    "explanation": "Venus is hotter, with surface temperatures around 465 °C, due to its thick atmosphere that traps heat.",
+    "order": 70
+  },
+  {
+    "category": "Space",
+    "statement": "The far side of the Moon never receives sunlight.",
+    "isFact": false,
+    "explanation": "The far side gets as much sunlight as the near side; it's just permanently hidden from our view.",
+    "order": 71
+  },
+  {
+    "category": "Space",
+    "statement": "The Moon landings were faked.",
+    "isFact": false,
+    "explanation": "The Apollo missions are backed by extensive evidence, including lunar samples, retroreflectors, independent tracking and thousands of photographs.",
+    "order": 72
+  },
+  {
+    "category": "Space",
+    "statement": "Jupiter has a solid surface you could stand on.",
+    "isFact": false,
+    "explanation": "Jupiter is a gas giant made mostly of hydrogen and helium, with no solid surface; the deeper you go, the denser the gas becomes.",
+    "order": 73
+  },
+  {
+    "category": "Space",
+    "statement": "Mars is the planet that comes closest to Earth.",
+    "isFact": false,
+    "explanation": "Venus gets closer to Earth than Mars ever does, and averaged over time Mercury is the nearest planet to Earth.",
+    "order": 74
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun is the largest star in the universe.",
+    "isFact": false,
+    "explanation": "Many stars, such as the red supergiant UY Scuti, are hundreds of times wider than the Sun.",
+    "order": 75
+  },
+  {
+    "category": "Space",
+    "statement": "The Big Bang was an explosion that happened at one point in space.",
+    "isFact": false,
+    "explanation": "The Big Bang was an expansion of space itself everywhere at once, not an explosion into existing space.",
+    "order": 76
+  },
+  {
+    "category": "Space",
+    "statement": "Space is so cold that anything exposed to it freezes instantly.",
+    "isFact": false,
+    "explanation": "A vacuum is a poor conductor of heat, so an object loses heat slowly, mostly by radiation.",
+    "order": 77
+  },
+  {
+    "category": "Space",
+    "statement": "An astronaut's body would explode if exposed to the vacuum of space.",
+    "isFact": false,
+    "explanation": "Skin is strong enough to hold the body together; the real dangers are lack of oxygen and loss of consciousness within seconds.",
+    "order": 78
+  },
+  {
+    "category": "Space",
+    "statement": "The Moon has no gravity.",
+    "isFact": false,
+    "explanation": "The Moon has about one-sixth of Earth's gravity, which is why astronauts could bounce along its surface.",
+    "order": 79
+  },
+  {
+    "category": "Space",
+    "statement": "Saturn's rings are solid, continuous sheets.",
+    "isFact": false,
+    "explanation": "They are made of countless separate particles orbiting Saturn, from tiny grains to large boulders.",
+    "order": 80
+  },
+  {
+    "category": "Space",
+    "statement": "The asteroid belt is so crowded that spacecraft must dodge rocks.",
+    "isFact": false,
+    "explanation": "The asteroids are spread across millions of kilometres, and spacecraft have crossed the belt without ever coming close to one.",
+    "order": 81
+  },
+  {
+    "category": "Space",
+    "statement": "Earth is the only place in the solar system with liquid water.",
+    "isFact": false,
+    "explanation": "Evidence suggests liquid water oceans lie beneath the ice of moons such as Europa and Enceladus.",
+    "order": 82
+  },
+  {
+    "category": "Space",
+    "statement": "Mars's atmosphere is mostly oxygen.",
+    "isFact": false,
+    "explanation": "It is about 95% carbon dioxide, and extremely thin, so humans can't breathe it.",
+    "order": 83
+  },
+  {
+    "category": "Space",
+    "statement": "A light-year is a measure of time.",
+    "isFact": false,
+    "explanation": "A light-year is a measure of distance: how far light travels in one year.",
+    "order": 84
+  },
+  {
+    "category": "Space",
+    "statement": "The stars in a constellation are all close together in space.",
+    "isFact": false,
+    "explanation": "They only appear to be near each other from Earth, and may be at wildly different distances.",
+    "order": 85
+  },
+  {
+    "category": "Space",
+    "statement": "The Moon is physically larger when it is near the horizon.",
+    "isFact": false,
+    "explanation": "This is an optical illusion; the Moon's real size and apparent size in the sky stay the same.",
+    "order": 86
+  },
+  {
+    "category": "Space",
+    "statement": "Humans have already travelled to Mars.",
+    "isFact": false,
+    "explanation": "Only robotic spacecraft such as rovers and landers have reached Mars so far.",
+    "order": 87
+  },
+  {
+    "category": "Space",
+    "statement": "Rocket engines need air to push against in order to work in space.",
+    "isFact": false,
+    "explanation": "Rockets work by expelling exhaust, which pushes the rocket forward according to Newton's third law, and they work best in a vacuum.",
+    "order": 88
+  },
+  {
+    "category": "Space",
+    "statement": "Stars twinkle because their brightness pulses on and off.",
+    "isFact": false,
+    "explanation": "Twinkling is caused by Earth's turbulent atmosphere bending starlight, and stars seen from space do not twinkle.",
+    "order": 89
+  },
+  {
+    "category": "Space",
+    "statement": "The phases of the Moon are caused by Earth's shadow.",
+    "isFact": false,
+    "explanation": "Phases occur because we see different amounts of the Moon's sunlit half as it orbits; Earth's shadow causes lunar eclipses.",
+    "order": 90
+  },
+  {
+    "category": "Space",
+    "statement": "It is safe to look at a partial solar eclipse without eye protection.",
+    "isFact": false,
+    "explanation": "Even a partially covered Sun can burn the retina and damage your eyes permanently.",
+    "order": 91
+  },
+  {
+    "category": "Space",
+    "statement": "The Milky Way is the only galaxy in the universe.",
+    "isFact": false,
+    "explanation": "The observable universe contains hundreds of billions of galaxies.",
+    "order": 92
+  },
+  {
+    "category": "Space",
+    "statement": "Meteorites are red-hot when they land on Earth.",
+    "isFact": false,
+    "explanation": "A meteorite's surface melts in the atmosphere, but the interior stays cold after travelling through space, so they are often cool to the touch.",
+    "order": 93
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun will end its life as a supernova.",
+    "isFact": false,
+    "explanation": "The Sun is not massive enough; it will swell into a red giant and then shed its outer layers to become a white dwarf.",
+    "order": 94
+  },
+  {
+    "category": "Space",
+    "statement": "Earth sits at the centre of the Milky Way.",
+    "isFact": false,
+    "explanation": "The Solar System is about 26,000 light-years from the galactic centre, in one of the spiral arms.",
+    "order": 95
+  },
+  {
+    "category": "Space",
+    "statement": "Polaris, the North Star, is the brightest star in the night sky.",
+    "isFact": false,
+    "explanation": "Polaris is only about the 48th-brightest star; its fame comes from sitting almost directly above the North Pole.",
+    "order": 96
+  },
+  {
+    "category": "Space",
+    "statement": "Venus is the planet closest to the Sun.",
+    "isFact": false,
+    "explanation": "Mercury is closest to the Sun; Venus is second.",
+    "order": 97
+  },
+  {
+    "category": "Space",
+    "statement": "The Sun is the hottest kind of star there is.",
+    "isFact": false,
+    "explanation": "The Sun's surface is about 5,500 °C, while blue stars can have surfaces over 30,000 °C.",
+    "order": 98
+  },
+  {
+    "category": "Space",
+    "statement": "Venus is a star, because it shines brightly in the night sky.",
+    "isFact": false,
+    "explanation": "Venus is a planet and shines by reflecting sunlight, and its thick, cloudy atmosphere makes it very reflective.",
+    "order": 99
+  },
+  {
+    "category": "Space",
+    "statement": "Mars has no water at all.",
+    "isFact": false,
+    "explanation": "Mars has water ice at its poles and underground, and there is evidence that liquid water once flowed across its surface.",
+    "order": 100
   }
 ]

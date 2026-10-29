@@ -173,5 +173,530 @@
     "isFact": false,
     "explanation": "The internet is the global network infrastructure connecting millions of computers. The World Wide Web is one service that runs on top of the internet, consisting of interlinked web pages accessed via browsers.",
     "order": 25
+  },
+  {
+    "category": "Technology",
+    "statement": "Tim Berners-Lee invented the World Wide Web while working at CERN.",
+    "isFact": true,
+    "explanation": "He proposed the system in 1989 to help scientists share documents, and the first website went live in 1991.",
+    "order": 26
+  },
+  {
+    "category": "Technology",
+    "statement": "Ada Lovelace is often regarded as the first computer programmer.",
+    "isFact": true,
+    "explanation": "In the 1840s she wrote an algorithm for Charles Babbage's proposed Analytical Engine, a machine that was never completed.",
+    "order": 27
+  },
+  {
+    "category": "Technology",
+    "statement": "Alan Turing helped break the German Enigma code during World War II.",
+    "isFact": true,
+    "explanation": "His work at Bletchley Park helped the Allies read encrypted messages, and is estimated to have shortened the war.",
+    "order": 28
+  },
+  {
+    "category": "Technology",
+    "statement": "ENIAC, one of the first general-purpose electronic computers, weighed around 30 tonnes.",
+    "isFact": true,
+    "explanation": "Completed in 1945, it filled a large room and used about 17,000 vacuum tubes.",
+    "order": 29
+  },
+  {
+    "category": "Technology",
+    "statement": "Moore's Law observes that the number of transistors on a chip roughly doubles every two years.",
+    "isFact": true,
+    "explanation": "Gordon Moore made the observation in 1965, and it guided the chip industry for decades.",
+    "order": 30
+  },
+  {
+    "category": "Technology",
+    "statement": "Linus Torvalds created the Linux kernel in 1991.",
+    "isFact": true,
+    "explanation": "He started it as a hobby project as a student, and it now powers servers, supercomputers and Android phones.",
+    "order": 31
+  },
+  {
+    "category": "Technology",
+    "statement": "The original iPhone could not copy and paste text.",
+    "isFact": true,
+    "explanation": "Copy and paste only arrived with iPhone OS 3.0 in 2009.",
+    "order": 32
+  },
+  {
+    "category": "Technology",
+    "statement": "Wikipedia was launched in 2001.",
+    "isFact": true,
+    "explanation": "Founded by Jimmy Wales and Larry Sanger, it has grown into one of the most visited websites in the world.",
+    "order": 33
+  },
+  {
+    "category": "Technology",
+    "statement": "JavaScript was created in just ten days in 1995.",
+    "isFact": true,
+    "explanation": "Brendan Eich wrote the first version at Netscape in about ten days, and it became the language of the web.",
+    "order": 34
+  },
+  {
+    "category": "Technology",
+    "statement": "CAPTCHA stands for 'Completely Automated Public Turing test to tell Computers and Humans Apart'.",
+    "isFact": true,
+    "explanation": "The tests are designed to be easy for people but hard for bots.",
+    "order": 35
+  },
+  {
+    "category": "Technology",
+    "statement": "USB stands for Universal Serial Bus.",
+    "isFact": true,
+    "explanation": "It was introduced in the mid-1990s to replace a confusing variety of ports with a single standard.",
+    "order": 36
+  },
+  {
+    "category": "Technology",
+    "statement": "The first domain name ever registered was symbolics.com.",
+    "isFact": true,
+    "explanation": "A computer company registered it on 15 March 1985.",
+    "order": 37
+  },
+  {
+    "category": "Technology",
+    "statement": "Computers store all information as binary digits.",
+    "isFact": true,
+    "explanation": "Everything in a computer, from text to video, is ultimately represented as 0s and 1s.",
+    "order": 38
+  },
+  {
+    "category": "Technology",
+    "statement": "The first mobile phone call was made in 1973.",
+    "isFact": true,
+    "explanation": "Martin Cooper of Motorola called a rival at Bell Labs using a prototype handset that weighed around 1 kg.",
+    "order": 39
+  },
+  {
+    "category": "Technology",
+    "statement": "The first text message, sent in 1992, read 'Merry Christmas'.",
+    "isFact": true,
+    "explanation": "Engineer Neil Papworth sent it from a computer to a mobile phone on the Vodafone network in the UK.",
+    "order": 40
+  },
+  {
+    "category": "Technology",
+    "statement": "A GPS receiver needs signals from at least four satellites to determine its position.",
+    "isFact": true,
+    "explanation": "Three satellites give a location, and a fourth is needed to correct the receiver's clock and work out altitude.",
+    "order": 41
+  },
+  {
+    "category": "Technology",
+    "statement": "QR codes were invented in Japan in 1994.",
+    "isFact": true,
+    "explanation": "Denso Wave created them to track car parts, and they are now used everywhere from payments to menus.",
+    "order": 42
+  },
+  {
+    "category": "Technology",
+    "statement": "Solid-state drives (SSDs) have no moving parts.",
+    "isFact": true,
+    "explanation": "They store data in flash memory chips, making them faster and more shock-resistant than spinning hard drives.",
+    "order": 43
+  },
+  {
+    "category": "Technology",
+    "statement": "Konrad Zuse built the Z3, an early programmable computer, in 1941.",
+    "isFact": true,
+    "explanation": "The electromechanical Z3 was built in Germany and is considered the first working programmable, fully automatic computer.",
+    "order": 44
+  },
+  {
+    "category": "Technology",
+    "statement": "Nintendo began as a playing card company.",
+    "isFact": true,
+    "explanation": "Founded in 1889 in Japan, it made handmade hanafuda cards for decades before moving into toys and video games.",
+    "order": 45
+  },
+  {
+    "category": "Technology",
+    "statement": "Atari released the arcade game Pong in 1972.",
+    "isFact": true,
+    "explanation": "Pong was one of the first commercially successful video games and helped launch the video game industry.",
+    "order": 46
+  },
+  {
+    "category": "Technology",
+    "statement": "The Bitcoin whitepaper was published in 2008 under the name Satoshi Nakamoto.",
+    "isFact": true,
+    "explanation": "The creator's real identity is still unknown, and the Bitcoin network launched in January 2009.",
+    "order": 47
+  },
+  {
+    "category": "Technology",
+    "statement": "The 2019 Nobel Prize in Chemistry honoured the development of lithium-ion batteries.",
+    "isFact": true,
+    "explanation": "John Goodenough, Stanley Whittingham and Akira Yoshino shared the prize for the batteries that power phones, laptops and electric cars.",
+    "order": 48
+  },
+  {
+    "category": "Technology",
+    "statement": "Touchscreens on most phones work by detecting the electrical conductivity of your finger.",
+    "isFact": true,
+    "explanation": "A capacitive screen senses the change in its electric field, which is why ordinary gloves don't work.",
+    "order": 49
+  },
+  {
+    "category": "Technology",
+    "statement": "Fibre-optic cables transmit data as pulses of light.",
+    "isFact": true,
+    "explanation": "Light travels through thin strands of glass, enabling very fast, long-distance data transfer.",
+    "order": 50
+  },
+  {
+    "category": "Technology",
+    "statement": "Most international internet traffic travels through undersea cables.",
+    "isFact": true,
+    "explanation": "Hundreds of submarine cables carry the vast majority of intercontinental data, not satellites.",
+    "order": 51
+  },
+  {
+    "category": "Technology",
+    "statement": "ChatGPT was released to the public in November 2022.",
+    "isFact": true,
+    "explanation": "Its release brought generative AI chatbots into the mainstream and reached 100 million users within about two months.",
+    "order": 52
+  },
+  {
+    "category": "Technology",
+    "statement": "IBM's Deep Blue beat world chess champion Garry Kasparov in 1997.",
+    "isFact": true,
+    "explanation": "It was the first time a computer defeated a reigning world champion in a match under standard tournament conditions.",
+    "order": 53
+  },
+  {
+    "category": "Technology",
+    "statement": "Google DeepMind's AlphaGo defeated Go champion Lee Sedol in 2016.",
+    "isFact": true,
+    "explanation": "The match was seen as a milestone because Go has far more possible positions than chess.",
+    "order": 54
+  },
+  {
+    "category": "Technology",
+    "statement": "The word 'robot' comes from a Czech word meaning forced labour.",
+    "isFact": true,
+    "explanation": "Karel Čapek's 1920 play R.U.R. introduced 'robot', from the Czech 'robota', meaning drudgery or forced work.",
+    "order": 55
+  },
+  {
+    "category": "Technology",
+    "statement": "The first webcam was set up to watch a coffee pot.",
+    "isFact": true,
+    "explanation": "In 1991, researchers at the University of Cambridge pointed a camera at the Trojan Room coffee pot so they could check whether it was full.",
+    "order": 56
+  },
+  {
+    "category": "Technology",
+    "statement": "Actress Hedy Lamarr co-patented a frequency-hopping system in 1942.",
+    "isFact": true,
+    "explanation": "The principle of switching frequencies to avoid interception underlies modern wireless technologies such as Bluetooth and Wi-Fi.",
+    "order": 57
+  },
+  {
+    "category": "Technology",
+    "statement": "The Apple I computer was released in 1976.",
+    "isFact": true,
+    "explanation": "Steve Wozniak designed it, and Steve Jobs helped sell it, with a first batch of about 200 units.",
+    "order": 58
+  },
+  {
+    "category": "Technology",
+    "statement": "Windows 95 introduced the Start button.",
+    "isFact": true,
+    "explanation": "The Start menu and taskbar became defining features of Windows for decades.",
+    "order": 59
+  },
+  {
+    "category": "Technology",
+    "statement": "Dark mode can save battery on phones with OLED screens.",
+    "isFact": true,
+    "explanation": "On OLED screens each pixel makes its own light, so black pixels are turned off and use almost no power.",
+    "order": 60
+  },
+  {
+    "category": "Technology",
+    "statement": "Quantum computers use qubits, which can exist in a superposition of states.",
+    "isFact": true,
+    "explanation": "Unlike a classical bit, a qubit can represent 0, 1 or a combination of both until it's measured.",
+    "order": 61
+  },
+  {
+    "category": "Technology",
+    "statement": "The first emoji were created in Japan in 1999.",
+    "isFact": true,
+    "explanation": "Shigetaka Kurita designed a set of 176 12×12 pixel images for the mobile internet service i-mode.",
+    "order": 62
+  },
+  {
+    "category": "Technology",
+    "statement": "ARPANET, a forerunner of the internet, sent its first message in 1969.",
+    "isFact": true,
+    "explanation": "The first message sent between two computers was meant to be 'LOGIN', but the system crashed after the letters 'LO'.",
+    "order": 63
+  },
+  {
+    "category": "Technology",
+    "statement": "Macs can't get viruses.",
+    "isFact": false,
+    "explanation": "Macs are less targeted than Windows PCs, but malware exists for macOS, and no operating system is immune.",
+    "order": 64
+  },
+  {
+    "category": "Technology",
+    "statement": "You should fully drain a modern phone battery before recharging it.",
+    "isFact": false,
+    "explanation": "Lithium-ion batteries don't have a memory effect, and deep discharges actually shorten their lifespan.",
+    "order": 65
+  },
+  {
+    "category": "Technology",
+    "statement": "Deleting a file immediately erases its data from your drive.",
+    "isFact": false,
+    "explanation": "Deleting usually just marks the space as available, and the data can remain recoverable until it is overwritten.",
+    "order": 66
+  },
+  {
+    "category": "Technology",
+    "statement": "The cloud means your data isn't stored on any physical machine.",
+    "isFact": false,
+    "explanation": "Cloud storage is held on real servers in data centres owned by the provider.",
+    "order": 67
+  },
+  {
+    "category": "Technology",
+    "statement": "Apple invented the smartphone.",
+    "isFact": false,
+    "explanation": "Smartphones such as the IBM Simon existed in 1994, years before the first iPhone, which popularised the touchscreen model.",
+    "order": 68
+  },
+  {
+    "category": "Technology",
+    "statement": "Facebook was the first social network.",
+    "isFact": false,
+    "explanation": "SixDegrees.com launched in 1997 and sites like Friendster and MySpace came well before Facebook in 2004.",
+    "order": 69
+  },
+  {
+    "category": "Technology",
+    "statement": "Google was the first internet search engine.",
+    "isFact": false,
+    "explanation": "Archie, created in 1990, and several others came before Google launched in 1998.",
+    "order": 70
+  },
+  {
+    "category": "Technology",
+    "statement": "A processor with a higher clock speed in GHz is always faster.",
+    "isFact": false,
+    "explanation": "Performance also depends on architecture, number of cores and efficiency, so a newer chip at a lower GHz can outperform an older one.",
+    "order": 71
+  },
+  {
+    "category": "Technology",
+    "statement": "Adding more RAM always makes a computer faster.",
+    "isFact": false,
+    "explanation": "Extra RAM helps only when the system is running out of memory; otherwise it makes little difference.",
+    "order": 72
+  },
+  {
+    "category": "Technology",
+    "statement": "Using a VPN makes you completely anonymous online.",
+    "isFact": false,
+    "explanation": "A VPN hides your traffic from your internet provider, but the VPN company and the sites you log in to can still identify you.",
+    "order": 73
+  },
+  {
+    "category": "Technology",
+    "statement": "A short password with symbols is stronger than a long passphrase.",
+    "isFact": false,
+    "explanation": "Length matters more than complexity, so a long passphrase is usually harder to crack than a short password with symbols.",
+    "order": 74
+  },
+  {
+    "category": "Technology",
+    "statement": "Using a phone at a petrol station can ignite the fuel.",
+    "isFact": false,
+    "explanation": "There is no confirmed case of a phone causing a petrol station fire; static electricity is the greater risk.",
+    "order": 75
+  },
+  {
+    "category": "Technology",
+    "statement": "Putting a wet phone in rice is the best way to dry it.",
+    "isFact": false,
+    "explanation": "Rice isn't very effective at pulling out moisture and can leave particles in ports; manufacturers advise against it.",
+    "order": 76
+  },
+  {
+    "category": "Technology",
+    "statement": "Computers work internally using the decimal system.",
+    "isFact": false,
+    "explanation": "Computers use binary, because electronic circuits easily represent two states: on and off.",
+    "order": 77
+  },
+  {
+    "category": "Technology",
+    "statement": "Email is encrypted and private by default.",
+    "isFact": false,
+    "explanation": "Standard email can be read by providers and others along the route unless end-to-end encryption is used.",
+    "order": 78
+  },
+  {
+    "category": "Technology",
+    "statement": "Bluetooth needs an internet connection to work.",
+    "isFact": false,
+    "explanation": "Bluetooth is a short-range radio link between devices and works without the internet.",
+    "order": 79
+  },
+  {
+    "category": "Technology",
+    "statement": "The IBM PC was the first computer ever built.",
+    "isFact": false,
+    "explanation": "Computers had existed for decades before the IBM PC arrived in 1981.",
+    "order": 80
+  },
+  {
+    "category": "Technology",
+    "statement": "AI chatbots always give accurate answers.",
+    "isFact": false,
+    "explanation": "Language models can state false information confidently, so important facts should be checked against reliable sources.",
+    "order": 81
+  },
+  {
+    "category": "Technology",
+    "statement": "A bigger screen always means a higher resolution.",
+    "isFact": false,
+    "explanation": "Resolution is the number of pixels, so a large screen can have lower resolution than a smaller one.",
+    "order": 82
+  },
+  {
+    "category": "Technology",
+    "statement": "The 5 GHz Wi-Fi band reaches farther than the 2.4 GHz band.",
+    "isFact": false,
+    "explanation": "The 2.4 GHz band travels farther and passes through walls better, whereas the 5 GHz band is faster over shorter distances.",
+    "order": 83
+  },
+  {
+    "category": "Technology",
+    "statement": "More signal bars always mean faster internet.",
+    "isFact": false,
+    "explanation": "Signal strength is not the same as speed, and network congestion or the plan can limit speeds even with full bars.",
+    "order": 84
+  },
+  {
+    "category": "Technology",
+    "statement": "Browser cookies are programs that infect your computer.",
+    "isFact": false,
+    "explanation": "Cookies are small text files that websites store to remember information, and they can't run code.",
+    "order": 85
+  },
+  {
+    "category": "Technology",
+    "statement": "The Y2K bug caused widespread disasters on 1 January 2000.",
+    "isFact": false,
+    "explanation": "Massive preparation work fixed most problems, and only minor glitches occurred.",
+    "order": 86
+  },
+  {
+    "category": "Technology",
+    "statement": "Electric cars are a very recent invention.",
+    "isFact": false,
+    "explanation": "Electric cars were built in the 1800s and were common in the early 1900s before petrol cars took over.",
+    "order": 87
+  },
+  {
+    "category": "Technology",
+    "statement": "Apple invented the touchscreen.",
+    "isFact": false,
+    "explanation": "Touchscreen technology dates to the 1960s, and multi-touch screens were developed years before the iPhone.",
+    "order": 88
+  },
+  {
+    "category": "Technology",
+    "statement": "Windows was the first product Microsoft ever made.",
+    "isFact": false,
+    "explanation": "Microsoft started in 1975 by making a BASIC interpreter for the Altair 8800, and Windows came in 1985.",
+    "order": 89
+  },
+  {
+    "category": "Technology",
+    "statement": "Apple invented emoji.",
+    "isFact": false,
+    "explanation": "Emoji began in Japan in 1999, and Apple later helped popularise them worldwide.",
+    "order": 90
+  },
+  {
+    "category": "Technology",
+    "statement": "Linux is owned and controlled by a single company.",
+    "isFact": false,
+    "explanation": "Linux is open source and developed by a global community, including volunteers and many companies.",
+    "order": 91
+  },
+  {
+    "category": "Technology",
+    "statement": "HTML is a programming language.",
+    "isFact": false,
+    "explanation": "HTML is a markup language that describes the structure of web pages, and it has no logic of its own like loops or conditions.",
+    "order": 92
+  },
+  {
+    "category": "Technology",
+    "statement": "Java and JavaScript are the same language.",
+    "isFact": false,
+    "explanation": "Despite the similar names, they are different languages that were created separately for different purposes.",
+    "order": 93
+  },
+  {
+    "category": "Technology",
+    "statement": "A padlock icon in your browser means a website is safe.",
+    "isFact": false,
+    "explanation": "The padlock means the connection is encrypted, but fraudulent websites can use it too.",
+    "order": 94
+  },
+  {
+    "category": "Technology",
+    "statement": "Dark mode saves battery on every kind of screen.",
+    "isFact": false,
+    "explanation": "It mainly helps on OLED displays, but on LCD screens the backlight stays on, so it makes no difference to power use.",
+    "order": 95
+  },
+  {
+    "category": "Technology",
+    "statement": "Quantum computers are just faster versions of regular computers.",
+    "isFact": false,
+    "explanation": "They work differently, and offer big speedups only for certain problems, such as factoring or simulating molecules.",
+    "order": 96
+  },
+  {
+    "category": "Technology",
+    "statement": "Tim Berners-Lee patented the World Wide Web and made a fortune from it.",
+    "isFact": false,
+    "explanation": "He chose not to patent it, and CERN made the technology freely available in 1993.",
+    "order": 97
+  },
+  {
+    "category": "Technology",
+    "statement": "Python is named after the snake.",
+    "isFact": false,
+    "explanation": "Guido van Rossum named the language after the British comedy group Monty Python.",
+    "order": 98
+  },
+  {
+    "category": "Technology",
+    "statement": "Mobile phones are proven to cause brain cancer.",
+    "isFact": false,
+    "explanation": "Large studies have not found a consistent link between mobile phone use and brain cancer.",
+    "order": 99
+  },
+  {
+    "category": "Technology",
+    "statement": "Blue-light glasses are proven to prevent eye damage from screens.",
+    "isFact": false,
+    "explanation": "Reviews have found little evidence that they prevent eye damage or strain, which more often comes from long viewing times.",
+    "order": 100
   }
 ]

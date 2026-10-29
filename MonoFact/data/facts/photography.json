@@ -173,5 +173,530 @@
     "isFact": true,
     "explanation": "Ansel Adams and Fred Archer developed the Zone System in 1940 to give photographers precise control over exposure and development to achieve a desired tonal range.",
     "order": 25
+  },
+  {
+    "category": "Photography",
+    "statement": "The principle behind the camera obscura was described centuries before photography existed.",
+    "isFact": true,
+    "explanation": "Scholars such as Mozi in China and Alhazen in the Arab world described how light passing through a small hole projects an inverted image.",
+    "order": 26
+  },
+  {
+    "category": "Photography",
+    "statement": "Louis Daguerre's photographic process was publicly announced in 1839.",
+    "isFact": true,
+    "explanation": "The French government bought the rights and gave the daguerreotype to the world 'free to all' in August 1839.",
+    "order": 27
+  },
+  {
+    "category": "Photography",
+    "statement": "William Henry Fox Talbot invented a negative-to-positive photographic process.",
+    "isFact": true,
+    "explanation": "His calotype process allowed many prints to be made from a single paper negative, a foundation of photography for over a century.",
+    "order": 28
+  },
+  {
+    "category": "Photography",
+    "statement": "George Eastman launched the Kodak camera in 1888 with the slogan 'You press the button, we do the rest'.",
+    "isFact": true,
+    "explanation": "The pre-loaded camera was returned to Kodak for developing, putting photography within reach of ordinary people.",
+    "order": 29
+  },
+  {
+    "category": "Photography",
+    "statement": "Eadweard Muybridge used photographs to show that a galloping horse has all four hooves off the ground at once.",
+    "isFact": true,
+    "explanation": "His 1870s experiments used a row of cameras triggered by tripwires to capture the horse in sequential frames.",
+    "order": 30
+  },
+  {
+    "category": "Photography",
+    "statement": "Dorothea Lange took the famous 'Migrant Mother' photograph in 1936.",
+    "isFact": true,
+    "explanation": "The image of Florence Owens Thompson became an icon of the Great Depression.",
+    "order": 31
+  },
+  {
+    "category": "Photography",
+    "statement": "Apollo astronauts used Hasselblad cameras on the Moon.",
+    "isFact": true,
+    "explanation": "Most of the cameras were left behind on the lunar surface, and only the film magazines came back to Earth.",
+    "order": 32
+  },
+  {
+    "category": "Photography",
+    "statement": "The 'Earthrise' photograph was taken by astronaut Bill Anders during Apollo 8.",
+    "isFact": true,
+    "explanation": "Taken in December 1968, it showed Earth rising above the lunar horizon and became one of the most influential images in history.",
+    "order": 33
+  },
+  {
+    "category": "Photography",
+    "statement": "A slower shutter speed produces more motion blur.",
+    "isFact": true,
+    "explanation": "The shutter stays open longer, so anything moving during the exposure is recorded as a streak.",
+    "order": 34
+  },
+  {
+    "category": "Photography",
+    "statement": "Aperture size controls how much of an image appears in focus.",
+    "isFact": true,
+    "explanation": "A wide aperture gives a shallow depth of field with a blurred background, while a narrow aperture keeps more of the scene sharp.",
+    "order": 35
+  },
+  {
+    "category": "Photography",
+    "statement": "'Golden hour' refers to the soft, warm light shortly after sunrise and before sunset.",
+    "isFact": true,
+    "explanation": "The Sun is low in the sky, so its light passes through more atmosphere, giving it a warmer and softer look.",
+    "order": 36
+  },
+  {
+    "category": "Photography",
+    "statement": "The photography term 'bokeh' comes from a Japanese word.",
+    "isFact": true,
+    "explanation": "It comes from 'boke', meaning blur or haze, and describes the aesthetic quality of out-of-focus areas of a photo.",
+    "order": 37
+  },
+  {
+    "category": "Photography",
+    "statement": "A full-frame camera sensor is about the same size as a frame of 35mm film.",
+    "isFact": true,
+    "explanation": "A full-frame sensor measures roughly 36 × 24 mm, matching the traditional 35mm film frame.",
+    "order": 38
+  },
+  {
+    "category": "Photography",
+    "statement": "A prime lens has a fixed focal length.",
+    "isFact": true,
+    "explanation": "Unlike a zoom lens, a prime lens cannot change its focal length, which often lets it have a wider aperture and sharper images.",
+    "order": 39
+  },
+  {
+    "category": "Photography",
+    "statement": "A histogram shows how the tones in a photo are distributed from dark to bright.",
+    "isFact": true,
+    "explanation": "Photographers use it to check for under- and overexposure, particularly when the screen is hard to see.",
+    "order": 40
+  },
+  {
+    "category": "Photography",
+    "statement": "A polarising filter can reduce reflections from water and glass.",
+    "isFact": true,
+    "explanation": "It blocks light waves vibrating in certain directions, which also deepens the blue of the sky.",
+    "order": 41
+  },
+  {
+    "category": "Photography",
+    "statement": "A neutral density (ND) filter reduces the amount of light entering the lens without changing colours.",
+    "isFact": true,
+    "explanation": "It lets photographers use slow shutter speeds or wide apertures in bright conditions.",
+    "order": 42
+  },
+  {
+    "category": "Photography",
+    "statement": "The Leica I, released in 1925, helped popularise 35mm film photography.",
+    "isFact": true,
+    "explanation": "Designed by Oskar Barnack, it showed that a small, portable camera could produce high-quality negatives.",
+    "order": 43
+  },
+  {
+    "category": "Photography",
+    "statement": "A pinhole camera has no lens.",
+    "isFact": true,
+    "explanation": "A tiny hole lets light into a dark box and forms an inverted image on the film or sensor.",
+    "order": 44
+  },
+  {
+    "category": "Photography",
+    "statement": "Ansel Adams was a founding member of Group f/64.",
+    "isFact": true,
+    "explanation": "The group, formed in 1932, championed sharply focused 'straight' photography using very small apertures.",
+    "order": 45
+  },
+  {
+    "category": "Photography",
+    "statement": "Steve McCurry photographed the 'Afghan Girl' for National Geographic in 1984.",
+    "isFact": true,
+    "explanation": "The photo, of a young girl in a refugee camp in Pakistan, appeared on the magazine's cover in June 1985.",
+    "order": 46
+  },
+  {
+    "category": "Photography",
+    "statement": "A cyanotype produces a blue-toned print.",
+    "isFact": true,
+    "explanation": "Invented by John Herschel in 1842, the process uses iron salts, which turn a deep Prussian blue when exposed to UV light.",
+    "order": 47
+  },
+  {
+    "category": "Photography",
+    "statement": "Each full stop of exposure doubles or halves the amount of light.",
+    "isFact": true,
+    "explanation": "Opening the aperture by one stop, or halving the shutter speed, changes the light reaching the sensor by a factor of two.",
+    "order": 48
+  },
+  {
+    "category": "Photography",
+    "statement": "DSLR stands for digital single-lens reflex.",
+    "isFact": true,
+    "explanation": "A mirror inside the camera reflects light up to the optical viewfinder until the shutter fires.",
+    "order": 49
+  },
+  {
+    "category": "Photography",
+    "statement": "Most digital camera sensors use a Bayer filter with twice as many green filters as red or blue.",
+    "isFact": true,
+    "explanation": "This pattern mimics the human eye's greater sensitivity to green light, and software then reconstructs full colour for every pixel.",
+    "order": 50
+  },
+  {
+    "category": "Photography",
+    "statement": "JPEG is a lossy format.",
+    "isFact": true,
+    "explanation": "JPEG discards some image data to reduce file size, and quality drops a little each time a file is re-saved.",
+    "order": 51
+  },
+  {
+    "category": "Photography",
+    "statement": "A RAW file keeps more image data than a JPEG.",
+    "isFact": true,
+    "explanation": "Because RAW files store the sensor's original data, they allow more flexibility when adjusting exposure and colour.",
+    "order": 52
+  },
+  {
+    "category": "Photography",
+    "statement": "The 'Sunny 16' rule is a way to estimate exposure without a light meter.",
+    "isFact": true,
+    "explanation": "On a bright, sunny day, set the aperture to f/16 and the shutter speed to the reciprocal of the ISO.",
+    "order": 53
+  },
+  {
+    "category": "Photography",
+    "statement": "Aperture, shutter speed and ISO make up the exposure triangle.",
+    "isFact": true,
+    "explanation": "Changing one of them affects the others if you want to keep the same overall brightness.",
+    "order": 54
+  },
+  {
+    "category": "Photography",
+    "statement": "Raising the ISO generally makes a photo noisier.",
+    "isFact": true,
+    "explanation": "A higher ISO amplifies the sensor's signal, which also amplifies random noise, so images look grainier.",
+    "order": 55
+  },
+  {
+    "category": "Photography",
+    "statement": "The first photograph to include a person was taken by Louis Daguerre in Paris in 1838.",
+    "isFact": true,
+    "explanation": "Because of the long exposure, only a man having his boots polished stood still long enough to appear on the street.",
+    "order": 56
+  },
+  {
+    "category": "Photography",
+    "statement": "Vivian Maier's street photographs were only discovered after her death.",
+    "isFact": true,
+    "explanation": "Her work was found in an auction storage locker in 2007 and has since been recognised among the best street photography of the 20th century.",
+    "order": 57
+  },
+  {
+    "category": "Photography",
+    "statement": "Infrared photography can make green foliage look white.",
+    "isFact": true,
+    "explanation": "Leaves reflect a lot of infrared light, known as the Wood effect, so they appear pale or glowing in infrared images.",
+    "order": 58
+  },
+  {
+    "category": "Photography",
+    "statement": "The famous 1934 'Surgeon's Photograph' of the Loch Ness Monster was a hoax.",
+    "isFact": true,
+    "explanation": "It turned out to be a toy submarine with a sculpted head, as confessed decades later.",
+    "order": 59
+  },
+  {
+    "category": "Photography",
+    "statement": "The Cottingley Fairies photographs were faked by two young cousins.",
+    "isFact": true,
+    "explanation": "The 1917 photos, made with paper cut-outs, famously fooled Sir Arthur Conan Doyle.",
+    "order": 60
+  },
+  {
+    "category": "Photography",
+    "statement": "Instagram began as a location check-in app called Burbn.",
+    "isFact": true,
+    "explanation": "Its founders noticed that users liked the photo features most and refocused the app around them before launching Instagram in 2010.",
+    "order": 61
+  },
+  {
+    "category": "Photography",
+    "statement": "Kodak filed for bankruptcy protection in 2012.",
+    "isFact": true,
+    "explanation": "The company that had dominated film photography struggled to adapt to the shift to digital imaging.",
+    "order": 62
+  },
+  {
+    "category": "Photography",
+    "statement": "The Voyager 1 'Pale Blue Dot' photograph shows Earth as a tiny speck from about 6 billion kilometres away.",
+    "isFact": true,
+    "explanation": "Taken in 1990 at Carl Sagan's request, it shows Earth as less than a pixel in size.",
+    "order": 63
+  },
+  {
+    "category": "Photography",
+    "statement": "A higher ISO always produces better image quality.",
+    "isFact": false,
+    "explanation": "Higher ISO increases sensitivity but also adds noise, so photographers use the lowest ISO that still gives a proper exposure.",
+    "order": 64
+  },
+  {
+    "category": "Photography",
+    "statement": "You should never use flash outdoors.",
+    "isFact": false,
+    "explanation": "Fill flash can lighten harsh shadows on faces in bright sunlight and is often used by professionals.",
+    "order": 65
+  },
+  {
+    "category": "Photography",
+    "statement": "Overcast days are bad for photography.",
+    "isFact": false,
+    "explanation": "Clouds act as a giant softbox, spreading light evenly, which is flattering for portraits and rich colours.",
+    "order": 66
+  },
+  {
+    "category": "Photography",
+    "statement": "Midday is the best time to photograph portraits outdoors.",
+    "isFact": false,
+    "explanation": "The overhead Sun creates harsh shadows under the eyes and nose, so softer morning or evening light is usually preferred.",
+    "order": 67
+  },
+  {
+    "category": "Photography",
+    "statement": "A lens's focal length is the physical length of the lens barrel.",
+    "isFact": false,
+    "explanation": "Focal length is the distance from the optical centre of the lens to the sensor when focused at infinity, and is not the lens's physical length.",
+    "order": 68
+  },
+  {
+    "category": "Photography",
+    "statement": "JPEG files give more editing flexibility than RAW files.",
+    "isFact": false,
+    "explanation": "RAW files keep far more tonal and colour information, so they can handle larger adjustments without degrading.",
+    "order": 69
+  },
+  {
+    "category": "Photography",
+    "statement": "A faster shutter speed lets more light into the camera.",
+    "isFact": false,
+    "explanation": "A faster shutter is open for less time, so less light reaches the sensor.",
+    "order": 70
+  },
+  {
+    "category": "Photography",
+    "statement": "More expensive cameras always take better photographs.",
+    "isFact": false,
+    "explanation": "Composition, lighting and timing matter more than equipment, and many classic images were taken with simple cameras.",
+    "order": 71
+  },
+  {
+    "category": "Photography",
+    "statement": "Digital zoom captures more detail than optical zoom.",
+    "isFact": false,
+    "explanation": "Digital zoom simply crops and enlarges the image, whereas optical zoom changes the lens to gather real detail.",
+    "order": 72
+  },
+  {
+    "category": "Photography",
+    "statement": "Film photography stopped completely once digital cameras arrived.",
+    "isFact": false,
+    "explanation": "Film is still manufactured and has seen a revival among photographers who enjoy its look and process.",
+    "order": 73
+  },
+  {
+    "category": "Photography",
+    "statement": "Adobe built the first version of Photoshop from scratch.",
+    "isFact": false,
+    "explanation": "Photoshop was originally written by brothers Thomas and John Knoll, and Adobe licensed it in 1988 before buying it.",
+    "order": 74
+  },
+  {
+    "category": "Photography",
+    "statement": "Leica invented the camera.",
+    "isFact": false,
+    "explanation": "Cameras existed in the 1800s long before Leica, which made its mark with the compact 35mm camera in the 1920s.",
+    "order": 75
+  },
+  {
+    "category": "Photography",
+    "statement": "The first photograph ever taken was a portrait.",
+    "isFact": false,
+    "explanation": "The earliest surviving photograph shows the view from a window of Niépce's estate in France.",
+    "order": 76
+  },
+  {
+    "category": "Photography",
+    "statement": "A UV filter always improves image quality.",
+    "isFact": false,
+    "explanation": "Modern lenses already have UV-blocking coatings, and an extra piece of glass can add flare or reduce sharpness.",
+    "order": 77
+  },
+  {
+    "category": "Photography",
+    "statement": "Image stabilisation freezes motion of the subject.",
+    "isFact": false,
+    "explanation": "Stabilisation only compensates for camera shake and can't stop a moving subject from blurring.",
+    "order": 78
+  },
+  {
+    "category": "Photography",
+    "statement": "A full-frame camera always has more megapixels than a smaller-sensor camera.",
+    "isFact": false,
+    "explanation": "Sensor size and megapixel count are independent, and some smaller-sensor cameras have more megapixels than full-frame ones.",
+    "order": 79
+  },
+  {
+    "category": "Photography",
+    "statement": "Polaroid pictures develop faster if you shake them.",
+    "isFact": false,
+    "explanation": "Shaking has no real effect and could even damage the image as the chemicals develop.",
+    "order": 80
+  },
+  {
+    "category": "Photography",
+    "statement": "The camera never lies.",
+    "isFact": false,
+    "explanation": "Framing, lenses, lighting, timing and editing can all change what a photograph appears to show.",
+    "order": 81
+  },
+  {
+    "category": "Photography",
+    "statement": "Bulb mode limits exposures to a maximum of 30 seconds.",
+    "isFact": false,
+    "explanation": "In bulb mode, the shutter stays open for as long as the button is held, which makes it useful for long night-time exposures.",
+    "order": 82
+  },
+  {
+    "category": "Photography",
+    "statement": "Mirrorless cameras don't have a viewfinder.",
+    "isFact": false,
+    "explanation": "Many mirrorless cameras have an electronic viewfinder that shows a live digital preview.",
+    "order": 83
+  },
+  {
+    "category": "Photography",
+    "statement": "A camera records scenes exactly the way the human eye sees them.",
+    "isFact": false,
+    "explanation": "Cameras have different dynamic range, perspective, and colour response from the human eye and brain.",
+    "order": 84
+  },
+  {
+    "category": "Photography",
+    "statement": "A daguerreotype could be copied easily from a negative.",
+    "isFact": false,
+    "explanation": "Daguerreotypes were unique positive images on metal and could not be reproduced from a negative.",
+    "order": 85
+  },
+  {
+    "category": "Photography",
+    "statement": "Ansel Adams is best known for his colour photography.",
+    "isFact": false,
+    "explanation": "Adams is famous for black-and-white landscapes, such as those of Yosemite and the American West.",
+    "order": 86
+  },
+  {
+    "category": "Photography",
+    "statement": "The memory card you use determines your image quality.",
+    "isFact": false,
+    "explanation": "A memory card only stores files; image quality depends on the sensor, lens and settings.",
+    "order": 87
+  },
+  {
+    "category": "Photography",
+    "statement": "Lens hoods are only for keeping rain off the lens.",
+    "isFact": false,
+    "explanation": "A hood blocks stray light to reduce flare and improve contrast, and also protects the front of the lens.",
+    "order": 88
+  },
+  {
+    "category": "Photography",
+    "statement": "Digital photographs will last forever without any effort.",
+    "isFact": false,
+    "explanation": "Files can be lost to drive failure, corruption or obsolete formats, so backups and migration are needed.",
+    "order": 89
+  },
+  {
+    "category": "Photography",
+    "statement": "Louis Daguerre invented photography single-handedly.",
+    "isFact": false,
+    "explanation": "Nicéphore Niépce made the first photograph, Daguerre refined the process after working with him, and Talbot developed a rival process.",
+    "order": 90
+  },
+  {
+    "category": "Photography",
+    "statement": "Shutter speed determines how sharp a lens is.",
+    "isFact": false,
+    "explanation": "Shutter speed affects motion blur and exposure, while sharpness depends on the lens, aperture, focus and stability.",
+    "order": 91
+  },
+  {
+    "category": "Photography",
+    "statement": "Taking a photo with a flash will always freeze any motion in the scene.",
+    "isFact": false,
+    "explanation": "Ambient light can still register during a long exposure, causing ghosting blur even though the flash froze part of the action.",
+    "order": 92
+  },
+  {
+    "category": "Photography",
+    "statement": "Black-and-white photography means that the camera cannot record colour.",
+    "isFact": false,
+    "explanation": "Digital cameras record colour data, and black-and-white images are usually made by converting to monochrome afterwards.",
+    "order": 93
+  },
+  {
+    "category": "Photography",
+    "statement": "A wider lens always makes a person look slimmer.",
+    "isFact": false,
+    "explanation": "Wide-angle lenses close to a subject can distort and exaggerate features, particularly at the edges of the frame.",
+    "order": 94
+  },
+  {
+    "category": "Photography",
+    "statement": "Shooting at higher resolutions guarantees sharper photos.",
+    "isFact": false,
+    "explanation": "Poor focus, camera shake or a weak lens will still produce soft images, no matter the pixel count.",
+    "order": 95
+  },
+  {
+    "category": "Photography",
+    "statement": "Panning with a slow shutter speed can keep a moving subject sharp while blurring the background.",
+    "isFact": true,
+    "explanation": "Following the subject smoothly during the exposure makes it appear still relative to the camera, while the background smears into streaks.",
+    "order": 96
+  },
+  {
+    "category": "Photography",
+    "statement": "Adobe Photoshop 1.0 was released in 1990.",
+    "isFact": true,
+    "explanation": "The first version ran only on Macintosh computers and has since become a shorthand for image editing.",
+    "order": 97
+  },
+  {
+    "category": "Photography",
+    "statement": "Magnum Photos was founded in 1947 by photographers including Robert Capa and Henri Cartier-Bresson.",
+    "isFact": true,
+    "explanation": "The cooperative gave photographers control over their own work and became one of the most famous photo agencies.",
+    "order": 98
+  },
+  {
+    "category": "Photography",
+    "statement": "The 'Blue Marble' photograph of the whole Earth was taken by the Apollo 17 crew in 1972.",
+    "isFact": true,
+    "explanation": "It is one of the most widely reproduced images in history and shows Earth fully lit by the Sun.",
+    "order": 99
+  },
+  {
+    "category": "Photography",
+    "statement": "A telephoto lens changes the perspective of a scene no matter where you stand.",
+    "isFact": false,
+    "explanation": "Perspective depends on the camera's position relative to the subject, whereas a telephoto lens only magnifies and crops the view.",
+    "order": 100
   }
 ]

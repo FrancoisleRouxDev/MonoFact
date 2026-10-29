@@ -173,5 +173,530 @@
     "isFact": true,
     "explanation": "Octopuses (and some other cephalopods) can recode their own RNA to alter protein function, allowing rapid adaptation to environmental changes like temperature.",
     "order": 25
+  },
+  {
+    "category": "Animals",
+    "statement": "A group of crows is called a murder.",
+    "isFact": true,
+    "explanation": "'Murder' is the traditional collective noun for crows, likely inspired by folklore about their dark plumage and scavenging habits.",
+    "order": 26
+  },
+  {
+    "category": "Animals",
+    "statement": "Sea otters sometimes hold hands while sleeping.",
+    "isFact": true,
+    "explanation": "Floating otters, especially mothers and pups, hold paws or wrap themselves in kelp so they don't drift apart while they rest.",
+    "order": 27
+  },
+  {
+    "category": "Animals",
+    "statement": "The blue whale is the largest animal known ever to have existed.",
+    "isFact": true,
+    "explanation": "Blue whales can reach about 30 metres in length and weigh up to roughly 180 tonnes, larger than any known dinosaur.",
+    "order": 28
+  },
+  {
+    "category": "Animals",
+    "statement": "Hummingbirds can fly backwards.",
+    "isFact": true,
+    "explanation": "Their unique shoulder joints let their wings rotate in a figure-eight, allowing them to hover and fly in reverse.",
+    "order": 29
+  },
+  {
+    "category": "Animals",
+    "statement": "Giraffes have the same number of neck bones as humans.",
+    "isFact": true,
+    "explanation": "Both have seven cervical vertebrae; a giraffe's are just enormously elongated.",
+    "order": 30
+  },
+  {
+    "category": "Animals",
+    "statement": "Honey bees communicate the location of food with a 'waggle dance'.",
+    "isFact": true,
+    "explanation": "The angle and duration of the dance tell other bees the direction and distance to a food source.",
+    "order": 31
+  },
+  {
+    "category": "Animals",
+    "statement": "Cats cannot taste sweetness.",
+    "isFact": true,
+    "explanation": "Cats lack a functional gene for the sweet taste receptor, so sugar means nothing to their tongues.",
+    "order": 32
+  },
+  {
+    "category": "Animals",
+    "statement": "A newborn kangaroo is about the size of a jellybean.",
+    "isFact": true,
+    "explanation": "A joey is only around 2 cm long at birth and crawls into its mother's pouch to continue developing.",
+    "order": 33
+  },
+  {
+    "category": "Animals",
+    "statement": "Axolotls can regrow lost limbs.",
+    "isFact": true,
+    "explanation": "These salamanders can regenerate limbs, spinal cord tissue, and even parts of their heart and brain.",
+    "order": 34
+  },
+  {
+    "category": "Animals",
+    "statement": "Sloths can hold their breath for up to 40 minutes.",
+    "isFact": true,
+    "explanation": "By slowing their heart rate, sloths can stay underwater far longer than dolphins can.",
+    "order": 35
+  },
+  {
+    "category": "Animals",
+    "statement": "Male seahorses give birth to the young.",
+    "isFact": true,
+    "explanation": "Females deposit eggs into the male's brood pouch, where he fertilises and carries them until they hatch.",
+    "order": 36
+  },
+  {
+    "category": "Animals",
+    "statement": "Elephants can recognise themselves in a mirror.",
+    "isFact": true,
+    "explanation": "Passing the mirror self-recognition test is rare in the animal kingdom; elephants, great apes and dolphins have done it.",
+    "order": 37
+  },
+  {
+    "category": "Animals",
+    "statement": "The snapping shrimp can create a sound louder than a gunshot underwater.",
+    "isFact": true,
+    "explanation": "Its claw snaps shut so fast that it produces a collapsing bubble, generating a sound of around 200 decibels.",
+    "order": 38
+  },
+  {
+    "category": "Animals",
+    "statement": "Crows can recognise individual human faces.",
+    "isFact": true,
+    "explanation": "Studies show crows remember faces that have threatened them and can even teach other crows to be wary of those people.",
+    "order": 39
+  },
+  {
+    "category": "Animals",
+    "statement": "A cheetah can accelerate from 0 to 100 km/h in about three seconds.",
+    "isFact": true,
+    "explanation": "Cheetahs are the fastest land animals, reaching around 100 km/h in just a few strides.",
+    "order": 40
+  },
+  {
+    "category": "Animals",
+    "statement": "The platypus is a mammal that lays eggs.",
+    "isFact": true,
+    "explanation": "Along with echidnas, the platypus is one of only a few egg-laying mammals, known as monotremes.",
+    "order": 41
+  },
+  {
+    "category": "Animals",
+    "statement": "Starfish do not have a brain.",
+    "isFact": true,
+    "explanation": "Sea stars have a decentralised nervous system with a nerve ring and radial nerves instead of a central brain.",
+    "order": 42
+  },
+  {
+    "category": "Animals",
+    "statement": "No two dogs have the same nose print.",
+    "isFact": true,
+    "explanation": "Just like human fingerprints, the ridge pattern on a dog's nose is unique to each animal.",
+    "order": 43
+  },
+  {
+    "category": "Animals",
+    "statement": "Male emperor penguins incubate the eggs on their feet.",
+    "isFact": true,
+    "explanation": "Through the Antarctic winter, males balance a single egg on their feet under a warm brood pouch while the females feed at sea.",
+    "order": 44
+  },
+  {
+    "category": "Animals",
+    "statement": "A woodpecker's tongue wraps around the back of its skull.",
+    "isFact": true,
+    "explanation": "The long tongue curls around the skull and acts like a cushion, helping to protect the brain during rapid pecking.",
+    "order": 45
+  },
+  {
+    "category": "Animals",
+    "statement": "Tardigrades can survive the vacuum of outer space.",
+    "isFact": true,
+    "explanation": "In a 2007 experiment, tardigrades exposed to open space survived, and some even went on to reproduce.",
+    "order": 46
+  },
+  {
+    "category": "Animals",
+    "statement": "The Arctic tern makes the longest migration of any animal.",
+    "isFact": true,
+    "explanation": "It flies from the Arctic to the Antarctic and back each year, covering roughly 70,000 km.",
+    "order": 47
+  },
+  {
+    "category": "Animals",
+    "statement": "Dolphins call each other using signature whistles.",
+    "isFact": true,
+    "explanation": "Each dolphin develops a unique whistle that works much like a name, which other dolphins use to address it.",
+    "order": 48
+  },
+  {
+    "category": "Animals",
+    "statement": "Giant pandas spend up to 14 hours a day eating.",
+    "isFact": true,
+    "explanation": "Bamboo is low in nutrients, so pandas must eat 12 to 38 kg of it daily to meet their energy needs.",
+    "order": 49
+  },
+  {
+    "category": "Animals",
+    "statement": "Sharks are older than trees.",
+    "isFact": true,
+    "explanation": "Sharks have existed for around 450 million years, while the first trees appeared roughly 385 million years ago.",
+    "order": 50
+  },
+  {
+    "category": "Animals",
+    "statement": "Horses can sleep while standing up.",
+    "isFact": true,
+    "explanation": "A special locking mechanism in their legs, the stay apparatus, lets horses doze on their feet without collapsing.",
+    "order": 51
+  },
+  {
+    "category": "Animals",
+    "statement": "Orcas are a species of dolphin.",
+    "isFact": true,
+    "explanation": "Despite the name 'killer whale', the orca is the largest member of the oceanic dolphin family.",
+    "order": 52
+  },
+  {
+    "category": "Animals",
+    "statement": "Bats are the only mammals capable of true sustained flight.",
+    "isFact": true,
+    "explanation": "Flying squirrels and sugar gliders only glide, while bats genuinely flap their wings to fly.",
+    "order": 53
+  },
+  {
+    "category": "Animals",
+    "statement": "A giraffe's tongue can be around 50 cm long.",
+    "isFact": true,
+    "explanation": "The dark, prehensile tongue strips leaves from thorny acacia trees, and its dark colour is thought to protect against sunburn.",
+    "order": 54
+  },
+  {
+    "category": "Animals",
+    "statement": "Owls cannot move their eyeballs.",
+    "isFact": true,
+    "explanation": "Their tube-shaped eyes are fixed in the skull, which is why owls need to turn their heads so far to look around.",
+    "order": 55
+  },
+  {
+    "category": "Animals",
+    "statement": "Spiders are not insects.",
+    "isFact": true,
+    "explanation": "Spiders are arachnids with eight legs and two body segments, whereas insects have six legs and three body segments.",
+    "order": 56
+  },
+  {
+    "category": "Animals",
+    "statement": "A group of owls is called a parliament.",
+    "isFact": true,
+    "explanation": "'Parliament' is the traditional collective noun for owls, a nod to their wise reputation.",
+    "order": 57
+  },
+  {
+    "category": "Animals",
+    "statement": "Mosquitoes kill more humans than any other animal.",
+    "isFact": true,
+    "explanation": "By spreading diseases such as malaria and dengue, mosquitoes are responsible for hundreds of thousands of deaths each year.",
+    "order": 58
+  },
+  {
+    "category": "Animals",
+    "statement": "An ostrich's eye is bigger than its brain.",
+    "isFact": true,
+    "explanation": "An ostrich eye is about 5 cm across, larger than its brain, and gives it excellent long-distance vision.",
+    "order": 59
+  },
+  {
+    "category": "Animals",
+    "statement": "Monarch butterflies migrate thousands of kilometres across several generations.",
+    "isFact": true,
+    "explanation": "No single butterfly makes the whole round trip; it takes multiple generations to complete the journey between Canada and Mexico.",
+    "order": 60
+  },
+  {
+    "category": "Animals",
+    "statement": "Naked mole-rats do not feel pain from acid.",
+    "isFact": true,
+    "explanation": "A mutation in their pain-sensing nerves means that acid, which usually burns, doesn't hurt them.",
+    "order": 61
+  },
+  {
+    "category": "Animals",
+    "statement": "Koalas can sleep up to 20 hours a day.",
+    "isFact": true,
+    "explanation": "Their eucalyptus diet is low in energy and toxic, so koalas conserve energy by sleeping for most of the day.",
+    "order": 62
+  },
+  {
+    "category": "Animals",
+    "statement": "Octopuses have blue blood.",
+    "isFact": true,
+    "explanation": "Their blood uses copper-based hemocyanin to carry oxygen, which turns blue when oxygenated, rather than iron-based haemoglobin.",
+    "order": 63
+  },
+  {
+    "category": "Animals",
+    "statement": "Pigs cannot sweat.",
+    "isFact": true,
+    "explanation": "Pigs have very few functional sweat glands, so they wallow in mud to cool down and protect their skin from the sun.",
+    "order": 64
+  },
+  {
+    "category": "Animals",
+    "statement": "The giant panda is a true bear.",
+    "isFact": true,
+    "explanation": "Genetic studies confirm giant pandas belong to the bear family, Ursidae, despite their unusual bamboo diet.",
+    "order": 65
+  },
+  {
+    "category": "Animals",
+    "statement": "A headless chicken named Mike lived for about 18 months in the 1940s.",
+    "isFact": true,
+    "explanation": "The axe missed his brain stem and one ear, which was enough for Mike to survive and be fed with an eyedropper.",
+    "order": 66
+  },
+  {
+    "category": "Animals",
+    "statement": "Only female mosquitoes bite.",
+    "isFact": true,
+    "explanation": "Females need the proteins in blood to develop their eggs, while males feed on nectar.",
+    "order": 67
+  },
+  {
+    "category": "Animals",
+    "statement": "Touching a baby bird will make its mother abandon it.",
+    "isFact": false,
+    "explanation": "Most birds have a poor sense of smell and will not reject a chick that has been handled, though it is still best to leave wildlife alone.",
+    "order": 68
+  },
+  {
+    "category": "Animals",
+    "statement": "Daddy longlegs are the most venomous spiders but their fangs cannot bite humans.",
+    "isFact": false,
+    "explanation": "This urban legend has never been supported; the venom of harvestmen and cellar spiders is not dangerous to people.",
+    "order": 69
+  },
+  {
+    "category": "Animals",
+    "statement": "Chameleons change colour mainly to blend in with their surroundings.",
+    "isFact": false,
+    "explanation": "Colour change is mostly used for communication, signalling mood and regulating body temperature.",
+    "order": 70
+  },
+  {
+    "category": "Animals",
+    "statement": "Hippos sweat blood.",
+    "isFact": false,
+    "explanation": "Hippos secrete a reddish-orange fluid that looks like blood, but it is a mix of pigments that acts as a natural sunscreen and antiseptic.",
+    "order": 71
+  },
+  {
+    "category": "Animals",
+    "statement": "Dogs see only in black and white.",
+    "isFact": false,
+    "explanation": "Dogs see colour, but with only two types of cone cells they mostly see shades of blue and yellow, not red and green.",
+    "order": 72
+  },
+  {
+    "category": "Animals",
+    "statement": "Porcupines can shoot their quills at attackers.",
+    "isFact": false,
+    "explanation": "Quills detach very easily on contact, but porcupines cannot throw or shoot them.",
+    "order": 73
+  },
+  {
+    "category": "Animals",
+    "statement": "All sharks must keep swimming constantly or they will drown.",
+    "isFact": false,
+    "explanation": "Some species such as nurse sharks can pump water over their gills while resting; only certain species rely on constant swimming.",
+    "order": 74
+  },
+  {
+    "category": "Animals",
+    "statement": "One dog year equals seven human years.",
+    "isFact": false,
+    "explanation": "Dogs age much faster in their first couple of years and then more slowly, and the rate varies with breed and size.",
+    "order": 75
+  },
+  {
+    "category": "Animals",
+    "statement": "Touching a toad gives you warts.",
+    "isFact": false,
+    "explanation": "Warts are caused by a human virus, not toads, though a toad's skin secretions can irritate the eyes and mouth.",
+    "order": 76
+  },
+  {
+    "category": "Animals",
+    "statement": "Bats are a type of rodent.",
+    "isFact": false,
+    "explanation": "Bats belong to their own order, Chiroptera, and are more closely related to many hoofed mammals and carnivores than to rodents.",
+    "order": 77
+  },
+  {
+    "category": "Animals",
+    "statement": "Cats always land safely on their feet.",
+    "isFact": false,
+    "explanation": "Cats have a righting reflex, but falls can still cause serious injuries, especially from low or very high heights.",
+    "order": 78
+  },
+  {
+    "category": "Animals",
+    "statement": "You swallow eight spiders a year while you sleep.",
+    "isFact": false,
+    "explanation": "This claim is an unsupported myth; spiders avoid sleeping humans and there is no evidence of such a thing happening.",
+    "order": 79
+  },
+  {
+    "category": "Animals",
+    "statement": "Elephants are afraid of mice.",
+    "isFact": false,
+    "explanation": "There's no evidence for this old myth; elephants are more likely to be startled by sudden, unexpected movement of any kind.",
+    "order": 80
+  },
+  {
+    "category": "Animals",
+    "statement": "Vampire bats suck blood from their prey.",
+    "isFact": false,
+    "explanation": "Vampire bats make a small cut and lap up the blood with their tongues instead of sucking.",
+    "order": 81
+  },
+  {
+    "category": "Animals",
+    "statement": "Rabbits are rodents.",
+    "isFact": false,
+    "explanation": "Rabbits and hares belong to the order Lagomorpha, which differs from rodents by having a second pair of upper incisors.",
+    "order": 82
+  },
+  {
+    "category": "Animals",
+    "statement": "A frog placed in slowly heating water will not jump out until it is boiled.",
+    "isFact": false,
+    "explanation": "Frogs will try to escape as soon as the water gets uncomfortably hot; the 'boiling frog' tale is just a metaphor.",
+    "order": 83
+  },
+  {
+    "category": "Animals",
+    "statement": "Humans are the only animals that use tools.",
+    "isFact": false,
+    "explanation": "Chimpanzees, crows, otters, octopuses and many other animals use tools to solve problems.",
+    "order": 84
+  },
+  {
+    "category": "Animals",
+    "statement": "The great white shark is the largest shark.",
+    "isFact": false,
+    "explanation": "The whale shark is the biggest, at up to 12 metres or more, and it feeds on plankton rather than large prey.",
+    "order": 85
+  },
+  {
+    "category": "Animals",
+    "statement": "Lions are called the king of the jungle because they live in jungles.",
+    "isFact": false,
+    "explanation": "Lions live on grasslands and savannas, not in jungles or rainforests.",
+    "order": 86
+  },
+  {
+    "category": "Animals",
+    "statement": "All bees die after they sting.",
+    "isFact": false,
+    "explanation": "Only honey bees have a barbed stinger that remains in the skin; bumblebees and many others can sting repeatedly.",
+    "order": 87
+  },
+  {
+    "category": "Animals",
+    "statement": "Snakes have slimy skin.",
+    "isFact": false,
+    "explanation": "Snake skin is dry and covered in smooth scales.",
+    "order": 88
+  },
+  {
+    "category": "Animals",
+    "statement": "A purring cat is always a happy cat.",
+    "isFact": false,
+    "explanation": "Cats also purr when they are stressed, in pain or injured, partly as a self-soothing behaviour.",
+    "order": 89
+  },
+  {
+    "category": "Animals",
+    "statement": "Dogs cool down by sweating all over their bodies like humans.",
+    "isFact": false,
+    "explanation": "Dogs mainly cool down by panting, with a little sweating through the pads of their paws.",
+    "order": 90
+  },
+  {
+    "category": "Animals",
+    "statement": "Penguins live at the North Pole.",
+    "isFact": false,
+    "explanation": "Penguins live almost exclusively in the Southern Hemisphere; polar bears, not penguins, live in the Arctic.",
+    "order": 91
+  },
+  {
+    "category": "Animals",
+    "statement": "The African elephant is the largest animal on Earth.",
+    "isFact": false,
+    "explanation": "It is the largest land animal, but the blue whale is far larger and the biggest animal of all time.",
+    "order": 92
+  },
+  {
+    "category": "Animals",
+    "statement": "Giraffes have more neck vertebrae than other mammals.",
+    "isFact": false,
+    "explanation": "Giraffes have just seven, the same as nearly all other mammals, including mice.",
+    "order": 93
+  },
+  {
+    "category": "Animals",
+    "statement": "Fish cannot feel pain.",
+    "isFact": false,
+    "explanation": "Fish have nociceptors and show stress behaviours when injured, and many scientists conclude they can experience pain.",
+    "order": 94
+  },
+  {
+    "category": "Animals",
+    "statement": "Tarantula bites are deadly to humans.",
+    "isFact": false,
+    "explanation": "Tarantula venom is generally no worse than a bee sting, though their urticating hairs can irritate skin and eyes.",
+    "order": 95
+  },
+  {
+    "category": "Animals",
+    "statement": "Adult clothes moths are the ones that eat holes in your clothes.",
+    "isFact": false,
+    "explanation": "It is the larvae that eat natural fibres such as wool; the adults don't feed at all.",
+    "order": 96
+  },
+  {
+    "category": "Animals",
+    "statement": "A dog's mouth is cleaner than a human's.",
+    "isFact": false,
+    "explanation": "Dog mouths host many bacteria of their own, and there's no evidence that they are cleaner than human mouths.",
+    "order": 97
+  },
+  {
+    "category": "Animals",
+    "statement": "Wolves howl at the moon.",
+    "isFact": false,
+    "explanation": "Wolves howl to communicate with their pack, and the moon has nothing to do with it; howling at night just carries well.",
+    "order": 98
+  },
+  {
+    "category": "Animals",
+    "statement": "Elephants drink by sucking water through their trunk directly into their stomach.",
+    "isFact": false,
+    "explanation": "An elephant sucks water into its trunk and then squirts it into its mouth; the trunk doesn't connect to the stomach.",
+    "order": 99
+  },
+  {
+    "category": "Animals",
+    "statement": "Goats will eat tin cans.",
+    "isFact": false,
+    "explanation": "Goats are curious and chew on many things, but they can't digest metal and prefer plants, so this is a myth.",
+    "order": 100
   }
 ]

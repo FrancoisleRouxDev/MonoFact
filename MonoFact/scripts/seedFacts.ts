@@ -1,3 +1,11 @@
+// ---------------------------------------------------------------------------
+// Seeds Firestore from data/facts/*.json (each category now holds 100 facts).
+//
+// NOTE: `npm run seed` must be re-run to push the expanded fact library to
+// Firestore. The app reads facts from Firestore, not from these JSON files,
+// so until you re-seed it will keep serving the old 25 facts per category.
+// The script clears each category before uploading, so it is safe to re-run.
+// ---------------------------------------------------------------------------
 import "dotenv/config";
 import { addDoc, collection, getDocs, deleteDoc, doc } from "firebase/firestore";
 import { db } from "../app/services/config";

@@ -173,5 +173,530 @@
     "isFact": true,
     "explanation": "Absolute zero (0 K, −273.15°C) is the theoretical lower limit of thermodynamic temperature, at which particles have minimal kinetic energy. It has never been fully achieved.",
     "order": 25
+  },
+  {
+    "category": "Science",
+    "statement": "Water is made of two hydrogen atoms and one oxygen atom.",
+    "isFact": true,
+    "explanation": "That is why its chemical formula is H2O.",
+    "order": 26
+  },
+  {
+    "category": "Science",
+    "statement": "About 60% of the adult human body is water.",
+    "isFact": true,
+    "explanation": "The exact share varies with age, sex and body composition, but water makes up the majority of body mass.",
+    "order": 27
+  },
+  {
+    "category": "Science",
+    "statement": "Light travels at roughly 300,000 kilometres per second in a vacuum.",
+    "isFact": true,
+    "explanation": "The precise value is 299,792,458 metres per second, and nothing with mass can reach it.",
+    "order": 28
+  },
+  {
+    "category": "Science",
+    "statement": "Hydrogen is the most abundant element in the universe.",
+    "isFact": true,
+    "explanation": "It makes up roughly 75% of all normal matter by mass, mostly in stars and gas clouds.",
+    "order": 29
+  },
+  {
+    "category": "Science",
+    "statement": "Sodium metal reacts violently with water.",
+    "isFact": true,
+    "explanation": "The reaction releases hydrogen gas and heat, which can ignite the gas and cause an explosion.",
+    "order": 30
+  },
+  {
+    "category": "Science",
+    "statement": "Mercury is liquid at room temperature.",
+    "isFact": true,
+    "explanation": "Mercury melts at about −39 °C, so it is liquid at ordinary temperatures, unlike almost all other metals.",
+    "order": 31
+  },
+  {
+    "category": "Science",
+    "statement": "Plants release oxygen during photosynthesis.",
+    "isFact": true,
+    "explanation": "They use sunlight to turn carbon dioxide and water into sugar, and oxygen is released as a by-product.",
+    "order": 32
+  },
+  {
+    "category": "Science",
+    "statement": "Red blood cells carry oxygen using a protein called haemoglobin.",
+    "isFact": true,
+    "explanation": "Haemoglobin contains iron, which binds oxygen in the lungs and releases it in tissues, and gives blood its red colour.",
+    "order": 33
+  },
+  {
+    "category": "Science",
+    "statement": "The human heart beats around 100,000 times a day.",
+    "isFact": true,
+    "explanation": "At an average of about 70 beats per minute, that adds up to roughly 100,000 beats every 24 hours.",
+    "order": 34
+  },
+  {
+    "category": "Science",
+    "statement": "The speed of sound in air is about 343 metres per second.",
+    "isFact": true,
+    "explanation": "This is at around 20 °C; sound travels faster in warmer air and slower in colder air.",
+    "order": 35
+  },
+  {
+    "category": "Science",
+    "statement": "According to Newton's first law, an object in motion stays in motion unless acted on by a force.",
+    "isFact": true,
+    "explanation": "This tendency to keep moving at a constant speed and direction is called inertia.",
+    "order": 36
+  },
+  {
+    "category": "Science",
+    "statement": "Atoms are mostly empty space.",
+    "isFact": true,
+    "explanation": "If the nucleus were the size of a marble, the electrons would be hundreds of metres away, with nothing in between.",
+    "order": 37
+  },
+  {
+    "category": "Science",
+    "statement": "Glass is made mainly from sand.",
+    "isFact": true,
+    "explanation": "The silica in sand is melted at high temperatures, with additives such as soda and lime, to form common glass.",
+    "order": 38
+  },
+  {
+    "category": "Science",
+    "statement": "Light behaves as both a wave and a particle.",
+    "isFact": true,
+    "explanation": "This wave-particle duality is a core idea of quantum mechanics, and is shown by experiments like the double slit.",
+    "order": 39
+  },
+  {
+    "category": "Science",
+    "statement": "Einstein's equation E = mc² shows that mass and energy are equivalent.",
+    "isFact": true,
+    "explanation": "A tiny amount of mass corresponds to a huge amount of energy, which is the principle behind nuclear power.",
+    "order": 40
+  },
+  {
+    "category": "Science",
+    "statement": "A pH of 7 is neutral.",
+    "isFact": true,
+    "explanation": "Values below 7 are acidic and above 7 are alkaline; pure water sits at about 7 at room temperature.",
+    "order": 41
+  },
+  {
+    "category": "Science",
+    "statement": "Humans normally have 23 pairs of chromosomes.",
+    "isFact": true,
+    "explanation": "We inherit one set of 23 from each parent, giving a total of 46 chromosomes in most cells.",
+    "order": 42
+  },
+  {
+    "category": "Science",
+    "statement": "Alexander Fleming discovered penicillin in 1928.",
+    "isFact": true,
+    "explanation": "He noticed that a mould had killed bacteria in one of his culture dishes, leading to the first widely used antibiotic.",
+    "order": 43
+  },
+  {
+    "category": "Science",
+    "statement": "Edward Jenner developed the world's first vaccine.",
+    "isFact": true,
+    "explanation": "In 1796 he used material from cowpox sores to protect people against smallpox.",
+    "order": 44
+  },
+  {
+    "category": "Science",
+    "statement": "Marie Curie won Nobel Prizes in two different sciences.",
+    "isFact": true,
+    "explanation": "She won the Physics prize in 1903 and the Chemistry prize in 1911.",
+    "order": 45
+  },
+  {
+    "category": "Science",
+    "statement": "Diamond and graphite are both made of pure carbon.",
+    "isFact": true,
+    "explanation": "The two materials are very different because their carbon atoms are bonded in different arrangements.",
+    "order": 46
+  },
+  {
+    "category": "Science",
+    "statement": "Earth's magnetic field is generated by molten iron moving in its outer core.",
+    "isFact": true,
+    "explanation": "The motion of this liquid metal acts as a dynamo, producing a field that shields us from much of the solar wind.",
+    "order": 47
+  },
+  {
+    "category": "Science",
+    "statement": "Mitochondria produce most of a cell's usable energy.",
+    "isFact": true,
+    "explanation": "They make ATP, the molecule cells use as fuel, which is why they're called the 'powerhouse of the cell'.",
+    "order": 48
+  },
+  {
+    "category": "Science",
+    "statement": "Dmitri Mendeleev created the first widely recognised periodic table.",
+    "isFact": true,
+    "explanation": "In 1869 he arranged the elements by atomic mass and left gaps for elements that had not yet been discovered.",
+    "order": 49
+  },
+  {
+    "category": "Science",
+    "statement": "The periodic table currently contains 118 confirmed elements.",
+    "isFact": true,
+    "explanation": "The last four, nihonium, moscovium, tennessine and oganesson, were officially named in 2016.",
+    "order": 50
+  },
+  {
+    "category": "Science",
+    "statement": "The human genome contains about 3 billion base pairs.",
+    "isFact": true,
+    "explanation": "That DNA is packed into the nucleus of nearly every cell, where it would be about two metres long if stretched out.",
+    "order": 51
+  },
+  {
+    "category": "Science",
+    "statement": "Pure water is a poor conductor of electricity.",
+    "isFact": true,
+    "explanation": "It's the dissolved ions, such as salts, in everyday water that allow it to carry current.",
+    "order": 52
+  },
+  {
+    "category": "Science",
+    "statement": "Rust is iron oxide.",
+    "isFact": true,
+    "explanation": "It forms when iron reacts with oxygen in the presence of water.",
+    "order": 53
+  },
+  {
+    "category": "Science",
+    "statement": "Any two humans are about 99.9% genetically identical.",
+    "isFact": true,
+    "explanation": "The tiny remaining difference accounts for all of the genetic variety between individuals.",
+    "order": 54
+  },
+  {
+    "category": "Science",
+    "statement": "An adult human body contains roughly 37 trillion cells.",
+    "isFact": true,
+    "explanation": "Estimates differ, but they usually fall at around 30 to 40 trillion cells.",
+    "order": 55
+  },
+  {
+    "category": "Science",
+    "statement": "Viruses cannot reproduce without a host cell.",
+    "isFact": true,
+    "explanation": "They must hijack the machinery of a living cell to make copies of themselves.",
+    "order": 56
+  },
+  {
+    "category": "Science",
+    "statement": "The Higgs boson was discovered at CERN in 2012.",
+    "isFact": true,
+    "explanation": "The discovery, using the Large Hadron Collider, confirmed the mechanism that gives elementary particles their mass.",
+    "order": 57
+  },
+  {
+    "category": "Science",
+    "statement": "Dry ice is solid carbon dioxide.",
+    "isFact": true,
+    "explanation": "It turns directly from a solid into a gas, a process called sublimation, at about −78.5 °C.",
+    "order": 58
+  },
+  {
+    "category": "Science",
+    "statement": "Tooth enamel is the hardest substance in the human body.",
+    "isFact": true,
+    "explanation": "It is made almost entirely of minerals but cannot regenerate once it is damaged.",
+    "order": 59
+  },
+  {
+    "category": "Science",
+    "statement": "The skin is the largest organ of the human body.",
+    "isFact": true,
+    "explanation": "In adults it covers about 1.5 to 2 square metres and accounts for roughly 15% of body weight.",
+    "order": 60
+  },
+  {
+    "category": "Science",
+    "statement": "The brain uses about 20% of the body's energy.",
+    "isFact": true,
+    "explanation": "It makes up only about 2% of our body weight but is very energy-hungry.",
+    "order": 61
+  },
+  {
+    "category": "Science",
+    "statement": "Helium was discovered on the Sun before it was found on Earth.",
+    "isFact": true,
+    "explanation": "In 1868, astronomers spotted an unknown spectral line in sunlight, and the element was named after the Greek word for the Sun, helios.",
+    "order": 62
+  },
+  {
+    "category": "Science",
+    "statement": "The human liver can regenerate.",
+    "isFact": true,
+    "explanation": "Even after a large part has been removed, the liver can grow back to near its original size.",
+    "order": 63
+  },
+  {
+    "category": "Science",
+    "statement": "Time passes slightly faster for satellites in orbit than for people on the ground.",
+    "isFact": true,
+    "explanation": "General relativity predicts that weaker gravity speeds clocks up, and GPS has to correct for this effect.",
+    "order": 64
+  },
+  {
+    "category": "Science",
+    "statement": "Humans have only five senses.",
+    "isFact": false,
+    "explanation": "Beyond sight, hearing, smell, taste and touch, we also sense balance, temperature, pain and the position of our body.",
+    "order": 65
+  },
+  {
+    "category": "Science",
+    "statement": "Cold weather itself causes the common cold.",
+    "isFact": false,
+    "explanation": "Colds are caused by viruses, though people spend more time indoors together in cold weather, which helps them spread.",
+    "order": 66
+  },
+  {
+    "category": "Science",
+    "statement": "Sugar makes children hyperactive.",
+    "isFact": false,
+    "explanation": "Controlled studies have found no link between sugar and hyperactivity in children, and expectations seem to play a major role.",
+    "order": 67
+  },
+  {
+    "category": "Science",
+    "statement": "Heavier objects fall faster than lighter ones in a vacuum.",
+    "isFact": false,
+    "explanation": "Without air resistance, all objects fall at the same rate, as astronaut David Scott showed by dropping a hammer and feather on the Moon.",
+    "order": 68
+  },
+  {
+    "category": "Science",
+    "statement": "Blood is blue inside your veins until it hits the air.",
+    "isFact": false,
+    "explanation": "Blood is always red; deoxygenated blood is just a darker red, and veins look blue because of how light passes through skin.",
+    "order": 69
+  },
+  {
+    "category": "Science",
+    "statement": "You lose most of your body heat through your head.",
+    "isFact": false,
+    "explanation": "The head loses heat in proportion to its surface area, about 7–10% of the body, no more than any other uncovered part.",
+    "order": 70
+  },
+  {
+    "category": "Science",
+    "statement": "Thomas Edison invented the electric light bulb entirely on his own.",
+    "isFact": false,
+    "explanation": "Many inventors, including Joseph Swan, worked on it, and Edison improved on earlier designs to make a practical bulb.",
+    "order": 71
+  },
+  {
+    "category": "Science",
+    "statement": "Swimming right after eating causes dangerous cramps.",
+    "isFact": false,
+    "explanation": "There is no evidence that eating before swimming increases the risk of drowning.",
+    "order": 72
+  },
+  {
+    "category": "Science",
+    "statement": "Hair and fingernails keep growing after death.",
+    "isFact": false,
+    "explanation": "The skin dehydrates and shrinks back, making hair and nails look longer, but no new growth occurs.",
+    "order": 73
+  },
+  {
+    "category": "Science",
+    "statement": "Swallowed chewing gum stays in your stomach for seven years.",
+    "isFact": false,
+    "explanation": "Gum can't be digested, but it passes through the digestive system within a few days like other indigestible food.",
+    "order": 74
+  },
+  {
+    "category": "Science",
+    "statement": "Reading in dim light permanently damages your eyes.",
+    "isFact": false,
+    "explanation": "It can cause eye strain and tiredness, but it does not cause lasting harm.",
+    "order": 75
+  },
+  {
+    "category": "Science",
+    "statement": "Matter exists in only three states: solid, liquid and gas.",
+    "isFact": false,
+    "explanation": "Plasma and Bose-Einstein condensates are also states of matter, and others exist.",
+    "order": 76
+  },
+  {
+    "category": "Science",
+    "statement": "The atom is the smallest possible particle.",
+    "isFact": false,
+    "explanation": "Atoms are made of protons, neutrons and electrons, and protons and neutrons are made of quarks.",
+    "order": 77
+  },
+  {
+    "category": "Science",
+    "statement": "A scientific theory is just a guess.",
+    "isFact": false,
+    "explanation": "In science, a theory is a well-tested explanation supported by a large body of evidence, such as the theory of gravity or evolution.",
+    "order": 78
+  },
+  {
+    "category": "Science",
+    "statement": "Humans evolved from chimpanzees.",
+    "isFact": false,
+    "explanation": "Humans and chimpanzees share a common ancestor that lived about 6 to 7 million years ago, but neither evolved from the other.",
+    "order": 79
+  },
+  {
+    "category": "Science",
+    "statement": "Vitamin C prevents you from catching colds.",
+    "isFact": false,
+    "explanation": "Studies show vitamin C does not prevent colds in most people, though it may slightly shorten their duration.",
+    "order": 80
+  },
+  {
+    "category": "Science",
+    "statement": "Alcohol warms you up when it's cold.",
+    "isFact": false,
+    "explanation": "Alcohol makes your skin feel warmer by dilating blood vessels, but this actually causes you to lose body heat more quickly.",
+    "order": 81
+  },
+  {
+    "category": "Science",
+    "statement": "Diamonds are completely indestructible.",
+    "isFact": false,
+    "explanation": "Diamond is extremely hard but brittle; it can shatter on impact and burns at high temperatures.",
+    "order": 82
+  },
+  {
+    "category": "Science",
+    "statement": "Microwave ovens cook food from the inside out.",
+    "isFact": false,
+    "explanation": "Microwaves penetrate only a few centimetres into food, so the outer layers heat first and the heat spreads inward.",
+    "order": 83
+  },
+  {
+    "category": "Science",
+    "statement": "Food cooked in a microwave oven becomes radioactive.",
+    "isFact": false,
+    "explanation": "Microwaves are non-ionising radiation and don't make food radioactive.",
+    "order": 84
+  },
+  {
+    "category": "Science",
+    "statement": "Mass and weight are the same thing.",
+    "isFact": false,
+    "explanation": "Mass is the amount of matter in an object, while weight is the force of gravity acting on it, which changes with location.",
+    "order": 85
+  },
+  {
+    "category": "Science",
+    "statement": "Plants take in carbon dioxide but never release it.",
+    "isFact": false,
+    "explanation": "Plants also respire, using oxygen and releasing carbon dioxide, though they produce more oxygen than they use during the day.",
+    "order": 86
+  },
+  {
+    "category": "Science",
+    "statement": "We see because our eyes send out beams of light.",
+    "isFact": false,
+    "explanation": "We see when light from an object enters our eyes; the eye is a receiver and does not emit light.",
+    "order": 87
+  },
+  {
+    "category": "Science",
+    "statement": "Magnetic north stays fixed in one place.",
+    "isFact": false,
+    "explanation": "The magnetic north pole drifts, currently by tens of kilometres a year, as the molten core moves.",
+    "order": 88
+  },
+  {
+    "category": "Science",
+    "statement": "All bacteria are harmful to humans.",
+    "isFact": false,
+    "explanation": "Most bacteria are harmless, and many, such as those in the gut, are essential for digesting food and staying healthy.",
+    "order": 89
+  },
+  {
+    "category": "Science",
+    "statement": "Fat can be turned into muscle with enough exercise.",
+    "isFact": false,
+    "explanation": "Fat and muscle are different tissues; exercise builds muscle and burns fat, but one cannot become the other.",
+    "order": 90
+  },
+  {
+    "category": "Science",
+    "statement": "People are either 'left-brained' or 'right-brained'.",
+    "isFact": false,
+    "explanation": "Brain imaging shows that both hemispheres are used together in nearly all tasks, regardless of personality.",
+    "order": 91
+  },
+  {
+    "category": "Science",
+    "statement": "Eating turkey makes you sleepy because of the tryptophan it contains.",
+    "isFact": false,
+    "explanation": "Turkey has no more tryptophan than other meats, and big meals, carbohydrates or alcohol are more likely to make you drowsy.",
+    "order": 92
+  },
+  {
+    "category": "Science",
+    "statement": "Time passes at the same rate everywhere in the universe.",
+    "isFact": false,
+    "explanation": "Both speed and gravity affect how fast time passes, as shown by Einstein's theories of relativity.",
+    "order": 93
+  },
+  {
+    "category": "Science",
+    "statement": "Sunlight consists only of visible light.",
+    "isFact": false,
+    "explanation": "Sunlight also includes ultraviolet and infrared radiation, which we cannot see.",
+    "order": 94
+  },
+  {
+    "category": "Science",
+    "statement": "Metals expand when they are cooled.",
+    "isFact": false,
+    "explanation": "Most metals contract when cooled and expand when heated.",
+    "order": 95
+  },
+  {
+    "category": "Science",
+    "statement": "Light always travels in a straight line.",
+    "isFact": false,
+    "explanation": "Gravity bends the path of light, as seen in gravitational lensing, and light also bends when passing through different materials.",
+    "order": 96
+  },
+  {
+    "category": "Science",
+    "statement": "A vacuum cleaner works by 'sucking' dirt up.",
+    "isFact": false,
+    "explanation": "It lowers the pressure inside, and the higher air pressure outside pushes air and dirt into the machine.",
+    "order": 97
+  },
+  {
+    "category": "Science",
+    "statement": "Stress can turn your hair white overnight.",
+    "isFact": false,
+    "explanation": "Hair that has already grown can't change colour in a night; stress can affect pigment-producing cells in new hair, but only over time.",
+    "order": 98
+  },
+  {
+    "category": "Science",
+    "statement": "Rosalind Franklin's X-ray images were crucial to discovering the structure of DNA.",
+    "isFact": true,
+    "explanation": "Her 'Photograph 51' revealed the helical shape of DNA, which helped Watson and Crick build their model in 1953.",
+    "order": 99
+  },
+  {
+    "category": "Science",
+    "statement": "Water drains in opposite directions in the Northern and Southern Hemispheres.",
+    "isFact": false,
+    "explanation": "The Coriolis effect is far too weak to influence a sink or toilet; the drain direction depends on the basin shape and how the water was set in motion.",
+    "order": 100
   }
 ]

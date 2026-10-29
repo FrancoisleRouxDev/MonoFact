@@ -173,5 +173,530 @@
     "isFact": false,
     "explanation": "A sidereal day — one full rotation relative to distant stars — is 23 hours, 56 minutes, and 4 seconds, not exactly 24 hours.",
     "order": 25
+  },
+  {
+    "category": "Nature",
+    "statement": "Antarctica is the largest desert on Earth.",
+    "isFact": true,
+    "explanation": "A desert is defined by low precipitation, not heat. Antarctica receives very little snowfall and covers about 14 million square kilometres, more than the Sahara.",
+    "order": 26
+  },
+  {
+    "category": "Nature",
+    "statement": "A lightning bolt is several times hotter than the surface of the Sun.",
+    "isFact": true,
+    "explanation": "Lightning heats the air to around 30,000 °C, while the Sun's surface is roughly 5,500 °C.",
+    "order": 27
+  },
+  {
+    "category": "Nature",
+    "statement": "The Pacific Ocean is larger than all of Earth's land combined.",
+    "isFact": true,
+    "explanation": "The Pacific covers about 165 million square kilometres, more than the roughly 149 million square kilometres of land on Earth.",
+    "order": 28
+  },
+  {
+    "category": "Nature",
+    "statement": "Coast redwoods are the tallest trees on Earth.",
+    "isFact": true,
+    "explanation": "The tallest known redwood, Hyperion, stands at about 115 metres in California.",
+    "order": 29
+  },
+  {
+    "category": "Nature",
+    "statement": "The Amazon River carries more water than any other river on Earth.",
+    "isFact": true,
+    "explanation": "It discharges roughly a fifth of all the freshwater that flows into the world's oceans.",
+    "order": 30
+  },
+  {
+    "category": "Nature",
+    "statement": "About 71% of Earth's surface is covered by water.",
+    "isFact": true,
+    "explanation": "Oceans make up almost all of it, which is why Earth is sometimes called the Blue Planet.",
+    "order": 31
+  },
+  {
+    "category": "Nature",
+    "statement": "Only about 3% of Earth's water is fresh water.",
+    "isFact": true,
+    "explanation": "The vast majority is salty ocean water, and most fresh water is locked up in ice caps and glaciers.",
+    "order": 32
+  },
+  {
+    "category": "Nature",
+    "statement": "The Mariana Trench is the deepest known point in the ocean.",
+    "isFact": true,
+    "explanation": "Its deepest point, the Challenger Deep, lies nearly 11,000 metres below the surface of the western Pacific.",
+    "order": 33
+  },
+  {
+    "category": "Nature",
+    "statement": "Measured from base to peak, Mauna Kea is taller than Mount Everest.",
+    "isFact": true,
+    "explanation": "Most of Mauna Kea in Hawaii is underwater: from the ocean floor to its summit it is over 10,000 metres tall.",
+    "order": 34
+  },
+  {
+    "category": "Nature",
+    "statement": "A Venus flytrap only snaps shut when two of its hairs are touched in quick succession.",
+    "isFact": true,
+    "explanation": "This helps the plant avoid wasting energy closing on raindrops or debris rather than a real insect.",
+    "order": 35
+  },
+  {
+    "category": "Nature",
+    "statement": "Coffee beans are the seeds of a fruit.",
+    "isFact": true,
+    "explanation": "They grow inside red 'coffee cherries' on the coffee plant before being roasted.",
+    "order": 36
+  },
+  {
+    "category": "Nature",
+    "statement": "Honey can last thousands of years without spoiling.",
+    "isFact": true,
+    "explanation": "Its low moisture and high acidity make it hostile to bacteria, and edible honey has been found in ancient Egyptian tombs.",
+    "order": 37
+  },
+  {
+    "category": "Nature",
+    "statement": "The Great Barrier Reef is the largest living structure on Earth.",
+    "isFact": true,
+    "explanation": "Made up of billions of tiny coral polyps, it stretches over 2,300 kilometres off the coast of Australia.",
+    "order": 38
+  },
+  {
+    "category": "Nature",
+    "statement": "Underground fungal networks can connect the roots of different trees.",
+    "isFact": true,
+    "explanation": "These mycorrhizal networks help trees exchange water and nutrients, though scientists still debate how much they shape forest behaviour.",
+    "order": 39
+  },
+  {
+    "category": "Nature",
+    "statement": "Vanilla comes from an orchid.",
+    "isFact": true,
+    "explanation": "Vanilla is extracted from the pods of the vanilla orchid, and its flowers must typically be pollinated by hand outside their native Mexico.",
+    "order": 40
+  },
+  {
+    "category": "Nature",
+    "statement": "The Sahara was once green and covered in lakes and grassland.",
+    "isFact": true,
+    "explanation": "Around 11,000 to 5,000 years ago, a wetter climate known as the African Humid Period turned the region lush.",
+    "order": 41
+  },
+  {
+    "category": "Nature",
+    "statement": "Tides are mainly caused by the gravitational pull of the Moon.",
+    "isFact": true,
+    "explanation": "The Moon's gravity pulls on the oceans, creating bulges that produce high tides as Earth rotates.",
+    "order": 42
+  },
+  {
+    "category": "Nature",
+    "statement": "Lake Baikal holds about 20% of the world's unfrozen fresh water.",
+    "isFact": true,
+    "explanation": "This Siberian lake is also the deepest on Earth, at over 1,600 metres, and is estimated to be about 25 million years old.",
+    "order": 43
+  },
+  {
+    "category": "Nature",
+    "statement": "Earth's atmosphere is mostly nitrogen.",
+    "isFact": true,
+    "explanation": "Nitrogen makes up about 78% of the air, oxygen about 21%, and the remainder is argon, carbon dioxide and other gases.",
+    "order": 44
+  },
+  {
+    "category": "Nature",
+    "statement": "Earth is closest to the Sun during the Northern Hemisphere's winter.",
+    "isFact": true,
+    "explanation": "Earth reaches its closest point, perihelion, in early January, which shows that the seasons don't come from distance.",
+    "order": 45
+  },
+  {
+    "category": "Nature",
+    "statement": "About three-quarters of the world's active volcanoes sit along the Ring of Fire.",
+    "isFact": true,
+    "explanation": "This horseshoe-shaped zone around the Pacific Ocean is also where most of the world's earthquakes occur.",
+    "order": 46
+  },
+  {
+    "category": "Nature",
+    "statement": "A grove of quaking aspens in Utah called Pando is a single living organism.",
+    "isFact": true,
+    "explanation": "All of its roughly 47,000 trunks are genetically identical stems connected by one root system.",
+    "order": 47
+  },
+  {
+    "category": "Nature",
+    "statement": "Giant sequoias are the largest trees on Earth by volume.",
+    "isFact": true,
+    "explanation": "General Sherman, in California, is estimated at over 1,400 cubic metres of wood.",
+    "order": 48
+  },
+  {
+    "category": "Nature",
+    "statement": "The smell of rain after a dry spell has a name: petrichor.",
+    "isFact": true,
+    "explanation": "It comes from oils released by plants and a compound made by soil bacteria called geosmin.",
+    "order": 49
+  },
+  {
+    "category": "Nature",
+    "statement": "Snowflakes have six-fold symmetry.",
+    "isFact": true,
+    "explanation": "The hexagonal arrangement of water molecules in ice causes snow crystals to grow with six arms or sides.",
+    "order": 50
+  },
+  {
+    "category": "Nature",
+    "statement": "Thunder is caused by air rapidly expanding around a lightning bolt.",
+    "isFact": true,
+    "explanation": "The extreme heat of lightning makes the air expand faster than the speed of sound, producing a shock wave we hear as thunder.",
+    "order": 51
+  },
+  {
+    "category": "Nature",
+    "statement": "The Atacama Desert in Chile is one of the driest places on Earth.",
+    "isFact": true,
+    "explanation": "Some weather stations there have never recorded any rain, and parts of it get less than a millimetre in a year.",
+    "order": 52
+  },
+  {
+    "category": "Nature",
+    "statement": "Botanically, a banana is a berry.",
+    "isFact": true,
+    "explanation": "A true berry develops from a single flower's ovary and has seeds in the flesh, which fits bananas but not strawberries.",
+    "order": 53
+  },
+  {
+    "category": "Nature",
+    "statement": "Cashew nuts grow outside the fruit they belong to.",
+    "isFact": true,
+    "explanation": "Each cashew nut hangs from the bottom of a fleshy 'cashew apple', and its shell contains an irritating oil.",
+    "order": 54
+  },
+  {
+    "category": "Nature",
+    "statement": "It takes about 40 litres of maple sap to make 1 litre of maple syrup.",
+    "isFact": true,
+    "explanation": "The sap is mostly water and must be boiled down until the sugar content is concentrated.",
+    "order": 55
+  },
+  {
+    "category": "Nature",
+    "statement": "Iceland sits on the boundary between two tectonic plates.",
+    "isFact": true,
+    "explanation": "The island straddles the Mid-Atlantic Ridge, where the North American and Eurasian plates drift apart, giving it volcanoes and geysers.",
+    "order": 56
+  },
+  {
+    "category": "Nature",
+    "statement": "The world's largest single flower, Rafflesia, smells like rotting flesh.",
+    "isFact": true,
+    "explanation": "Rafflesia arnoldii can grow to about a metre across, and its odour attracts the flies that pollinate it.",
+    "order": 57
+  },
+  {
+    "category": "Nature",
+    "statement": "Lichens are a partnership between a fungus and an alga or bacterium.",
+    "isFact": true,
+    "explanation": "The fungus provides structure and protection, while its partner makes food through photosynthesis.",
+    "order": 58
+  },
+  {
+    "category": "Nature",
+    "statement": "The Amazon rainforest spans nine countries.",
+    "isFact": true,
+    "explanation": "Around 60% of it lies in Brazil, with the remainder across Peru, Colombia, Bolivia, Venezuela, Ecuador, Guyana, Suriname and French Guiana.",
+    "order": 59
+  },
+  {
+    "category": "Nature",
+    "statement": "The auroras are caused by charged particles from the Sun hitting Earth's atmosphere.",
+    "isFact": true,
+    "explanation": "Earth's magnetic field funnels these particles toward the poles, where they excite atmospheric gases and make them glow.",
+    "order": 60
+  },
+  {
+    "category": "Nature",
+    "statement": "Some bamboo species flower only once every few decades.",
+    "isFact": true,
+    "explanation": "Certain species bloom about every 60 to 120 years, and then the whole population often dies back after seeding.",
+    "order": 61
+  },
+  {
+    "category": "Nature",
+    "statement": "Most of the ocean floor has still not been directly seen or explored.",
+    "isFact": true,
+    "explanation": "More than 80% of the ocean remains unmapped at high resolution and largely unexplored.",
+    "order": 62
+  },
+  {
+    "category": "Nature",
+    "statement": "The Antarctic ice sheet holds about 90% of the world's ice.",
+    "isFact": true,
+    "explanation": "If it melted completely, global sea levels would rise by roughly 58 metres.",
+    "order": 63
+  },
+  {
+    "category": "Nature",
+    "statement": "Bristlecone pines can live for more than 4,000 years.",
+    "isFact": true,
+    "explanation": "The oldest known individuals in the western United States are thought to be nearly 5,000 years old.",
+    "order": 64
+  },
+  {
+    "category": "Nature",
+    "statement": "Water expands as it freezes.",
+    "isFact": true,
+    "explanation": "Ice is about 9% less dense than liquid water, which is why it floats and why frozen pipes can burst.",
+    "order": 65
+  },
+  {
+    "category": "Nature",
+    "statement": "Chocolate comes from the seeds of the cacao tree.",
+    "isFact": true,
+    "explanation": "Cacao seeds are fermented, dried and roasted before being ground into cocoa.",
+    "order": 66
+  },
+  {
+    "category": "Nature",
+    "statement": "Mosses have no true roots.",
+    "isFact": true,
+    "explanation": "They absorb water directly through their leaves and use tiny hair-like rhizoids only to anchor themselves.",
+    "order": 67
+  },
+  {
+    "category": "Nature",
+    "statement": "Seasons are caused by the Earth being closer to or farther from the Sun.",
+    "isFact": false,
+    "explanation": "Seasons are caused by the tilt of Earth's axis, which changes how directly sunlight hits each hemisphere through the year.",
+    "order": 68
+  },
+  {
+    "category": "Nature",
+    "statement": "Goldenrod is the main cause of hay fever.",
+    "isFact": false,
+    "explanation": "Goldenrod is pollinated by insects and its pollen is heavy and sticky; ragweed, which blooms at the same time, is the real culprit.",
+    "order": 69
+  },
+  {
+    "category": "Nature",
+    "statement": "Poinsettias are deadly poisonous to humans and pets.",
+    "isFact": false,
+    "explanation": "Poinsettias can cause mild stomach upset or skin irritation, but they are not deadly.",
+    "order": 70
+  },
+  {
+    "category": "Nature",
+    "statement": "Botanically, a tomato is a vegetable.",
+    "isFact": false,
+    "explanation": "A tomato develops from a flower's ovary and contains seeds, so botanists classify it as a fruit, though cooks treat it as a vegetable.",
+    "order": 71
+  },
+  {
+    "category": "Nature",
+    "statement": "Mount Everest is the tallest mountain on Earth when measured from base to summit.",
+    "isFact": false,
+    "explanation": "Everest has the highest summit above sea level, but Mauna Kea is taller from base to peak, and Chimborazo's summit is farthest from Earth's centre.",
+    "order": 72
+  },
+  {
+    "category": "Nature",
+    "statement": "Quicksand can pull a person completely under.",
+    "isFact": false,
+    "explanation": "Quicksand is denser than the human body, so a person floats and can usually escape by moving slowly.",
+    "order": 73
+  },
+  {
+    "category": "Nature",
+    "statement": "You can safely drink the water stored inside a cactus to survive in the desert.",
+    "isFact": false,
+    "explanation": "Most cactus fluid is bitter, can cause nausea or diarrhoea, and is not a reliable source of drinking water.",
+    "order": 74
+  },
+  {
+    "category": "Nature",
+    "statement": "Carrots were originally orange.",
+    "isFact": false,
+    "explanation": "Early carrots were purple, yellow or white; orange varieties were developed by Dutch growers in the 16th and 17th centuries.",
+    "order": 75
+  },
+  {
+    "category": "Nature",
+    "statement": "The Earth is a perfect sphere.",
+    "isFact": false,
+    "explanation": "Earth bulges at the equator because of its rotation, making it an oblate spheroid about 43 km wider across the equator than pole to pole.",
+    "order": 76
+  },
+  {
+    "category": "Nature",
+    "statement": "Humans and non-avian dinosaurs lived at the same time.",
+    "isFact": false,
+    "explanation": "Non-avian dinosaurs died out about 66 million years ago, millions of years before the first humans appeared.",
+    "order": 77
+  },
+  {
+    "category": "Nature",
+    "statement": "Redwoods are the oldest living trees.",
+    "isFact": false,
+    "explanation": "Redwoods are tall but not the oldest; bristlecone pines and some other species live far longer.",
+    "order": 78
+  },
+  {
+    "category": "Nature",
+    "statement": "Thunder causes lightning.",
+    "isFact": false,
+    "explanation": "Lightning comes first and heats the air so quickly that it creates thunder. We see lightning before hearing thunder because light travels faster than sound.",
+    "order": 79
+  },
+  {
+    "category": "Nature",
+    "statement": "Deserts never get any rain.",
+    "isFact": false,
+    "explanation": "Deserts are defined by receiving little rain, usually under 250 mm a year, not by getting none.",
+    "order": 80
+  },
+  {
+    "category": "Nature",
+    "statement": "Sea water freezes at 0 °C, just like fresh water.",
+    "isFact": false,
+    "explanation": "The salt in sea water lowers its freezing point to around −2 °C.",
+    "order": 81
+  },
+  {
+    "category": "Nature",
+    "statement": "Rivers always flow from north to south.",
+    "isFact": false,
+    "explanation": "Rivers flow downhill, so many go in other directions; the Nile, for example, flows north.",
+    "order": 82
+  },
+  {
+    "category": "Nature",
+    "statement": "Antarctica is just a giant sheet of floating ice.",
+    "isFact": false,
+    "explanation": "Antarctica is a continent with land beneath its ice, whereas the Arctic Ocean ice does float.",
+    "order": 83
+  },
+  {
+    "category": "Nature",
+    "statement": "The North Pole sits on land.",
+    "isFact": false,
+    "explanation": "The North Pole is in the middle of the Arctic Ocean and is covered by shifting sea ice.",
+    "order": 84
+  },
+  {
+    "category": "Nature",
+    "statement": "Rain is pure water.",
+    "isFact": false,
+    "explanation": "Rainwater contains dissolved gases and particles, and is naturally slightly acidic because it absorbs carbon dioxide.",
+    "order": 85
+  },
+  {
+    "category": "Nature",
+    "statement": "Scientists can predict exactly when an earthquake will happen.",
+    "isFact": false,
+    "explanation": "Scientists can estimate long-term probabilities for a region, but no one can predict the exact time and place of an earthquake.",
+    "order": 86
+  },
+  {
+    "category": "Nature",
+    "statement": "All trees lose their leaves in autumn.",
+    "isFact": false,
+    "explanation": "Evergreens such as pines and firs keep their needles year-round and shed them gradually.",
+    "order": 87
+  },
+  {
+    "category": "Nature",
+    "statement": "Autumn leaves get their yellow and orange colours from pigments newly made in the fall.",
+    "isFact": false,
+    "explanation": "The yellow and orange carotenoids are present all year but hidden by green chlorophyll, which breaks down as autumn arrives.",
+    "order": 88
+  },
+  {
+    "category": "Nature",
+    "statement": "Seaweed is a type of plant.",
+    "isFact": false,
+    "explanation": "Seaweeds are algae, which belong to different groups than land plants and have no true roots, stems or leaves.",
+    "order": 89
+  },
+  {
+    "category": "Nature",
+    "statement": "The sky is blue because it reflects the ocean.",
+    "isFact": false,
+    "explanation": "The sky is blue because molecules in the atmosphere scatter short blue wavelengths of sunlight more than longer red ones.",
+    "order": 90
+  },
+  {
+    "category": "Nature",
+    "statement": "The ocean is blue because it reflects the sky.",
+    "isFact": false,
+    "explanation": "Water absorbs red light more strongly than blue, so the ocean looks blue even though reflection adds some colour.",
+    "order": 91
+  },
+  {
+    "category": "Nature",
+    "statement": "Glaciers do not move.",
+    "isFact": false,
+    "explanation": "Glaciers flow slowly under their own weight, from a few centimetres to many metres a day.",
+    "order": 92
+  },
+  {
+    "category": "Nature",
+    "statement": "Hurricanes spin in the same direction all over the world.",
+    "isFact": false,
+    "explanation": "Earth's rotation makes them spin counterclockwise in the Northern Hemisphere and clockwise in the Southern Hemisphere.",
+    "order": 93
+  },
+  {
+    "category": "Nature",
+    "statement": "Bamboo is a type of tree.",
+    "isFact": false,
+    "explanation": "Bamboo is a giant grass in the Poaceae family, related to wheat and rice.",
+    "order": 94
+  },
+  {
+    "category": "Nature",
+    "statement": "Almonds are true nuts.",
+    "isFact": false,
+    "explanation": "Botanically, almonds are the seeds of a drupe, related to peaches and cherries, rather than true nuts.",
+    "order": 95
+  },
+  {
+    "category": "Nature",
+    "statement": "Pineapples grow on trees.",
+    "isFact": false,
+    "explanation": "A pineapple grows from a low, spiky plant in the ground, and each fruit takes months to ripen.",
+    "order": 96
+  },
+  {
+    "category": "Nature",
+    "statement": "Cranberries grow while submerged in water.",
+    "isFact": false,
+    "explanation": "Cranberries grow on low vines in bogs; the fields are flooded only at harvest time so the floating berries are easy to collect.",
+    "order": 97
+  },
+  {
+    "category": "Nature",
+    "statement": "Diamonds are made from compressed coal.",
+    "isFact": false,
+    "explanation": "Most diamonds formed deep in the mantle, billions of years ago, long before land plants that form coal even existed.",
+    "order": 98
+  },
+  {
+    "category": "Nature",
+    "statement": "Forest fires are always destructive for a forest.",
+    "isFact": false,
+    "explanation": "Many ecosystems rely on periodic fires to clear undergrowth and release seeds; giant sequoia and lodgepole pine cones open with heat.",
+    "order": 99
+  },
+  {
+    "category": "Nature",
+    "statement": "Tides only affect the oceans.",
+    "isFact": false,
+    "explanation": "The Moon's pull also flexes the solid Earth, raising and lowering the ground by tens of centimetres twice a day.",
+    "order": 100
   }
 ]
