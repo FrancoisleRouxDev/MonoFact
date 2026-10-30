@@ -51,11 +51,11 @@ export default function CardCountSelector({
                             onPress={() => onSelect(count)}
                         >
                             <Text style={[styles.pillText, active && styles.pillTextActive]}>
-                                {count}
+                                {isAll ? "All" : count}
                             </Text>
                             {isAll && (
                                 <Text style={[styles.pillHint, active && styles.pillTextActive]}>
-                                    all
+                                    {count}
                                 </Text>
                             )}
                         </Pressable>
