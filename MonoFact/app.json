@@ -57,8 +57,9 @@
     "extra": {
       "router": {},
       "eas": {
-        "projectId": "c5652e8d-8bc2-4a9b-b830-48afabadc19a"
+        "projectId": "6c8c5d73-1627-4d7a-9792-bca2faf2a6b3"
       }
-    }
+    },
+    "owner": "velocity73"
   }
 }
