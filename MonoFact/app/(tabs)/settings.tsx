@@ -23,13 +23,25 @@ import { UserRound, Bell, Shield, Info } from "lucide-react-native";
 import { auth } from "@/app/services/config";
 import { signOut } from "firebase/auth";
 import { useUser } from "@/app/context/UserContext";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getNotificationsEnabled, setNotificationsEnabled } from "@/lib/notifications";
 
 export default function SettingsScreen() {
   // Pull user data from shared context instead of fetching Firebase directly
   const { userData } = useUser();
   const { toast, showToast, hideToast } = useToast();
-  const [notifications, setNotifications] = useState(true);
+  const [notifications, setNotifications] = useState(false);
+
+  // Load the saved reminder choice (the app turns it on at first launch once permission is granted)
+  useEffect(() => {
+    getNotificationsEnabled().then(setNotifications);
+  }, []);
+
+  const handleNotificationsChange = async (enabled: boolean) => {
+    setNotifications(enabled);
+    const result = await setNotificationsEnabled(enabled);
+    setNotifications(result);
+  };
   const router = useRouter();
 
   const handleLogout = async () => {
@@ -78,7 +90,7 @@ export default function SettingsScreen() {
             title="Notifications"
             icon={Bell}
             value={notifications}
-            onValueChange={setNotifications}
+            onValueChange={handleNotificationsChange}
           />
         </SettingsSection>
 

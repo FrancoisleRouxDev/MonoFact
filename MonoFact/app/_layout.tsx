@@ -7,7 +7,7 @@ import { onAuthStateChanged } from 'firebase/auth';
 import { auth } from '@/app/services/config';
 import { View, ActivityIndicator } from 'react-native';
 import { Colors } from '@/constants/Colors';
-import { setupNotifications } from '@/app/services/notificationService';
+import { initNotifications } from '@/lib/notifications';
 
 function AuthGate({ children }: { children: React.ReactNode }) {
   const [authLoading, setAuthLoading] = useState(true);
@@ -61,7 +61,7 @@ export const unstable_settings = {
 
 export default function RootLayout() {
   useEffect(() => {
-    setupNotifications();
+    initNotifications();
   }, []);
 
   return (
