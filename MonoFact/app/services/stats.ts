@@ -8,6 +8,8 @@ import {
 } from "firebase/firestore";
 
 import { auth, db } from "./config";
+import { localDateKey } from "@/lib/date";
+import { shuffle } from "@/lib/shuffle";
 
 // --------------------------------------------------
 // Level thresholds
@@ -21,13 +23,17 @@ const getXPForLevel = (level: number): number => {
 // Get the correct level from XP
 // --------------------------------------------------
 
-const getLevelFromXP = (xp: number): number => {
+export const getLevelFromXP = (xp: number): number => {
     let level = 1;
     while (xp >= getXPForLevel(level + 1)) {
         level++;
     }
     return level;
 }
+
+// Bonus XP for answering correctly in a streak: 10 per streak step, capped at 9.
+export const calcStreakBonus = (streak: number): number =>
+    streak >= 3 ? Math.min(streak, 9) * 10 : 0;
 
 export const getRequiredXPForLevel = (level: number): number => {
     return getXPForLevel(level + 1);
@@ -102,8 +108,7 @@ export const recordAnswer = async (
     // Step 2 — calculate and apply streak bonus
     const newStreak = await recordStreak(isCorrect);
 
-    const cappedStreak = Math.min(newStreak, 9);
-    const streakBonus = newStreak >= 3 ? cappedStreak * 10 : 0;
+    const streakBonus = calcStreakBonus(newStreak);
 
     if (streakBonus > 0) {
         await updateDoc(userRef, {
@@ -315,7 +320,7 @@ export const checkAchievements = async (
         : Math.round((totalCorrect / totalAnswers) * 100);
 
     // ---- Games played today ----
-    const today = new Date().toISOString().split("T")[0];
+    const today = localDateKey();
     const lastPlayedDate = data.lastPlayedDate ?? "";
     let gamesPlayedToday = data.gamesPlayedToday ?? 0;
 
@@ -434,7 +439,7 @@ export const getDailyFacts = async () => {
     if (!snapshot.exists()) throw new Error("User document does not exist.");
 
     const data = snapshot.data();
-    const today = new Date().toISOString().split("T")[0];
+    const today = localDateKey();
 
     // Return cached facts if already selected today
     if (data.dailyFactDate === today && data.dailyFactIds?.length === 5) {
@@ -447,7 +452,7 @@ export const getDailyFacts = async () => {
     const allIds = factsSnapshot.docs.map((d) => d.id);
 
     // Pick 5 random fact IDs
-    const shuffled = allIds.sort(() => Math.random() - 0.5);
+    const shuffled = shuffle(allIds);
     const selectedIds = shuffled.slice(0, 5);
 
     // Cache them against today's date
@@ -469,7 +474,7 @@ export const recordDailyChallengeCompleted = async (
     const currentUser = auth.currentUser;
     if (!currentUser) throw new Error("No authenticated user.");
 
-    const today = new Date().toISOString().split("T")[0];
+    const today = localDateKey();
     const userRef = doc(db, "users", currentUser.uid);
 
     // Mark challenge as completed today

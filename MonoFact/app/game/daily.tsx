@@ -8,6 +8,7 @@ import {
     ScrollView,
 } from "react-native";
 import { useRouter } from "expo-router";
+import { localDateKey } from "@/lib/date";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { db, auth } from "@/app/services/config";
 import { useState, useEffect } from "react";
@@ -83,7 +84,7 @@ export default function DailyGameplayScreen() {
                 const userRef = doc(db, "users", currentUser.uid);
                 const userSnap = await getDoc(userRef);
                 const userData = userSnap.data();
-                const today = new Date().toISOString().split("T")[0];
+                const today = localDateKey();
 
                 if (userData?.dailyCompletedDate === today) {
                     setScreenState("already_done");
