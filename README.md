@@ -166,9 +166,14 @@ EXPO_PUBLIC_FIREBASE_MEASUREMENT_ID=your_measurement_id
 
 ### 4. Seed the Database
 
-Populate your Firestore instance with the starter fact pool:
+Client writes to `categories` are blocked by `firestore.rules`, so seeding uses the Firebase Admin SDK:
+
+1. In Firebase Console > Project settings > Service accounts, generate a private key (JSON).
+2. Save it outside the repo and set `GOOGLE_APPLICATION_CREDENTIALS` to its path (shell or `.env`).
+3. Deploy the rules, then seed:
 
 ```bash
+firebase deploy --only firestore:rules
 npm run seed
 ```
 

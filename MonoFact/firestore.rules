@@ -1,0 +1,16 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+    // Each user can read and write only their own document.
+    match /users/{uid} {
+      allow read, write: if request.auth != null && request.auth.uid == uid;
+    }
+
+    // Fact decks are readable by signed-in users and never writable by clients.
+    // They are seeded with the Admin SDK (npm run seed), which bypasses rules.
+    match /categories/{document=**} {
+      allow read: if request.auth != null;
+      allow write: if false;
+    }
+  }
+}

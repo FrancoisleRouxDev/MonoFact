@@ -1,0 +1,6 @@
+# local env files
+.env
+
+# Firebase Admin service-account keys
+*service-account*.json
+serviceAccount*.json
