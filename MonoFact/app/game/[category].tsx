@@ -7,6 +7,7 @@ import {
     orderBy,
 } from "firebase/firestore";
 import { db } from "@/app/services/config";
+import { getLocalFacts } from "@/app/services/localFacts";
 import { useState, useEffect } from "react";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
@@ -105,12 +106,17 @@ export default function GameplayScreen() {
                 );
 
                 const q = query(factsRef, orderBy("order"));
-                const snapshot = await getDocs(q);
-
-                const loadedFacts: Fact[] = snapshot.docs.map((document) => ({
-                    id: document.id,
-                    ...(document.data() as Omit<Fact, "id">),
-                }));
+                let loadedFacts: Fact[];
+                try {
+                    const snapshot = await getDocs(q);
+                    loadedFacts = snapshot.docs.map((document) => ({
+                        id: document.id,
+                        ...(document.data() as Omit<Fact, "id">),
+                    }));
+                } catch (error) {
+                    console.warn("Using bundled facts while offline:", error);
+                    loadedFacts = getLocalFacts(categoryName);
+                }
 
                 setPool(loadedFacts);
                 // Default to the largest offered count up to 25 that the pool can supply.

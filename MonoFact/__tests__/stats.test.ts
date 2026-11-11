@@ -1,6 +1,10 @@
 import { calcStreakBonus, getLevelFromXP, getRequiredXPForLevel } from "@/app/services/stats";
 
 // stats.ts imports the Firebase config; the pure helpers don't need it.
+jest.mock("@react-native-async-storage/async-storage", () => ({
+    getItem: jest.fn(),
+    setItem: jest.fn(),
+}));
 jest.mock("@/app/services/config", () => ({ auth: {}, db: {} }));
 jest.mock("firebase/firestore", () => ({}));
 

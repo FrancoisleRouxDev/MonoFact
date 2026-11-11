@@ -8,6 +8,7 @@ import {
 import { doc, getDoc, onSnapshot } from "firebase/firestore";
 import { auth, db } from "@/app/services/config";
 import { onAuthStateChanged } from "firebase/auth";
+import { getLocalProgress, saveLocalProgress } from "@/app/services/localProgress";
 
 /**
  * Shape of the user document stored in Firestore ('users' collection).
@@ -76,11 +77,16 @@ export function UserProvider({ children }: { children: ReactNode }) {
 
             // Real-time listener for the authenticated user document
             const userRef = doc(db, "users", user.uid);
+            getLocalProgress(user.uid).then((cached) => {
+                if (cached) setUserData(cached);
+            });
             unsubscribeSnapshot = onSnapshot(
                 userRef,
                 (snapshot) => {
                     if (snapshot.exists()) {
-                        setUserData(snapshot.data() as UserData);
+                        const next = snapshot.data() as UserData;
+                        setUserData(next);
+                        void saveLocalProgress(user.uid, next);
                     }
                     setLoading(false);
                 },
@@ -108,7 +114,9 @@ export function UserProvider({ children }: { children: ReactNode }) {
         const userRef = doc(db, "users", currentUser.uid);
         getDoc(userRef).then((snapshot) => {
             if (snapshot.exists()) {
-                setUserData(snapshot.data() as UserData);
+                const next = snapshot.data() as UserData;
+                setUserData(next);
+                void saveLocalProgress(currentUser.uid, next);
             }
         }).catch((err) => {
             console.error("Failed to refresh user data:", err);

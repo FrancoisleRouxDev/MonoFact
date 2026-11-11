@@ -11,6 +11,8 @@ import { useRouter } from "expo-router";
 import { localDateKey } from "@/lib/date";
 import { collection, getDocs, doc, getDoc } from "firebase/firestore";
 import { db, auth } from "@/app/services/config";
+import { getLocalFacts } from "@/app/services/localFacts";
+import { getLocalProgress } from "@/app/services/localProgress";
 import { useState, useEffect } from "react";
 import { Colors } from "@/constants/Colors";
 import { Spacing } from "@/constants/Spacing";
@@ -82,8 +84,14 @@ export default function DailyGameplayScreen() {
 
                 // Check if user already completed today's challenge
                 const userRef = doc(db, "users", currentUser.uid);
-                const userSnap = await getDoc(userRef);
-                const userData = userSnap.data();
+                let userData;
+                try {
+                    const userSnap = await getDoc(userRef);
+                    userData = userSnap.data();
+                } catch (error) {
+                    console.warn("Using local daily progress while offline:", error);
+                    userData = await getLocalProgress(currentUser.uid);
+                }
                 const today = localDateKey();
 
                 if (userData?.dailyCompletedDate === today) {
@@ -92,17 +100,29 @@ export default function DailyGameplayScreen() {
                 }
 
                 // Get today's 5 cached fact IDs (or generate new ones)
-                const selectedIds = await getDailyFacts();
+                let selectedIds: string[];
+                try {
+                    selectedIds = await getDailyFacts();
+                } catch (error) {
+                    console.warn("Using bundled daily selection while offline:", error);
+                    selectedIds = getLocalFacts("daily")
+                        .slice(0, 5)
+                        .map((fact) => fact.id);
+                }
 
                 // Fetch all daily facts from Firestore
-                const factsRef = collection(db, "categories", "daily", "facts");
-                const snapshot = await getDocs(factsRef);
-
-                // Filter to only today's selected facts
-                const allFacts: Fact[] = snapshot.docs.map((d) => ({
-                    id: d.id,
-                    ...(d.data() as Omit<Fact, "id">),
-                }));
+                let allFacts: Fact[];
+                try {
+                    const factsRef = collection(db, "categories", "daily", "facts");
+                    const snapshot = await getDocs(factsRef);
+                    allFacts = snapshot.docs.map((d) => ({
+                        id: d.id,
+                        ...(d.data() as Omit<Fact, "id">),
+                    }));
+                } catch (error) {
+                    console.warn("Using bundled daily facts while offline:", error);
+                    allFacts = getLocalFacts("daily");
+                }
 
                 const todaysFacts = allFacts.filter((f) =>
                     selectedIds.includes(f.id)

@@ -10,6 +10,8 @@ import {
 import { auth, db } from "./config";
 import { localDateKey } from "@/lib/date";
 import { shuffle } from "@/lib/shuffle";
+import { getLocalProgress, updateLocalProgress, applyLocalAnswer } from "./localProgress";
+import { getLocalFacts } from "./localFacts";
 
 // --------------------------------------------------
 // Level thresholds
@@ -94,8 +96,9 @@ export const recordAnswer = async (
     const categoryIncorrectPath =
         `categoryStats.${categoryKey}.incorrect`;
 
-    // Step 1 — update XP and stats
-    await updateDoc(userRef, {
+    try {
+        // Step 1 — update XP and stats
+        await updateDoc(userRef, {
         totalCorrect: increment(isCorrect ? 1 : 0),
         totalIncorrect: increment(isCorrect ? 0 : 1),
         xp: increment(isCorrect ? 15 : 0),
@@ -135,7 +138,16 @@ export const recordAnswer = async (
     // Step 6 - check achievements after every answer
     await checkAchievements();
 
-    return streakBonus;
+        return streakBonus;
+    } catch (error) {
+        console.warn("Saving answer online failed; keeping progress locally:", error);
+        const local = await updateLocalProgress(currentUser.uid, (current) =>
+            applyLocalAnswer(current, isCorrect, categoryKey, source)
+        );
+        return Math.max(0, (local.currentStreak ?? 0) >= 3
+            ? Math.min(local.currentStreak ?? 0, 9) * 10
+            : 0);
+    }
 };
 
 // --------------------------------------------------
@@ -150,14 +162,24 @@ export const recordGameCompleted = async (
 
     const userRef = doc(db, "users", currentUser.uid);
 
-    await updateDoc(userRef, {
-        gamesPlayed: increment(1),
-        lastCategory: null,
-        lastQuestionIndex: null,
-    });
+    try {
+        await updateDoc(userRef, {
+            gamesPlayed: increment(1),
+            lastCategory: null,
+            lastQuestionIndex: null,
+        });
 
-    // Check achievements after every completed game
-    await checkAchievements(correctAnswersInRound);
+        // Check achievements after every completed game
+        await checkAchievements(correctAnswersInRound);
+    } catch (error) {
+        console.warn("Saving completed game online failed; keeping progress locally:", error);
+        await updateLocalProgress(currentUser.uid, (current) => ({
+            ...current,
+            gamesPlayed: (current.gamesPlayed ?? 0) + 1,
+            lastCategory: undefined,
+            lastQuestionIndex: undefined,
+        }));
+    }
 };
 
 // --------------------------------------------------
@@ -173,10 +195,19 @@ export const saveLastPosition = async (
 
     const userRef = doc(db, "users", currentUser.uid);
 
-    await updateDoc(userRef, {
-        lastCategory: category,
-        lastQuestionIndex: index,
-    });
+    try {
+        await updateDoc(userRef, {
+            lastCategory: category,
+            lastQuestionIndex: index,
+        });
+    } catch (error) {
+        console.warn("Saving game position online failed; keeping it locally:", error);
+        await updateLocalProgress(currentUser.uid, (current) => ({
+            ...current,
+            lastCategory: category,
+            lastQuestionIndex: index,
+        }));
+    }
 };
 
 // --------------------------------------------------
@@ -189,10 +220,19 @@ export const clearLastPosition = async () => {
 
     const userRef = doc(db, "users", currentUser.uid);
 
-    await updateDoc(userRef, {
-        lastCategory: null,
-        lastQuestionIndex: null,
-    });
+    try {
+        await updateDoc(userRef, {
+            lastCategory: null,
+            lastQuestionIndex: null,
+        });
+    } catch (error) {
+        console.warn("Clearing game position online failed; clearing it locally:", error);
+        await updateLocalProgress(currentUser.uid, (current) => ({
+            ...current,
+            lastCategory: undefined,
+            lastQuestionIndex: undefined,
+        }));
+    }
 };
 
 // --------------------------------------------------
@@ -434,7 +474,27 @@ export const getDailyFacts = async () => {
     if (!currentUser) throw new Error("No authenticated user.");
 
     const userRef = doc(db, "users", currentUser.uid);
-    const snapshot = await getDoc(userRef);
+    let snapshot;
+    try {
+        snapshot = await getDoc(userRef);
+    } catch (error) {
+        console.warn("Loading daily progress online failed; using local progress:", error);
+        const local = await getLocalProgress(currentUser.uid);
+        const today = localDateKey();
+        if (local?.dailyFactDate === today && local.dailyFactIds?.length === 5) {
+            return local.dailyFactIds;
+        }
+
+        const selectedIds = getLocalFacts("daily")
+            .slice(0, 5)
+            .map((fact) => fact.id);
+        await updateLocalProgress(currentUser.uid, (current) => ({
+            ...current,
+            dailyFactIds: selectedIds,
+            dailyFactDate: today,
+        }));
+        return selectedIds;
+    }
 
     if (!snapshot.exists()) throw new Error("User document does not exist.");
 
@@ -478,13 +538,22 @@ export const recordDailyChallengeCompleted = async (
     const userRef = doc(db, "users", currentUser.uid);
 
     // Mark challenge as completed today
-    await updateDoc(userRef, {
-        dailyChallengesCompleted: increment(1),
-        dailyCompletedDate: today,
-    });
+    try {
+        await updateDoc(userRef, {
+            dailyChallengesCompleted: increment(1),
+            dailyCompletedDate: today,
+        });
 
-    // Check achievements including flawless (5/5)
-    await checkAchievements(correctAnswers);
+        // Check achievements including flawless (5/5)
+        await checkAchievements(correctAnswers);
+    } catch (error) {
+        console.warn("Saving daily completion online failed; keeping it locally:", error);
+        await updateLocalProgress(currentUser.uid, (current) => ({
+            ...current,
+            dailyChallengesCompleted: (current.dailyChallengesCompleted ?? 0) + 1,
+            dailyCompletedDate: today,
+        }));
+    }
 };
 
 // ---------------------------------------
@@ -497,19 +566,30 @@ export const recordDailyBonus = async () => {
 
     const userRef = doc(db, "users", currentUser.uid);
 
-    await updateDoc(userRef, {
-        xp: increment(100),
-    });
-
-    const updated = await getDoc(userRef);
-    const updatedData = updated.data();
-    const currentXP = updatedData?.xp ?? 0;
-    const currentLevel = updatedData?.level ?? 1;
-    const correctLevel = getLevelFromXP(currentXP);
-
-    if (correctLevel !== currentLevel) {
+    try {
         await updateDoc(userRef, {
-            level: correctLevel,
+            xp: increment(100),
+        });
+        const updated = await getDoc(userRef);
+        const updatedData = updated.data();
+        const currentXP = updatedData?.xp ?? 0;
+        const currentLevel = updatedData?.level ?? 1;
+        const correctLevel = getLevelFromXP(currentXP);
+
+        if (correctLevel !== currentLevel) {
+            await updateDoc(userRef, {
+                level: correctLevel,
+            });
+        }
+    } catch (error) {
+        console.warn("Saving daily bonus online failed; keeping it locally:", error);
+        await updateLocalProgress(currentUser.uid, (current) => {
+            const xp = (current.xp ?? 0) + 100;
+            return {
+                ...current,
+                xp,
+                level: getLevelFromXP(xp),
+            };
         });
     }
 }
