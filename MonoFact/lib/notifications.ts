@@ -14,10 +14,15 @@ Notifications.setNotificationHandler({
 });
 
 const STORAGE_KEY = "notificationsEnabled";
+const TIME_STORAGE_KEY = "notificationsTime";
 const REMINDER_ID = "daily-reminder";
 const REMINDER_CHANNEL = "daily-reminder";
-const REMINDER_HOUR = 19;
-const REMINDER_MINUTE = 0;
+const DEFAULT_NOTIFICATION_TIME: NotificationTime = { hour: 19, minute: 0 };
+
+export type NotificationTime = {
+    hour: number;
+    minute: number;
+};
 
 async function requestPermission(): Promise<boolean> {
     if (Platform.OS === "web") return false;
@@ -27,10 +32,10 @@ async function requestPermission(): Promise<boolean> {
     return requested.granted;
 }
 
-// Schedules (or replaces) ONE repeating daily reminder at 19:00 local time.
+// Schedules (or replaces) ONE repeating daily reminder at the user's local time.
 // A daily reminder doesn't need exact timing, so no exact-alarm permission is
 // requested.
-async function scheduleDailyReminder(): Promise<void> {
+async function scheduleDailyReminder(time: NotificationTime): Promise<void> {
     // Creating the Android channel can fail on some devices and in Expo Go.
     // That must not block the reminder, so fall back to the default channel.
     let channelId: string | undefined;
@@ -54,8 +59,8 @@ async function scheduleDailyReminder(): Promise<void> {
         },
         trigger: {
             type: Notifications.SchedulableTriggerInputTypes.DAILY,
-            hour: REMINDER_HOUR,
-            minute: REMINDER_MINUTE,
+            hour: time.hour,
+            minute: time.minute,
             channelId,
         },
     });
@@ -83,8 +88,64 @@ async function writePreference(enabled: boolean): Promise<void> {
     }
 }
 
+function isValidNotificationTime(time: NotificationTime): boolean {
+    return Number.isInteger(time.hour)
+        && time.hour >= 0
+        && time.hour <= 23
+        && Number.isInteger(time.minute)
+        && time.minute >= 0
+        && time.minute <= 59;
+}
+
+async function readNotificationTime(): Promise<NotificationTime> {
+    try {
+        const raw = await AsyncStorage.getItem(TIME_STORAGE_KEY);
+        if (!raw) return DEFAULT_NOTIFICATION_TIME;
+
+        const parsed: unknown = JSON.parse(raw);
+        if (
+            typeof parsed === "object"
+            && parsed !== null
+            && "hour" in parsed
+            && "minute" in parsed
+            && typeof parsed.hour === "number"
+            && typeof parsed.minute === "number"
+        ) {
+            const time = { hour: parsed.hour, minute: parsed.minute };
+            if (isValidNotificationTime(time)) return time;
+        }
+    } catch (error) {
+        console.warn("Failed to read notification time:", error);
+    }
+
+    return DEFAULT_NOTIFICATION_TIME;
+}
+
+async function writeNotificationTime(time: NotificationTime): Promise<void> {
+    await AsyncStorage.setItem(TIME_STORAGE_KEY, JSON.stringify(time));
+}
+
 export async function getNotificationsEnabled(): Promise<boolean> {
     return (await readPreference()) ?? false;
+}
+
+export async function getNotificationTime(): Promise<NotificationTime> {
+    return readNotificationTime();
+}
+
+export async function setNotificationTime(time: NotificationTime): Promise<boolean> {
+    if (!isValidNotificationTime(time)) return false;
+
+    try {
+        await writeNotificationTime(time);
+        if (await getNotificationsEnabled()) {
+            await scheduleDailyReminder(time);
+        }
+        return true;
+    } catch (error) {
+        console.error("Failed to update notification time:", error);
+        return false;
+    }
 }
 
 // Turns the daily reminder on or off and remembers the choice. Turning it on
@@ -92,7 +153,7 @@ export async function getNotificationsEnabled(): Promise<boolean> {
 export async function setNotificationsEnabled(enabled: boolean): Promise<boolean> {
     try {
         if (enabled && (await requestPermission())) {
-            await scheduleDailyReminder();
+            await scheduleDailyReminder(await readNotificationTime());
             await writePreference(true);
             return true;
         }
