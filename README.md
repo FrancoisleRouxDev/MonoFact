@@ -1,5 +1,13 @@
 # MonoFact
 
+<div align="center">
+
+![MonoFact preview](assets/monofact-preview.png)
+
+### *Test your intuition. Discover the truth.*
+
+</div>
+
 MonoFact is a cross-platform fact-or-myth quiz app built with React Native, Expo, TypeScript, and Firebase.
 
 Players swipe right for **Fact** or left for **Myth**, learn from an explanation, and build XP, streaks, category progress, and achievements.
@@ -21,17 +29,25 @@ Players swipe right for **Fact** or left for **Myth**, learn from an explanation
 
 ## Screenshots
 
-| Home | Categories | Gameplay |
+| Splash screen | Onboarding | Onboarding |
 |---|---|---|
-| <img src="assets/Home%20screen.jpg" width="200" alt="MonoFact home screen"> | <img src="assets/Categories%20screen.jpg" width="200" alt="MonoFact categories screen"> | <img src="assets/Gameplay%20screen.jpg" width="200" alt="MonoFact gameplay screen"> |
+| <img src="assets/Splash_screen_3.jpg" width="200" alt="MonoFact splash screen"> | <img src="assets/Splash_screen_3-1.jpg" width="200" alt="MonoFact onboarding screen"> | <img src="assets/Splash_screen_3-2.jpg" width="200" alt="MonoFact onboarding screen"> |
 
-| Feedback | Results | Statistics |
+| Login | Register | Home |
 |---|---|---|
-| <img src="assets/Feedback%20screen.jpg" width="200" alt="MonoFact feedback screen"> | <img src="assets/Results%20screen.jpg" width="200" alt="MonoFact results screen"> | <img src="assets/Statistics%20screen.jpg" width="200" alt="MonoFact statistics screen"> |
+| <img src="assets/Login%20screen.jpg" width="200" alt="MonoFact login screen"> | <img src="assets/Register%20screen.jpg" width="200" alt="MonoFact registration screen"> | <img src="assets/Home%20screen.jpg" width="200" alt="MonoFact home screen"> |
 
-| Profile | Settings | Daily challenge |
+| Categories | Gameplay | Feedback |
 |---|---|---|
-| <img src="assets/Profile%20screen.jpg" width="200" alt="MonoFact profile screen"> | <img src="assets/Settings%20screen.jpg" width="200" alt="MonoFact settings screen"> | <img src="assets/Daily_Feedback_screen.jpg" width="200" alt="MonoFact daily challenge feedback"> |
+| <img src="assets/Categories%20screen.jpg" width="200" alt="MonoFact categories screen"> | <img src="assets/Gameplay%20screen.jpg" width="200" alt="MonoFact gameplay screen"> | <img src="assets/Feedback%20screen.jpg" width="200" alt="MonoFact feedback screen"> |
+
+| Daily feedback | Results | Profile |
+|---|---|---|
+| <img src="assets/Daily_Feedback_screen.jpg" width="200" alt="MonoFact daily challenge feedback"> | <img src="assets/Results%20screen.jpg" width="200" alt="MonoFact results screen"> | <img src="assets/Profile%20screen.jpg" width="200" alt="MonoFact profile screen"> |
+
+| Statistics | Settings | |
+|---|---|---|
+| <img src="assets/Statistics%20screen.jpg" width="200" alt="MonoFact statistics screen"> | <img src="assets/Settings%20screen.jpg" width="200" alt="MonoFact settings screen"> | |
 
 ## Tech stack
 
